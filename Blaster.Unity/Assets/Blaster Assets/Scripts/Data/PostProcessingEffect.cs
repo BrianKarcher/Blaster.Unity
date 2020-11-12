@@ -11,14 +11,14 @@ namespace BlueOrb.Scripts.Data
         public GameObject Effect;        
         public float InitialWeight;
         public float Duration;
-        //private Volume Volume;
+        private Volume Volume;
         private float CurrentWeight;
         private float TargetWeight;
         private bool _isActive;
 
         public void Init()
         {
-            //Volume = Effect.GetComponent<Volume>();
+            Volume = Effect.GetComponent<Volume>();
             CurrentWeight = InitialWeight;
             SetWeight(InitialWeight);
             _isActive = false;
@@ -40,21 +40,21 @@ namespace BlueOrb.Scripts.Data
             {
                 CurrentWeight = TargetWeight;
                 //_isActive = false;
-                //Volume.gameObject.SetActive(false);
+                Volume.gameObject.SetActive(false);
             }
             SetWeight(CurrentWeight);
         }
 
         private void SetWeight(float weight)
         {
-            //if (Volume == null)
-            //    return;
+            if (Volume == null)
+                return;
 
-            //Volume.weight = weight;
-            //if (weight == 0)
-            //    Volume.gameObject.SetActive(false);
-            //else
-            //    Volume.gameObject.SetActive(true);
+            Volume.weight = weight;
+            if (weight == 0)
+                Volume.gameObject.SetActive(false);
+            else
+                Volume.gameObject.SetActive(true);
         }
 
         public float GetCurrentWeight()
