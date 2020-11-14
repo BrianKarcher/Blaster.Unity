@@ -38,9 +38,11 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public bool _createAsChild = false;
 
         private int _layerMask = 0;
-        private PhysicsComponent _physicsComponent;
+        //private PhysicsComponent _physicsComponent;
+        private Vector3 _spawnPointPosition;
         private PlayerController _playerController;
-        private ThirdPersonCameraController _camera;
+        private ICameraController _camera;
+        //private UnityEngine.Camera _camera;
         //private AIComponent _aIComponent;
         //private CollisionComponent _collisionComponent;
         //private FloorComponent _floorComponent;
@@ -53,10 +55,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
             _entity = entity;
 
             //_animationComponent = entity.Components.GetComponent<AnimationComponent>();
-            if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+            //if (_physicsComponent == null)
+            //    _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+            _spawnPointPosition = GetSpawnpointWithOffset();
+
             if (_camera == null)
-                _camera = UnityEngine.Camera.main.transform.parent.GetComponent<ThirdPersonCameraController>();
+                _camera = _entity.Components.GetComponent<ICameraController>();
+            //_camera = UnityEngine.Camera.main.transform.parent.GetComponent<ThirdPersonCameraController>();
             if (_playerController == null)
                 _playerController = entity.Components.GetComponent<PlayerController>();
             //_aIComponent = entity.Components.GetComponent<AIComponent>();
@@ -73,6 +78,14 @@ namespace BlueOrb.Scripts.AI.AtomActions
             Finish();
         }
 
+        private Vector3 GetSpawnpointWithOffset()
+        {
+            if (_spawnPoint != null)
+                return _spawnPoint.transform.TransformPoint(_offset);
+            else
+                return _entity.transform.TransformPoint(_offset);
+        }
+
         private void ProcessShoot(IEntity entity)
         {
             var velocity = CalculateVelocity();
@@ -81,12 +94,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
             //var position = _physicsComponent.GetWorldPos() + RotateAroundAxis(new Vector3(_offset.x, _offset.y, 0f), angleToRotate, new Vector3(0, 0, 1));
 
-            Vector3 position;
-
-            if (_spawnPoint != null)
-                position = _spawnPoint.transform.TransformPoint(_offset);
-            else
-                position = entity.transform.TransformPoint(_offset);
+            Vector3 position = GetSpawnpointWithOffset();
 
             //var newObject = (GameObject.Instantiate(_objectToShoot, position, entity.transform.rotation) as Transform).GetComponent<IComponentRepository>();
             //IComponentRepository newObject = null;
@@ -160,45 +168,45 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             var speed = UnityEngine.Random.Range(_minSpeed, _maxSpeed);
 
-            Vector3 velocity = Vector3.zero;
+            Vector3 direction = Vector3.zero;
 
             switch (_shootTarget)
             {
                 case ShootTarget.StraightShot:
-                    velocity = _entity.transform.forward; //_animationComponent.GetFacingDirectionVector();
+                    direction = _entity.transform.forward; //_animationComponent.GetFacingDirectionVector();
                     break;
                 case ShootTarget.Random:
                     //targetVector = new Vector2D(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1));
                     var angle = UnityEngine.Random.Range(0f, 360f);
                     var x = Mathf.Cos(angle);
                     var y = Mathf.Sin(angle);
-                    velocity = new Vector3(x, 0, y);
+                    direction = new Vector3(x, 0, y);
                     break;
                 case ShootTarget.ToLocation:
-                    velocity = _shootToLocation - (Vector3)_physicsComponent.GetWorldPos3();
+                    direction = _shootToLocation - _spawnPointPosition;
                     break;
                 case ShootTarget.ToTarget:
                     var targetEntity = _entity.Target.GetComponent<IEntity>();
                     if (targetEntity != null)
-                        velocity = targetEntity.GetPosition() - _physicsComponent.GetWorldPos3();
+                        direction = targetEntity.GetPosition() - _spawnPointPosition;
                     else
-                        velocity = _entity.Target.transform.position - _physicsComponent.GetWorldPos3();
+                        direction = _entity.Target.transform.position - _spawnPointPosition;
                     break;
                 case ShootTarget.CameraRaycast:
                     if (!_camera.Raycast(1000f, _layerMask, out var hitInfo))
                         // If raycast no-hit, just point down the camera forward direction very far
-                        velocity = _camera.transform.TransformPoint(new Vector3(0f, 0f, 1000f)) - _physicsComponent.GetWorldPos3();
+                        direction = _camera.transform.TransformPoint(new Vector3(0f, 0f, 1000f)) - _spawnPointPosition;
                     else
-                        velocity = hitInfo.point - _physicsComponent.GetWorldPos3();
+                        direction = hitInfo.point - _spawnPointPosition;
                     break;
                 case ShootTarget.ShooterDirection:
-                    velocity = _playerController.Shooter.transform.forward;
+                    direction = _playerController.Shooter.transform.forward;
                     break;
                 case ShootTarget.None:
                     return Vector3.zero;
             }
 
-            velocity = velocity.normalized * speed;
+            var velocity = direction.normalized * speed;
 
             return velocity;
         }
