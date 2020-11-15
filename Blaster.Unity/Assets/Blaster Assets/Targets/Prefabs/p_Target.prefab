@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8255405523248145261}
   - component: {fileID: 4629806782661260377}
+  - component: {fileID: 7085825524113192926}
   m_Layer: 0
   m_Name: Collisions
   m_TagString: Target
@@ -45,6 +46,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2292265524688068172, guid: c39d746e3c5528c459bfe21bc05a7575, type: 3}
+--- !u!114 &7085825524113192926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3192729542066649204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2115692530, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 8048432936696822203}
+  componentName: 
 --- !u!1 &3958268624709902591
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8532563114344893225}
   - component: {fileID: 3732046781768632610}
+  - component: {fileID: 8048432936696822203}
   m_Layer: 0
   m_Name: p_Target
   m_TagString: Target
@@ -160,7 +176,13 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: Main
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 3958268624709902591}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -168,7 +190,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 00000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -178,12 +200,12 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
     EnableBreakpoints: 1
-    editorFlags: 1
+    editorFlags: 3
     activeStateName: 
     mouseEvents: 0
     handleLevelLoaded: 0
@@ -211,8 +233,25 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  fsmTemplate: {fileID: 11400000, guid: a07e6e5aed1abac4495431bd0565892c, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &8048432936696822203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958268624709902591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &8188756631123123393
 PrefabInstance:
   m_ObjectHideFlags: 0
