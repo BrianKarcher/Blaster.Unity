@@ -60,7 +60,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
             _spawnPointPosition = GetSpawnpointWithOffset();
 
             if (_camera == null)
+            {
+                //var cameraGo = UnityEngine.Camera.main;
                 _camera = _entity.Components.GetComponent<ICameraController>();
+            }
             //_camera = UnityEngine.Camera.main.transform.parent.GetComponent<ThirdPersonCameraController>();
             if (_playerController == null)
                 _playerController = entity.Components.GetComponent<PlayerController>();
