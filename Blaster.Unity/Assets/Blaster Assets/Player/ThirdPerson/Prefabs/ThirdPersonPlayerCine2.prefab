@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6793147974607708676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CameraFSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 3650020308829916384}
   - component: {fileID: 574487283956767259}
   - component: {fileID: 7950907761263058504}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625931937587158994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainFSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,9 +163,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7711831247389427738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character Swivel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,9 +200,9 @@ GameObject:
   - component: {fileID: 3558983921129821646}
   - component: {fileID: 8634725137116782661}
   - component: {fileID: 1644692683222115068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThirdPersonPlayerCine2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,9 +267,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 142887405539735097}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shooter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,9 +299,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5032431833510675783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,9 +330,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3895154372069365746}
   - component: {fileID: 206743392750212725}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character Logic
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -400,6 +400,11 @@ MonoBehaviour:
   _yawRange: 180
   _pitchMin: -45
   _pitchMax: 45
+  _yawMin: 0
+  _yawMax: 0
+  yaw: 0
+  pitch: 0
+  roll: 0
 --- !u!1 &6294613528830819027
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108492608697729361}
   - component: {fileID: 3116929755131028287}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShooterFSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1361446530666013042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +625,7 @@ GameObject:
   - component: {fileID: 778568923653450173}
   - component: {fileID: 18128187496614770}
   - component: {fileID: 1535222232757276668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,9 +716,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7919477757398285961}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FSM
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
