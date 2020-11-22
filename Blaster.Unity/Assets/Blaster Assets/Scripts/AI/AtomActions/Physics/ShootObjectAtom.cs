@@ -41,8 +41,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
         //private PhysicsComponent _physicsComponent;
         private Vector3 _spawnPointPosition;
         private PlayerController _playerController;
-        private ICameraController _camera;
-        //private UnityEngine.Camera _camera;
+        //private ICameraController _camera;
+        private UnityEngine.Camera _camera;
         //private AIComponent _aIComponent;
         //private CollisionComponent _collisionComponent;
         //private FloorComponent _floorComponent;
@@ -61,8 +61,9 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
             if (_camera == null)
             {
-                //var cameraGo = UnityEngine.Camera.main;
-                _camera = _entity.Components.GetComponent<ICameraController>();
+                var cameraGo = UnityEngine.Camera.main;
+                _camera = cameraGo;
+                //_camera = _entity.Components.GetComponent<ICameraController>();
             }
             //_camera = UnityEngine.Camera.main.transform.parent.GetComponent<ThirdPersonCameraController>();
             if (_playerController == null)
@@ -196,11 +197,23 @@ namespace BlueOrb.Scripts.AI.AtomActions
                         direction = _entity.Target.transform.position - _spawnPointPosition;
                     break;
                 case ShootTarget.CameraRaycast:
-                    if (!_camera.Raycast(1000f, _layerMask, out var hitInfo))
+                    Ray ray = _camera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+                    // Create a vector at the center of our camera's viewport
+                    // Vector3 rayOrigin = _camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+
+                    // var rtn = UnityEngine.Physics.Raycast(rayOrigin, _camera.transform.forward, out hitInfo, maxDistance, layerMask);
+                    var maxDistance = 1000f;
+                    var rtn = UnityEngine.Physics.Raycast(ray, out var hitInfo, maxDistance, _layerMask);
+                    //if (!_camera.Raycast(1000f, _layerMask, out var hitInfo))
+                    if (!rtn)
+                    {
                         // If raycast no-hit, just point down the camera forward direction very far
                         direction = _camera.transform.TransformPoint(new Vector3(0f, 0f, 1000f)) - _spawnPointPosition;
+                    }
                     else
+                    {
                         direction = hitInfo.point - _spawnPointPosition;
+                    }
                     break;
                 case ShootTarget.ShooterDirection:
                     direction = _playerController.Shooter.transform.forward;
