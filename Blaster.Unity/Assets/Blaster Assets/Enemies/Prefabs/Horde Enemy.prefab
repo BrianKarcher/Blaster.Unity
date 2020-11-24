@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 2124730976940947632}
   - component: {fileID: 2124730976940947634}
   - component: {fileID: 2124730976940947633}
+  - component: {fileID: 7341241074651190650}
   m_Layer: 0
   m_Name: Horde Enemy
   m_TagString: Enemy
@@ -485,3 +486,34 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.99, z: 0}
+--- !u!114 &7341241074651190650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124730976940947637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2139407959, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 2124730976940947635}
+  componentName: 
+  _entityStats:
+    _maxHP: 3
+    _currentHP: 3
+    _maxSP: 0
+    _currentSP: 0
+    _maxStamina: 0
+    _currentStamina: 0
+    _actionStaminas: []
+    _staminaRefreshAmount: 0
+    _staminaRefreshDelay: 0
+    _physicalAttackPower: 0
+    _magicalAttackPower: 0
+    _physicalDefense: 0
+    _magicalDefense: 0
+    _experience: 0
+    _level: 0
+    IsHiding: 0
