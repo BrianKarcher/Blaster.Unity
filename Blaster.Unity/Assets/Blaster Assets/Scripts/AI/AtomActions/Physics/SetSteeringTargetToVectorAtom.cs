@@ -24,7 +24,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
         public GoToType _goToType;
         public int WaypointIndex;
         //public string[] _messageReceivers;
-        public bool sendToSelf;
+        public bool sendToSelf = true;
         public string physicsComponentName;
         public string waypointName;
 
