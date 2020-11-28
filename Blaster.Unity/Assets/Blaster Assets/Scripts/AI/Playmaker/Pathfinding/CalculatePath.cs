@@ -83,12 +83,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Physics
                     return;
                 }
 
-                Vector4[] vector4s = new Vector4[_atom.Path.Count];
-                for (int i = 0; i < _atom.Path.Count; i++)
-                {
-                    var tempVector = _atom.Path[i];
-                    vector4s[i] = new Vector4(tempVector.x, tempVector.y, tempVector.z);
-                }
+                var vector4s = _atom.GetPath();
                 StoreVectorArray.vector4Values = vector4s;
                 Finish();
             }

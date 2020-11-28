@@ -90,9 +90,9 @@ namespace BlueOrb.Scripts.AI.AtomActions
             newPathId = MessageDispatcher.Instance.StartListening("NewPath", entity.GetId(), (data) =>
             {
                 //var newPath = (PathfindingData)data.ExtraInfo;
-                var newPath = data.ExtraInfo as List<Vector3>;
-                Path = newPath;
-                _behavior.SetPath(Path);
+                var newPath = ((List<Vector3> path, int waypoint))data.ExtraInfo;
+                Path = newPath.path;
+                _behavior.SetPath(Path, newPath.waypoint);
                 //AdjustWwaypointsForCurrentPosition(newPath);
             });
         }
