@@ -192,9 +192,9 @@ namespace BlueOrb.Scripts.AI.AtomActions
                 case ShootTarget.ToTarget:
                     var targetEntity = _entity.Target.GetComponent<IEntity>();
                     if (targetEntity != null)
-                        direction = targetEntity.GetPosition() - _spawnPointPosition;
+                        direction = (targetEntity.GetPosition() + _shootToLocation) - _spawnPointPosition;
                     else
-                        direction = _entity.Target.transform.position - _spawnPointPosition;
+                        direction = (_entity.Target.transform.position + _shootToLocation) - _spawnPointPosition;
                     break;
                 case ShootTarget.CameraRaycast:
                     Ray ray = _camera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
