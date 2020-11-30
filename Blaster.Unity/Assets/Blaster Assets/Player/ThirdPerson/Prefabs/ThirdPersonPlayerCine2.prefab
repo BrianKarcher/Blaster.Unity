@@ -363,6 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: -155506251, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
   InvisibleCameraOrigin: {fileID: 5032431833510675783}
   _objectToRotate: {fileID: 7711831247389427738}
   _verticalAxisName: Rotate Camera Vertical
@@ -400,8 +402,11 @@ MonoBehaviour:
   _yawRange: 180
   _pitchMin: -45
   _pitchMax: 45
+  _fovZoomOut: 60
+  _fovZoomIn: 20
   _yawMin: 0
   _yawMax: 0
+  _cinemachineVirtualCamera: {fileID: 0}
   yaw: 0
   pitch: 0
   roll: 0
@@ -627,7 +632,7 @@ GameObject:
   - component: {fileID: 1535222232757276668}
   m_Layer: 8
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
