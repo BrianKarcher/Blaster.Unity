@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8255405523248145261}
   - component: {fileID: 4629806782661260377}
   - component: {fileID: 7085825524113192926}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collisions
   m_TagString: Target
   m_Icon: {fileID: 0}
@@ -71,7 +71,8 @@ GameObject:
   - component: {fileID: 8532563114344893225}
   - component: {fileID: 3732046781768632610}
   - component: {fileID: 8048432936696822203}
-  m_Layer: 0
+  - component: {fileID: 7231415982873063223}
+  m_Layer: 11
   m_Name: p_Target
   m_TagString: Target
   m_Icon: {fileID: 0}
@@ -252,6 +253,22 @@ MonoBehaviour:
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+--- !u!54 &7231415982873063223
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958268624709902591}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1001 &8188756631123123393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,6 +350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c39d746e3c5528c459bfe21bc05a7575,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c39d746e3c5528c459bfe21bc05a7575, type: 3}
