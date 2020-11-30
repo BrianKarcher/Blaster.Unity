@@ -2105,7 +2105,7 @@ GameObject:
   - component: {fileID: 912670832}
   - component: {fileID: 912670834}
   - component: {fileID: 912670833}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Terrain
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -3317,6 +3317,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273365112}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1291519510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6128631322365642215, guid: ad9375413efc7824da469ac383620f15,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033070236}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1307174350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3431,6 +3443,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 18.62
       objectReference: {fileID: 0}
+    - target: {fileID: 3239011891136494306, guid: 95f57408e1b8da540916bd6a9a451b03,
+        type: 3}
+      propertyPath: _cinemachineVirtualCamera
+      value: 
+      objectReference: {fileID: 1291519510}
     - target: {fileID: 7391379247307723856, guid: 95f57408e1b8da540916bd6a9a451b03,
         type: 3}
       propertyPath: m_Enabled

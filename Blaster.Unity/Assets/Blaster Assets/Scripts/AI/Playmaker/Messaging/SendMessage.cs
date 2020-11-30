@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
+using TooltipAttribute = HutongGames.PlayMaker.TooltipAttribute;
 
 namespace BlueOrb.Scripts.AI.Playmaker
 {
@@ -42,7 +44,11 @@ namespace BlueOrb.Scripts.AI.Playmaker
             if (!Recipient.IsNone)
             {
                 if (Recipient.Value == null || Recipient.Value.gameObject == null)
-                    throw new Exception("(SendMessage) Could not locate Game Object " + Recipient.GetDisplayName());
+                {
+                    Debug.Log("(SendMessage) Could not locate Game Object " + Recipient.GetDisplayName());
+                    Finish();
+                    return;
+                }
 
                 var target = Recipient.Value.GetComponent<EntityCommonComponent>();
                 if (target == null)
