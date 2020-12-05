@@ -4,6 +4,7 @@ using BlueOrb.Common.Container;
 using UnityEngine;
 using BlueOrb.Scripts.UI;
 using TMPro;
+using Assets.Blaster_Assets.Scripts.Components;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Camera
 {
@@ -30,23 +31,28 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 
             var entity = go.GetComponent<IEntity>();
 
-            var pos = UnityEngine.Camera.main.WorldToScreenPoint(entity.GetPosition() + LabelOffset.Value);
+            Finish();
+
+            var worldPos = entity.GetPosition() + LabelOffset.Value;
+
+            var pos = UnityEngine.Camera.main.WorldToScreenPoint(worldPos);
 
             // TODO This is bad and SLOW!
             var uiController = GameObject.FindObjectOfType<UIController>();
+            if (uiController == null)
+                return;
 
             var canvas = uiController.GetCanvas();
 
             //var extraInfo = ((Vector3 pos, string text, Color color))data.ExtraInfo;
             var label = GameObject.Instantiate(Label.Value, pos, Quaternion.identity, canvas.transform);
             // Calculate *screen* position (note, not a canvas/recttransform position)
-            var textMesh = label.GetComponent<TextMeshProUGUI>();
-            textMesh.text = "Hello!";
-
-            //Vector2 canvasPos;
+            var pointsAcquiredComponent = label.GetComponent<PointsAcquiredComponent>();
+            pointsAcquiredComponent.SetText("Hello!");
+            pointsAcquiredComponent.SetWorldPosition(worldPos);
 
             //_atom.Start(entity);
-            Finish();
+            
         }
 
         public override void OnExit()

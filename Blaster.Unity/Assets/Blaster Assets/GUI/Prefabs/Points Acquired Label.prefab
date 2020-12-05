@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 2707671265557584812}
   - component: {fileID: 2707671265557584814}
   - component: {fileID: 2707671265557584815}
+  - component: {fileID: -1516517693789070362}
+  - component: {fileID: 4713652193407367884}
   m_Layer: 0
-  m_Name: Temp Points
+  m_Name: Points Acquired Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,3 +158,35 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &-1516517693789070362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707671265557584813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
+--- !u!114 &4713652193407367884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707671265557584813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3d8b2f1b05cc241804804b42596a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: -1516517693789070362}
+  componentName: 
+  _textMeshPro: {fileID: 2707671265557584815}

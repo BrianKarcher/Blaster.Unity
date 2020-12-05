@@ -384,12 +384,12 @@ MonoBehaviour:
           value: 0
         fsmVector2Params: []
         fsmVector3Params:
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: LabelOffset
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
-          value: {x: 0, y: 1, z: 0}
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -427,7 +427,13 @@ MonoBehaviour:
       boolVariables: []
       stringVariables: []
       vector2Variables: []
-      vector3Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: LabelOffset
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {x: 0, y: 0, z: 0}
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
@@ -457,7 +463,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
