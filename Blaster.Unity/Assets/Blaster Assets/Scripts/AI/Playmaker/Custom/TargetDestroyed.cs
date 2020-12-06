@@ -47,12 +47,14 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
             //var extraInfo = ((Vector3 pos, string text, Color color))data.ExtraInfo;
             var label = GameObject.Instantiate(Label.Value, pos, Quaternion.identity, canvas.transform);
             // Calculate *screen* position (note, not a canvas/recttransform position)
-            var pointsAcquiredComponent = label.GetComponent<PointsAcquiredComponent>();
-            pointsAcquiredComponent.SetText("Hello!");
-            pointsAcquiredComponent.SetWorldPosition(worldPos);
+            var pinComponent = label.GetComponent<PinUIToWorldSpaceComponent>();            
+            pinComponent.SetWorldPosition(worldPos);
+
+            var textMeshPro = label.GetComponent<TextMeshProUGUI>();
+            textMeshPro.SetText("+50");
 
             //_atom.Start(entity);
-            
+
         }
 
         public override void OnExit()

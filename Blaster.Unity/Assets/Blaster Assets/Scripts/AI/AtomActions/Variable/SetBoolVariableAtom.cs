@@ -10,7 +10,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
     {
         public enum BoolVariableEnum
         {
-            AutoRotateSameAsCamera = 0,
+            //AutoRotateSameAsCamera = 0,
             IkActive = 1,
             AutoTurn = 2
         }
@@ -23,7 +23,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         private bool _originalValue;
 
         private PhysicsComponent _physicsComponent;
-        private PlayerController _playerController;
+        //private PlayerController _playerController;
         private AnimationComponent _animator;
 
         public override void Start(IEntity entity)
@@ -31,8 +31,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
             base.Start(entity);
             if (_physicsComponent == null)
                 _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
-            if (_playerController == null)
-                _playerController = entity.Components.GetComponent<PlayerController>();
+            //if (_playerController == null)
+            //    _playerController = entity.Components.GetComponent<PlayerController>();
             if (_animator == null)
                 _animator = entity.Components.GetComponent<AnimationComponent>();
 
@@ -57,10 +57,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             switch (Variable)
             {
-                case BoolVariableEnum.AutoRotateSameAsCamera:
-                    _playerController.AutoRotateSameAsCamera = value;
+                //case BoolVariableEnum.AutoRotateSameAsCamera:
+                //    _playerController.AutoRotateSameAsCamera = value;
                     //_physicsComponent.Controller.GetPhysicsData().MaxSpeed = value;
-                    break;
+                    //break;
                 case BoolVariableEnum.IkActive:
                     _animator.IkActive = value;
                     break;
@@ -74,8 +74,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             switch (Variable)
             {
-                case BoolVariableEnum.AutoRotateSameAsCamera:
-                    return _playerController.AutoRotateSameAsCamera;
+                //case BoolVariableEnum.AutoRotateSameAsCamera:
+                //    return _playerController.AutoRotateSameAsCamera;
                 case BoolVariableEnum.IkActive:
                     return _animator.IkActive;
                 case BoolVariableEnum.AutoTurn:

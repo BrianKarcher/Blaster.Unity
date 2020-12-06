@@ -18,8 +18,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public bool Value;
 
         private PhysicsComponent _physicsComponent;
-        private PlayerController _playerController;
-        private PlayerParryComponent _playerParryComponent;
+        //private PlayerController _playerController;
+        //private PlayerParryComponent _playerParryComponent;
         private AnimationComponent _animator;
 
         public override void Start(IEntity entity)
@@ -27,12 +27,12 @@ namespace BlueOrb.Scripts.AI.AtomActions
             base.Start(entity);
             if (_physicsComponent == null)
                 _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
-            if (_playerController == null)
-                _playerController = entity.Components.GetComponent<PlayerController>();
+            //if (_playerController == null)
+            //    _playerController = entity.Components.GetComponent<PlayerController>();
             if (_animator == null)
                 _animator = entity.Components.GetComponent<AnimationComponent>();
-            if (_playerParryComponent == null)
-                _playerParryComponent = entity.Components.GetComponent<PlayerParryComponent>();
+            //if (_playerParryComponent == null)
+            //    _playerParryComponent = entity.Components.GetComponent<PlayerParryComponent>();
         }
 
         public override void OnUpdate()
@@ -46,8 +46,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
             {
                 case BoolVariableEnum.Grounded:
                     return _physicsComponent.Controller.GetIsGrounded();
-                case BoolVariableEnum.CanParry:
-                    return _playerParryComponent.CanParry;
+                //case BoolVariableEnum.CanParry:
+                //    return _playerParryComponent.CanParry;
             }
             throw new System.Exception("Enum " + Variable.ToString() + " not found");
         }

@@ -21,7 +21,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         private Vector3 _originalValue;
 
         private PhysicsComponent _physicsComponent;
-        private PlayerController _playerController;
+        //private PlayerController _playerController;
         private AnimationComponent _animator;
 
         public override void Start(IEntity entity)
@@ -29,8 +29,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
             base.Start(entity);
             if (_physicsComponent == null)
                 _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
-            if (_playerController == null)
-                _playerController = entity.Components.GetComponent<PlayerController>();
+            //if (_playerController == null)
+            //    _playerController = entity.Components.GetComponent<PlayerController>();
             if (_animator == null)
                 _animator = entity.Components.GetComponent<AnimationComponent>();
 

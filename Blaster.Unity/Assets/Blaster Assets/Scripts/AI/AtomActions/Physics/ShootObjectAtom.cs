@@ -40,7 +40,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         private int _layerMask = 0;
         //private PhysicsComponent _physicsComponent;
         private Vector3 _spawnPointPosition;
-        private PlayerController _playerController;
+        //private PlayerController _playerController;
         //private ICameraController _camera;
         private UnityEngine.Camera _camera;
         //private AIComponent _aIComponent;
@@ -66,8 +66,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
                 //_camera = _entity.Components.GetComponent<ICameraController>();
             }
             //_camera = UnityEngine.Camera.main.transform.parent.GetComponent<ThirdPersonCameraController>();
-            if (_playerController == null)
-                _playerController = entity.Components.GetComponent<PlayerController>();
+            //if (_playerController == null)
+            //    _playerController = entity.Components.GetComponent<PlayerController>();
             //_aIComponent = entity.Components.GetComponent<AIComponent>();
             //_collisionComponent = entity.Components.GetComponent<CollisionComponent>();
             //_floorComponent = entity.Components.GetComponent<FloorComponent>();
@@ -216,7 +216,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
                     }
                     break;
                 case ShootTarget.ShooterDirection:
-                    direction = _playerController.Shooter.transform.forward;
+                    throw new NotImplementedException("Shooter Direction not implemented");
+                    //direction = _playerController.Shooter.transform.forward;
                     break;
                 case ShootTarget.None:
                     return Vector3.zero;

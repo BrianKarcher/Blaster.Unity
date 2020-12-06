@@ -17,13 +17,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
         public GameObjectVariableEnum Variable;
         private GameObject _value;
-        private PlayerParryComponent _playerParryComponent;
+        //private PlayerParryComponent _playerParryComponent;
 
         public override void Start(IEntity entity)
         {
             base.Start(entity);
-            if (_playerParryComponent == null)
-                _playerParryComponent = entity.Components.GetComponent<PlayerParryComponent>();
+            //if (_playerParryComponent == null)
+            //    _playerParryComponent = entity.Components.GetComponent<PlayerParryComponent>();
         }
 
         public override void OnUpdate()
@@ -39,8 +39,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
             {
                 case GameObjectVariableEnum.Player:
                     return EntityContainer.Instance.GetMainCharacter().gameObject;
-                case GameObjectVariableEnum.ParriedEntity:
-                    return _playerParryComponent.CurrentOtherParryGameObject;
+                //case GameObjectVariableEnum.ParriedEntity:
+                //    return _playerParryComponent.CurrentOtherParryGameObject;
                 case GameObjectVariableEnum.Target:
                     return _entity.Target;
             }
