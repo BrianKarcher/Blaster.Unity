@@ -18,17 +18,20 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
             //CustomVelocity = 6,
             Self = 7,
             Home = 8,
-            Player = 9
+            Player = 9,
+            GameObject = 10
         }
 
         public GoToType _goToType;
         public int WaypointIndex;
+        
         //public string[] _messageReceivers;
         public bool sendToSelf = true;
         public string physicsComponentName;
         public string waypointName;
 
         private PhysicsComponent _physicsComponent;
+        private GameObject _goToGameObject;
         //private AIComponent _aIComponent;
         //private SteeringBehaviorManager _steering;
 
@@ -135,6 +138,8 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
                     return _entity.HomePosition;
                 case GoToType.Player:
                     return EntityContainer.Instance.GetMainCharacter().GetFootPosition();
+                case GoToType.GameObject:
+                    return _goToGameObject.transform.position;
             }
             return Vector3.negativeInfinity;
         }
@@ -162,6 +167,11 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
         public override void OnUpdate()
         {
             Tick();
+        }
+
+        public void SetGameObject(GameObject gameObject)
+        {
+            _goToGameObject = gameObject;
         }
     }
 }

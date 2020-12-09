@@ -11,6 +11,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
         [RequiredField]
         public FsmOwnerDefault gameObject;
 
+        public FsmGameObject GoToGameObject;
         public SetSteeringTargetToVectorAtom _atom;
         [Tooltip("Repeat every frame while the state is active.")]
         public bool everyFrame;
@@ -31,6 +32,10 @@ namespace BlueOrb.Scripts.AI.Playmaker
             //var rqSM = Owner.GetComponent<PlayMakerStateMachineComponent>();
             //_entity = rqSM.GetComponentRepository();
             //var entity = Owner.GetComponent<IEntity>();
+            if (!GoToGameObject.IsNone)
+            {
+                _atom.SetGameObject(GoToGameObject.Value);
+            }
             _atom.Start(entity);
             if (!everyFrame)
             {
