@@ -9,19 +9,19 @@ namespace BlueOrb.Scripts.AI.AtomActions
 {
     public class CreateExplosionAtom : AtomActionBase
     {
-        public float AffectedDistance;
-        public float Force;
-        public float Distance;
-        public float Damage;
-        public float Delay;
+        public float AffectedDistance { get; set; }
+        public float Force { get; set; }
+        public float Radius { get; set; }
+        public float Damage { get; set; }
+        public float Delay { get; set; }
 
-        private PhysicsComponent _physicsComponent;
         //protected EntityCommonComponent _entityCommon;
-        private int _layerMask = -1;
-        private string[] _tags;
-        private Vector3 _position;
-        private float _startTime;
+        public int LayerMask { get; set; }
+        public string[] Tags { get; set; }
+        //public Vector3 Position { get; set; }
+        private float _startTime { get; set; }
         //private bool _result;
+        private PhysicsComponent _physicsComponent;
 
         public override void Start(IEntity entity)
         {
@@ -51,7 +51,9 @@ namespace BlueOrb.Scripts.AI.AtomActions
         private void Explode()
         {
             //_itemHits = UnityEngine.Physics.BoxCastAll(attackPos, halfExtent, transform.forward, transform.rotation, _attackData.Distance);
-            var itemHits = UnityEngine.Physics.OverlapSphere(_position, Distance, _layerMask);
+            //Debug.
+            var itemHits = UnityEngine.Physics.OverlapSphere(_entity.GetPosition(), Radius, LayerMask);
+            Debug.Log($"Explode hit {itemHits.Length} items");
 
             Debug.Log($"Explode Count: {itemHits.Length}");
             for (int i = 0; i < itemHits.Length; i++)
@@ -59,9 +61,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
                 var itemHit = itemHits[i];
                 if (!itemHit.isTrigger)
                     continue;
-                var otherEntity = itemHit.attachedRigidbody?.GetComponent<ComponentRepository>();
+                ComponentRepository otherEntity;
+
+                otherEntity = itemHit.attachedRigidbody?.GetComponent<ComponentRepository>();
                 if (otherEntity == null)
-                    continue;
+                {
+
+                }
 
                 // It sounds fun, but no, you can't hit yourself
                 if (otherEntity.GetId() == _entity.GetId())
@@ -73,7 +79,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
                     continue;
 
                 var itemHitTag = itemHit.tag;
-                var tagFound = Array.IndexOf(_tags, itemHitTag) > -1;
+                var tagFound = Array.IndexOf(Tags, itemHitTag) > -1;
                 if (!tagFound)
                     continue;
 
@@ -87,17 +93,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
         private void ExplodeEntity(ComponentRepository entity)
         {
-            MessageDispatcher.Instance.DispatchMsg("Explode", 0f, _entity.GetId(), entity.GetId(), (_position, Damage, Force, _entity.gameObject));
-        }
-
-        public void SetLayerMask(int layerMask)
-        {
-            _layerMask = layerMask;
-        }
-
-        public void SetPosition(Vector3 position)
-        {
-            _position = position;
+            MessageDispatcher.Instance.DispatchMsg("Explode", 0f, _entity.GetId(), entity.GetId(), (_entity.GetPosition(), Damage, Force, _entity.gameObject));
         }
     }
 }

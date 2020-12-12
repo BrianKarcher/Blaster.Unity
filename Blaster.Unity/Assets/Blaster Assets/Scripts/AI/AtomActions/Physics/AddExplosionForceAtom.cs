@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace BlueOrb.Scripts.AI.AtomActions
 {
-    public class ExplodeAtom : AtomActionBase
+    public class AddExplosionForceAtom : AtomActionBase
     {
         //private Vector3 _position;
         public Vector3 Position { get; set; }
@@ -54,6 +54,14 @@ namespace BlueOrb.Scripts.AI.AtomActions
             _entityStatsComponent.AddHp(-Damage);
             _physicsComponent.Explode(Force, Position, Radius, UpwardsModifier);
             Finish();
+        }
+
+        public void SetProperties(float damage, float force, float radius, float upwardsModifier)
+        {
+            Damage = damage;
+            Force = force;
+            Radius = radius;
+            UpwardsModifier = upwardsModifier;
         }
 
         //public override void StartListening(IEntity entity)
