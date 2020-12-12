@@ -1,15 +1,16 @@
 ﻿using BlueOrb.Common.Container;
+using BlueOrb.Controller.Block;
 using BlueOrb.Messaging;
 using BlueOrb.Physics;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static BlueOrb.Physics.Helpers.DrawBoxCast;
 
 namespace BlueOrb.Scripts.AI.AtomActions
 {
     public class CreateExplosionAtom : AtomActionBase
     {
-        public float AffectedDistance { get; set; }
         public float Force { get; set; }
         public float Radius { get; set; }
         public float Damage { get; set; }
@@ -52,6 +53,9 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             //_itemHits = UnityEngine.Physics.BoxCastAll(attackPos, halfExtent, transform.forward, transform.rotation, _attackData.Distance);
             //Debug.
+
+            // Debugging purposes
+            DrawBox(_entity.GetPosition(), new Vector3(Radius, Radius, Radius), Quaternion.identity, Color.yellow, 1f);
             var itemHits = UnityEngine.Physics.OverlapSphere(_entity.GetPosition(), Radius, LayerMask);
             Debug.Log($"Explode hit {itemHits.Length} items");
 
@@ -59,29 +63,34 @@ namespace BlueOrb.Scripts.AI.AtomActions
             for (int i = 0; i < itemHits.Length; i++)
             {
                 var itemHit = itemHits[i];
-                if (!itemHit.isTrigger)
-                    continue;
+                //if (!itemHit.isTrigger)
+                //    continue;
                 ComponentRepository otherEntity;
-
                 otherEntity = itemHit.attachedRigidbody?.GetComponent<ComponentRepository>();
                 if (otherEntity == null)
                 {
-
+                    otherEntity = itemHit.GetComponent<EntityItemComponent>()?.GetComponentRepository() as ComponentRepository;
+                }
+                if (otherEntity == null)
+                {
+                    continue;
                 }
 
                 // It sounds fun, but no, you can't hit yourself
                 if (otherEntity.GetId() == _entity.GetId())
                     continue;
 
-                Debug.Log("Exploded : " + otherEntity.name);
-
                 if (_entitiesHit.Contains(otherEntity.GetId()))
                     continue;
 
                 var itemHitTag = itemHit.tag;
+                Debug.Log($"Exploded tag check on  {itemHitTag}");
                 var tagFound = Array.IndexOf(Tags, itemHitTag) > -1;
+                Debug.Log($"Exploded tag check on  {itemHitTag}: {tagFound}");
                 if (!tagFound)
                     continue;
+
+                Debug.Log("Exploded : " + otherEntity.name);
 
                 ExplodeEntity(otherEntity);
 

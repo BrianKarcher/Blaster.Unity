@@ -17,17 +17,11 @@ namespace BlueOrb.Scripts.AI.AtomActions
         private GameObject _otherEntity;
         public GameObject OtherEntity => _otherEntity;
 
-        //private PhysicsComponent _physicsComponent;
-
         private Action<Telegram> _explodedDel;
         private long _explodedIndex;
 
         public override void Start(IEntity entity)
         {
-            base.Start(entity);
-            //if (_physicsComponent == null)
-            //    _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
-
             if (_explodedDel == null)
             {
                 _explodedDel = (data) =>
@@ -37,6 +31,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
                     Finish();
                 };
             }
+
+            base.Start(entity);
         }
 
         public override void StartListening(IEntity entity)

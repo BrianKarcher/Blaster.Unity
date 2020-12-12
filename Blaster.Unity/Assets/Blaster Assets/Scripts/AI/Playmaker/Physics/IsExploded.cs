@@ -15,6 +15,10 @@ namespace BlueOrb.Scripts.AI.Playmaker
         [RequiredField]
         public FsmOwnerDefault gameObject;
 
+        [UIHint(UIHint.Variable)]
+        [Tooltip("Fire when exploded.")]
+        public FsmEvent Exploded;
+
         public IsExplodedAtom _atom;
 
         public override void Reset()
@@ -31,7 +35,18 @@ namespace BlueOrb.Scripts.AI.Playmaker
             }
             var entity = go.GetComponent<IEntity>();
             _atom.Start(entity);
-            Finish();
+            //Finish();
+        }
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+            _atom.OnUpdate();
+            if (_atom.IsFinished)
+            {
+                Fsm.Event(Exploded);
+                Finish();
+            }
         }
 
         public override void OnExit()

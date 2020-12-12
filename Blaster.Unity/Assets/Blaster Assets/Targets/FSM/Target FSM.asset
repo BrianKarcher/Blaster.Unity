@@ -87,7 +87,7 @@ MonoBehaviour:
         x: 218
         y: 145
         width: 103
-        height: 32
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -100,17 +100,27 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: Exploded
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Last steps
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.TriggerEvent
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
+        - BlueOrb.Scripts.AI.Playmaker.IsExploded
         customNames:
         - 
         - 
-        actionEnabled: 0001
-        actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 9c5124001a44e005
+        - 
+        actionEnabled: 000101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000050000000d000000
+        actionHashCodes: 9c5124001a44e0057a822f01
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -126,6 +136,14 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -178,13 +196,15 @@ MonoBehaviour:
         - FireProjectileHit
         - 
         - FINISHED
+        - Exploded
         byteData: 0000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 02000000
+        customTypeSizes: 0200000000000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 14000000070000001200000017000000130000001400000028000000030000000300000017000000130000001200000001000000
+        - BlueOrb.Scripts.AI.AtomActions.IsExplodedAtom
+        paramDataType: 14000000070000001200000017000000130000001400000028000000030000000300000017000000130000001200000001000000140000001700000028000000
         paramName:
         - gameObject
         - trigger
@@ -199,8 +219,11 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000200000003000000010000000100000004000000
-        paramByteDataSize: 00000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
+        - gameObject
+        - Exploded
+        - _atom
+        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000200000003000000010000000100000004000000020000000400000001000000
+        paramByteDataSize: 00000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
     - name: Destroy
       description: 
       colorIndex: 0
@@ -419,6 +442,9 @@ MonoBehaviour:
     events:
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: Exploded
+      isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
     variables:

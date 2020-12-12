@@ -302,14 +302,16 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         - BlueOrb.Scripts.AI.Playmaker.Camera.TargetDestroyed
+        - BlueOrb.Scripts.AI.Playmaker.CreateExplosion
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000050000000a000000
-        actionHashCodes: b2cf1000b2cf1000eea3eb01
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000050000000a0000000d000000
+        actionHashCodes: b2cf1000b2cf1000eea3eb0162757a00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -344,19 +346,87 @@ MonoBehaviour:
             showInInspector: 1
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Enemy
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Target
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 7
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 5
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 9
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 11
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 8
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -395,11 +465,14 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams: []
         byteData: 00000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 1400000011000000110000000100000001000000140000001100000011000000010000000100000014000000130000001c000000
+        arrayParamSizes: 0300000003000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmInt
+        - HutongGames.PlayMaker.FsmString
+        customTypeSizes: 00000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.CreateExplosionAtom
+        paramDataType: 1400000011000000110000000100000001000000140000001100000011000000010000000100000014000000130000001c000000140000000f0000000f0000000f0000000f0000000c0000001000000010000000100000000c00000012000000120000001200000028000000
         paramName:
         - gameObject
         - activate
@@ -414,8 +487,22 @@ MonoBehaviour:
         - gameObject
         - Label
         - LabelOffset
-        paramDataPos: 00000000000000000100000000000000010000000100000002000000030000000200000003000000020000000000000000000000
-        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000100000001000000000000000000000000000000
+        - gameObject
+        - Force
+        - Radius
+        - Damage
+        - Delay
+        - Layer
+        - 
+        - 
+        - 
+        - Tags
+        - 
+        - 
+        - 
+        - _atom
+        paramDataPos: 000000000000000001000000000000000100000001000000020000000300000002000000030000000200000000000000000000000300000000000000010000000200000003000000000000000000000001000000020000000100000000000000010000000200000000000000
+        paramByteDataSize: 000000000000000000000000010000000100000000000000000000000000000001000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
