@@ -468,6 +468,7 @@ MonoBehaviour:
   _applySpeedLimit: 1
   _steering:
     _drawDebug: 0
+    ProjectOnGround: 1
     Target: {x: 0, y: 0, z: 0}
     Offset: {x: 0, y: 0, z: 0}
     SteeringMode: 
@@ -628,7 +629,13 @@ MonoBehaviour:
       boolVariables: []
       stringVariables: []
       vector2Variables: []
-      vector3Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: LabelOffset
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {x: 0, y: 2, z: 0}
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
@@ -646,7 +653,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 0

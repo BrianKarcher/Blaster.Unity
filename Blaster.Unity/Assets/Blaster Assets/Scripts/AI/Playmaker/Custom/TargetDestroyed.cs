@@ -31,7 +31,6 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 
             var entity = go.GetComponent<IEntity>();
 
-            Finish();
 
             var worldPos = entity.GetPosition() + LabelOffset.Value;
 
@@ -40,7 +39,11 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
             // TODO This is bad and SLOW!
             var uiController = GameObject.FindObjectOfType<UIController>();
             if (uiController == null)
+            {
+                Debug.LogError($"Cannot locate UIController.");
+                Finish();
                 return;
+            }
 
             var canvas = uiController.GetCanvas();
 
@@ -54,7 +57,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
             textMeshPro.SetText("+50");
 
             //_atom.Start(entity);
-
+            Finish();
         }
 
         public override void OnExit()
