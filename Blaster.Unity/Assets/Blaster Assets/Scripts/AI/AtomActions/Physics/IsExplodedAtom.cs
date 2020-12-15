@@ -1,4 +1,5 @@
-﻿using BlueOrb.Common.Container;
+﻿using Assets.Blaster_Assets.Scripts.AI.Playmaker.Physics.Data;
+using BlueOrb.Common.Container;
 using BlueOrb.Messaging;
 using BlueOrb.Physics;
 using System;
@@ -8,6 +9,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
 {
     public class IsExplodedAtom : AtomActionBase
     {
+        public string ExplodeMessage = "Explode";
         private Vector3 _position;
         public Vector3 Position => _position;
         private float _damage;
@@ -26,8 +28,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
             {
                 _explodedDel = (data) =>
                 {
+                    var explodeData = data.ExtraInfo as ExplodeData;
+                    _position = explodeData.ExplodePosition;
+                    _damage = explodeData.Damage;
+                    _force = explodeData.Force;
+                    _otherEntity = explodeData.ExplodingEntity;
                     // Aren't Tuples nice?
-                    (_position, _damage, _force, _otherEntity) = ((Vector3, float, float, GameObject))data.ExtraInfo;
+                    //(_position, _damage, _force, _otherEntity) = data.ExtraInfo as ExplodeData;
                     Finish();
                 };
             }
@@ -38,13 +45,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public override void StartListening(IEntity entity)
         {
             base.StartListening(entity);
-            _explodedIndex = MessageDispatcher.Instance.StartListening("Explode", _entity.GetId(), _explodedDel);
+            _explodedIndex = MessageDispatcher.Instance.StartListening(ExplodeMessage, _entity.GetId(), _explodedDel);
         }
 
         public override void StopListening(IEntity entity)
         {
             base.StopListening(entity);
-            MessageDispatcher.Instance.StopListening("Explode", _entity.GetId(), _explodedIndex);
+            MessageDispatcher.Instance.StopListening(ExplodeMessage, _entity.GetId(), _explodedIndex);
         }
 
         //public override void OnUpdate()

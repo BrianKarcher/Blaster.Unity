@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: Horde Main Logic
+  m_Name: Horde With Bomb Main Logic
   m_EditorClassIdentifier: 
   category: General
   fsm:
@@ -25,7 +25,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 50
-        y: 100
+        y: 116
         width: 100
         height: 32
       isBreakpoint: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 231
-        y: 160
+        y: 176
         width: 100
         height: 48
       isBreakpoint: 0
@@ -101,10 +101,10 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
-          name: Dead
+          name: NearPlayer
           isSystemEvent: 0
           isGlobal: 0
-        toState: Dead
+        toState: Near Player Explode
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.TriggerEvent
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
-        - BlueOrb.Scripts.AI.Playmaker.IsExploded
+        - HutongGames.PlayMaker.Actions.TriggerEvent
         customNames:
         - 
         - 
@@ -120,9 +120,15 @@ MonoBehaviour:
         actionEnabled: 000101
         actionIsOpen: 010101
         actionStartIndex: 00000000050000000d000000
-        actionHashCodes: 9c5124001a44e0057a822f01
+        actionHashCodes: 9c5124001a44e0059c512400
         unityObjectParams: []
         fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: 
           tooltip: 
@@ -179,6 +185,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -196,15 +208,14 @@ MonoBehaviour:
         - FireProjectileHit
         - 
         - Hit
-        - Dead
-        byteData: 0000000000
+        - NearPlayer
+        byteData: 000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000000000000
+        customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        - BlueOrb.Scripts.AI.AtomActions.IsExplodedAtom
-        paramDataType: 14000000070000001200000017000000130000001400000028000000030000000300000017000000130000001200000001000000140000001700000028000000
+        paramDataType: 140000000700000012000000170000001300000014000000280000000300000003000000170000001300000012000000010000001400000007000000120000001700000013000000
         paramName:
         - gameObject
         - trigger
@@ -220,17 +231,19 @@ MonoBehaviour:
         - TagCheck
         - GotoPreviousState
         - gameObject
-        - Exploded
-        - _atom
-        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000200000003000000010000000100000004000000020000000400000001000000
-        paramByteDataSize: 00000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
+        - trigger
+        - collideTag
+        - sendEvent
+        - storeCollider
+        paramDataPos: 000000000000000000000000000000000000000001000000000000000100000002000000030000000100000001000000040000000200000005000000020000000400000002000000
+        paramByteDataSize: 000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000
     - name: Hit
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 221
-        y: 249
+        y: 265
         width: 100
         height: 64
       isBreakpoint: 0
@@ -249,7 +262,7 @@ MonoBehaviour:
           name: Dead
           isSystemEvent: 0
           isGlobal: 0
-        toState: Dead
+        toState: Explode
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -267,9 +280,8 @@ MonoBehaviour:
         - BlueOrb.Scripts.AI.Playmaker.StopMoving
         - BlueOrb.Scripts.AI.PlayMaker.Attack.AddHp
         - HutongGames.PlayMaker.Actions.Wait
-        - HutongGames.PlayMaker.Actions.TriggerEvent
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
-        - BlueOrb.Scripts.AI.Playmaker.IsExploded
+        - HutongGames.PlayMaker.Actions.TriggerEvent
         customNames:
         - 
         - 
@@ -277,11 +289,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
-        actionEnabled: 01000101000101
-        actionIsOpen: 01010101010101
-        actionStartIndex: 000000000f0000001100000014000000170000001c00000024000000
-        actionHashCodes: 95bc020514d13203657e6f0148c011019c5124001a44e0057a822f01
+        actionEnabled: 010001010100
+        actionIsOpen: 010101010101
+        actionStartIndex: 000000000f0000001100000014000000170000001f000000
+        actionHashCodes: 95bc020514d13203657e6f0148c011011a44e0059c512400
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -343,14 +354,6 @@ MonoBehaviour:
             showInInspector: 1
             networkSync: 0
             value: {fileID: 0}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: Main
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -363,13 +366,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: Projectile
+          value: 
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 
+          value: Player
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -400,22 +403,20 @@ MonoBehaviour:
         - 
         - Dead
         - FINISHED
-        - Hit
         - FireProjectileHit
         - 
         - Hit
-        - Dead
+        - NearPlayer
         byteData: 0100000000000000000001000000000000
         arrayParamSizes: 00000000
         arrayParamTypes:
         - System.String
-        customTypeSizes: 0c000000000000000200000000000000
+        customTypeSizes: 0c0000000000000002000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        - BlueOrb.Scripts.AI.AtomActions.IsExplodedAtom
-        paramDataType: 14000000130000002800000003000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001400000028000000140000000f000000170000000f000000170000000100000014000000070000001200000017000000130000001400000028000000030000000300000017000000130000001200000001000000140000001700000028000000
+        paramDataType: 14000000130000002800000003000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001400000028000000140000000f000000170000000f000000170000000100000014000000280000000300000003000000170000001300000012000000010000001400000007000000120000001700000013000000
         paramName:
         - gameObject
         - Recipient
@@ -441,11 +442,6 @@ MonoBehaviour:
         - finishEvent
         - realTime
         - gameObject
-        - trigger
-        - collideTag
-        - sendEvent
-        - storeCollider
-        - gameObject
         - _atom
         - Message
         - Data
@@ -454,34 +450,46 @@ MonoBehaviour:
         - TagCheck
         - GotoPreviousState
         - gameObject
-        - Exploded
-        - _atom
-        paramDataPos: 00000000000000000000000000000000010000000000000002000000000000000100000002000000030000000400000005000000060000000a000000010000000100000002000000000000000300000001000000040000000b000000030000000c0000000000000005000000010000000400000002000000060000000700000008000000020000000100000010000000050000000900000003000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000000000000000000000000000000100000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
-    - name: Dead
+        - trigger
+        - collideTag
+        - sendEvent
+        - storeCollider
+        paramDataPos: 00000000000000000000000000000000010000000000000002000000000000000100000002000000030000000400000005000000060000000a000000010000000100000002000000000000000300000001000000040000000b000000030000000200000005000000060000000700000001000000000000000c000000040000000d000000010000000800000002000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000
+    - name: Explode
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 432
-        y: 292
+        y: 308
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Destroy
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - BlueOrb.Scripts.AI.Playmaker.Camera.TargetDestroyed
+        - BlueOrb.Scripts.AI.Playmaker.CreateExplosion
         - HutongGames.PlayMaker.Actions.DestroyObject
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: eea3eb019ff80c02
+        - 
+        actionEnabled: 010100
+        actionIsOpen: 010101
+        actionStartIndex: 000000000500000013000000
+        actionHashCodes: 17211b0462757a009ff80c02
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -506,13 +514,33 @@ MonoBehaviour:
             showInInspector: 1
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Enemy
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Environment
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -523,8 +551,50 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: 7
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 5
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 0
-        fsmIntParams: []
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 50
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 9
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 10
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -543,29 +613,49 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 14000000130000001c000000130000000f00000011000000
+        stringParams:
+        - Explode
+        byteData: 000000000000803f000000000000803f01
+        arrayParamSizes: 0200000002000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmInt
+        - HutongGames.PlayMaker.FsmString
+        customTypeSizes: 02000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.CreateExplosionAtom
+        paramDataType: 14000000130000001c0000001000000004000000140000000f0000000f0000000f0000000f0000000c00000010000000100000000c0000001200000012000000280000000300000001000000130000000f00000011000000
         paramName:
         - gameObject
         - Label
         - LabelOffset
+        - Points
+        - Color
+        - gameObject
+        - Force
+        - Radius
+        - Damage
+        - Delay
+        - Layer
+        - 
+        - 
+        - Tags
+        - 
+        - 
+        - _atom
+        - ExplodeMessage
+        - HasPoints
         - gameObject
         - delay
         - detachChildren
-        paramDataPos: 000000000000000000000000010000000000000000000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000200000003000000000000000100000002000000010000000000000001000000000000000000000010000000010000000400000000000000
+        paramByteDataSize: 00000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
     - name: AI On
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 455
-        y: 205
+        y: 221
         width: 100
         height: 32
       isBreakpoint: 0
@@ -655,6 +745,175 @@ MonoBehaviour:
         - _finishOnFirstMessageSent
         paramDataPos: 00000000000000000000000000000000010000000000000002000000000000000100000002000000030000000400000005000000060000000a000000
         paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+    - name: Near Player Explode
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 434
+        y: 114
+        width: 148
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Destroy
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - BlueOrb.Scripts.AI.Playmaker.Camera.TargetDestroyed
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 17211b04
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 2707671265557584813, guid: 68f955f723f4ed240a0d7f57e05f1118,
+            type: 3}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: -50
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params:
+        - useVariable: 1
+          name: LabelOffset
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 0000803f4181a23e000000000000803f
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000130000001c0000001000000004000000
+        paramName:
+        - gameObject
+        - Label
+        - LabelOffset
+        - Points
+        - Color
+        paramDataPos: 0000000000000000000000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000010000000
+    - name: Destroy
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 683
+        y: 115
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.DestroyObject
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 9ff80c02
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Main
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 130000000f00000011000000
+        paramName:
+        - gameObject
+        - delay
+        - detachChildren
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -663,6 +922,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: Hit
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: NearPlayer
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []

@@ -332,7 +332,7 @@ MonoBehaviour:
         actionEnabled: 010101
         actionIsOpen: 010101
         actionStartIndex: 00000000050000000a000000
-        actionHashCodes: b2cf1000b2cf1000eea3eb01
+        actionHashCodes: b2cf1000b2cf100017211b04
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -379,7 +379,13 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -417,12 +423,12 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 00000000
+        byteData: 0000000000000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000011000000110000000100000001000000140000001100000011000000010000000100000014000000130000001c000000
+        paramDataType: 1400000011000000110000000100000001000000140000001100000011000000010000000100000014000000130000001c0000001000000004000000
         paramName:
         - gameObject
         - activate
@@ -437,8 +443,10 @@ MonoBehaviour:
         - gameObject
         - Label
         - LabelOffset
-        paramDataPos: 00000000000000000100000000000000010000000100000002000000030000000200000003000000020000000000000000000000
-        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000100000001000000000000000000000000000000
+        - Points
+        - Color
+        paramDataPos: 000000000000000001000000000000000100000001000000020000000300000002000000030000000200000000000000000000000000000004000000
+        paramByteDataSize: 000000000000000000000000010000000100000000000000000000000000000001000000010000000000000000000000000000000000000010000000
     events:
     - name: FINISHED
       isSystemEvent: 1

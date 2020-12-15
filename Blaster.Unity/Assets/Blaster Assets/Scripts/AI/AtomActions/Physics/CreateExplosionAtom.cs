@@ -1,4 +1,5 @@
-﻿using BlueOrb.Common.Container;
+﻿using Assets.Blaster_Assets.Scripts.AI.Playmaker.Physics.Data;
+using BlueOrb.Common.Container;
 using BlueOrb.Controller.Block;
 using BlueOrb.Messaging;
 using BlueOrb.Physics;
@@ -11,6 +12,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
 {
     public class CreateExplosionAtom : AtomActionBase
     {
+        public string ExplodeMessage = "Explode";
+        public bool HasPoints = true;
         public float Force { get; set; }
         public float Radius { get; set; }
         public float Damage { get; set; }
@@ -102,7 +105,15 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
         private void ExplodeEntity(ComponentRepository entity)
         {
-            MessageDispatcher.Instance.DispatchMsg("Explode", 0f, _entity.GetId(), entity.GetId(), (_entity.GetPosition(), Damage, Force, _entity.gameObject));
+            ExplodeData explodeData = new ExplodeData()
+            {
+                Damage = Damage,
+                Force = Force,
+                ExplodePosition = _entity.GetPosition(),
+                HasPoints = HasPoints,
+                ExplodingEntity = _entity.gameObject
+            };
+            MessageDispatcher.Instance.DispatchMsg(ExplodeMessage, 0f, _entity.GetId(), entity.GetId(), explodeData);
         }
     }
 }

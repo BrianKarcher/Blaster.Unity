@@ -617,6 +617,8 @@ MonoBehaviour:
   m_Script: {fileID: -155506251, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
   InvisibleCameraOrigin: {fileID: 340769521334551355}
   _objectToRotate: {fileID: 340769521334551355}
   _verticalAxisName: Rotate Camera Vertical
@@ -654,8 +656,11 @@ MonoBehaviour:
   _yawRange: 180
   _pitchMin: -45
   _pitchMax: 45
+  _fovZoomOut: 60
+  _fovZoomIn: 20
   _yawMin: 0
   _yawMax: 0
+  _cinemachineVirtualCamera: {fileID: 0}
   yaw: 0
   pitch: 0
   roll: 0
@@ -701,6 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7391379248417117920}
   - component: {fileID: 2315920606805549931}
+  - component: {fileID: 426527128820257248}
   m_Layer: 0
   m_Name: FirstPersonPlayerCine
   m_TagString: Player
@@ -742,6 +748,19 @@ MonoBehaviour:
   _height: 2
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+--- !u!65 &426527128820257248
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391379248417117951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.8, z: 1}
+  m_Center: {x: 0, y: 0.67, z: 0}
 --- !u!1 &8333641181532523211
 GameObject:
   m_ObjectHideFlags: 0

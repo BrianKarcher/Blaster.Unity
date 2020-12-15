@@ -17,6 +17,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 
         public FsmGameObject Label;
         public FsmVector3 LabelOffset;
+        public FsmInt Points;
+        public Color Color = Color.white;
 
         //public AddLayerWeightLerpAtom _atom;
 
@@ -54,7 +56,19 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
             pinComponent.SetWorldPosition(worldPos);
 
             var textMeshPro = label.GetComponent<TextMeshProUGUI>();
-            textMeshPro.SetText("+50");
+            string prefix = string.Empty;
+            //Color color;
+            if (Points.Value >= 0)
+            {
+                prefix = "+";
+                //color = 
+            }
+            else
+            {
+                prefix = "-";
+            }
+            textMeshPro.color = Color;
+            textMeshPro.SetText(prefix + Points.Value);
 
             //_atom.Start(entity);
             Finish();

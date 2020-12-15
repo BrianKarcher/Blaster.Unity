@@ -55,6 +55,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
         {
             base.OnUpdate();
             _atom.OnUpdate();
+            if (_atom.IsFinished)
+                Finish();
         }
 
         public override void OnExit()
