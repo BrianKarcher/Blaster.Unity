@@ -3,6 +3,7 @@ using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using UnityEngine;
 using TooltipAttribute = HutongGames.PlayMaker.TooltipAttribute;
+using System;
 
 namespace BlueOrb.Scripts.AI.Playmaker
 {
@@ -91,6 +92,12 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 {
                     // Get the Entity hit
                     var hitGameObject = hitInfo.collider?.attachedRigidbody?.gameObject;
+                    if (hitGameObject == null)
+                    {
+                        hitGameObject = hitInfo.collider.gameObject;
+                    }
+                    if (hitGameObject == null)
+                        throw new Exception("(TrailingRaycast) Could not locate a GameObject");
                     storeEntity.Value = hitGameObject;
                 }
                 if (!storePosition.IsNone)

@@ -7,6 +7,7 @@ namespace Assets.Blaster_Assets.Scripts.Components
     [AddComponentMenu("BlueOrb/Components/Pin UI To World Space Component")]
     public class PinUIToWorldSpaceComponent : ComponentBase<PinUIToWorldSpaceComponent>
     {
+        [SerializeField]
         private Vector3 _worldPosition;
 
         private void Update()

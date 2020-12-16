@@ -45,14 +45,17 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 if (Recipient.Value == null || Recipient.Value.gameObject == null)
                 {
-                    Debug.Log("(SendMessage) Could not locate Game Object " + Recipient.GetDisplayName());
+                    Debug.Log($"{entity.name}.{Fsm.ActiveStateName} (SendMessage) Could not locate Game Object {Recipient.GetDisplayName()}");
                     Finish();
                     return;
                 }
 
                 var target = Recipient.Value.GetComponent<EntityCommonComponent>();
                 if (target == null)
-                    throw new Exception($"Invalid target {Recipient.Value.name}");
+                {
+                    Debug.LogWarning($"Target {Recipient.Value.name} does not contain an EntityCommonComponent");
+                    return;
+                }
                 _atom.TargetUniqueIds = new string[] { target.GetId() };
             }
             _atom.Start(entity);
