@@ -52,7 +52,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
             _atom.Radius = Radius.Value;
             _atom.Tags = Tags.Select(i => i.Value).ToArray();
             _atom.CastSphere = CastSphere;
-            if (!Recipients.IsNone)
+            if (!Recipients.IsNone && Recipients.objectReferences != null)
             {
                 _atom.Recipients = Recipients.objectReferences.Select(i => (GameObject)i).ToList();
             }

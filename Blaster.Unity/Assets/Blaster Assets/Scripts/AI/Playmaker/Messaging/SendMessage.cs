@@ -58,7 +58,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 if (_targetIds == null)
                     _targetIds = new List<string>();
                 _targetIds.Clear();
-                if (!Recipients.IsNone)
+                if (!Recipients.IsNone && Recipients.objectReferences != null)
                 {
                     for (int i = 0; i < Recipients.objectReferences.Length; i++)
                     {

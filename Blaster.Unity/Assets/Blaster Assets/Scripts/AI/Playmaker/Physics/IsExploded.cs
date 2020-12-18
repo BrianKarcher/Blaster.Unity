@@ -19,6 +19,10 @@ namespace BlueOrb.Scripts.AI.Playmaker
         [Tooltip("Fire when exploded.")]
         public FsmEvent Exploded;
 
+        [UIHint(UIHint.Variable)]
+        [Tooltip("Position where the explosion occurred.")]
+        public FsmVector3 Position;
+
         public IsExplodedAtom _atom;
 
         public override void Reset()
@@ -53,6 +57,10 @@ namespace BlueOrb.Scripts.AI.Playmaker
         {
             base.OnExit();
             _atom.End();
+            if (!Position.IsNone)
+            {
+                Position.Value = _atom.Position;
+            }
         }
     }
 }

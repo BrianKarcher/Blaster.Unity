@@ -80,7 +80,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
         private void ExplodeCastSphere()
         {
-            DrawBox(_entity.GetPosition(), new Vector3(Radius, Radius, Radius), Quaternion.identity, Color.yellow, 1f);
+            DrawBox(_entity.GetPosition(), new Vector3(Radius, Radius, Radius), Quaternion.identity, Color.yellow, 10f);
             var itemHits = UnityEngine.Physics.OverlapSphere(_entity.GetPosition(), Radius, LayerMask);
             Debug.Log($"Explode hit {itemHits.Length} items");
 

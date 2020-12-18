@@ -572,8 +572,8 @@ MonoBehaviour:
         _wanderJitterPerSec: 10
         _wallDetectionFeelerLength: 2
       _showDebug: 0
-      _gravity: -9.8
-      _gravityVector: {x: 0, y: -9.8, z: 0}
+      _gravity: -15
+      _gravityVector: {x: 0, y: -15, z: 0}
       _applyGravity: 1
       _movingTurnSpeed: 720
       _stationaryTurnSpeed: 540
@@ -610,6 +610,7 @@ MonoBehaviour:
   _applySpeedLimit: 1
   _steering:
     _drawDebug: 0
+    ProjectOnGround: 1
     Target: {x: 0, y: 0, z: 0}
     Offset: {x: 0, y: 0, z: 0}
     SteeringMode: 

@@ -18,7 +18,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public float Force { get; set; }
         //private float _radius;
         public float Radius { get; set; }
-        public float UpwardsModifier;
+        public float UpwardsModifier { get; set; }
         //public float Force => _force;
         //private GameObject _otherEntity;
         //public GameObject OtherEntity => _otherEntity;
