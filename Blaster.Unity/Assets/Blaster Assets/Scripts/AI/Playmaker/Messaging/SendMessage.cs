@@ -29,6 +29,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
         [HutongGames.PlayMaker.Tooltip("Store the GameObject that collided with the Owner of this FSM.")]
         public FsmArray Recipients;
 
+        public FsmString Message;
+
         public SendMessageAtom _atom;
         private IEntity _entity;
 
@@ -75,7 +77,10 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 }
                 _atom.TargetUniqueIds = _targetIds;
             }
-
+            if (!Message.IsNone && !String.IsNullOrWhiteSpace(Message.Value))
+            {
+                _atom.Message = Message.Value;
+            }
             _atom.Start(_entity);
         }
 
