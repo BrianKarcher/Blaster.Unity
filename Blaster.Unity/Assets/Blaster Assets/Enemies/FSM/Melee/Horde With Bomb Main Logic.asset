@@ -292,7 +292,7 @@ MonoBehaviour:
         actionEnabled: 010001010100
         actionIsOpen: 010101010101
         actionStartIndex: 000000000f0000001100000014000000170000001f000000
-        actionHashCodes: 95bc020514d13203657e6f0148c011011a44e0059c512400
+        actionHashCodes: 7e8fa90514d13203657e6f0148c011011a44e0059c512400
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -375,7 +375,20 @@ MonoBehaviour:
           value: Player
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: 
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 0
@@ -408,22 +421,21 @@ MonoBehaviour:
         - Hit
         - NearPlayer
         byteData: 0100000000000000000001000000000000
-        arrayParamSizes: 00000000
-        arrayParamTypes:
-        - System.String
-        customTypeSizes: 0c0000000000000002000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0b0000000000000002000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 14000000130000002800000003000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001400000028000000140000000f000000170000000f000000170000000100000014000000280000000300000003000000170000001300000012000000010000001400000007000000120000001700000013000000
+        paramDataType: 1400000013000000290000002800000003000000030000000300000001000000010000000100000001000000010000000100000007000000010000001400000028000000140000000f000000170000000f000000170000000100000014000000280000000300000003000000170000001300000012000000010000001400000007000000120000001700000013000000
         paramName:
         - gameObject
         - Recipient
+        - Recipients
         - _atom
         - Message
         - ExtraInfo
-        - TargetUniqueIds
         - collideTag
         - _sendToSelf
         - _sendToAll
@@ -454,7 +466,7 @@ MonoBehaviour:
         - collideTag
         - sendEvent
         - storeCollider
-        paramDataPos: 00000000000000000000000000000000010000000000000002000000000000000100000002000000030000000400000005000000060000000a000000010000000100000002000000000000000300000001000000040000000b000000030000000200000005000000060000000700000001000000000000000c000000040000000d000000010000000800000002000000
+        paramDataPos: 00000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000010000000100000002000000000000000300000001000000040000000b000000030000000200000005000000060000000700000001000000000000000c000000040000000d000000010000000800000002000000
         paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000
     - name: Explode
       description: 
@@ -488,8 +500,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010100
         actionIsOpen: 010101
-        actionStartIndex: 000000000500000013000000
-        actionHashCodes: 17211b0462757a009ff80c02
+        actionStartIndex: 000000000500000015000000
+        actionHashCodes: 17211b046186fb039ff80c02
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -543,7 +555,20 @@ MonoBehaviour:
           value: Environment
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: 
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 0
@@ -615,7 +640,7 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Explode
-        byteData: 000000000000803f000000000000803f01
+        byteData: 000000000000803f000000000000803f0101
         arrayParamSizes: 0200000002000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmInt
@@ -623,7 +648,7 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.CreateExplosionAtom
-        paramDataType: 14000000130000001c0000001000000004000000140000000f0000000f0000000f0000000f0000000c00000010000000100000000c0000001200000012000000280000000300000001000000130000000f00000011000000
+        paramDataType: 14000000130000001c0000001000000004000000140000000f0000000f0000000f0000000f00000001000000290000000c00000010000000100000000c0000001200000012000000280000000300000001000000130000000f00000011000000
         paramName:
         - gameObject
         - Label
@@ -635,6 +660,8 @@ MonoBehaviour:
         - Radius
         - Damage
         - Delay
+        - CastSphere
+        - Recipients
         - Layer
         - 
         - 
@@ -647,8 +674,8 @@ MonoBehaviour:
         - gameObject
         - delay
         - detachChildren
-        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000200000003000000000000000100000002000000010000000000000001000000000000000000000010000000010000000400000000000000
-        paramByteDataSize: 00000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
+        paramDataPos: 000000000000000000000000000000000000000001000000000000000100000002000000030000001000000000000000000000000100000002000000010000000000000001000000000000000000000011000000010000000400000000000000
+        paramByteDataSize: 000000000000000000000000000000001000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
     - name: AI On
       description: 
       colorIndex: 0
@@ -678,7 +705,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 95bc0205
+        actionHashCodes: 7e8fa905
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -705,7 +732,20 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: 
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
@@ -720,20 +760,19 @@ MonoBehaviour:
         - 
         - 
         byteData: 0100000000000000000001
-        arrayParamSizes: 00000000
-        arrayParamTypes:
-        - System.String
-        customTypeSizes: 0c000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0b000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 14000000130000002800000003000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramDataType: 140000001300000029000000280000000300000003000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - gameObject
         - Recipient
+        - Recipients
         - _atom
         - Message
         - ExtraInfo
-        - TargetUniqueIds
         - collideTag
         - _sendToSelf
         - _sendToAll
@@ -743,7 +782,7 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 00000000000000000000000000000000010000000000000002000000000000000100000002000000030000000400000005000000060000000a000000
+        paramDataPos: 00000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000
         paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
     - name: Near Player Explode
       description: 

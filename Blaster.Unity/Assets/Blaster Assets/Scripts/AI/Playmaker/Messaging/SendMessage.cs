@@ -25,9 +25,17 @@ namespace BlueOrb.Scripts.AI.Playmaker
         [HutongGames.PlayMaker.Tooltip("Store the GameObject that collided with the Owner of this FSM.")]
         public FsmGameObject Recipient;
 
-        public SendMessageAtom _atom;
+        [UIHint(UIHint.Variable)]
+        [HutongGames.PlayMaker.Tooltip("Store the GameObject that collided with the Owner of this FSM.")]
+        public FsmArray Recipients;
 
-		public override void Reset()
+        public SendMessageAtom _atom;
+        private IEntity _entity;
+
+        private List<string> _targetIds = null;
+
+
+        public override void Reset()
 		{
 			gameObject = null;
         }
@@ -40,25 +48,53 @@ namespace BlueOrb.Scripts.AI.Playmaker
 			}
             //var rqSM = Owner.GetComponent<PlayMakerStateMachineComponent>();
             //_entity = rqSM.GetComponentRepository();
-            var entity = go.GetComponent<IEntity>();
-            if (!Recipient.IsNone)
+            _entity = go.GetComponent<IEntity>();
+            if (Recipient.IsNone && Recipients.IsNone)
             {
-                if (Recipient.Value == null || Recipient.Value.gameObject == null)
-                {
-                    Debug.Log($"{entity.name}.{Fsm.ActiveStateName} (SendMessage) Could not locate Game Object {Recipient.GetDisplayName()}");
-                    Finish();
-                    return;
-                }
-
-                var target = Recipient.Value.GetComponent<EntityCommonComponent>();
-                if (target == null)
-                {
-                    Debug.LogWarning($"Target {Recipient.Value.name} does not contain an EntityCommonComponent");
-                    return;
-                }
-                _atom.TargetUniqueIds = new string[] { target.GetId() };
+                _atom.TargetUniqueIds = null;
             }
-            _atom.Start(entity);
+            else
+            {
+                if (_targetIds == null)
+                    _targetIds = new List<string>();
+                _targetIds.Clear();
+                if (!Recipients.IsNone)
+                {
+                    for (int i = 0; i < Recipients.objectReferences.Length; i++)
+                    {
+                        var recipientGO = Recipients.objectReferences[i] as GameObject;
+                        string recipientId = GetRecipientId(recipientGO);
+                        _targetIds.Add(recipientId);
+                    }
+                }
+                
+                if (!Recipient.IsNone)
+                {
+                    string recipientId = GetRecipientId(Recipient.Value);
+                    _targetIds.Add(recipientId);
+                }
+                _atom.TargetUniqueIds = _targetIds;
+            }
+
+            _atom.Start(_entity);
+        }
+
+        private string GetRecipientId(GameObject recipient)
+        {
+            if (recipient == null || recipient.gameObject == null)
+            {
+                Debug.Log($"{_entity.name}.{Fsm.ActiveStateName} (SendMessage) Could not locate Game Object {recipient.name}");
+                Finish();
+                return null;
+            }
+
+            var target = recipient.GetComponent<EntityCommonComponent>();
+            if (target == null)
+            {
+                Debug.LogWarning($"Target {recipient.name} does not contain an EntityCommonComponent");
+                return null;
+            }
+            return target.GetId();
         }
 
         public override void OnExit()

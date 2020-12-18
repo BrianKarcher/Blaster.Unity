@@ -18,6 +18,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public float Radius { get; set; }
         public float Damage { get; set; }
         public float Delay { get; set; }
+        public bool CastSphere { get; set; }
+        public List<GameObject> Recipients { get; set; }
 
         //protected EntityCommonComponent _entityCommon;
         public int LayerMask { get; set; }
@@ -56,8 +58,28 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             //_itemHits = UnityEngine.Physics.BoxCastAll(attackPos, halfExtent, transform.forward, transform.rotation, _attackData.Distance);
             //Debug.
+            if (CastSphere)
+            {
+                ExplodeCastSphere();
+            }
 
+            if (Recipients != null && Recipients.Count != 0)
+            {
+                foreach (var recipient in Recipients)
+                {
+                    ComponentRepository otherEntity;
+                    otherEntity = recipient.GetComponent<ComponentRepository>();
+                    ExplodeEntity(otherEntity);
+                }
+            }
             // Debugging purposes
+
+            _entitiesHit.Clear();
+            Finish();
+        }
+
+        private void ExplodeCastSphere()
+        {
             DrawBox(_entity.GetPosition(), new Vector3(Radius, Radius, Radius), Quaternion.identity, Color.yellow, 1f);
             var itemHits = UnityEngine.Physics.OverlapSphere(_entity.GetPosition(), Radius, LayerMask);
             Debug.Log($"Explode hit {itemHits.Length} items");
@@ -99,8 +121,6 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
                 _entitiesHit.Add(otherEntity.GetId());
             }
-            _entitiesHit.Clear();
-            Finish();
         }
 
         private void ExplodeEntity(ComponentRepository entity)

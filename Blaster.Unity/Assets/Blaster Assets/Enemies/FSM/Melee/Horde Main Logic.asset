@@ -24,7 +24,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
+        x: 98
         y: 100
         width: 100
         height: 32
@@ -84,7 +84,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 231
+        x: 279
         y: 160
         width: 100
         height: 48
@@ -101,10 +101,10 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
-          name: Dead
+          name: Exploded
           isSystemEvent: 0
           isGlobal: 0
-        toState: Dead
+        toState: Exploded
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -196,15 +196,16 @@ MonoBehaviour:
         - FireProjectileHit
         - 
         - Hit
-        - Dead
+        - Exploded
+        - Explode
         byteData: 0000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000000000000
+        customTypeSizes: 0200000001000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.IsExplodedAtom
-        paramDataType: 14000000070000001200000017000000130000001400000028000000030000000300000017000000130000001200000001000000140000001700000028000000
+        paramDataType: 1400000007000000120000001700000013000000140000002800000003000000030000001700000013000000120000000100000014000000170000002800000003000000
         paramName:
         - gameObject
         - trigger
@@ -222,17 +223,18 @@ MonoBehaviour:
         - gameObject
         - Exploded
         - _atom
-        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000200000003000000010000000100000004000000020000000400000001000000
-        paramByteDataSize: 00000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
+        - ExplodeMessage
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000001000000020000000300000001000000010000000400000002000000040000000100000005000000
+        paramByteDataSize: 0000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000
     - name: Hit
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 221
+        x: 269
         y: 249
         width: 100
-        height: 64
+        height: 80
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -242,6 +244,14 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 0
         toState: Hit
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Exploded
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Exploded
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -281,7 +291,7 @@ MonoBehaviour:
         actionEnabled: 01000101000101
         actionIsOpen: 01010101010101
         actionStartIndex: 000000000f0000001100000014000000170000001c00000024000000
-        actionHashCodes: 95bc020514d13203657e6f0148c011019c5124001a44e0057a822f01
+        actionHashCodes: 7e8fa90514d13203657e6f0148c011019c5124001a44e0057a822f01
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -372,7 +382,20 @@ MonoBehaviour:
           value: 
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 0
@@ -404,25 +427,25 @@ MonoBehaviour:
         - FireProjectileHit
         - 
         - Hit
-        - Dead
+        - Exploded
+        - Explode
         byteData: 0100000000000000000001000000000000
-        arrayParamSizes: 00000000
-        arrayParamTypes:
-        - System.String
-        customTypeSizes: 0c000000000000000200000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0b000000000000000200000001000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.IsExplodedAtom
-        paramDataType: 14000000130000002800000003000000030000000c0000000300000001000000010000000100000001000000010000000100000007000000010000001400000028000000140000000f000000170000000f000000170000000100000014000000070000001200000017000000130000001400000028000000030000000300000017000000130000001200000001000000140000001700000028000000
+        paramDataType: 1400000013000000290000002800000003000000030000000300000001000000010000000100000001000000010000000100000007000000010000001400000028000000140000000f000000170000000f00000017000000010000001400000007000000120000001700000013000000140000002800000003000000030000001700000013000000120000000100000014000000170000002800000003000000
         paramName:
         - gameObject
         - Recipient
+        - Recipients
         - _atom
         - Message
         - ExtraInfo
-        - TargetUniqueIds
         - collideTag
         - _sendToSelf
         - _sendToAll
@@ -456,15 +479,16 @@ MonoBehaviour:
         - gameObject
         - Exploded
         - _atom
-        paramDataPos: 00000000000000000000000000000000010000000000000002000000000000000100000002000000030000000400000005000000060000000a000000010000000100000002000000000000000300000001000000040000000b000000030000000c0000000000000005000000010000000400000002000000060000000700000008000000020000000100000010000000050000000900000003000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000000000000000000000000000000100000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000
+        - ExplodeMessage
+        paramDataPos: 00000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000010000000100000002000000000000000300000001000000040000000b000000030000000c00000000000000050000000100000004000000020000000600000007000000080000000200000001000000100000000500000009000000030000000a000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000
     - name: Dead
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 432
-        y: 292
+        x: 619
+        y: 301
         width: 100
         height: 16
       isBreakpoint: 0
@@ -572,8 +596,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 455
-        y: 205
+        x: 63.960938
+        y: 219
         width: 100
         height: 32
       isBreakpoint: 0
@@ -596,7 +620,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 95bc0205
+        actionHashCodes: 7e8fa905
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -623,7 +647,20 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
@@ -638,20 +675,19 @@ MonoBehaviour:
         - 
         - 
         byteData: 0100000000000000000001
-        arrayParamSizes: 00000000
-        arrayParamTypes:
-        - System.String
-        customTypeSizes: 0c000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0b000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 14000000130000002800000003000000030000000c000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramDataType: 140000001300000029000000280000000300000003000000030000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - gameObject
         - Recipient
+        - Recipients
         - _atom
         - Message
         - ExtraInfo
-        - TargetUniqueIds
         - collideTag
         - _sendToSelf
         - _sendToAll
@@ -661,13 +697,76 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 00000000000000000000000000000000010000000000000002000000000000000100000002000000030000000400000005000000060000000a000000
+        paramDataPos: 00000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000
         paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+    - name: Exploded
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 487
+        y: 144
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Dead
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
     - name: Dead
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Exploded
       isSystemEvent: 0
       isGlobal: 0
     - name: Hit

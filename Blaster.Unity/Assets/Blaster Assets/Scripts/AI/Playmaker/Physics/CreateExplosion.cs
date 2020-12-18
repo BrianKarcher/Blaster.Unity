@@ -1,12 +1,14 @@
 ﻿using BlueOrb.Scripts.AI.AtomActions;
 using HutongGames.PlayMaker;
+using PM = HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using System.Linq;
+using UnityEngine;
 
 namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Physics")]
-    [Tooltip("Create an explosion.")]
+    [PM.Tooltip("Create an explosion.")]
     public class CreateExplosion : FsmStateAction
     {
         [RequiredField]
@@ -16,13 +18,15 @@ namespace BlueOrb.Scripts.AI.Playmaker
         public FsmFloat Radius = 5;
         public FsmFloat Damage = 1;
         public FsmFloat Delay;
+        public bool CastSphere = true;
+        public FsmArray Recipients;
 
         //protected EntityCommonComponent _entityCommon;
         [UIHint(UIHint.Layer)]
-        [Tooltip("Layers to check.")]
+        [PM.Tooltip("Layers to check.")]
         public FsmInt[] Layer;
         [UIHint(UIHint.Tag)]
-        [Tooltip("The Tag to search for. If Child Name is set, both name and Tag need to match.")]
+        [PM.Tooltip("The Tag to search for. If Child Name is set, both name and Tag need to match.")]
         public FsmString[] Tags;
 
         public CreateExplosionAtom _atom;
@@ -47,6 +51,15 @@ namespace BlueOrb.Scripts.AI.Playmaker
             _atom.Force = Force.Value;
             _atom.Radius = Radius.Value;
             _atom.Tags = Tags.Select(i => i.Value).ToArray();
+            _atom.CastSphere = CastSphere;
+            if (!Recipients.IsNone)
+            {
+                _atom.Recipients = Recipients.objectReferences.Select(i => (GameObject)i).ToList();
+            }
+            else
+            {
+                _atom.Recipients = null;
+            }
 
             _atom.Start(entity);
         }

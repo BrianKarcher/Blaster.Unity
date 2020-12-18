@@ -21,7 +21,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
     {
         public string Message;
         public string ExtraInfo;
-        public string[] TargetUniqueIds;
+        private List<string> _targetUniqueIds;
+        public List<string> TargetUniqueIds { get { return _targetUniqueIds; } set { _targetUniqueIds = value; } }
         public string collideTag;
 
         public bool _sendToSelf = false;
@@ -101,9 +102,9 @@ namespace BlueOrb.Scripts.AI.AtomActions
             }
             else
             {
-                for (int i = 0; i < TargetUniqueIds.Length; i++)
+                for (int i = 0; i < _targetUniqueIds.Count; i++)
                 {
-                    Process(TargetUniqueIds[i]);
+                    Process(_targetUniqueIds[i]);
                 }
             }
             _messageSent = true;
