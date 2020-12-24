@@ -19,7 +19,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
         public FsmFloat Damage = 1;
         public FsmFloat Delay;
         public bool CastSphere = true;
-        public FsmArray Recipients;
+        //[UIHint(UIHint.FsmObject)]
+        public FsmObject[] Recipients;
 
         //protected EntityCommonComponent _entityCommon;
         [UIHint(UIHint.Layer)]
@@ -52,9 +53,10 @@ namespace BlueOrb.Scripts.AI.Playmaker
             _atom.Radius = Radius.Value;
             _atom.Tags = Tags.Select(i => i.Value).ToArray();
             _atom.CastSphere = CastSphere;
-            if (!Recipients.IsNone && Recipients.objectReferences != null)
+            if (Recipients.Length > 0)
+            //if (!Recipients.IsNone && Recipients.objectReferences != null)
             {
-                _atom.Recipients = Recipients.objectReferences.Select(i => (GameObject)i).ToList();
+                _atom.Recipients = Recipients.Select(i => (GameObject)i.Value).ToList();
             }
             else
             {
