@@ -28,6 +28,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         private float _delay = 0f;
         public ShootTarget _shootTarget = ShootTarget.Random;
         public Vector3 _shootToLocation;
+        public bool LookToVelocity = false;
         public Vector3 _rotation;
         [SerializeField]
         [HideInInspector]
@@ -113,7 +114,15 @@ namespace BlueOrb.Scripts.AI.AtomActions
             //    newObject.Reset();
             //}
             //GameObject newObject = null;
-            Quaternion rotation = entity.transform.rotation * Quaternion.Euler(_rotation);
+            Quaternion rotation;
+            if (LookToVelocity)
+            {
+                rotation = Quaternion.LookRotation(velocity);
+            }
+            else
+            {
+                rotation = entity.transform.rotation * Quaternion.Euler(_rotation);
+            }
             var newObject = GameObject.Instantiate(_objectToShoot, position, rotation) as GameObject;
             if (_createAsChild)
             {
