@@ -104,6 +104,9 @@ namespace BlueOrb.Scripts.AI.AtomActions
             {
                 for (int i = 0; i < _targetUniqueIds.Count; i++)
                 {
+                    // Don't accidently trigger a "Send To All"
+                    if (_targetUniqueIds[i] == null)
+                        continue;
                     Process(_targetUniqueIds[i]);
                 }
             }
