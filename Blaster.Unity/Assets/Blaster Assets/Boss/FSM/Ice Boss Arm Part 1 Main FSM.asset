@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: Ice Boss Part 1 Main FSM
+  m_Name: Ice Boss Arm Part 1 Main FSM
   m_EditorClassIdentifier: 
   category: General
   fsm:
@@ -206,13 +206,15 @@ MonoBehaviour:
         actionNames:
         - BlueOrb.Scripts.AI.PlayMaker.Attack.AddHp
         - BlueOrb.Scripts.AI.Playmaker.Camera.AddPoints
+        - HutongGames.PlayMaker.Actions.DestroyObject
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 657e6f0117211b04
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000008000000
+        actionHashCodes: 657e6f0117211b049ff80c02
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -222,6 +224,12 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 2707671265557584813, guid: 68f955f723f4ed240a0d7f57e05f1118,
             type: 3}
+        - useVariable: 1
+          name: Main
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
         - ownerOption: 1
           gameObject:
@@ -257,6 +265,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: -1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams:
         - useVariable: 0
           name: 
@@ -264,7 +278,13 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 5
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params:
         - useVariable: 0
@@ -283,7 +303,7 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000000f0000001700000014000000130000001c0000001000000004000000
+        paramDataType: 140000000f0000001700000014000000130000001c0000001000000004000000130000000f00000011000000
         paramName:
         - gameObject
         - Hp
@@ -293,8 +313,11 @@ MonoBehaviour:
         - LabelOffset
         - Points
         - Color
-        paramDataPos: 0000000000000000000000000100000000000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000010000000
+        - gameObject
+        - delay
+        - detachChildren
+        paramDataPos: 0000000000000000000000000100000000000000000000000000000000000000010000000100000000000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000010000000000000000000000000000000
     - name: End
       description: 
       colorIndex: 0
