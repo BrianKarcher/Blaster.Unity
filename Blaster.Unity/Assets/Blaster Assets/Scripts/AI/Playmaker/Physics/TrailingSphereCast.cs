@@ -5,6 +5,7 @@ using UnityEngine;
 using TooltipAttribute = HutongGames.PlayMaker.TooltipAttribute;
 using System;
 using BlueOrb.Physics.Helpers;
+using BlueOrb.Controller.Block;
 
 namespace BlueOrb.Scripts.AI.Playmaker
 {
@@ -103,7 +104,12 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 if (!storeEntity.IsNone)
                 {
                     // Get the Entity hit
-                    var hitGameObject = hitInfo.collider?.attachedRigidbody?.gameObject;
+                    GameObject hitGameObject;
+                    hitGameObject = hitInfo.collider?.GetComponent<EntityItemComponent>()?.GetComponentRepository().gameObject;
+                    if (hitGameObject == null)
+                    {
+                        hitGameObject = hitInfo.collider?.attachedRigidbody?.gameObject;
+                    }
                     if (hitGameObject == null)
                     {
                         // TODO - Create a better way to get the Entity (gameObject that contains EntityCommon) that was hit
