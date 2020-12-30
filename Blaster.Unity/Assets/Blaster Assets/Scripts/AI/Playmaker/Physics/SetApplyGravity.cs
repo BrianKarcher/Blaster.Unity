@@ -8,11 +8,27 @@ namespace BlueOrb.Scripts.AI.Playmaker
     [Tooltip("Set Apply Gravity.")]
     public class SetApplyGravity : FsmStateAction
     {
+        [RequiredField]
+        [Tooltip("The main GameObject.")]
+        public FsmOwnerDefault gameObject;
+
         public SetApplyGravityAtom _atom;
+
+        public override void Reset()
+        {
+            gameObject = null;
+        }
 
         public override void OnEnter()
         {
-            var entity = Owner.GetComponent<IEntity>();
+            var go = Fsm.GetOwnerDefaultTarget(gameObject);
+            if (go == null)
+            {
+                return;
+            }
+            //var rqSM = Owner.GetComponent<PlayMakerStateMachineComponent>();
+            //_entity = rqSM.GetComponentRepository();
+            var entity = go.GetComponent<IEntity>();
             _atom.Start(entity);            
         }
 
