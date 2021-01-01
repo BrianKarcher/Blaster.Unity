@@ -58,15 +58,15 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
             var textMeshPro = label.GetComponent<TextMeshProUGUI>();
             string prefix = string.Empty;
             //Color color;
-            if (Points.Value >= 0)
-            {
-                prefix = "+";
-                //color = 
-            }
-            else
-            {
-                prefix = "-";
-            }
+            //if (Points.Value >= 0)
+            //{
+            //    prefix = "+";
+            //    //color = 
+            //}
+            //else
+            //{
+            //    prefix = "-";
+            //}
             textMeshPro.color = Color;
             textMeshPro.SetText(prefix + Points.Value);
 

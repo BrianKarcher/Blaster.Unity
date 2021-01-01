@@ -25,7 +25,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 98
-        y: 100
+        y: 148
         width: 100
         height: 32
       isBreakpoint: 0
@@ -85,9 +85,9 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 279
-        y: 160
-        width: 100
-        height: 48
+        y: 208
+        width: 132
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -108,19 +108,29 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: Tower Destroyed
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Tower Destroyed, dead
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.TriggerEvent
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - BlueOrb.Scripts.AI.Playmaker.IsExploded
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         customNames:
         - 
         - 
         - 
-        actionEnabled: 000101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000050000000d000000
-        actionHashCodes: 9c5124001a44e005156eaa05
+        - 
+        actionEnabled: 00010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000050000000d00000012000000
+        actionHashCodes: 9c5124001a44e005156eaa051a44e005
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -135,7 +145,21 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -179,6 +203,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -204,14 +234,18 @@ MonoBehaviour:
         - Hit
         - Exploded
         - Explode
-        byteData: 0000000000
+        - TowerDead
+        - 
+        - Tower Destroyed
+        byteData: 000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000001000000
+        customTypeSizes: 020000000100000002000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.IsExplodedAtom
-        paramDataType: 1400000007000000120000001700000013000000140000002800000003000000030000001700000013000000120000000100000014000000170000001c0000002800000003000000
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 1400000007000000120000001700000013000000140000002800000003000000030000001700000013000000120000000100000014000000170000001c00000028000000030000001400000028000000030000000300000017000000130000001200000001000000
         paramName:
         - gameObject
         - trigger
@@ -231,15 +265,23 @@ MonoBehaviour:
         - Position
         - _atom
         - ExplodeMessage
-        paramDataPos: 000000000000000000000000000000000000000001000000000000000100000002000000030000000100000001000000040000000200000004000000000000000100000005000000
-        paramByteDataSize: 000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000001000000020000000300000001000000010000000400000002000000040000000000000001000000050000000300000002000000060000000700000008000000020000000200000005000000
+        paramByteDataSize: 0000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Hit
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 269
-        y: 249
+        y: 297
         width: 100
         height: 80
       isBreakpoint: 0
@@ -509,7 +551,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 619
-        y: 301
+        y: 349
         width: 100
         height: 16
       isBreakpoint: 0
@@ -618,7 +660,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 63.960938
-        y: 219
+        y: 267
         width: 100
         height: 32
       isBreakpoint: 0
@@ -732,8 +774,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 487
-        y: 144
+        x: 532
+        y: 198
         width: 100
         height: 48
       isBreakpoint: 0
@@ -965,6 +1007,115 @@ MonoBehaviour:
         - storeForce
         paramDataPos: 0000000000000000010000000000000000000000010000000200000000000000040000000200000003000000040000000500000006000000010000000700000000000000050000000300000006000000000000000100000000000000040000000a00000001000000020000000100000008000000
         paramByteDataSize: 0000000000000000000000000000000000000000000000000000000004000000010000000000000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000000000000400000000000000000000000000000000000000
+    - name: Tower Destroyed, dead
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 487
+        y: 111
+        width: 169
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - BlueOrb.Scripts.AI.Playmaker.Camera.TargetDestroyed
+        - HutongGames.PlayMaker.Actions.DestroyObject
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 17211b049ff80c02
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 2707671265557584813, guid: 68f955f723f4ed240a0d7f57e05f1118,
+            type: 3}
+        - useVariable: 1
+          name: Main
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 100
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params:
+        - useVariable: 1
+          name: LabelOffset
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 000000000000803f000000000000803f
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000130000001c0000001000000004000000130000000f00000011000000
+        paramName:
+        - gameObject
+        - Label
+        - LabelOffset
+        - Points
+        - Color
+        - gameObject
+        - delay
+        - detachChildren
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000010000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -976,6 +1127,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: Hit
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Tower Destroyed
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
