@@ -15,7 +15,7 @@ namespace BlueOrb.Controller.Manager
         private void Awake()
         {
             // TODO: Move this into a "NewGame" state
-            GameStateController.Instance.BeginNewGame = true;
+            //GameStateController.Instance.BeginNewGame = true;
         }
     }
 }

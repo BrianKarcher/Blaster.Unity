@@ -94,7 +94,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
             }
             else if (_sendToUIManager)
             {
-                Process("UI Manager");
+                Process("UI Controller");
             }
             else if (_sendToGameController)
             {

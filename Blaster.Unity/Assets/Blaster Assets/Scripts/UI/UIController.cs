@@ -1,4 +1,5 @@
 ﻿//using Assets.Source.UI;
+using Assets.Blaster_Assets.Scripts.UI;
 using BlueOrb.Base.Input;
 using BlueOrb.Base.Item;
 using BlueOrb.Base.Manager;
@@ -17,6 +18,8 @@ namespace BlueOrb.Scripts.UI
     {
         [SerializeField]
         private Image OverlayImage;
+        [SerializeField]
+        private CurrentScore _currentScore;
 
         [SerializeField]
         private Canvas Canvas;
@@ -43,6 +46,11 @@ namespace BlueOrb.Scripts.UI
                 //RectTransformUtility.ScreenPointToLocalPointInRectangle(Canvas., screenPoint, null, out canvasPos);
 
                 //label.transform.localPosition = 
+            });
+            MessageDispatcher.Instance.StartListening("SetCurrentScore", GetId(), (data) =>
+            {
+                var currentScore = (int)data.ExtraInfo;
+                _currentScore.SetScore(currentScore);
             });
         }
 
