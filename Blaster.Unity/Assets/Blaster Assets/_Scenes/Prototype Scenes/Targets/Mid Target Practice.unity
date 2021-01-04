@@ -4522,6 +4522,12 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -3525211714591136420, guid: fc19e61700b33a946b038b8f7b83423e, type: 2}
     value: {fileID: 1568637913}
+  - key: {fileID: 6362037212878468282, guid: fc19e61700b33a946b038b8f7b83423e, type: 2}
+    value: {fileID: 1089294883}
+  - key: {fileID: -1858567566960475574, guid: fc19e61700b33a946b038b8f7b83423e, type: 2}
+    value: {fileID: 1441369867}
+  - key: {fileID: 441879586420053605, guid: fc19e61700b33a946b038b8f7b83423e, type: 2}
+    value: {fileID: 1441369867}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &562832722
@@ -10810,6 +10816,7 @@ GameObject:
   - component: {fileID: 1089294884}
   - component: {fileID: 1089294885}
   - component: {fileID: 1089294886}
+  - component: {fileID: 1089294888}
   m_Layer: 0
   m_Name: Track B Joint
   m_TagString: Untagged
@@ -10824,8 +10831,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089294883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.00854, y: 0, z: 119.4946}
+  m_LocalRotation: {x: 0, y: -0.66054654, z: 0, w: 0.7507852}
+  m_LocalPosition: {x: -66.00854, y: 0, z: 119.49162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10861,6 +10868,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _child: {fileID: 1441369864}
+--- !u!114 &1089294888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089294883}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -513018092, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _otherJoint: {fileID: 0}
 --- !u!1 &1091727889
 GameObject:
   m_ObjectHideFlags: 0
@@ -13757,6 +13777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1441369864}
+  - component: {fileID: 1441369867}
   m_Layer: 0
   m_Name: Dolly Cart
   m_TagString: Untagged
@@ -13779,6 +13800,25 @@ Transform:
   m_Father: {fileID: 1739888732}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1441369867
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441369863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1445012322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15419,6 +15459,7 @@ GameObject:
   - component: {fileID: 1568637914}
   - component: {fileID: 1568637915}
   - component: {fileID: 1568637916}
+  - component: {fileID: 1568637918}
   m_Layer: 0
   m_Name: Track A Joint
   m_TagString: Untagged
@@ -15470,6 +15511,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _child: {fileID: 1441369864}
+--- !u!114 &1568637918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568637913}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -513018092, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _otherJoint: {fileID: 0}
 --- !u!1001 &1571803652
 PrefabInstance:
   m_ObjectHideFlags: 0
