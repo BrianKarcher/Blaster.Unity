@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -197,6 +199,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &62097545
@@ -691,7 +694,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1378026, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -707,7 +710,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177363757}
-  m_LocalRotation: {x: 0.006891465, y: 0.9815844, z: -0.0360847, w: 0.18746324}
+  m_LocalRotation: {x: -0.00005707874, y: 0.99984515, z: 0.0033014363, w: 0.017286384}
   m_LocalPosition: {x: -8.068212, y: 44.95369, z: -50.97777}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -791,6 +794,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1391272470
@@ -821,6 +825,11 @@ PrefabInstance:
       objectReference: {fileID: 2004165685}
     - target: {fileID: 3558983921129821646, guid: 0774fff9ed24de34ea9a79aa0e611638,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558983921129821646, guid: 0774fff9ed24de34ea9a79aa0e611638,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.34
       objectReference: {fileID: 0}
@@ -836,6 +845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3558983921129821646, guid: 0774fff9ed24de34ea9a79aa0e611638,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558983921129821646, guid: 0774fff9ed24de34ea9a79aa0e611638,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -847,16 +861,6 @@ PrefabInstance:
     - target: {fileID: 3558983921129821646, guid: 0774fff9ed24de34ea9a79aa0e611638,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3558983921129821646, guid: 0774fff9ed24de34ea9a79aa0e611638,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3558983921129821646, guid: 0774fff9ed24de34ea9a79aa0e611638,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3558983921129821646, guid: 0774fff9ed24de34ea9a79aa0e611638,
@@ -1006,6 +1010,7 @@ MonoBehaviour:
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
+  m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -1052,14 +1057,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6128631322365642215, guid: ff24f7a7de79f654784af3184b2aba7f,
         type: 3}
-      propertyPath: m_Lens.m_SensorSize.x
-      value: 2.2439477
-      objectReference: {fileID: 0}
-    - target: {fileID: 6128631322365642215, guid: ff24f7a7de79f654784af3184b2aba7f,
-        type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 526874741}
+    - target: {fileID: 6128631322365642215, guid: ff24f7a7de79f654784af3184b2aba7f,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 2.2439477
+      objectReference: {fileID: 0}
     - target: {fileID: 6128631322365642232, guid: ff24f7a7de79f654784af3184b2aba7f,
         type: 3}
       propertyPath: m_Name
@@ -1069,6 +1074,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128631322365642233, guid: ff24f7a7de79f654784af3184b2aba7f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6128631322365642233, guid: ff24f7a7de79f654784af3184b2aba7f,
         type: 3}
@@ -1087,6 +1097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6128631322365642233, guid: ff24f7a7de79f654784af3184b2aba7f,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9996497
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128631322365642233, guid: ff24f7a7de79f654784af3184b2aba7f,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1099,16 +1114,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6128631322365642233, guid: ff24f7a7de79f654784af3184b2aba7f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9996497
-      objectReference: {fileID: 0}
-    - target: {fileID: 6128631322365642233, guid: ff24f7a7de79f654784af3184b2aba7f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6128631322365642233, guid: ff24f7a7de79f654784af3184b2aba7f,
         type: 3}
@@ -1224,10 +1229,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0313b2fb6c6b0f1418046c2eeb9b5cda, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1248,6 +1254,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2090177113
 MeshFilter:
   m_ObjectHideFlags: 0
