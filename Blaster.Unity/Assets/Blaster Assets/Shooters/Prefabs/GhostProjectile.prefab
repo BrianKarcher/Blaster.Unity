@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 6266728583548910155}
   - component: {fileID: 6266728583548910152}
   - component: {fileID: 6266728583548910153}
-  - component: {fileID: 4216590384783941506}
   - component: {fileID: -7588857396630361458}
   - component: {fileID: -2795170683769859360}
   - component: {fileID: 2873120128929243990}
-  - component: {fileID: 3548232879917068129}
   m_Layer: 14
   m_Name: GhostProjectile
   m_TagString: ShooterProjectile
@@ -491,20 +489,8 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 90145ac0225deab48bcb3c612225cb09, type: 2}
+  fsmTemplate: {fileID: 0}
   eventHandlerComponentsAdded: 1
---- !u!114 &4216590384783941506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6266728583548910158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa05546af6038c46a9af4c4170949ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-7588857396630361458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,23 +533,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetFSMs:
   - {fileID: 6266728583548910153}
---- !u!114 &3548232879917068129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6266728583548910158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -2065472211, guid: 5f883fe007940ca4999e75188cf004f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _addToEntityContainer: 1
-  _target: {fileID: 0}
-  _height: 0
-  _homePosition: {x: 0, y: 0, z: 0}
-  _parentRepo: {fileID: 0}
 --- !u!1001 &5590048156127201612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,10 +540,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6266728583548910148}
     m_Modifications:
+    - target: {fileID: 418662334453021666, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 894826005065958197, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156355608824023074, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1156355609850552897, guid: 720dfca5f1d10bf459e7409b4155b435,
         type: 3}
       propertyPath: m_Name
       value: VFX_GhostProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156355609850552926, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1156355609850552926, guid: 720dfca5f1d10bf459e7409b4155b435,
         type: 3}
@@ -593,6 +582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1156355609850552926, guid: 720dfca5f1d10bf459e7409b4155b435,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156355609850552926, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -604,16 +598,6 @@ PrefabInstance:
     - target: {fileID: 1156355609850552926, guid: 720dfca5f1d10bf459e7409b4155b435,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1156355609850552926, guid: 720dfca5f1d10bf459e7409b4155b435,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1156355609850552926, guid: 720dfca5f1d10bf459e7409b4155b435,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1156355609850552926, guid: 720dfca5f1d10bf459e7409b4155b435,
@@ -631,10 +615,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1643525951219049762, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3530011345994071007, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801539056054501550, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5128049955650979655, guid: 720dfca5f1d10bf459e7409b4155b435,
         type: 3}
       propertyPath: m_Name
       value: ParticlesTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784013393224906413, guid: 720dfca5f1d10bf459e7409b4155b435,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 720dfca5f1d10bf459e7409b4155b435, type: 3}
