@@ -18,7 +18,7 @@ Shader "BlueOrbGames/CelShader"
 		_RimPower("RimPower", Range( 1 , 10)) = 1
 		[HDR]_OutlineColor("OutlineColor", Color) = (0,0,0,0)
 		_OutlineWidth("OutlineWidth", Range( 0 , 0.1)) = 0.0001
-		_OutlineDistance("OutlineDistance", Float) = 1
+		_OutlineDistance("OutlineDistance", Float) = 0.01
 		_SpecularColor("SpecularColor", Color) = (0.3490566,0.3490566,0.3490566,0)
 		_SpecularIntensity("SpecularIntensity", Range( 0 , 1)) = 1
 		_SpecularTransition("SpecularTransition", Range( 0 , 1)) = 0
