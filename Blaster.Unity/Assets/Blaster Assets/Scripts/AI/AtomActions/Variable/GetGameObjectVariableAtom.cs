@@ -42,6 +42,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
                 //case GameObjectVariableEnum.ParriedEntity:
                 //    return _playerParryComponent.CurrentOtherParryGameObject;
                 case GameObjectVariableEnum.Target:
+                    if (_entity.Target == null)
+                    {
+                        return EntityContainer.Instance.GetMainCharacter().gameObject;
+                    }
                     return _entity.Target;
             }
             throw new System.Exception("Enum " + Variable.ToString() + " not found");
