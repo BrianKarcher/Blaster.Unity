@@ -57,6 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -81,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &9171319710686052260
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -496,6 +498,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -520,6 +523,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &1628838009743344732
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -604,6 +608,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -628,6 +633,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &4892392292830686035
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -777,6 +783,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -801,6 +808,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &4759073634311790334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -875,6 +883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addToEntityContainer: 1
   _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
@@ -965,6 +974,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -989,6 +999,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &318581001080228140
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1273,6 +1284,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1297,6 +1309,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &6229708060555345581
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1385,6 +1398,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1409,6 +1423,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &5235376362467893154
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1437,6 +1452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addToEntityContainer: 1
   _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
@@ -1487,6 +1503,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &5151236821753832011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5087178802870292102}
+  m_Layer: 0
+  m_Name: Big Rock Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5087178802870292102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151236821753832011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.19, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5140324593809503869}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5165727012259079932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1594,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1572,6 +1619,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &2240696085360107897
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1599,6 +1647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addToEntityContainer: 1
   _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
@@ -1989,6 +2038,7 @@ Transform:
   - {fileID: 5080553339088779947}
   - {fileID: 6609411960230202583}
   - {fileID: 1941399707792817353}
+  - {fileID: 5087178802870292102}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2006,6 +2056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addToEntityContainer: 1
   _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
