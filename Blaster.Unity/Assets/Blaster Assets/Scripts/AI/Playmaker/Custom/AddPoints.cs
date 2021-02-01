@@ -33,9 +33,9 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 
             var entity = go.GetComponent<IEntity>();
 
-
-            //var worldPos = entity.GetPosition() + LabelOffset.Value;
-            var worldPos = entity.transform.TransformPoint(LabelOffset.Value);
+            // Just add the two. TransformPoint is affected by Scale and we don't want that.
+            var worldPos = entity.GetPosition() + LabelOffset.Value;
+            //var worldPos = entity.transform.TransformPoint(LabelOffset.Value);
 
             var pos = UnityEngine.Camera.main.WorldToScreenPoint(worldPos);
 
