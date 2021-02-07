@@ -54,7 +54,7 @@ MonoBehaviour:
       windowsUWP_primaryInputSource: 0
       xboxOne_primaryInputSource: 0
       gameCoreXboxOne_primaryInputSource: 0
-      gameCoreXboxSeriesX_primaryInputSource: 0
+      gameCoreScarlett_primaryInputSource: 0
       ps4_primaryInputSource: 0
       ps5_primaryInputSource: 0
       webGL_primaryInputSource: 0
@@ -119,9 +119,11 @@ MonoBehaviour:
       platformVars_gameCoreXboxOne:
         disableKeyboard: 0
         ignoreInputWhenAppNotInFocus: 1
-      platformVars_gameCoreXboxSeriesX:
+        assignJoysticksByUserId: 0
+      platformVars_gameCoreScarlett:
         disableKeyboard: 0
         ignoreInputWhenAppNotInFocus: 1
+        assignJoysticksByUserId: 0
       platformVars_wii:
         disableKeyboard: 0
         ignoreInputWhenAppNotInFocus: 1
@@ -309,7 +311,7 @@ MonoBehaviour:
       _digitalAxisSensitivity: 3
       _mouseXYAxisMode: 0
       _mouseOtherAxisMode: 0
-      _mouseXYAxisSensitivity: 1
+      _mouseXYAxisSensitivity: 0.5
       _mouseXYAxisDeltaCalc: 0
       _mouseOtherAxisSensitivity: 1
       _customControllerAxisSensitivity: 1
