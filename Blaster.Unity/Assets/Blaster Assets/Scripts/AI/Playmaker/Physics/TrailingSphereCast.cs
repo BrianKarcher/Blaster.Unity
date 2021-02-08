@@ -118,6 +118,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
                     }
                     if (hitGameObject == null)
                         throw new Exception("(TrailingRaycast) Could not locate a GameObject");
+                    else
+                        Debug.Log($"TrailingRayCast - Hit {hitGameObject.name}");
                     storeEntity.Value = hitGameObject;
                 }
                 if (!storeCollider.IsNone)

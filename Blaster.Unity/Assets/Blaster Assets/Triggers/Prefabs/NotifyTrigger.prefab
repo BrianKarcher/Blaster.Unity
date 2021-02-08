@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2572405789342415295}
   m_Layer: 11
   m_Name: NotifyTrigger
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,6 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,6 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &2572405789342415291
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -109,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addToEntityContainer: 1
   _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
