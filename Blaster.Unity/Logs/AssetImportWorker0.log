@@ -15,11 +15,11 @@ C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61561
+53869
 Successfully changed project path to: C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 79.09 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 92.33 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
@@ -37,25 +37,25 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56260
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001230 seconds.
+Registered in 0.001572 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 74.88 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 88.56 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.775 seconds
+- Completed reload, in  0.935 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.012021 seconds.
+Registered in 0.014949 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 80.45 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 94.14 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 (AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -94,91 +94,527 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.027 seconds
+- Completed reload, in  1.170 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.11 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5227 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.8 MB.
-System memory in use after: 254.0 MB.
+Unloading 5371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 260.1 MB.
+System memory in use after: 260.3 MB.
 
-Unloading 51 unused Assets to reduce memory usage. Loaded Objects now: 5919.
-Total: 2.529300 ms (FindLiveObjects: 0.458100 ms CreateObjectMapping: 0.278800 ms MarkObjects: 1.686300 ms  DeleteObjects: 0.105200 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Blaster Assets/Roland/Materials/m_Shooter.mat
-  artifactKey: Guid(be6a46bea01823341a96189ddb4b534a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Roland/Materials/m_Shooter.mat using Guid(be6a46bea01823341a96189ddb4b534a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1400fb7a70f824df502288c42f71ff5e') in 0.146368 seconds
-  Import took 0.153334 seconds .
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 6056.
+Total: 3.211400 ms (FindLiveObjects: 0.624900 ms CreateObjectMapping: 0.469100 ms MarkObjects: 2.010600 ms  DeleteObjects: 0.105800 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000307 seconds.
-  path: Assets/Blaster Assets/Roland/Materials/M_RolandsClothes.mat
-  artifactKey: Guid(95ef6107aec6b1042b5414da0b259d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Roland/Materials/M_RolandsClothes.mat using Guid(95ef6107aec6b1042b5414da0b259d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80295f21fc49b3dca61ff1d4b2d02fe9') in 0.028837 seconds
-  Import took 0.035372 seconds .
+  path: Assets/AstarPathfindingProject/ExampleScenes/Example13_Moving/Water fallback.jpg
+  artifactKey: Guid(e6f8288974c664a309d6c66de636978c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AstarPathfindingProject/ExampleScenes/Example13_Moving/Water fallback.jpg using Guid(e6f8288974c664a309d6c66de636978c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a86dec47a8e8a389e7688291e68e43b9') in 0.075154 seconds
+  Import took 0.083627 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/Blaster Assets/Roland/Materials/M_RolandsBody.mat
-  artifactKey: Guid(03addaa950258a84ba9b512d5db52f31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Roland/Materials/M_RolandsBody.mat using Guid(03addaa950258a84ba9b512d5db52f31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '858c8457f29be42bb56083c9d15ea173') in 0.029006 seconds
-  Import took 0.035141 seconds .
+  Time since last request: 0.000162 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WhitePortSolid.png
+  artifactKey: Guid(8113366f9f7cec647878e3af2fb98922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WhitePortSolid.png using Guid(8113366f9f7cec647878e3af2fb98922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9f184475e9ae8f17f5539ddfb2b30d6') in 0.018435 seconds
+  Import took 0.026034 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 831.525337 seconds.
-  path: Assets/Blaster Assets/VFX/Shooter/MuzzleFlash Prefabs/MF_RegularlProjectile.prefab
-  artifactKey: Guid(8dfdde457b25bc242975118390eccc02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/VFX/Shooter/MuzzleFlash Prefabs/MF_RegularlProjectile.prefab using Guid(8dfdde457b25bc242975118390eccc02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ed9133e27a859e16b439ad0788d90a8') in 0.047643 seconds
-  Import took 0.055949 seconds .
+  Time since last request: 0.000276 seconds.
+  path: Assets/PlayMaker/Editor/Watermarks/Upload.png
+  artifactKey: Guid(816c57d588a2ae143a0e1f9e5029eadb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayMaker/Editor/Watermarks/Upload.png using Guid(816c57d588a2ae143a0e1f9e5029eadb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc3d9d1bd988890668f8bf12f212b09b') in 0.019806 seconds
+  Import took 0.027854 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 73.479932 seconds.
-  path: Assets/Blaster Assets/VFX/Shooter/Projectiles Prefabs/Regular Projectile.prefab
-  artifactKey: Guid(d1a08894f010256499274899fbccb802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/VFX/Shooter/Projectiles Prefabs/Regular Projectile.prefab using Guid(d1a08894f010256499274899fbccb802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6439c0aefd59e85a6fba31221a5b7b4') in 0.018453 seconds
-  Import took 0.025614 seconds .
+  Time since last request: 0.000247 seconds.
+  path: Assets/AstarPathfindingProject/Editor/EditorAssets/images/upDownArrow_02.png
+  artifactKey: Guid(0a9d941450e7c46cf8928d06762c2189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AstarPathfindingProject/Editor/EditorAssets/images/upDownArrow_02.png using Guid(0a9d941450e7c46cf8928d06762c2189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1a3759516471d4d96acb946dced38d7') in 0.020030 seconds
+  Import took 0.028036 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 84.834442 seconds.
-  path: Assets/Blaster Assets/VFX/Shooter/Impact Prefabs/ImpactEnemy_Default.prefab
-  artifactKey: Guid(709dac3532b9b9e48973973ec8e98063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/VFX/Shooter/Impact Prefabs/ImpactEnemy_Default.prefab using Guid(709dac3532b9b9e48973973ec8e98063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a31d8d38244feccc50310923dab88dc') in 0.007237 seconds
-  Import took 0.015037 seconds .
+  Time since last request: 0.000148 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/white.png
+  artifactKey: Guid(37e6f91f3efb0954cbdce254638862ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/white.png using Guid(37e6f91f3efb0954cbdce254638862ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38280e8f3744bd7ad42585b3c66b5d88') in 0.018466 seconds
+  Import took 0.026520 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013649 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
+
+(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
+
+(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.973 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 233.9 MB.
+System memory in use after: 234.3 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6063.
+Total: 3.136600 ms (FindLiveObjects: 0.554500 ms CreateObjectMapping: 0.396000 ms MarkObjects: 2.152900 ms  DeleteObjects: 0.031900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.909051 seconds.
-  path: Assets/Blaster Assets/VFX/Shooter/Impact Prefabs/ImpactEnemy_Default.prefab
-  artifactKey: Guid(709dac3532b9b9e48973973ec8e98063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/VFX/Shooter/Impact Prefabs/ImpactEnemy_Default.prefab using Guid(709dac3532b9b9e48973973ec8e98063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dd9536bbbd1ef692eca0473ac934bc9') in 0.003080 seconds
-  Import took 0.010643 seconds .
+  Time since last request: 271.774402 seconds.
+  path: Assets/Blaster Assets/T_Foam_Noise.png
+  artifactKey: Guid(457840f5339154f4ca0d23a4cda5936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/T_Foam_Noise.png using Guid(457840f5339154f4ca0d23a4cda5936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beb8677772248612162501ca95ed0e12') in 0.045400 seconds
+  Import took 0.053363 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 38.941651 seconds.
-  path: Assets/Blaster Assets/VFX/Shooter/Impact Prefabs/ImpactEnemy_Regular.prefab
-  artifactKey: Guid(709dac3532b9b9e48973973ec8e98063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/VFX/Shooter/Impact Prefabs/ImpactEnemy_Regular.prefab using Guid(709dac3532b9b9e48973973ec8e98063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e3cde7446f8a14865112577389eefa3') in 0.007069 seconds
-  Import took 0.015757 seconds .
+  Time since last request: 114.287267 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures
+  artifactKey: Guid(b10bcb2c8443a884e9182664770c3df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures using Guid(b10bcb2c8443a884e9182664770c3df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca60c1e94d54fb0c2534f0ebd807b792') in 0.009160 seconds
+  Import took 0.017074 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3262.617605 seconds.
-  path: Assets/Blaster Assets/VFX/Shooter/Impact Prefabs/Impact_BombExplosion.prefab
-  artifactKey: Guid(05b5145855fc7dd4cbf6899b2167bc3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/VFX/Shooter/Impact Prefabs/Impact_BombExplosion.prefab using Guid(05b5145855fc7dd4cbf6899b2167bc3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '469321a0300b1bbbe8423c8db7faf339') in 0.021895 seconds
-  Import took 0.030928 seconds .
+  Time since last request: 4.585555 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06ff8e9aa9ef2d77c8ba55f62e04f5a8') in 0.010857 seconds
+  Import took 0.017850 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.281621 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06ff8e9aa9ef2d77c8ba55f62e04f5a8') in 0.002606 seconds
+  Import took 0.010510 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 68.532638 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6de6aaba5b1d68bbc12a8d559d41c3f') in 0.001841 seconds
+  Import took 0.009885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 212.777297 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab60ba397ec67d80329a4d04109a3e9a') in 0.002168 seconds
+  Import took 0.010560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 59.448628 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e468d1d85c7abf539d06cb0864f4778b') in 0.001864 seconds
+  Import took 0.009350 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013262 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.15 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
+
+(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
+
+(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.058 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 234.0 MB.
+System memory in use after: 234.4 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6065.
+Total: 3.358800 ms (FindLiveObjects: 0.556600 ms CreateObjectMapping: 0.438800 ms MarkObjects: 2.328800 ms  DeleteObjects: 0.033000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012672 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
+
+(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
+
+(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.905 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
+Refreshing native plugins compatible for Editor in 1.14 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 234.1 MB.
+System memory in use after: 234.5 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6067.
+Total: 2.616300 ms (FindLiveObjects: 0.525200 ms CreateObjectMapping: 0.341900 ms MarkObjects: 1.719500 ms  DeleteObjects: 0.028400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013426 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
+
+(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
+
+(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.013 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
+Refreshing native plugins compatible for Editor in 1.05 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 234.1 MB.
+System memory in use after: 234.6 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6069.
+Total: 3.828500 ms (FindLiveObjects: 0.601400 ms CreateObjectMapping: 0.598700 ms MarkObjects: 2.590800 ms  DeleteObjects: 0.036300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012142 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
+
+(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
+
+(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.942 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 234.2 MB.
+System memory in use after: 234.6 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6071.
+Total: 3.096900 ms (FindLiveObjects: 0.647000 ms CreateObjectMapping: 0.401200 ms MarkObjects: 2.012000 ms  DeleteObjects: 0.035500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2398.981713 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/m_Lake.mat
+  artifactKey: Guid(959c4a8552f85d741a88d5bf4af5c5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/m_Lake.mat using Guid(959c4a8552f85d741a88d5bf4af5c5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e292a30a2d69e692512ccf29c98d3fe2') in 0.154369 seconds
+  Import took 0.162442 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 141.715931 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Water_Mask.png
+  artifactKey: Guid(3642fead44351744a8ea17a407ae1df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Water_Mask.png using Guid(3642fead44351744a8ea17a407ae1df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa8dbb2fec2d301e0b0a3a4105541eaa') in 0.020507 seconds
+  Import took 0.028969 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 91.890022 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90dea136e1a23287899d80d3d9f30c4b') in 0.008563 seconds
+  Import took 0.015992 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.302746 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90dea136e1a23287899d80d3d9f30c4b') in 0.002049 seconds
+  Import took 0.010051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.849193 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88a2b37cf990a3fd81762adc05bd40ab') in 0.002421 seconds
+  Import took 0.009635 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.336169 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd098620714df8bfd4cdeb6a7e416618d') in 0.002122 seconds
+  Import took 0.010367 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.014054 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.17 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
+
+(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
+
+(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.075 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
+Refreshing native plugins compatible for Editor in 1.11 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 236.7 MB.
+System memory in use after: 237.2 MB.
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6150.
+Total: 3.602400 ms (FindLiveObjects: 0.680100 ms CreateObjectMapping: 0.493400 ms MarkObjects: 2.395100 ms  DeleteObjects: 0.032400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 398.579914 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
+  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b089daf650136757f982c9e2978ee394') in 0.013705 seconds
+  Import took 0.021333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 167.106124 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Shaders/m_Lake.mat
+  artifactKey: Guid(959c4a8552f85d741a88d5bf4af5c5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Shaders/m_Lake.mat using Guid(959c4a8552f85d741a88d5bf4af5c5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b49dc7b0e48479bbcaab99780fa31157') in 0.100032 seconds
+  Import took 0.108381 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
