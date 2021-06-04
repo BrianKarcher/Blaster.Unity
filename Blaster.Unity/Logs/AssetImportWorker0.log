@@ -15,11 +15,11 @@ C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53869
+55642
 Successfully changed project path to: C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 92.33 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 89.37 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
@@ -37,25 +37,25 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56268
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001572 seconds.
+Registered in 0.001308 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 88.56 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 81.63 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.935 seconds
+- Completed reload, in  0.786 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.014949 seconds.
+Registered in 0.012828 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 94.14 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 84.65 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 (AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -94,68 +94,268 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.170 seconds
+- Completed reload, in  1.050 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.11 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.01 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5371 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 260.1 MB.
-System memory in use after: 260.3 MB.
+System memory in use before: 260.4 MB.
+System memory in use after: 260.7 MB.
 
-Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 6056.
-Total: 3.211400 ms (FindLiveObjects: 0.624900 ms CreateObjectMapping: 0.469100 ms MarkObjects: 2.010600 ms  DeleteObjects: 0.105800 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/AstarPathfindingProject/ExampleScenes/Example13_Moving/Water fallback.jpg
-  artifactKey: Guid(e6f8288974c664a309d6c66de636978c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AstarPathfindingProject/ExampleScenes/Example13_Moving/Water fallback.jpg using Guid(e6f8288974c664a309d6c66de636978c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a86dec47a8e8a389e7688291e68e43b9') in 0.075154 seconds
-  Import took 0.083627 seconds .
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 6057.
+Total: 2.639300 ms (FindLiveObjects: 0.465000 ms CreateObjectMapping: 0.306700 ms MarkObjects: 1.756200 ms  DeleteObjects: 0.110500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000162 seconds.
-  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WhitePortSolid.png
-  artifactKey: Guid(8113366f9f7cec647878e3af2fb98922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WhitePortSolid.png using Guid(8113366f9f7cec647878e3af2fb98922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9f184475e9ae8f17f5539ddfb2b30d6') in 0.018435 seconds
-  Import took 0.026034 seconds .
+  path: Assets/Blaster Assets/Environments/Shaders/Environment PBR.shadergraph
+  artifactKey: Guid(03e9fead37443b242a9ac186206ef0d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment PBR.shadergraph using Guid(03e9fead37443b242a9ac186206ef0d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8933de8b4cfa214190f019a7750715a3') in 0.030832 seconds
+  Import took 0.038186 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000276 seconds.
-  path: Assets/PlayMaker/Editor/Watermarks/Upload.png
-  artifactKey: Guid(816c57d588a2ae143a0e1f9e5029eadb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PlayMaker/Editor/Watermarks/Upload.png using Guid(816c57d588a2ae143a0e1f9e5029eadb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc3d9d1bd988890668f8bf12f212b09b') in 0.019806 seconds
-  Import took 0.027854 seconds .
+  Time since last request: 0.000228 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders
+  artifactKey: Guid(3b79a5b53b97fc549a2df2528951482b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders using Guid(3b79a5b53b97fc549a2df2528951482b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e6a4de0c3cd00641507554fed3bfd58') in 0.005773 seconds
+  Import took 0.012331 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/AstarPathfindingProject/Editor/EditorAssets/images/upDownArrow_02.png
-  artifactKey: Guid(0a9d941450e7c46cf8928d06762c2189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AstarPathfindingProject/Editor/EditorAssets/images/upDownArrow_02.png using Guid(0a9d941450e7c46cf8928d06762c2189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1a3759516471d4d96acb946dced38d7') in 0.020030 seconds
-  Import took 0.028036 seconds .
+  Time since last request: 0.000236 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/Environment PBR Height.shadergraph
+  artifactKey: Guid(ecc01daa379805047895d3626d778b31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment PBR Height.shadergraph using Guid(ecc01daa379805047895d3626d778b31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7ebd49d81ae0911b556832709ace19b') in 0.006186 seconds
+  Import took 0.013191 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000148 seconds.
-  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/white.png
-  artifactKey: Guid(37e6f91f3efb0954cbdce254638862ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/white.png using Guid(37e6f91f3efb0954cbdce254638862ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38280e8f3744bd7ad42585b3c66b5d88') in 0.018466 seconds
-  Import took 0.026520 seconds .
+  Time since last request: 73.987367 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/Environment PBR.shadergraph
+  artifactKey: Guid(03e9fead37443b242a9ac186206ef0d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment PBR.shadergraph using Guid(03e9fead37443b242a9ac186206ef0d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70e05881febcb7f7a1d1d8b34025c6ac') in 0.001836 seconds
+  Import took 0.009670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.784295 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Materials
+  artifactKey: Guid(6c133c0a5d231e24cba55015a236fb55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Materials using Guid(6c133c0a5d231e24cba55015a236fb55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83a421f058599066e387117e86dc1e62') in 0.008317 seconds
+  Import took 0.016354 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 60.758187 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Dirt_basecolor.png
+  artifactKey: Guid(24798d69be875e2468128c2431d7d50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Dirt_basecolor.png using Guid(24798d69be875e2468128c2431d7d50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed6d78fb29cc2e664c4bc0f2f685f50d') in 0.050762 seconds
+  Import took 0.058554 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Dirt_Masks.png
+  artifactKey: Guid(4736e7f7930afcb42b9f4798c2a44f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Dirt_Masks.png using Guid(4736e7f7930afcb42b9f4798c2a44f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '525eb67c0eb37d38a9bd47cc73054f71') in 0.020547 seconds
+  Import took 0.027124 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Dirt_normal.png
+  artifactKey: Guid(1b67050059f351441aa9ec7f49181647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Dirt_normal.png using Guid(1b67050059f351441aa9ec7f49181647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76cbf64cdaca10116a9ce5e1bd75fabe') in 0.015224 seconds
+  Import took 0.021826 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Dirt_height.png
+  artifactKey: Guid(17123f2294d8e704195045e98d388f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Dirt_height.png using Guid(17123f2294d8e704195045e98d388f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e96000e61ed468e167a77338b9735091') in 0.016264 seconds
+  Import took 0.023071 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001247 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Dirt_height.png
+  artifactKey: Guid(17123f2294d8e704195045e98d388f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Dirt_height.png using Guid(17123f2294d8e704195045e98d388f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e96000e61ed468e167a77338b9735091') in 0.013012 seconds
+  Import took 0.020573 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.195634 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Dirt_Masks.png
+  artifactKey: Guid(4736e7f7930afcb42b9f4798c2a44f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Dirt_Masks.png using Guid(4736e7f7930afcb42b9f4798c2a44f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e7dc963a8b8e71d147255bd39b5e1e5') in 0.018878 seconds
+  Import took 0.026406 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.375742 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Dirt_normal.png
+  artifactKey: Guid(1b67050059f351441aa9ec7f49181647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Dirt_normal.png using Guid(1b67050059f351441aa9ec7f49181647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '756bdb583dee1b7848afebd6b524fa17') in 0.016701 seconds
+  Import took 0.024331 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.178989 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/m_Dirt.mat
+  artifactKey: Guid(8237b0f9655cd4643b9c545fd0fa6789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/m_Dirt.mat using Guid(8237b0f9655cd4643b9c545fd0fa6789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b5c89b858dfb6b93b50933465847b5d') in 0.108790 seconds
+  Import took 0.116467 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 205.795258 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/m_Dirt.mat
+  artifactKey: Guid(8237b0f9655cd4643b9c545fd0fa6789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/m_Dirt.mat using Guid(8237b0f9655cd4643b9c545fd0fa6789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae5a1e200c509bc6d8b54bb000496257') in 0.036812 seconds
+  Import took 0.045184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1365.742474 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Mud_basecolor.png
+  artifactKey: Guid(cc74a46f92a1d7e4ba73f7ef1ea75905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Mud_basecolor.png using Guid(cc74a46f92a1d7e4ba73f7ef1ea75905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba76beb49c65752c5feb14e771ad6109') in 0.016866 seconds
+  Import took 0.025487 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Mud_normal.png
+  artifactKey: Guid(b2760b06a097b2948a61ec15aa10a4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Mud_normal.png using Guid(b2760b06a097b2948a61ec15aa10a4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b89a629ad13c4aae772ce4091a1f516') in 0.016331 seconds
+  Import took 0.024247 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Mud_height.png
+  artifactKey: Guid(ecfd89bde2bef4d49bbeb6799cad7f83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Mud_height.png using Guid(ecfd89bde2bef4d49bbeb6799cad7f83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa479007ef61d767678e52f39b56c63f') in 0.015251 seconds
+  Import took 0.022721 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Mud_Masks.png
+  artifactKey: Guid(fd1c4cdcb4a69214986aa8de35a88e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Mud_Masks.png using Guid(fd1c4cdcb4a69214986aa8de35a88e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17399b40281f5140711be47345aecd59') in 0.017214 seconds
+  Import took 0.024807 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.101928 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Mud_Masks.png
+  artifactKey: Guid(fd1c4cdcb4a69214986aa8de35a88e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Mud_Masks.png using Guid(fd1c4cdcb4a69214986aa8de35a88e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc22d162bd00b6dbc92edf16e2b24b9d') in 0.015864 seconds
+  Import took 0.023322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.643721 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Mud_normal.png
+  artifactKey: Guid(b2760b06a097b2948a61ec15aa10a4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Mud_normal.png using Guid(b2760b06a097b2948a61ec15aa10a4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '526a15acbdf9ef739bc51ef3a3add03c') in 0.014553 seconds
+  Import took 0.021897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2127.175462 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Grass_basecolor.png
+  artifactKey: Guid(1d53253e0c60fc442885d7e720036896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Grass_basecolor.png using Guid(1d53253e0c60fc442885d7e720036896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2befd51b48df2a78b2175e2aa3cde235') in 0.041471 seconds
+  Import took 0.092122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Grass_Masks.png
+  artifactKey: Guid(0ab15c1fa108c21449a10a2d9134b86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Grass_Masks.png using Guid(0ab15c1fa108c21449a10a2d9134b86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09065c73fe9bf7a93d507161d5766f7b') in 0.027425 seconds
+  Import took 0.035671 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Grass_height.png
+  artifactKey: Guid(7b26e8c63de1ca646a7e179e8d3a991b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Grass_height.png using Guid(7b26e8c63de1ca646a7e179e8d3a991b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '977bf04f6978c0a3a8e40c63815eb820') in 0.016086 seconds
+  Import took 0.024382 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Grass_normal.png
+  artifactKey: Guid(1d17bb0055440544e8770af00ca368fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Grass_normal.png using Guid(1d17bb0055440544e8770af00ca368fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebc29c2b018b5cfe521d038a4330f1b2') in 0.016428 seconds
+  Import took 0.023703 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.200577 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Grass_Masks.png
+  artifactKey: Guid(0ab15c1fa108c21449a10a2d9134b86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Grass_Masks.png using Guid(0ab15c1fa108c21449a10a2d9134b86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9472c720d1e937cbb7b1fbc45549e345') in 0.015428 seconds
+  Import took 0.023368 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.740680 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/T_Grass_normal.png
+  artifactKey: Guid(1d17bb0055440544e8770af00ca368fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/T_Grass_normal.png using Guid(1d17bb0055440544e8770af00ca368fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccf3a90a41de9d95622631a7eb87a3f6') in 0.020556 seconds
+  Import took 0.029097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 412.639905 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/Environment PBR Height 1.shadergraph
+  artifactKey: Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment PBR Height 1.shadergraph using Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b86616f09ab6b16ee5ba738fde2f533') in 0.018450 seconds
+  Import took 0.030308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.791007 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph
+  artifactKey: Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph using Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a712fff8300cb228efeddbe3fd11aaf') in 0.010317 seconds
+  Import took 0.019443 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 377.319461 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph
+  artifactKey: Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph using Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6073ae256778c6f403296262f3cbe08') in 0.003357 seconds
+  Import took 0.012542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.892130 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/m_ForestVertexPaint.mat
+  artifactKey: Guid(5e0eb5e153e5e4f49b54bcb28904d693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/m_ForestVertexPaint.mat using Guid(5e0eb5e153e5e4f49b54bcb28904d693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fceda6d966fdc05045c5e035a9ee690f') in 0.050950 seconds
+  Import took 0.059700 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.013649 seconds.
+Registered in 0.012182 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.02 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 (AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -194,427 +394,1134 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.973 seconds
+- Completed reload, in  1.048 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5116 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 241.0 MB.
+System memory in use after: 241.4 MB.
+
+Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 6261.
+Total: 3.034600 ms (FindLiveObjects: 0.630400 ms CreateObjectMapping: 0.426800 ms MarkObjects: 1.843600 ms  DeleteObjects: 0.133000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1183.314543 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_basecolor.png
+  artifactKey: Guid(24798d69be875e2468128c2431d7d50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_basecolor.png using Guid(24798d69be875e2468128c2431d7d50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3d45e911cb9794fb4d86c33900be32c') in 0.041332 seconds
+  Import took 0.049927 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_Masks.png
+  artifactKey: Guid(0ab15c1fa108c21449a10a2d9134b86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_Masks.png using Guid(0ab15c1fa108c21449a10a2d9134b86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fdbd3d5f7fd70dacaf066a8ddcd5050') in 0.017788 seconds
+  Import took 0.025207 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_height.png
+  artifactKey: Guid(7b26e8c63de1ca646a7e179e8d3a991b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_height.png using Guid(7b26e8c63de1ca646a7e179e8d3a991b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60a6f2879fd0560a7cbc75682b383cc4') in 0.019302 seconds
+  Import took 0.027178 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_basecolor.png
+  artifactKey: Guid(1d53253e0c60fc442885d7e720036896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_basecolor.png using Guid(1d53253e0c60fc442885d7e720036896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b26bdd9e70ab47837d3a943dec9eb8af') in 0.018281 seconds
+  Import took 0.025669 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_normal.png
+  artifactKey: Guid(1d17bb0055440544e8770af00ca368fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_normal.png using Guid(1d17bb0055440544e8770af00ca368fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e37dcedc0903a96c80cb4381596501b') in 0.024470 seconds
+  Import took 0.031781 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_normal.png
+  artifactKey: Guid(b2760b06a097b2948a61ec15aa10a4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_normal.png using Guid(b2760b06a097b2948a61ec15aa10a4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4a177348f3d509942ba3805a4ea247c') in 0.020487 seconds
+  Import took 0.027795 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Foam_Noise.png
+  artifactKey: Guid(457840f5339154f4ca0d23a4cda5936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Foam_Noise.png using Guid(457840f5339154f4ca0d23a4cda5936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64dc84f1051bc816d84bb3e784fee2b2') in 0.016498 seconds
+  Import took 0.024766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_Masks.png
+  artifactKey: Guid(4736e7f7930afcb42b9f4798c2a44f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_Masks.png using Guid(4736e7f7930afcb42b9f4798c2a44f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40ad3cf14a128525c22aefd16091323a') in 0.022329 seconds
+  Import took 0.030359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_height.png
+  artifactKey: Guid(ecfd89bde2bef4d49bbeb6799cad7f83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_height.png using Guid(ecfd89bde2bef4d49bbeb6799cad7f83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cb857c2f74301bef6f5c0d3810ae3f9') in 0.018016 seconds
+  Import took 0.025481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Water_Mask.png
+  artifactKey: Guid(3642fead44351744a8ea17a407ae1df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Water_Mask.png using Guid(3642fead44351744a8ea17a407ae1df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b10023f8c88b522fb7bbcaae3ce24767') in 0.016882 seconds
+  Import took 0.024656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_basecolor.png
+  artifactKey: Guid(cc74a46f92a1d7e4ba73f7ef1ea75905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_basecolor.png using Guid(cc74a46f92a1d7e4ba73f7ef1ea75905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61bd36343ea361e0621267eb34c3f771') in 0.016590 seconds
+  Import took 0.024876 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_normal.png
+  artifactKey: Guid(1b67050059f351441aa9ec7f49181647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_normal.png using Guid(1b67050059f351441aa9ec7f49181647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1af00d20cb126b388d313bfc5a5b04be') in 0.015050 seconds
+  Import took 0.023328 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_height.png
+  artifactKey: Guid(17123f2294d8e704195045e98d388f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_height.png using Guid(17123f2294d8e704195045e98d388f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20821797994a961e837e1f5dcd31bd86') in 0.011752 seconds
+  Import took 0.019610 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_Masks.png
+  artifactKey: Guid(fd1c4cdcb4a69214986aa8de35a88e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_Masks.png using Guid(fd1c4cdcb4a69214986aa8de35a88e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bff1647b2cd385848977a640f4be9f7') in 0.009980 seconds
+  Import took 0.017628 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 314.051993 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Materials/m_Dust.mat
+  artifactKey: Guid(ccdbc611d6443c744abf143806b4acab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Materials/m_Dust.mat using Guid(ccdbc611d6443c744abf143806b4acab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff96b4d54a64313de44eaab645e165d6') in 0.110717 seconds
+  Import took 0.119542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Materials/m_Grass.mat
+  artifactKey: Guid(26cced5419552f040b2b7f62ec5526c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Materials/m_Grass.mat using Guid(26cced5419552f040b2b7f62ec5526c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '265b2666a6468f381fe503539805683f') in 0.026654 seconds
+  Import took 0.034634 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 183.431139 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph
+  artifactKey: Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph using Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c23c96fb0689502d843d3a6d07b42f7') in 0.005259 seconds
+  Import took 0.013485 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 138.615039 seconds.
+  path: Assets/_TerrainAutoUpgrade/layer_checkerGround3d3aba195e4d26ee.terrainlayer
+  artifactKey: Guid(2883a712fbde9d14f8de60b6b0ee0f42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_TerrainAutoUpgrade/layer_checkerGround3d3aba195e4d26ee.terrainlayer using Guid(2883a712fbde9d14f8de60b6b0ee0f42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f07727aa27ab2e5657b9e3dda43730') in 0.019759 seconds
+  Import took 0.027294 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.829594 seconds.
+  path: Assets/Polybrush Data
+  artifactKey: Guid(de22f9b8e96574d42aa62927decc3477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polybrush Data using Guid(de22f9b8e96574d42aa62927decc3477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b386db1a8fb4887eacf02a125ab07cc6') in 0.005066 seconds
+  Import took 0.013014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.865321 seconds.
+  path: Assets/Polybrush Data/Brush Settings
+  artifactKey: Guid(39254bd6492c6dc4887d893bfada8a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polybrush Data/Brush Settings using Guid(39254bd6492c6dc4887d893bfada8a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f57931590ac50fb6a8935f7090910f09') in 0.005253 seconds
+  Import took 0.013222 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.071655 seconds.
+  path: Assets/Polybrush Data/Brush Settings/BrushSettings-Default.asset
+  artifactKey: Guid(a65f0183d0b3f7644beb8d2a7df3e8a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polybrush Data/Brush Settings/BrushSettings-Default.asset using Guid(a65f0183d0b3f7644beb8d2a7df3e8a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a781f63b4bd2c91f282069bfac8bbd2') in 0.006808 seconds
+  Import took 0.014239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.752388 seconds.
+  path: Assets/Polybrush Data/Color Palette
+  artifactKey: Guid(3c94003be25b42e408403bd13ddc0abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polybrush Data/Color Palette using Guid(3c94003be25b42e408403bd13ddc0abf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffe5f33f63f54f75f282fc5898c8d2a3') in 0.005514 seconds
+  Import took 0.013054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.067953 seconds.
+  path: Assets/Polybrush Data/Color Palette/ColorPalette-Default.asset
+  artifactKey: Guid(35056d82d27c5614aa35860dcc7fb337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polybrush Data/Color Palette/ColorPalette-Default.asset using Guid(35056d82d27c5614aa35860dcc7fb337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a52e348fdbf2a397960a88efc751d4f4') in 0.005483 seconds
+  Import took 0.012962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.416650 seconds.
+  path: Assets/Polybrush Data/Prefab Palette
+  artifactKey: Guid(c354065408c037e4888c9323c29c1f90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polybrush Data/Prefab Palette using Guid(c354065408c037e4888c9323c29c1f90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0cd04a3ae754b284b09a30652fa9623') in 0.005178 seconds
+  Import took 0.012714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.082213 seconds.
+  path: Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset
+  artifactKey: Guid(124d3a7675140b5459467337acdbb3b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polybrush Data/Prefab Palette/PrefabPalette-Default.asset using Guid(124d3a7675140b5459467337acdbb3b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07f7d28da79ec153b9571e4280885a35') in 0.006517 seconds
+  Import took 0.014089 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.614092 seconds.
+  path: Packages/com.unity.polybrush/package.json
+  artifactKey: Guid(3f0090ad51a2a4f91ab978f06c088ff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.polybrush/package.json using Guid(3f0090ad51a2a4f91ab978f06c088ff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '559e2afe56f2796df5c19557a22b42fb') in 0.008149 seconds
+  Import took 0.015338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.944753 seconds.
+  path: Packages/com.unity.polybrush/Tests
+  artifactKey: Guid(412610cb5caa7884ca5d6e0edce5a8b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.polybrush/Tests using Guid(412610cb5caa7884ca5d6e0edce5a8b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af53b06fdd1216d3682f2c93973ffd17') in 0.005747 seconds
+  Import took 0.014609 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.824251 seconds.
+  path: Packages/com.unity.polybrush/Tests/Shader
+  artifactKey: Guid(3690f4252826f4640b5ab2940af0bf1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.polybrush/Tests/Shader using Guid(3690f4252826f4640b5ab2940af0bf1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fc3d695d9583fe2aa5194e1e4d05301') in 0.005461 seconds
+  Import took 0.012938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.817238 seconds.
+  path: Packages/com.unity.polybrush/Tests/Shader/TestShaderWithNoMeta.shader
+  artifactKey: Guid(8d51ac110dbf8dd479610bcd64923ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.polybrush/Tests/Shader/TestShaderWithNoMeta.shader using Guid(8d51ac110dbf8dd479610bcd64923ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f4131f6c5ff661b9d8348e01a9cd154') in 0.006432 seconds
+  Import took 0.014541 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.346119 seconds.
+  path: Packages/com.unity.polybrush/Tests/Shader/TestShaderWithMeta.shader
+  artifactKey: Guid(7cb82cbc3ee9b8840b33ac28948ce1cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.polybrush/Tests/Shader/TestShaderWithMeta.shader using Guid(7cb82cbc3ee9b8840b33ac28948ce1cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2562b9273ec4cc43a77387677e70aa6') in 0.006581 seconds
+  Import took 0.014760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007644 seconds.
+  path: Packages/com.unity.polybrush/Tests/Shader/TestShaderWithMeta.shader
+  artifactKey: Guid(7cb82cbc3ee9b8840b33ac28948ce1cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.polybrush/Tests/Shader/TestShaderWithMeta.shader using Guid(7cb82cbc3ee9b8840b33ac28948ce1cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2562b9273ec4cc43a77387677e70aa6') in 0.002611 seconds
+  Import took 0.010672 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012573 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
+
+(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
+
+(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
+
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.176 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
+Refreshing native plugins compatible for Editor in 1.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5471 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 255.8 MB.
+System memory in use after: 254.2 MB.
+
+Unloading 223 unused Assets to reduce memory usage. Loaded Objects now: 6630.
+Total: 4.590800 ms (FindLiveObjects: 0.596900 ms CreateObjectMapping: 0.391200 ms MarkObjects: 2.284900 ms  DeleteObjects: 1.316900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 629.623143 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph
+  artifactKey: Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph using Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bceb94dd236c301e3a5a976d3da7669') in 0.014108 seconds
+  Import took 0.023027 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.152670 seconds.
+  path: Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph
+  artifactKey: Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Shaders/Environment Vertex Paint.shadergraph using Guid(0ae3bc6684dbaaf4e9c803032a481216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd314621abffae51a898234adfd38b541') in 0.001976 seconds
+  Import took 0.009670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 761.955020 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/19603D16.png
+  artifactKey: Guid(78b06834af8bc544da3da025038d9d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/19603D16.png using Guid(78b06834af8bc544da3da025038d9d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '424eb357b698b8a24ec079887fdbf6ff') in 0.019728 seconds
+  Import took 0.028828 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/AddToList.png
+  artifactKey: Guid(cccc116a6334dc1428687697c5a11d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/AddToList.png using Guid(cccc116a6334dc1428687697c5a11d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'facd4c2b40eb30aa184a2b74d74da244') in 0.007465 seconds
+  Import took 0.015330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Rewired/Examples/GamepadTemplateUI/Images/action-button.png
+  artifactKey: Guid(fb21d43469c422e4799d052c515883f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Examples/GamepadTemplateUI/Images/action-button.png using Guid(fb21d43469c422e4799d052c515883f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ce9ae7ed76d7de4d29aee087b8b82ac') in 0.031904 seconds
+  Import took 0.039735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Rewired/Extras/TouchControls/Sprites/Joysticks/DirectionIndicators/Arrow08.png
+  artifactKey: Guid(8e0cb7e7dc5f5a54ab9e388c6b9b5999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Extras/TouchControls/Sprites/Joysticks/DirectionIndicators/Arrow08.png using Guid(8e0cb7e7dc5f5a54ab9e388c6b9b5999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52164ca1acdf857ebca719f5a889aec2') in 0.023962 seconds
+  Import took 0.031670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/AstarPathfindingProject/Editor/EditorAssets/images/ArrowUp.png
+  artifactKey: Guid(b1722c752c8754c5281b2efd6cf8477c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AstarPathfindingProject/Editor/EditorAssets/images/ArrowUp.png using Guid(b1722c752c8754c5281b2efd6cf8477c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92c2d53268cd13704f1715ce71ab0f1f') in 0.012331 seconds
+  Import took 0.020369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Rewired/Extras/TouchControls/Sprites/Joysticks/Bases/ArcadeBase01.png
+  artifactKey: Guid(eb5fb5ba53d17ae4e9edaffc2107e563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Extras/TouchControls/Sprites/Joysticks/Bases/ArcadeBase01.png using Guid(eb5fb5ba53d17ae4e9edaffc2107e563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '902df21b38be36fc1ab2f3b69092425a') in 0.024257 seconds
+  Import took 0.031695 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/AstarPathfindingProject/Editor/EditorAssets/images/ArrowDown.png
+  artifactKey: Guid(12ea2fbedc5cc4bd191d795f44b2de75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AstarPathfindingProject/Editor/EditorAssets/images/ArrowDown.png using Guid(12ea2fbedc5cc4bd191d795f44b2de75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '037c7e9fc550563c10d1aa179ed68f74') in 0.009065 seconds
+  Import took 0.016881 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/AlienWorld3D16.png
+  artifactKey: Guid(6e1279dbe1b15a94ab375c40b525c44c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/AlienWorld3D16.png using Guid(6e1279dbe1b15a94ab375c40b525c44c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cf5250df1cefca191487b6aeb3fbbe8') in 0.007298 seconds
+  Import took 0.014791 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/PlayMaker/Editor/Watermarks/AnalogClock.png
+  artifactKey: Guid(6a9f8cb89f6f3dc408b1097092f17c9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayMaker/Editor/Watermarks/AnalogClock.png using Guid(6a9f8cb89f6f3dc408b1097092f17c9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bd3127898d04f6d01b3e77c00566516') in 0.008584 seconds
+  Import took 0.016045 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/Action3D16.png
+  artifactKey: Guid(587ca6c5ac6d9d34590b6f93d37da7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/Action3D16.png using Guid(587ca6c5ac6d9d34590b6f93d37da7e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0685560fd4997220292733df23660f87') in 0.007727 seconds
+  Import took 0.015130 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/AlienInvasion3D16.png
+  artifactKey: Guid(9e153f5a102023e4fbc74a8696369462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/AlienInvasion3D16.png using Guid(9e153f5a102023e4fbc74a8696369462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd648954248bd6634add46b3a353ab7ef') in 0.006872 seconds
+  Import took 0.014120 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/AstarPathfindingProject/Editor/EditorAssets/images/ArrowDown_on.png
+  artifactKey: Guid(d8951099054c64beaaa49d675d71cfcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AstarPathfindingProject/Editor/EditorAssets/images/ArrowDown_on.png using Guid(d8951099054c64beaaa49d675d71cfcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b2226c0d4937323d2a651bffa2a0905') in 0.006896 seconds
+  Import took 0.014070 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/Rewired/Extras/TouchControls/Sprites/Joysticks/DirectionIndicators/Arrow01.png
+  artifactKey: Guid(ab50eddfd4deefb4c84f38f813189326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Extras/TouchControls/Sprites/Joysticks/DirectionIndicators/Arrow01.png using Guid(ab50eddfd4deefb4c84f38f813189326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '246853ccd8d756b830517e89b15762df') in 0.011440 seconds
+  Import took 0.019299 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/Arctic3D16.png
+  artifactKey: Guid(1bd0469e24c0d094eab6425e942d28b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/Arctic3D16.png using Guid(1bd0469e24c0d094eab6425e942d28b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99f937d67a4418d1e9f576775ab2ca41') in 0.007137 seconds
+  Import took 0.014954 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/AstarPathfindingProject/Editor/EditorAssets/images/ArrowUp_on.png
+  artifactKey: Guid(4c914fdaf554243fe9fb26afc323caef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AstarPathfindingProject/Editor/EditorAssets/images/ArrowUp_on.png using Guid(4c914fdaf554243fe9fb26afc323caef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd76737109741c12ad4a50af12c9fcb08') in 0.007156 seconds
+  Import took 0.014938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000343 seconds.
+  path: Assets/AstarPathfindingProject/ExampleScenes/Example11_RVO/Arrow.psd
+  artifactKey: Guid(5de2706722ecf4e7797812f980546c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AstarPathfindingProject/ExampleScenes/Example11_RVO/Arrow.psd using Guid(5de2706722ecf4e7797812f980546c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '732e1843ac89d781c01df4698b0d8315') in 0.010345 seconds
+  Import took 0.018082 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/PlayMaker/Editor/Watermarks/Alien.png
+  artifactKey: Guid(24dda0ac7b175944f8968586045fbe32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayMaker/Editor/Watermarks/Alien.png using Guid(24dda0ac7b175944f8968586045fbe32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53d7c81e1fcf50d576399b3ce1abd6f3') in 0.007264 seconds
+  Import took 0.014851 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/About.png
+  artifactKey: Guid(8aba6bb20faf8824d9d81946542f1ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/About.png using Guid(8aba6bb20faf8824d9d81946542f1ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5564b9ab3b3e9ea969d9ce5148256d28') in 0.008881 seconds
+  Import took 0.016722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Rewired/Extras/TouchControls/Sprites/Joysticks/Sticks/ArcadeStick01_Red.png
+  artifactKey: Guid(20df1a443bb7dd445abf482e23f98d01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Extras/TouchControls/Sprites/Joysticks/Sticks/ArcadeStick01_Red.png using Guid(20df1a443bb7dd445abf482e23f98d01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5419fe643452e97fd3cb159ba0ed6986') in 0.012140 seconds
+  Import took 0.019656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.789717 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_Masks.png
+  artifactKey: Guid(0ab15c1fa108c21449a10a2d9134b86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_Masks.png using Guid(0ab15c1fa108c21449a10a2d9134b86c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe8056293f4273e2b9c17e820fc7f9ae') in 0.016765 seconds
+  Import took 0.024900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Blaster Assets/Boss/Textures/T_IceSpear_basecolor.png
+  artifactKey: Guid(94cde70c85d09924cbcbe762f431cab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Boss/Textures/T_IceSpear_basecolor.png using Guid(94cde70c85d09924cbcbe762f431cab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb212d47e1f28d62c6eac007551be528') in 0.012657 seconds
+  Import took 0.020923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Blaster Assets/Boss/Textures/T_IceSpear_MRAOE_Mask.png
+  artifactKey: Guid(97d9a5ace1ce1ca43ac805281c685ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Boss/Textures/T_IceSpear_MRAOE_Mask.png using Guid(97d9a5ace1ce1ca43ac805281c685ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '338da628bd9a0cfceee3355b2166644d') in 0.016643 seconds
+  Import took 0.024522 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Blaster Assets/VFX/LavaEnvironment/Textures/TexturesCom_Rock_Lava_1K_height.tif
+  artifactKey: Guid(716ae42803f14c54d888e158a29e87c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/VFX/LavaEnvironment/Textures/TexturesCom_Rock_Lava_1K_height.tif using Guid(716ae42803f14c54d888e158a29e87c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fa0bb6406bcc1d7cef0b806bdbc6a28') in 0.013158 seconds
+  Import took 0.021997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Blaster Assets/VFX/Shooter/Textures/T_SmokeTrail_01.png
+  artifactKey: Guid(3eec2ae61b55cfb4c9a4d90f6322b4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/VFX/Shooter/Textures/T_SmokeTrail_01.png using Guid(3eec2ae61b55cfb4c9a4d90f6322b4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b5e1deb5263d80a325971ce32b8b0f9') in 0.009021 seconds
+  Import took 0.016918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/TexMex3D16.png
+  artifactKey: Guid(8b5142d00a9926147b48bb32cb7ffe8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/TexMex3D16.png using Guid(8b5142d00a9926147b48bb32cb7ffe8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deac97d779e3fac61e136d35ca54710e') in 0.006883 seconds
+  Import took 0.015268 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_normal.png
+  artifactKey: Guid(1d17bb0055440544e8770af00ca368fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_normal.png using Guid(1d17bb0055440544e8770af00ca368fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2bf5a0d769866e8e9b2c067fd03d5f8') in 0.010690 seconds
+  Import took 0.018332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_normal.png
+  artifactKey: Guid(b2760b06a097b2948a61ec15aa10a4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_normal.png using Guid(b2760b06a097b2948a61ec15aa10a4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5e29c82c8feeeac88020fc0c117dfa7') in 0.010395 seconds
+  Import took 0.018260 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Blaster Assets/VFX/Weather/Textures/T_Snowflake.png
+  artifactKey: Guid(abb69fe168724c44bb15a874af2cb643) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/VFX/Weather/Textures/T_Snowflake.png using Guid(abb69fe168724c44bb15a874af2cb643) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ed98bd2bffdce98c9d24b2a8d75cd0a') in 0.008116 seconds
+  Import took 0.015715 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text Image 1.png
+  artifactKey: Guid(4ccf43d26c4748c792174516f4a8fcef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text Image 1.png using Guid(4ccf43d26c4748c792174516f4a8fcef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d21a8db09aa0f1df3ae671f8e153ec1') in 0.007852 seconds
+  Import took 0.015423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Blaster Assets/VFX/Ice Environment/Textures/T_Smoke_01.png
+  artifactKey: Guid(b3009943aca6b0c479934ba279596b6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/VFX/Ice Environment/Textures/T_Smoke_01.png using Guid(b3009943aca6b0c479934ba279596b6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f6cf6904561f7ee075d7cd7c7cee74d') in 0.007976 seconds
+  Import took 0.015662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_height.png
+  artifactKey: Guid(ecfd89bde2bef4d49bbeb6799cad7f83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_height.png using Guid(ecfd89bde2bef4d49bbeb6799cad7f83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cafff642a8f03c37644204ff201c7ca') in 0.008598 seconds
+  Import took 0.016209 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Water_Mask.png
+  artifactKey: Guid(3642fead44351744a8ea17a407ae1df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Water_Mask.png using Guid(3642fead44351744a8ea17a407ae1df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b35e013d93ea87a7927e6edeb966fead') in 0.010890 seconds
+  Import took 0.018954 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/TextureReferenceBg.png
+  artifactKey: Guid(f9bd85ea2601b824c87556c13e852933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/TextureReferenceBg.png using Guid(f9bd85ea2601b824c87556c13e852933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12806ab804b74c578bd9254ebef09981') in 0.008694 seconds
+  Import took 0.016500 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_basecolor.png
+  artifactKey: Guid(cc74a46f92a1d7e4ba73f7ef1ea75905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_basecolor.png using Guid(cc74a46f92a1d7e4ba73f7ef1ea75905) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0268743f0c46a646850dee956fadc4bf') in 0.008652 seconds
+  Import took 0.017010 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text UI Screenshot.png
+  artifactKey: Guid(c76d18757a194d618355f05f815cb0a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text UI Screenshot.png using Guid(c76d18757a194d618355f05f815cb0a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75c4236bb66f85d3a36c87e953dc7e2d') in 0.010233 seconds
+  Import took 0.017762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Blaster Assets/Boss/Textures/T_IceBoss_Masks.png
+  artifactKey: Guid(3d1c4939370697d48b62c21266de3685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Boss/Textures/T_IceBoss_Masks.png using Guid(3d1c4939370697d48b62c21266de3685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca572c3a88ff0f80070c556fb7820706') in 0.012185 seconds
+  Import took 0.019271 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Rewired/Examples/PlayerMouseSprite/Sprites/target.png
+  artifactKey: Guid(d3f9f79929c708d45b0cc96aa9af8fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Examples/PlayerMouseSprite/Sprites/target.png using Guid(d3f9f79929c708d45b0cc96aa9af8fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9865eab4d82fcba5b8178852f31e63c') in 0.012472 seconds
+  Import took 0.020370 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_Masks.png
+  artifactKey: Guid(fd1c4cdcb4a69214986aa8de35a88e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Mud_Masks.png using Guid(fd1c4cdcb4a69214986aa8de35a88e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b087f12d9f1eea9727bc3b4a44aca76') in 0.009433 seconds
+  Import took 0.017621 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Blaster Assets/Boss/Textures/T_IceSpear_normal.png
+  artifactKey: Guid(6322e974d505ea64e8a23be545880843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Boss/Textures/T_IceSpear_normal.png using Guid(6322e974d505ea64e8a23be545880843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14e20596609c5491a1a86b6933182112') in 0.010504 seconds
+  Import took 0.018477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/TakeScreenshotOFF.png
+  artifactKey: Guid(7587de2e3bec8bf4d973109524ccc6b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/TakeScreenshotOFF.png using Guid(7587de2e3bec8bf4d973109524ccc6b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a26f16e71f6acc08d0f5079d6735452') in 0.006914 seconds
+  Import took 0.015049 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.745029 seconds.
+  path: Assets/Cinema Suite/About/Editor/Resources/ThemesGetItFree.png
+  artifactKey: Guid(8cb77d9b17f6c0449b09c8c7cf2ae5c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/About/Editor/Resources/ThemesGetItFree.png using Guid(8cb77d9b17f6c0449b09c8c7cf2ae5c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b45ca6689d0a690c3f2eed51de15da6e') in 0.008326 seconds
+  Import took 0.016348 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Diagonal.psd
+  artifactKey: Guid(ed5290d8df18488780e2996b9b882f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Diagonal.psd using Guid(ed5290d8df18488780e2996b9b882f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2312e160a4d6c95f55ae1f13d7c1ee33') in 0.007145 seconds
+  Import took 0.014383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Cinema Suite/About/Editor/Resources/ThemesKeyImage.png
+  artifactKey: Guid(b6faa36da897873438b5be08d04e0d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/About/Editor/Resources/ThemesKeyImage.png using Guid(b6faa36da897873438b5be08d04e0d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ed29a8f950ae34ba663ab587d0cb310') in 0.009177 seconds
+  Import took 0.016965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/PlayMaker/Editor/Watermarks/ThoughtBubble.png
+  artifactKey: Guid(f218ed29f9b2ba042b5b00c2bc3ac412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayMaker/Editor/Watermarks/ThoughtBubble.png using Guid(f218ed29f9b2ba042b5b00c2bc3ac412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '259b50bb06b5212fdc61efaac6830c38') in 0.007211 seconds
+  Import took 0.015286 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Rewired/Examples/GamepadTemplateUI/Images/trigger.png
+  artifactKey: Guid(6311b67a8f5ed854eaf03779d9a6724b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Examples/GamepadTemplateUI/Images/trigger.png using Guid(6311b67a8f5ed854eaf03779d9a6724b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f363e322ecd3634e3c13a07f1fd6562') in 0.009709 seconds
+  Import took 0.017258 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/Vintage3D16.png
+  artifactKey: Guid(7d4e50a72a0a035449e0d4e5151396d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/Vintage3D16.png using Guid(7d4e50a72a0a035449e0d4e5151396d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81316c3969e79ba3d4069f45e8fd50dc') in 0.007344 seconds
+  Import took 0.015414 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.219130 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphButtonActive.png
+  artifactKey: Guid(dd3411e8d9927d3429d5872dbdbd752b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphButtonActive.png using Guid(dd3411e8d9927d3429d5872dbdbd752b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e93d451176c6ee868e0ef4254b5d109') in 0.006894 seconds
+  Import took 0.014856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Rewired/Extras/ControlMapper/Images/graphic-center-stick.png
+  artifactKey: Guid(ec2db8ab6243b9545bbe7e137131b6c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Extras/ControlMapper/Images/graphic-center-stick.png using Guid(ec2db8ab6243b9545bbe7e137131b6c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0caced7a4ae8eaa664635a278c9ec62') in 0.009572 seconds
+  Import took 0.016486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GrayNormalHeaderSquare.png
+  artifactKey: Guid(b16188b8a3dee8146bd9cb0bde234a24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GrayNormalHeaderSquare.png using Guid(b16188b8a3dee8146bd9cb0bde234a24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efba3a4d4b277789bc27daae9400a9f4') in 0.007282 seconds
+  Import took 0.014778 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_height.png
+  artifactKey: Guid(7b26e8c63de1ca646a7e179e8d3a991b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_height.png using Guid(7b26e8c63de1ca646a7e179e8d3a991b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed860e98de589436d7be2f6fdeccbdd3') in 0.009314 seconds
+  Import took 0.016813 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_basecolor.png
+  artifactKey: Guid(1d53253e0c60fc442885d7e720036896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Grass_basecolor.png using Guid(1d53253e0c60fc442885d7e720036896) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '296108fd9139cd708f2fe66b13991fb9') in 0.009262 seconds
+  Import took 0.016654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Rewired/Extras/ControlMapper/Images/graphic-move-stick.png
+  artifactKey: Guid(a734389a53a8a384888da1abcad1dd1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rewired/Extras/ControlMapper/Images/graphic-move-stick.png using Guid(a734389a53a8a384888da1abcad1dd1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '695028ddf5e2aac8299d87bdf9aa902c') in 0.008687 seconds
+  Import took 0.016253 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphPopup.png
+  artifactKey: Guid(2ae607812d722ec46b48647c2a800779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphPopup.png using Guid(2ae607812d722ec46b48647c2a800779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe8c5e10b59c4b7f70256e4931a4cfa5') in 0.006832 seconds
+  Import took 0.014369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GrayNormalHeader.png
+  artifactKey: Guid(9e88b336bd16b1e4b99de75f486126c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GrayNormalHeader.png using Guid(9e88b336bd16b1e4b99de75f486126c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb71678c374f2817d74194d0af09a0fd') in 0.007384 seconds
+  Import took 0.014763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.681588 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/UpdateOFF.png
+  artifactKey: Guid(99d70ac09b4db9742b404c3f92d8564b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/UpdateOFF.png using Guid(99d70ac09b4db9742b404c3f92d8564b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a99ff471225471fe9aecbe82ea4e04') in 0.011806 seconds
+  Import took 0.020521 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/AstarPathfindingProject/ExampleScenes/Example13_Moving/Water fallback.jpg
+  artifactKey: Guid(e6f8288974c664a309d6c66de636978c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AstarPathfindingProject/ExampleScenes/Example13_Moving/Water fallback.jpg using Guid(e6f8288974c664a309d6c66de636978c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7f47023726e3e2cb95b3d95dc9bd04f') in 0.023111 seconds
+  Import took 0.030842 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Gizmos/VariableTypeDefinitionAsset Icon.tiff
+  artifactKey: Guid(c60786ad683288b48a78c637b7d04b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gizmos/VariableTypeDefinitionAsset Icon.tiff using Guid(c60786ad683288b48a78c637b7d04b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b11e1f28041e1e9763cd7b9df174339c') in 0.009167 seconds
+  Import took 0.017107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/PlayMaker/Editor/Watermarks/WorldWireframe.png
+  artifactKey: Guid(15306e0de1b3a0046b1fd3c5dc399ef9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayMaker/Editor/Watermarks/WorldWireframe.png using Guid(15306e0de1b3a0046b1fd3c5dc399ef9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d3af19cc22fef6debc689e415c0234b') in 0.019943 seconds
+  Import took 0.027654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/Winterfell3D16.png
+  artifactKey: Guid(0576cf4bdee5ba74cb8767cd3dee9bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/Winterfell3D16.png using Guid(0576cf4bdee5ba74cb8767cd3dee9bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f3abdb308c1ed9613029ba742451002') in 0.011268 seconds
+  Import took 0.018655 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.690201 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/BadFilm3D16.png
+  artifactKey: Guid(9525ff165f082b244b1f3a7854a0fd66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/BadFilm3D16.png using Guid(9525ff165f082b244b1f3a7854a0fd66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af09a6d24f738d35c4c3f332a4539f91') in 0.006858 seconds
+  Import took 0.014722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010524 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/Beach3D16.png
+  artifactKey: Guid(153eedf731d3b2b45a2183d4b6c43f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/Beach3D16.png using Guid(153eedf731d3b2b45a2183d4b6c43f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51e4ea9c2b9cf37366339ba74d057ba1') in 0.007031 seconds
+  Import took 0.015559 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/BleachBypass3D16.png
+  artifactKey: Guid(929dfe8885c233b46b3f84a45a3bec08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/BleachBypass3D16.png using Guid(929dfe8885c233b46b3f84a45a3bec08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81073cad586ffb492d3459eba5cbc7ea') in 0.006699 seconds
+  Import took 0.014432 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Blaster Assets/Environments/Material Library/Textures/BOG_Dirt_height.png
+  artifactKey: Guid(1faae8fc3ad0c554bb5d1664b7d74f5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Material Library/Textures/BOG_Dirt_height.png using Guid(1faae8fc3ad0c554bb5d1664b7d74f5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dee54cbc915e4c193bff69fa173670e9') in 0.008999 seconds
+  Import took 0.017302 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/Bit3Channels3D16.png
+  artifactKey: Guid(ea1d162dba3f6f949bd59cb15d4d6f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/Bit3Channels3D16.png using Guid(ea1d162dba3f6f949bd59cb15d4d6f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47155ac8450d42c0d60cfe6001d6a770') in 0.006940 seconds
+  Import took 0.015057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalHeader.png
+  artifactKey: Guid(bd910a1d744309b499b59062db7891ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalHeader.png using Guid(bd910a1d744309b499b59062db7891ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22c2dc81d5fc3a7c958dc4f52d895bdf') in 0.006881 seconds
+  Import took 0.015101 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Blaster Assets/Environments/Material Library/Textures/BOG_Dirt_basecolor.png
+  artifactKey: Guid(00d7fcc1c72408e489909146603f584d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Material Library/Textures/BOG_Dirt_basecolor.png using Guid(00d7fcc1c72408e489909146603f584d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bd96881e58cf0eddb9b07174a88cf0a') in 0.009714 seconds
+  Import took 0.017540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Cinema Suite/Cinema Themes/LUTs/Bit1Channel3D16.png
+  artifactKey: Guid(d96d5a23798573448beb376a384e9376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cinema Suite/Cinema Themes/LUTs/Bit1Channel3D16.png using Guid(d96d5a23798573448beb376a384e9376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aa6fdc2ac1fe6a7803b42bc6af0fd2a') in 0.006887 seconds
+  Import took 0.014727 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1461.977818 seconds.
+  path: Assets/PlayMaker/Editor/Resources/backButton.png
+  artifactKey: Guid(ac6641fa8d46a2d408fc356b1018cb57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayMaker/Editor/Resources/backButton.png using Guid(ac6641fa8d46a2d408fc356b1018cb57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '769bc845f6b6d6319d6a867c4d4eadb6') in 0.010961 seconds
+  Import took 0.020073 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Blaster Assets/Environments/Ice Environment/Textures/BOG_IceLakeFloor_height.png
+  artifactKey: Guid(4ca4513019004944991c871a761740f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Ice Environment/Textures/BOG_IceLakeFloor_height.png using Guid(4ca4513019004944991c871a761740f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46a179634cb742a5845bf046103cdb27') in 0.009858 seconds
+  Import took 0.017658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Blaster Assets/Environments/Material Library/Textures/BOG_Dirt_normal.png
+  artifactKey: Guid(e568ecc80326bf14d839c85032deac36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Material Library/Textures/BOG_Dirt_normal.png using Guid(e568ecc80326bf14d839c85032deac36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7add317795bbfd1391c1aca570dace5b') in 0.014174 seconds
+  Import took 0.022199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalBaseLeft.png
+  artifactKey: Guid(330fd0c8f074a3c4f8042114a61a73d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalBaseLeft.png using Guid(330fd0c8f074a3c4f8042114a61a73d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '230973c1a1b1d01aaba123688ac049bd') in 0.014760 seconds
+  Import took 0.023442 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Blaster Assets/Environments/Material Library/Textures/BOG_Dirt_MRAOE_Masks.png
+  artifactKey: Guid(6922ae370a95a80409672fb9af981499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Material Library/Textures/BOG_Dirt_MRAOE_Masks.png using Guid(6922ae370a95a80409672fb9af981499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2440017e34bfbaab32840646dba59be4') in 0.011511 seconds
+  Import took 0.020225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Blaster Assets/Environments/Ice Environment/Textures/BOG_IceCaveRoof_Snow_height.png
+  artifactKey: Guid(bdad6a007bf4d414db9db284b2158571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Ice Environment/Textures/BOG_IceCaveRoof_Snow_height.png using Guid(bdad6a007bf4d414db9db284b2158571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd21774398415220ba8e3bbb1a3f13758') in 0.009765 seconds
+  Import took 0.017732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Blaster Assets/Environments/Ice Environment/Textures/BOG_IceCaveRoof_height.png
+  artifactKey: Guid(333ccdb6c3e968f49a5367a6274a8304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Ice Environment/Textures/BOG_IceCaveRoof_height.png using Guid(333ccdb6c3e968f49a5367a6274a8304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84193c796829aff8e76a3703a97f4211') in 0.015449 seconds
+  Import took 0.023315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Blaster Assets/Environments/Ice Environment/Textures/BOG_IceCaveWall_height.png
+  artifactKey: Guid(cd543fee86164f442a9bd6e3a479e6b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Ice Environment/Textures/BOG_IceCaveWall_height.png using Guid(cd543fee86164f442a9bd6e3a479e6b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58d744cc3c2e1f709f4c9ec9f508a95c') in 0.012688 seconds
+  Import took 0.020874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 364.814420 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertPot_basecolor.png
+  artifactKey: Guid(172afe6f73c81134683245ff63fd0454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertPot_basecolor.png using Guid(172afe6f73c81134683245ff63fd0454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5218e89dfd49ce0e4abdd87448a9b9e') in 0.011686 seconds
+  Import took 0.020890 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertPot_normal.png
+  artifactKey: Guid(7e3537809c7de2a4fb5ad1fb82bde29b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertPot_normal.png using Guid(7e3537809c7de2a4fb5ad1fb82bde29b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e04000628d4f9685f19f3aea07ffde2') in 0.011095 seconds
+  Import took 0.019821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertPot_Mask.png
+  artifactKey: Guid(a1f79f16758301d47ab908a5b691c94c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertPot_Mask.png using Guid(a1f79f16758301d47ab908a5b691c94c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32bf10cabcc60104191e32be6ef25f6e') in 0.011368 seconds
+  Import took 0.019542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertPot_basecolor.png
+  artifactKey: Guid(172afe6f73c81134683245ff63fd0454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertPot_basecolor.png using Guid(172afe6f73c81134683245ff63fd0454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5218e89dfd49ce0e4abdd87448a9b9e') in 0.010903 seconds
+  Import took 0.018729 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Blaster Assets/VFX/Shooter/Textures/T_FireTileable_D.png
+  artifactKey: Guid(68d63b1295d67d045be17e9fa43c9f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/VFX/Shooter/Textures/T_FireTileable_D.png using Guid(68d63b1295d67d045be17e9fa43c9f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbf8261cceb98600cbc3e6b2881c2028') in 0.009612 seconds
+  Import took 0.017503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Foam_Noise.png
+  artifactKey: Guid(457840f5339154f4ca0d23a4cda5936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Foam_Noise.png using Guid(457840f5339154f4ca0d23a4cda5936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '133390638e008a35f9281c269b97133b') in 0.009899 seconds
+  Import took 0.017800 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_Masks.png
+  artifactKey: Guid(4736e7f7930afcb42b9f4798c2a44f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_Masks.png using Guid(4736e7f7930afcb42b9f4798c2a44f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '635d8d4327a0fe210cd355577093539a') in 0.011954 seconds
+  Import took 0.019706 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_basecolor.png
+  artifactKey: Guid(24798d69be875e2468128c2431d7d50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_basecolor.png using Guid(24798d69be875e2468128c2431d7d50e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba67c6e4d6d0abfaecdf28c1e2de37ec') in 0.010420 seconds
+  Import took 0.018862 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_normal.png
+  artifactKey: Guid(1b67050059f351441aa9ec7f49181647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_normal.png using Guid(1b67050059f351441aa9ec7f49181647) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20c3a5a03a5f9f270776f3d261edd0bd') in 0.010711 seconds
+  Import took 0.019122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_normal.png
+  artifactKey: Guid(d2329b0a0e3c8fa48a272d2db0c211e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_normal.png using Guid(d2329b0a0e3c8fa48a272d2db0c211e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80c19d414c3abf15423cb9b6be47478e') in 0.011681 seconds
+  Import took 0.019661 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_height.png
+  artifactKey: Guid(17123f2294d8e704195045e98d388f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Dirt_height.png using Guid(17123f2294d8e704195045e98d388f33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6dabe50ac73e7f6888548292a725da0') in 0.010565 seconds
+  Import took 0.018322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_ARMEMask.png
+  artifactKey: Guid(3eb4ea69f49c53a48a3738b79652d48a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_ARMEMask.png using Guid(3eb4ea69f49c53a48a3738b79652d48a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90a9efc6b96fe6ed23d589b230b1ea37') in 0.011235 seconds
+  Import took 0.019067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_height.png
+  artifactKey: Guid(0aa16fcee6bb9384fb33d282a2117f93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_height.png using Guid(0aa16fcee6bb9384fb33d282a2117f93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fe7a2b66168bfcd4961b9a4bc736369') in 0.009472 seconds
+  Import took 0.017819 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_basecolor.png
+  artifactKey: Guid(adecfdca6cbf32f4e94d14e8ef5a45c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_basecolor.png using Guid(adecfdca6cbf32f4e94d14e8ef5a45c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74e0134f302a6d949e7283ada94c006b') in 0.010766 seconds
+  Import took 0.019001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000581 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_basecolor.png
+  artifactKey: Guid(adecfdca6cbf32f4e94d14e8ef5a45c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Textures/T_DesertSand_basecolor.png using Guid(adecfdca6cbf32f4e94d14e8ef5a45c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74e0134f302a6d949e7283ada94c006b') in 0.010581 seconds
+  Import took 0.019495 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1979.338670 seconds.
+  path: Assets/Blaster Assets/Environments/Forest/Materials/m_Mud.mat
+  artifactKey: Guid(ccdbc611d6443c744abf143806b4acab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Forest/Materials/m_Mud.mat using Guid(ccdbc611d6443c744abf143806b4acab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f460be0a1b61fae3e830bafa701c156') in 0.101136 seconds
+  Import took 0.111603 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012286 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
+
+(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
+
+(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.003 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
 Refreshing native plugins compatible for Editor in 1.03 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 233.9 MB.
-System memory in use after: 234.3 MB.
+Unloading 5115 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 244.4 MB.
+System memory in use after: 244.8 MB.
 
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6063.
-Total: 3.136600 ms (FindLiveObjects: 0.554500 ms CreateObjectMapping: 0.396000 ms MarkObjects: 2.152900 ms  DeleteObjects: 0.031900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 271.774402 seconds.
-  path: Assets/Blaster Assets/T_Foam_Noise.png
-  artifactKey: Guid(457840f5339154f4ca0d23a4cda5936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/T_Foam_Noise.png using Guid(457840f5339154f4ca0d23a4cda5936f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beb8677772248612162501ca95ed0e12') in 0.045400 seconds
-  Import took 0.053363 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 114.287267 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Textures
-  artifactKey: Guid(b10bcb2c8443a884e9182664770c3df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Textures using Guid(b10bcb2c8443a884e9182664770c3df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca60c1e94d54fb0c2534f0ebd807b792') in 0.009160 seconds
-  Import took 0.017074 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.585555 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06ff8e9aa9ef2d77c8ba55f62e04f5a8') in 0.010857 seconds
-  Import took 0.017850 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.281621 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06ff8e9aa9ef2d77c8ba55f62e04f5a8') in 0.002606 seconds
-  Import took 0.010510 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 68.532638 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6de6aaba5b1d68bbc12a8d559d41c3f') in 0.001841 seconds
-  Import took 0.009885 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 212.777297 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab60ba397ec67d80329a4d04109a3e9a') in 0.002168 seconds
-  Import took 0.010560 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 59.448628 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e468d1d85c7abf539d06cb0864f4778b') in 0.001864 seconds
-  Import took 0.009350 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.013262 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
-
-(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
-
-(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.058 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 234.0 MB.
-System memory in use after: 234.4 MB.
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6065.
-Total: 3.358800 ms (FindLiveObjects: 0.556600 ms CreateObjectMapping: 0.438800 ms MarkObjects: 2.328800 ms  DeleteObjects: 0.033000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012672 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.02 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
-
-(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
-
-(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.905 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 234.1 MB.
-System memory in use after: 234.5 MB.
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6067.
-Total: 2.616300 ms (FindLiveObjects: 0.525200 ms CreateObjectMapping: 0.341900 ms MarkObjects: 1.719500 ms  DeleteObjects: 0.028400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.013426 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
-
-(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
-
-(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.013 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
-Refreshing native plugins compatible for Editor in 1.05 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 234.1 MB.
-System memory in use after: 234.6 MB.
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6069.
-Total: 3.828500 ms (FindLiveObjects: 0.601400 ms CreateObjectMapping: 0.598700 ms MarkObjects: 2.590800 ms  DeleteObjects: 0.036300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012142 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
-
-(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
-
-(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.942 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
-Refreshing native plugins compatible for Editor in 1.02 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 234.2 MB.
-System memory in use after: 234.6 MB.
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6071.
-Total: 3.096900 ms (FindLiveObjects: 0.647000 ms CreateObjectMapping: 0.401200 ms MarkObjects: 2.012000 ms  DeleteObjects: 0.035500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 2398.981713 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/m_Lake.mat
-  artifactKey: Guid(959c4a8552f85d741a88d5bf4af5c5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/m_Lake.mat using Guid(959c4a8552f85d741a88d5bf4af5c5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e292a30a2d69e692512ccf29c98d3fe2') in 0.154369 seconds
-  Import took 0.162442 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 141.715931 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Textures/T_Water_Mask.png
-  artifactKey: Guid(3642fead44351744a8ea17a407ae1df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Textures/T_Water_Mask.png using Guid(3642fead44351744a8ea17a407ae1df3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa8dbb2fec2d301e0b0a3a4105541eaa') in 0.020507 seconds
-  Import took 0.028969 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 91.890022 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90dea136e1a23287899d80d3d9f30c4b') in 0.008563 seconds
-  Import took 0.015992 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.302746 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90dea136e1a23287899d80d3d9f30c4b') in 0.002049 seconds
-  Import took 0.010051 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 25.849193 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88a2b37cf990a3fd81762adc05bd40ab') in 0.002421 seconds
-  Import took 0.009635 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.336169 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd098620714df8bfd4cdeb6a7e416618d') in 0.002122 seconds
-  Import took 0.010367 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014054 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.17 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-(AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:18)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 18)
-
-(AutoPlayFirstSceneAtStartOfGame) Setting next scene to 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:52)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 52)
-
-(AutoPlayFirstSceneAtStartOfGame) playModeStartScene = Assets/Blaster Assets/_Scenes/Base/Game Controller.unity
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-BlueOrb.Editor.AutoPlayFirstSceneAtStartOfGame:.cctor () (at C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs:53)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: C:/Projects/Blaster.Source/src/BlueOrb.Editor/AutoPlayFirstSceneAtStartOfGame.cs Line: 53)
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.075 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4996 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 236.7 MB.
-System memory in use after: 237.2 MB.
-
-Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 6150.
-Total: 3.602400 ms (FindLiveObjects: 0.680100 ms CreateObjectMapping: 0.493400 ms MarkObjects: 2.395100 ms  DeleteObjects: 0.032400 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 398.579914 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph
-  artifactKey: Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/Lake.shadergraph using Guid(18fa2962b1f4fa84da44e593f1d623c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b089daf650136757f982c9e2978ee394') in 0.013705 seconds
-  Import took 0.021333 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 167.106124 seconds.
-  path: Assets/Blaster Assets/Environments/Forest/Shaders/m_Lake.mat
-  artifactKey: Guid(959c4a8552f85d741a88d5bf4af5c5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Forest/Shaders/m_Lake.mat using Guid(959c4a8552f85d741a88d5bf4af5c5d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b49dc7b0e48479bbcaab99780fa31157') in 0.100032 seconds
-  Import took 0.108381 seconds .
+Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 6692.
+Total: 3.021300 ms (FindLiveObjects: 0.584400 ms CreateObjectMapping: 0.393900 ms MarkObjects: 1.898600 ms  DeleteObjects: 0.143600 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

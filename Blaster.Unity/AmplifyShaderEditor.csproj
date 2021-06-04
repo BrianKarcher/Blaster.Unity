@@ -119,8 +119,8 @@
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Templates\TemplateNodeParent.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Constants\ShaderVariables\Transform\TransformVariables.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\HelperFuncs\UnityObjToClipPosHlpNode.cs" />
-    <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Constants\ShaderVariables\Various\PrimitiveIdVariableNode.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Templates\TemplatePass.cs" />
+    <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Nodes\Constants\ShaderVariables\Various\PrimitiveIdVariableNode.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Utils\ASEStartScreen.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Templates\TemplatesBlendModule.cs" />
     <Compile Include="Assets\AmplifyShaderEditor\Plugins\Editor\Native\FallbackString.cs" />
@@ -943,12 +943,6 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Rewired_Windows">
-      <HintPath>Assets\Rewired\Internal\Libraries\Runtime\Rewired_Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="BlueOrb.Messaging">
-      <HintPath>Assets\Plugins\BlueOrb.Messaging.dll</HintPath>
-    </Reference>
     <Reference Include="PlayMakerEditor">
       <HintPath>Assets\PlayMaker\Editor\PlayMakerEditor.dll</HintPath>
     </Reference>
@@ -958,14 +952,11 @@
     <Reference Include="ConditionalExpression">
       <HintPath>Assets\PlayMaker\ConditionalExpression.dll</HintPath>
     </Reference>
-    <Reference Include="PlayMaker">
-      <HintPath>Assets\Plugins\PlayMaker\PlayMaker.dll</HintPath>
-    </Reference>
     <Reference Include="BlueOrb.Controller">
       <HintPath>Assets\Plugins\BlueOrb.Controller.dll</HintPath>
     </Reference>
-    <Reference Include="BlueOrb.Physics">
-      <HintPath>Assets\Plugins\BlueOrb.Physics.dll</HintPath>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="BlueOrb.Base">
       <HintPath>Assets\Plugins\BlueOrb.Base.dll</HintPath>
@@ -976,11 +967,29 @@
     <Reference Include="Pathfinding.ClipperLib">
       <HintPath>Assets\AstarPathfindingProject\Plugins\Clipper\Pathfinding.ClipperLib.dll</HintPath>
     </Reference>
-    <Reference Include="Rewired_Core">
-      <HintPath>Assets\Rewired\Internal\Libraries\Runtime\Rewired_Core.dll</HintPath>
-    </Reference>
     <Reference Include="clipper_library">
       <HintPath>Library\PackageCache\com.unity.cinemachine@2.7.1\Runtime\ThirdParty\clipper_library.dll</HintPath>
+    </Reference>
+    <Reference Include="ConditionalExpressionEditor">
+      <HintPath>Assets\PlayMaker\Editor\ConditionalExpressionEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.5\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Windows">
+      <HintPath>Assets\Rewired\Internal\Libraries\Runtime\Rewired_Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="BlueOrb.Messaging">
+      <HintPath>Assets\Plugins\BlueOrb.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="PlayMaker">
+      <HintPath>Assets\Plugins\PlayMaker\PlayMaker.dll</HintPath>
+    </Reference>
+    <Reference Include="BlueOrb.Physics">
+      <HintPath>Assets\Plugins\BlueOrb.Physics.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>Assets\Rewired\Internal\Libraries\Runtime\Rewired_Core.dll</HintPath>
     </Reference>
     <Reference Include="BlueOrb.Editor">
       <HintPath>Assets\Plugins\Editor\BlueOrb.Editor.dll</HintPath>
@@ -988,17 +997,8 @@
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.2.2\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
-    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
-    </Reference>
     <Reference Include="Pathfinding.Poly2Tri">
       <HintPath>Assets\AstarPathfindingProject\Plugins\Poly2Tri\Pathfinding.Poly2Tri.dll</HintPath>
-    </Reference>
-    <Reference Include="ConditionalExpressionEditor">
-      <HintPath>Assets\PlayMaker\Editor\ConditionalExpressionEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.5\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Blaster.Source">
       <HintPath>Assets\Plugins\Blaster.Source.dll</HintPath>
