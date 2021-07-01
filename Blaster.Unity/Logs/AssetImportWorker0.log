@@ -15,11 +15,11 @@ C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63000
+61028
 Successfully changed project path to: C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 C:/Users/migue/Documents/GitHub/Blaster.Unity/Blaster.Unity
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 91.19 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 91.23 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
@@ -37,25 +37,25 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56836
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56928
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001254 seconds.
+Registered in 0.001245 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 87.09 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 85.29 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.788 seconds
+- Completed reload, in  0.776 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.013152 seconds.
+Registered in 0.012519 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 97.61 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 90.01 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 (AutoPlayFirstSceneAtStartOfGame) constructor called, scene count: 1
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -94,83 +94,403 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.137 seconds
+- Completed reload, in  1.097 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Hidden/AstarPathfindingProject/Navmesh Outline': fallback shader 'None' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.10 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.00 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5493 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 267.5 MB.
 System memory in use after: 267.7 MB.
 
 Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 6179.
-Total: 3.130200 ms (FindLiveObjects: 0.536300 ms CreateObjectMapping: 0.371300 ms MarkObjects: 2.063600 ms  DeleteObjects: 0.157900 ms)
+Total: 2.736100 ms (FindLiveObjects: 0.535700 ms CreateObjectMapping: 0.349000 ms MarkObjects: 1.734500 ms  DeleteObjects: 0.116100 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Blaster Assets/Environments/Castle/Textures/T_Castle_StoneWall_Mask.png
-  artifactKey: Guid(f5fcc260d03b7e947bd4f561eddafe43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Castle/Textures/T_Castle_StoneWall_Mask.png using Guid(f5fcc260d03b7e947bd4f561eddafe43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c5eff6a46f76b6aee2aaa2e4199bd1d') in 0.083421 seconds
-  Import took 0.091962 seconds .
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR.unity
+  artifactKey: Guid(8f47d25a0842ad84d953cc7aec8c2f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR.unity using Guid(8f47d25a0842ad84d953cc7aec8c2f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '361e2417f3f8c7bd8b33d3782edd0619') in 0.017223 seconds
+  Import took 0.024871 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000145 seconds.
-  path: Assets/Blaster Assets/Environments/Castle/Textures/T_StoneTower_Corner_Mask.png
-  artifactKey: Guid(584c5a4d4b30b11419f032d926e2dd70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Castle/Textures/T_StoneTower_Corner_Mask.png using Guid(584c5a4d4b30b11419f032d926e2dd70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5533bac75600457f151be1f82e5ddd6d') in 0.012286 seconds
-  Import took 0.020601 seconds .
+  Time since last request: 0.000257 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/HDRI_Lava.mat
+  artifactKey: Guid(09bbff4ab73dd5d49a2d4967531fba37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/HDRI_Lava.mat using Guid(09bbff4ab73dd5d49a2d4967531fba37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0150308ac1d97f631e98a902eacdd671') in 0.136696 seconds
+  Import took 0.144146 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/Blaster Assets/Environments/Castle/Textures/T_Castle_StoneWall_normal.png
-  artifactKey: Guid(f4dd680899b24054195f7747d08c4e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Castle/Textures/T_Castle_StoneWall_normal.png using Guid(f4dd680899b24054195f7747d08c4e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32bad33a87c035c9d9f074c1207ef1b2') in 0.014242 seconds
-  Import took 0.021958 seconds .
+  Time since last request: 0.000153 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava PostProcessVolume Profile.asset
+  artifactKey: Guid(757d4da282da2704ca530c71dcca7601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava PostProcessVolume Profile.asset using Guid(757d4da282da2704ca530c71dcca7601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58ace834534c5201a60a880de615ddd1') in 0.010838 seconds
+  Import took 0.018178 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000158 seconds.
-  path: Assets/Blaster Assets/Environments/Castle/Textures/T_StoneTower_Corner_basecolor.png
-  artifactKey: Guid(520f54e0233697844a0c572069ac5c3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Castle/Textures/T_StoneTower_Corner_basecolor.png using Guid(520f54e0233697844a0c572069ac5c3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '721a99e6dd01015eb37815976d509a01') in 0.011673 seconds
-  Import took 0.020177 seconds .
+  Time since last request: 0.001673 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava PostProcessVolume Profile.asset
+  artifactKey: Guid(757d4da282da2704ca530c71dcca7601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava PostProcessVolume Profile.asset using Guid(757d4da282da2704ca530c71dcca7601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58ace834534c5201a60a880de615ddd1') in 0.002489 seconds
+  Import took 0.010214 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000154 seconds.
-  path: Assets/Blaster Assets/Environments/Castle/Textures/T_StoneTower_Corner_normal.png
-  artifactKey: Guid(7bf36c2a46293b8408bbeb39684f9a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Castle/Textures/T_StoneTower_Corner_normal.png using Guid(7bf36c2a46293b8408bbeb39684f9a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '966231ef638fe9b4925d068116182fa6') in 0.010614 seconds
-  Import took 0.018867 seconds .
+  Time since last request: 0.892409 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR
+  artifactKey: Guid(cd6d0f94820f7244f8f231eb0a8a087b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR using Guid(cd6d0f94820f7244f8f231eb0a8a087b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51a5fad949a3708e9ffce7e2f67a9561') in 0.005989 seconds
+  Import took 0.013920 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000236 seconds.
-  path: Assets/Blaster Assets/Environments/Castle/Textures/T_StoneTower_Corner_basecolor.png
-  artifactKey: Guid(520f54e0233697844a0c572069ac5c3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Castle/Textures/T_StoneTower_Corner_basecolor.png using Guid(520f54e0233697844a0c572069ac5c3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '721a99e6dd01015eb37815976d509a01') in 0.009839 seconds
-  Import took 0.017360 seconds .
+  Time since last request: 0.000225 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR
+  artifactKey: Guid(cd6d0f94820f7244f8f231eb0a8a087b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR using Guid(cd6d0f94820f7244f8f231eb0a8a087b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51a5fad949a3708e9ffce7e2f67a9561') in 0.001435 seconds
+  Import took 0.008993 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000147 seconds.
-  path: Assets/Blaster Assets/Environments/Castle/Textures/T_Castle_StoneWall_basecolor.png
-  artifactKey: Guid(c35b2e3e09ce93542be82b1a929267c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Castle/Textures/T_Castle_StoneWall_basecolor.png using Guid(c35b2e3e09ce93542be82b1a929267c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '273c7edca108f0c14675435e8cf10b2d') in 0.010620 seconds
-  Import took 0.018373 seconds .
+  Time since last request: 0.049229 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR/LightingData.asset
+  artifactKey: Guid(f8ed03ce7cba0874dbc02e34abb99867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR/LightingData.asset using Guid(f8ed03ce7cba0874dbc02e34abb99867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98f430f3f7fd741b7098b4264802696a') in 0.006402 seconds
+  Import took 0.014374 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 303.019307 seconds.
-  path: Assets/Blaster Assets/Environments/Castle/Meshes/SM_Castle_StoneTower_Corner.fbx
-  artifactKey: Guid(6cd314629f53e7e4da791bfebc0f410e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Blaster Assets/Environments/Castle/Meshes/SM_Castle_StoneTower_Corner.fbx using Guid(6cd314629f53e7e4da791bfebc0f410e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '500c96d008dd6520921563d985a95e91') in 0.136527 seconds
-  Import took 0.146458 seconds .
+  Time since last request: 0.000243 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR/ReflectionProbe-0.exr
+  artifactKey: Guid(b7c82137fdefbc94bb9325e43d891dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR/ReflectionProbe-0.exr using Guid(b7c82137fdefbc94bb9325e43d891dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b45a75177a7bace3ec3b490e56d27eb4') in 0.023366 seconds
+  Import took 0.030367 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR/Lightmap-0_comp_light.exr
+  artifactKey: Guid(c3f02264c5893464aa747d7fde92c7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR/Lightmap-0_comp_light.exr using Guid(c3f02264c5893464aa747d7fde92c7de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a9cc6a6c3bfab65e6171f1ba47a404') in 0.018246 seconds
+  Import took 0.025697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR/Lightmap-0_comp_dir.png
+  artifactKey: Guid(0c033e108aa00a64791b37d7b11c22a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava_Diorama_PBR/Lightmap-0_comp_dir.png using Guid(0c033e108aa00a64791b37d7b11c22a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cccd846ae36260dead407f7534f262e7') in 0.034653 seconds
+  Import took 0.042095 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.237088 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Meshes/SM_EnemyTent.fbx
+  artifactKey: Guid(38e363d4ecd2e8d41811f9af711450ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Meshes/SM_EnemyTent.fbx using Guid(38e363d4ecd2e8d41811f9af711450ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd41591db543882ac99ad0f7cb09ffb0b') in 0.043569 seconds
+  Import took 0.051139 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 86.774389 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_basecolor.png
+  artifactKey: Guid(6b64b0507d19edb49a6a76329c89f32b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_basecolor.png using Guid(6b64b0507d19edb49a6a76329c89f32b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6106ab49752f846c6274cd243409e07') in 0.011877 seconds
+  Import took 0.020334 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_normal.png
+  artifactKey: Guid(aa758876617912c408f090b2b5e7e00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_normal.png using Guid(aa758876617912c408f090b2b5e7e00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '661b58d43d6f8e24666ac56818051c69') in 0.009845 seconds
+  Import took 0.017346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_Mask.png
+  artifactKey: Guid(ba4454af5896fc548b00a018742ef8e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_Mask.png using Guid(ba4454af5896fc548b00a018742ef8e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5ea6f0bf065205c25a590f84efbfd2c') in 0.011848 seconds
+  Import took 0.019846 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.680636 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/M_BaseColor.mat
+  artifactKey: Guid(824adb48d3e84844d8a0e1a607ec7c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/M_BaseColor.mat using Guid(824adb48d3e84844d8a0e1a607ec7c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64e229650a16655e85e35fbdfd4b00b1') in 0.010555 seconds
+  Import took 0.018627 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/m_EnemyTent.mat
+  artifactKey: Guid(78576e73adbdefa468a10e569c23ee28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/m_EnemyTent.mat using Guid(78576e73adbdefa468a10e569c23ee28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf8ab381b6e313e15b0c81dce340ec09') in 0.011314 seconds
+  Import took 0.019051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 117.159094 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/m_EnemyTent.mat
+  artifactKey: Guid(78576e73adbdefa468a10e569c23ee28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/m_EnemyTent.mat using Guid(78576e73adbdefa468a10e569c23ee28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01cd3dd43b200d299b81bbd543d56981') in 0.024704 seconds
+  Import took 0.032861 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2088.178134 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_Mask.png
+  artifactKey: Guid(ba4454af5896fc548b00a018742ef8e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_Mask.png using Guid(ba4454af5896fc548b00a018742ef8e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4398ae9b69c0c6b435310b8e632c6a1f') in 0.013665 seconds
+  Import took 0.023584 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.237362 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_normal.png
+  artifactKey: Guid(aa758876617912c408f090b2b5e7e00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_EnemyTent_normal.png using Guid(aa758876617912c408f090b2b5e7e00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e601934e254f81b16f7b3cc7eecdb080') in 0.014286 seconds
+  Import took 0.022830 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.209419 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_Mask.png
+  artifactKey: Guid(57bc7a168c60212438ff2e963cd6f114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_Mask.png using Guid(57bc7a168c60212438ff2e963cd6f114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '727c9e5793630d7c2416a45e7cef675c') in 0.010808 seconds
+  Import took 0.020446 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002827 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_Mask.png
+  artifactKey: Guid(57bc7a168c60212438ff2e963cd6f114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_Mask.png using Guid(57bc7a168c60212438ff2e963cd6f114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '727c9e5793630d7c2416a45e7cef675c') in 0.008184 seconds
+  Import took 0.016446 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.435117 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_basecolor.png
+  artifactKey: Guid(73fa956ad95fad94c80a07df1fc3755a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_basecolor.png using Guid(73fa956ad95fad94c80a07df1fc3755a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d19c2a2e5d61f23cd02dec1bd8e675a') in 0.009730 seconds
+  Import took 0.018158 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_basecolor.png
+  artifactKey: Guid(dffa06ef8f9cc2b4c9c4551a05af0135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_basecolor.png using Guid(dffa06ef8f9cc2b4c9c4551a05af0135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c26f2ff637ffb1180c64099465689b9b') in 0.010711 seconds
+  Import took 0.019785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_basecolor.png
+  artifactKey: Guid(d5f218b727c79234c897f8b2031a08bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_basecolor.png using Guid(d5f218b727c79234c897f8b2031a08bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46fdbec4d3e0cca4402dd44a8fac79cb') in 0.010198 seconds
+  Import took 0.018956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_normal.png
+  artifactKey: Guid(9c174860f0971934f9554d8831f2d2ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_normal.png using Guid(9c174860f0971934f9554d8831f2d2ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a99a9f3e0858bf9cc7369d15b8329bd6') in 0.009399 seconds
+  Import took 0.017747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_Mask.png
+  artifactKey: Guid(5e4b64be03d92cd43afd521f12581678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_Mask.png using Guid(5e4b64be03d92cd43afd521f12581678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be54aa03ddb5f8993374dd5625346fc9') in 0.011463 seconds
+  Import took 0.019468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_normal.png
+  artifactKey: Guid(693055c0958fa024a8ef30e2fc20638c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_normal.png using Guid(693055c0958fa024a8ef30e2fc20638c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '799252d30da3638a038e3f6cc141e378') in 0.011136 seconds
+  Import took 0.019243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_Mask.png
+  artifactKey: Guid(ce67fa47da42e3c40844ff660dc6d491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_Mask.png using Guid(ce67fa47da42e3c40844ff660dc6d491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d92f86f60a1a8d802bb2bf3d1fc14f8') in 0.010445 seconds
+  Import took 0.018840 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_normal.png
+  artifactKey: Guid(025621934356b714ca63929b1379a981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_normal.png using Guid(025621934356b714ca63929b1379a981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b14f2ae7961ada42eb0debae7be506') in 0.009951 seconds
+  Import took 0.017406 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.496194 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_Mask.png
+  artifactKey: Guid(57bc7a168c60212438ff2e963cd6f114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_Mask.png using Guid(57bc7a168c60212438ff2e963cd6f114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56cf7244e823ce2a38a2567efc7fe760') in 0.010151 seconds
+  Import took 0.018170 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000141 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_Mask.png
+  artifactKey: Guid(5e4b64be03d92cd43afd521f12581678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_Mask.png using Guid(5e4b64be03d92cd43afd521f12581678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75ba629492cb2d1fcdd241f5385aea41') in 0.009836 seconds
+  Import took 0.017540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_Mask.png
+  artifactKey: Guid(ce67fa47da42e3c40844ff660dc6d491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_Mask.png using Guid(ce67fa47da42e3c40844ff660dc6d491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ffb72bc72bccd1ba48e9d7e97e94124') in 0.010116 seconds
+  Import took 0.018049 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.715801 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_normal.png
+  artifactKey: Guid(693055c0958fa024a8ef30e2fc20638c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Desert_M_Wall_Window_normal.png using Guid(693055c0958fa024a8ef30e2fc20638c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e9d2d7580f1367353aca10a7b82df0d') in 0.009398 seconds
+  Import took 0.017517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_normal.png
+  artifactKey: Guid(9c174860f0971934f9554d8831f2d2ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_LavaColumn_normal.png using Guid(9c174860f0971934f9554d8831f2d2ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a87bbc8945d0ce5e077574ec10e97746') in 0.008973 seconds
+  Import took 0.017194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_normal.png
+  artifactKey: Guid(025621934356b714ca63929b1379a981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Roof_normal.png using Guid(025621934356b714ca63929b1379a981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37a9f65c64c0f264408d943fec68c407') in 0.010048 seconds
+  Import took 0.018477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.479396 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Meshes/DioramaBase.fbx
+  artifactKey: Guid(3024beab11dceb34db2f0b1d3733bdbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Meshes/DioramaBase.fbx using Guid(3024beab11dceb34db2f0b1d3733bdbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47f702924e1d550a73d9f78525c931c3') in 0.023195 seconds
+  Import took 0.031310 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Meshes/SM_Desert_M_Roof.fbx
+  artifactKey: Guid(9e5f05b79041fa643bba28b29df13ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Meshes/SM_Desert_M_Roof.fbx using Guid(9e5f05b79041fa643bba28b29df13ebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd1d59e690bf08ed080d28c81c1e4ca0') in 0.019791 seconds
+  Import took 0.027396 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Meshes/SM_Desert_M_BrokenColumn_B.fbx
+  artifactKey: Guid(d9014b9afdf5c5f46be64a21742e33cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Meshes/SM_Desert_M_BrokenColumn_B.fbx using Guid(d9014b9afdf5c5f46be64a21742e33cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83610e55686f7d62e71fed5c692185ee') in 0.020376 seconds
+  Import took 0.028049 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Meshes/SM_DesertPot.fbx
+  artifactKey: Guid(c7b04ae5fcd17604eb4a4f2e1f34e8e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Meshes/SM_DesertPot.fbx using Guid(c7b04ae5fcd17604eb4a4f2e1f34e8e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be2e59e1c4bbed41181556c98c74f100') in 0.022173 seconds
+  Import took 0.029324 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Meshes/SM_Desert_M_BrokenColumn_A.fbx
+  artifactKey: Guid(a9f1f47808d9ffa43896c118fd81db44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Meshes/SM_Desert_M_BrokenColumn_A.fbx using Guid(a9f1f47808d9ffa43896c118fd81db44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61ac714f91de73696e2604c3a7ea5bdc') in 0.019358 seconds
+  Import took 0.027265 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Blaster Assets/Environments/Desert/Meshes/SM_Desert_M_Column.fbx
+  artifactKey: Guid(73eee08c8171ed840bdc2fc0ce27cf87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Desert/Meshes/SM_Desert_M_Column.fbx using Guid(73eee08c8171ed840bdc2fc0ce27cf87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bd2e7f6d4213b34b637ec3080ab9f49') in 0.020397 seconds
+  Import took 0.027894 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 59.686102 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Wall_Window_basecolor.png
+  artifactKey: Guid(73fa956ad95fad94c80a07df1fc3755a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Wall_Window_basecolor.png using Guid(73fa956ad95fad94c80a07df1fc3755a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b11c08f522a4d27fd5473f18c55edda') in 0.010149 seconds
+  Import took 0.018035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.186302 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Wall_Window_Mask.png
+  artifactKey: Guid(5e4b64be03d92cd43afd521f12581678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Wall_Window_Mask.png using Guid(5e4b64be03d92cd43afd521f12581678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f872149e7533d53f24e1d38476f26310') in 0.010287 seconds
+  Import took 0.018292 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.958543 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Wall_Window_normal.png
+  artifactKey: Guid(693055c0958fa024a8ef30e2fc20638c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/T_Lava_M_Wall_Window_normal.png using Guid(693055c0958fa024a8ef30e2fc20638c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a66e463b7e47da53b28f6f4c310b0a5') in 0.009566 seconds
+  Import took 0.017400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 44.142460 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/m_Lava_Wall.mat
+  artifactKey: Guid(f42f81d208ffc4b4eaceac83cb97e061) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/m_Lava_Wall.mat using Guid(f42f81d208ffc4b4eaceac83cb97e061) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56645212d52aa318280eaae58a211368') in 0.022942 seconds
+  Import took 0.031085 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.579499 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/m_Lava_Column.mat
+  artifactKey: Guid(00e62e16377ae24478e6a610e7c33c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/m_Lava_Column.mat using Guid(00e62e16377ae24478e6a610e7c33c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d47b751836f4927f60ec48fb49aa79f') in 0.016893 seconds
+  Import took 0.026015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 309.135191 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Materials/m_Lava_Roof.mat
+  artifactKey: Guid(6f5d2d2190d556547a23b48e8ad30124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Materials/m_Lava_Roof.mat using Guid(6f5d2d2190d556547a23b48e8ad30124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff66ac5f9be9d6749adbcfc0f6e8fc4c') in 0.018387 seconds
+  Import took 0.028068 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 186.695442 seconds.
+  path: Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava PostProcessVolume Profile.asset
+  artifactKey: Guid(757d4da282da2704ca530c71dcca7601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blaster Assets/Environments/Lava/Lava Diorama/Lava PostProcessVolume Profile.asset using Guid(757d4da282da2704ca530c71dcca7601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b9c6b0a765fe1f59ce48e6811bfc3c1') in 0.008052 seconds
+  Import took 0.017456 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
