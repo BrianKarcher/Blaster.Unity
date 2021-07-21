@@ -96,7 +96,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
             var target = recipient.GetComponent<EntityCommonComponent>();
             if (target == null)
             {
-                Debug.LogWarning($"Target {recipient.name} does not contain an EntityCommonComponent in FSM {Fsm.Name} - {Fsm.ActiveStateName}");
+                Debug.LogWarning($"Target {recipient.name} does not contain an EntityCommonComponent in GO {Fsm.GameObjectName} in FSM {Fsm.Name} - {Fsm.ActiveStateName}");
                 return null;
             }
             return target.GetId();
