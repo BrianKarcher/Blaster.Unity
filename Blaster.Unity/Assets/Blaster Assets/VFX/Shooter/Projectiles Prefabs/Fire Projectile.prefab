@@ -4829,6 +4829,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.0000001
   m_Center: {x: -0.00000020861624, y: 0, z: 0.00000017881392}
+--- !u!135 &8414143308355480256
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553805800673467690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0000001
+  m_Center: {x: -0.00000020861624, y: 0, z: 0.00000017881392}
 --- !u!114 &6180743177779903323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4854,6 +4867,7 @@ GameObject:
   - component: {fileID: 5090170921490079854}
   - component: {fileID: 5169206511766865632}
   - component: {fileID: 176277809001093969}
+  - component: {fileID: 5695457797628056656}
   m_Layer: 0
   m_Name: Fire Projectile
   m_TagString: Projectile
@@ -4894,7 +4908,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &176277809001093969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4913,6 +4927,19 @@ MonoBehaviour:
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+--- !u!135 &5695457797628056656
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090170921490079855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5319375239058163072
 GameObject:
   m_ObjectHideFlags: 0

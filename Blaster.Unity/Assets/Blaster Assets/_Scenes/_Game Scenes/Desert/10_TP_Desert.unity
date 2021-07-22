@@ -1829,15 +1829,15 @@ GameObject:
   - component: {fileID: 81128199}
   - component: {fileID: 81128198}
   - component: {fileID: 81128197}
-  - component: {fileID: 81128201}
   - component: {fileID: 81128200}
-  m_Layer: 10
+  - component: {fileID: 81128201}
+  m_Layer: 0
   m_Name: Gear
-  m_TagString: Environment
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &81128196
 Transform:
   m_ObjectHideFlags: 0
@@ -1860,7 +1860,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81128195}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2019,7 +2019,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 1
+        value: 0
       stringVariables:
       - useVariable: 1
         name: Message
@@ -7231,7 +7231,7 @@ PrefabInstance:
     - target: {fileID: 6128631322365642233, guid: ad9375413efc7824da469ac383620f15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.079472
+      value: 27.310528
       objectReference: {fileID: 0}
     - target: {fileID: 6128631322365642233, guid: ad9375413efc7824da469ac383620f15,
         type: 3}
@@ -10545,14 +10545,15 @@ GameObject:
   - component: {fileID: 507865396}
   - component: {fileID: 507865395}
   - component: {fileID: 507865394}
+  - component: {fileID: 507865398}
   - component: {fileID: 507865397}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Gear (1)
-  m_TagString: Environment
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &507865393
 Transform:
   m_ObjectHideFlags: 0
@@ -10575,7 +10576,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507865392}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -10716,7 +10717,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 1
+        value: 0
       stringVariables:
       - useVariable: 1
         name: Message
@@ -10788,6 +10789,24 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 843271705ce52d24aa8908581349a5c2, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &507865398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507865392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &509168226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20858,8 +20877,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.348732, y: 11.1047125, z: 21.08439}
-  m_Center: {x: -30.029766, y: 5.0523562, z: 15.5366335}
+  m_Size: {x: 0.305645, y: 11.1047125, z: 21.08439}
+  m_Center: {x: -30.55131, y: 5.0523562, z: 15.5366335}
 --- !u!65 &997851663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20871,8 +20890,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3487301, y: 11.1047125, z: 10.991123}
-  m_Center: {x: -30.029766, y: 5.0523562, z: -9.433643}
+  m_Size: {x: 0.43455315, y: 11.1047125, z: 10.991123}
+  m_Center: {x: -30.486855, y: 5.0523562, z: -9.433643}
 --- !u!65 &997851664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37904,7 +37923,7 @@ PrefabInstance:
     - target: {fileID: 7391379248417117920, guid: 95f57408e1b8da540916bd6a9a451b03,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.16
+      value: -4.77
       objectReference: {fileID: 0}
     - target: {fileID: 7391379248417117920, guid: 95f57408e1b8da540916bd6a9a451b03,
         type: 3}
@@ -39078,7 +39097,7 @@ PrefabInstance:
     - target: {fileID: 4266444831525673743, guid: da5bd672f54e42c4489722953c31e677,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.66
+      value: -4.27
       objectReference: {fileID: 0}
     - target: {fileID: 4266444831525673743, guid: da5bd672f54e42c4489722953c31e677,
         type: 3}
@@ -42131,11 +42150,11 @@ GameObject:
   - component: {fileID: 2047052524}
   - component: {fileID: 2047052523}
   - component: {fileID: 2047052522}
-  - component: {fileID: 2047052525}
   - component: {fileID: 2047052526}
-  m_Layer: 10
+  - component: {fileID: 2047052525}
+  m_Layer: 0
   m_Name: SHOOT HERE
-  m_TagString: Environment
+  m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42162,11 +42181,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047052520}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.17910767, y: 1, z: 1}
-  m_Center: {x: 0.41044617, y: 0, z: 0}
+  m_Size: {x: 1.1559296, y: 1, z: 1}
+  m_Center: {x: 0.35702133, y: 0, z: 0}
 --- !u!23 &2047052523
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42240,7 +42259,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 57
-        y: 107
+        y: 139
         width: 100
         height: 32
       isBreakpoint: 0
@@ -42258,14 +42277,22 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CollisionEvent
+        - HutongGames.PlayMaker.Actions.TriggerEvent
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: beb33100
+        - 
+        actionEnabled: 0001
+        actionIsOpen: 0101
+        actionStartIndex: 0000000006000000
+        actionHashCodes: beb331009c512400
         unityObjectParams: []
         fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: 
           tooltip: 
@@ -42281,6 +42308,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -42288,6 +42323,12 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Projectile
         - useVariable: 0
           name: 
           tooltip: 
@@ -42314,12 +42355,13 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Collision
-        byteData: 00000000
+        - Collision
+        byteData: 0300000001000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000070000001200000017000000130000000f000000
+        paramDataType: 14000000070000001200000017000000130000000f0000001400000007000000120000001700000013000000
         paramName:
         - gameObject
         - collision
@@ -42327,15 +42369,20 @@ MonoBehaviour:
         - sendEvent
         - storeCollider
         - storeForce
-        paramDataPos: 000000000000000000000000000000000000000000000000
-        paramByteDataSize: 000000000400000000000000000000000000000000000000
+        - gameObject
+        - trigger
+        - collideTag
+        - sendEvent
+        - storeCollider
+        paramDataPos: 0000000000000000000000000000000000000000000000000100000004000000010000000100000001000000
+        paramByteDataSize: 0000000004000000000000000000000000000000000000000000000004000000000000000000000000000000
     - name: ReduceHP
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 271
-        y: 122
+        x: 265
+        y: 222
         width: 100
         height: 48
       isBreakpoint: 0
@@ -42419,7 +42466,7 @@ MonoBehaviour:
         - FINISHED
         - FINISHED
         - Return
-        byteData: 0000
+        byteData: 0001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -42443,7 +42490,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 454
-        y: 116
+        y: 100
         width: 100
         height: 32
       isBreakpoint: 0
@@ -42537,7 +42584,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -42575,7 +42622,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 607
-        y: 134
+        y: 166
         width: 100
         height: 16
       isBreakpoint: 0
@@ -45099,9 +45146,9 @@ GameObject:
   - component: {fileID: 2136628797}
   - component: {fileID: 2136628796}
   - component: {fileID: 2136628799}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SHOOT HERE
-  m_TagString: Environment
+  m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45128,7 +45175,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136628794}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -45224,14 +45271,22 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CollisionEvent
+        - HutongGames.PlayMaker.Actions.TriggerEvent
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: beb33100
+        - 
+        actionEnabled: 0001
+        actionIsOpen: 0101
+        actionStartIndex: 0000000006000000
+        actionHashCodes: beb331009c512400
         unityObjectParams: []
         fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: 
           tooltip: 
@@ -45247,6 +45302,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -45254,6 +45317,12 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Projectile
         - useVariable: 0
           name: 
           tooltip: 
@@ -45280,12 +45349,13 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
-        byteData: 00000000
+        - FINISHED
+        byteData: 0000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000070000001200000017000000130000000f000000
+        paramDataType: 14000000070000001200000017000000130000000f0000001400000007000000120000001700000013000000
         paramName:
         - gameObject
         - collision
@@ -45293,8 +45363,13 @@ MonoBehaviour:
         - sendEvent
         - storeCollider
         - storeForce
-        paramDataPos: 000000000000000000000000000000000000000000000000
-        paramByteDataSize: 000000000400000000000000000000000000000000000000
+        - gameObject
+        - trigger
+        - collideTag
+        - sendEvent
+        - storeCollider
+        paramDataPos: 0000000000000000000000000000000000000000000000000100000004000000010000000100000001000000
+        paramByteDataSize: 0000000004000000000000000000000000000000000000000000000004000000000000000000000000000000
     - name: ReduceHP
       description: 
       colorIndex: 0
@@ -45385,7 +45460,7 @@ MonoBehaviour:
         - FINISHED
         - FINISHED
         - Return
-        byteData: 0000
+        byteData: 0001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
