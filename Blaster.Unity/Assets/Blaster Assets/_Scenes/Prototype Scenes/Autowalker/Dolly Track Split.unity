@@ -783,7 +783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &295725310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Path: {fileID: 984883494}
   m_UpdateMethod: 0
   m_PositionUnits: 1
-  m_Speed: 3
+  m_Speed: 0
   m_Position: 0
 --- !u!4 &295725311
 Transform:
@@ -814,7 +814,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 28.5, z: 0}
 --- !u!1 &332591142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 959515129}
+  _speed: 3
 --- !u!65 &548358981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1899,7 +1900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &959515128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1924,7 +1925,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959515127}
-  m_LocalRotation: {x: 0, y: -0.50885046, z: 0, w: 0.8608549}
+  m_LocalRotation: {x: 0, y: -0.5456443, z: 0, w: 0.83801687}
   m_LocalPosition: {x: 0.28, y: 3, z: -7.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3484,6 +3485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 295725311}
+  _speed: 3
 --- !u!1 &1637775585
 GameObject:
   m_ObjectHideFlags: 0
