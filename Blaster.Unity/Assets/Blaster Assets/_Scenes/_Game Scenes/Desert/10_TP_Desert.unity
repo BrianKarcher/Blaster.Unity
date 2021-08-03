@@ -1163,6 +1163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 547310594}
+  _speed: 5
 --- !u!65 &51231129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1307,6 +1308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 1778359090}
+  _speed: 5
 --- !u!65 &55891217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5492,12 +5494,12 @@ Transform:
   - {fileID: 1690737029}
   - {fileID: 205858033}
   - {fileID: 1487429295}
-  - {fileID: 722902082}
+  - {fileID: 372804880}
   - {fileID: 1553728654}
   - {fileID: 1112093037}
-  - {fileID: 372804880}
-  - {fileID: 73977086}
+  - {fileID: 722902082}
   - {fileID: 1087710489}
+  - {fileID: 73977086}
   - {fileID: 1059395238}
   - {fileID: 1091325630}
   m_Father: {fileID: 139966957}
@@ -14843,7 +14845,7 @@ GameObject:
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &547310594
 Transform:
   m_ObjectHideFlags: 0
@@ -14851,8 +14853,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547310593}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000014603138}
-  m_LocalPosition: {x: -100.58, y: -18.97096, z: -60.48556}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -100.58001, y: -18.970964, z: -60.48556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1267707499}
@@ -14873,7 +14875,7 @@ MonoBehaviour:
   m_Path: {fileID: 819013544}
   m_UpdateMethod: 0
   m_PositionUnits: 1
-  m_Speed: 5
+  m_Speed: 0
   m_Position: 0
 --- !u!4 &552707048 stripped
 Transform:
@@ -16376,6 +16378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 2116815418}
+  _speed: 5
 --- !u!65 &590232485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32742,6 +32745,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 593336955}
     m_Modifications:
+    - target: {fileID: 206743392750212725, guid: 0774fff9ed24de34ea9a79aa0e611638,
+        type: 3}
+      propertyPath: invertY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 206743392750212725, guid: 0774fff9ed24de34ea9a79aa0e611638,
         type: 3}
       propertyPath: _yawRange
@@ -50462,12 +50470,12 @@ GameObject:
   - component: {fileID: 1778359090}
   - component: {fileID: 1778359091}
   m_Layer: 0
-  m_Name: Track AJoint
+  m_Name: Track A Joint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1778359090
 Transform:
   m_ObjectHideFlags: 0
@@ -50475,8 +50483,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778359089}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.070604, y: 1.11, z: 0.3779785}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -2.0706036, y: 1.11, z: 0.3779785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1267707499}
@@ -50497,7 +50505,7 @@ MonoBehaviour:
   m_Path: {fileID: 1943238132}
   m_UpdateMethod: 0
   m_PositionUnits: 1
-  m_Speed: 5
+  m_Speed: 0
   m_Position: 0
 --- !u!1001 &1778663302
 PrefabInstance:
@@ -59785,7 +59793,7 @@ GameObject:
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2116815418
 Transform:
   m_ObjectHideFlags: 0
@@ -59793,7 +59801,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116815417}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.039854877, y: -0.7787274, z: -0.049727965, w: 0.62411726}
   m_LocalPosition: {x: -52.71069, y: 1.11, z: 0.3779785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -59815,7 +59823,7 @@ MonoBehaviour:
   m_Path: {fileID: 1537364850}
   m_UpdateMethod: 0
   m_PositionUnits: 1
-  m_Speed: 5
+  m_Speed: 0
   m_Position: 0
 --- !u!1001 &2117785884
 PrefabInstance:
