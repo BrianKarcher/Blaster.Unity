@@ -210,37 +210,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4129558}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5073179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5073180}
-  m_Layer: 0
-  m_Name: Targets
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5073180
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5073179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 813530481}
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6284768
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,6 +3241,274 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 132758194}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &135436201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 135436204}
+  - component: {fileID: 135436203}
+  - component: {fileID: 135436202}
+  m_Layer: 0
+  m_Name: TargetSpawner-1-2
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &135436202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135436201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 4
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 4
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: Scale
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 1, y: 1, z: 1}
+      - useVariable: 1
+        name: ScaleDown
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: -2, y: -2, z: -2}
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnPoint
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 135436201}
+      - useVariable: 1
+        name: ObjectToSpawn
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: SetParent
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Parent
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 135436201}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ObjectsToSpawn
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 7354573403167432920, guid: 5eeaaab4763b7034e814162dc8a35fd8, type: 3}
+        - {fileID: 8633341840154399821, guid: 417e3a4004f2ce548ae43eae6eb21b15, type: 3}
+        - {fileID: 5611419086149858093, guid: 59c87f68d7837164ca380b61dc53ec85, type: 3}
+        - {fileID: 2771676333167263598, guid: ddbc48dd1a5a43745947a7fbb355f30b, type: 3}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 86eac9eb454c65c46a004c18b1fb35b7, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &135436203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135436201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
+--- !u!4 &135436204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135436201}
+  m_LocalRotation: {x: -0, y: -0.31592223, z: -0, w: 0.9487851}
+  m_LocalPosition: {x: -18.28, y: 0.54, z: 13.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 146266227}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -36.833, z: 0}
 --- !u!1 &139966956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,6 +4501,70 @@ MonoBehaviour:
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+--- !u!1 &144605694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 144605695}
+  m_Layer: 0
+  m_Name: Stage 03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &144605695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144605694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1696555792}
+  - {fileID: 175859648}
+  m_Father: {fileID: 257832829}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &146266226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146266227}
+  m_Layer: 0
+  m_Name: Stage 01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146266227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146266226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 789205669}
+  - {fileID: 135436204}
+  m_Father: {fileID: 257832829}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146543860
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,6 +5208,274 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e5f05b79041fa643bba28b29df13ebe, type: 3}
+--- !u!1 &175859647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 175859648}
+  - component: {fileID: 175859650}
+  - component: {fileID: 175859649}
+  m_Layer: 0
+  m_Name: TargetSpawner-3-2
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &175859648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175859647}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -89.27, y: -18.71, z: -56.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 144605695}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &175859649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175859647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 4
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: Scale
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 1, y: 1, z: 1}
+      - useVariable: 1
+        name: ScaleDown
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: -2, y: -2, z: -2}
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnPoint
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 175859647}
+      - useVariable: 1
+        name: ObjectToSpawn
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: SetParent
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Parent
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 175859647}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ObjectsToSpawn
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 7354573403167432920, guid: 5eeaaab4763b7034e814162dc8a35fd8, type: 3}
+        - {fileID: 8633341840154399821, guid: 417e3a4004f2ce548ae43eae6eb21b15, type: 3}
+        - {fileID: 5611419086149858093, guid: 59c87f68d7837164ca380b61dc53ec85, type: 3}
+        - {fileID: 2771676333167263598, guid: ddbc48dd1a5a43745947a7fbb355f30b, type: 3}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 86eac9eb454c65c46a004c18b1fb35b7, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &175859650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175859647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &177448720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6874,6 +7443,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e5f05b79041fa643bba28b29df13ebe, type: 3}
+--- !u!1 &257832828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257832829}
+  m_Layer: 0
+  m_Name: Targets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &257832829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257832828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 146266227}
+  - {fileID: 462228637}
+  - {fileID: 144605695}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261981062
 GameObject:
   m_ObjectHideFlags: 0
@@ -12215,6 +12817,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 461802663}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &462228636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462228637}
+  m_Layer: 0
+  m_Name: Stage 02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &462228637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462228636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1015571490}
+  - {fileID: 1379630030}
+  m_Father: {fileID: 257832829}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &462722677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8345536390884858635, guid: 57e24e8797ab68b47be355e25df62420,
@@ -21465,6 +22099,274 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e5f05b79041fa643bba28b29df13ebe, type: 3}
+--- !u!1 &789205668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789205669}
+  - component: {fileID: 789205671}
+  - component: {fileID: 789205670}
+  m_Layer: 0
+  m_Name: TargetSpawner-1-1
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &789205669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789205668}
+  m_LocalRotation: {x: -0, y: 0.31592405, z: -0, w: 0.94878453}
+  m_LocalPosition: {x: -18.28, y: 0.54, z: -13.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 146266227}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 36.833, z: 0}
+--- !u!114 &789205670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789205668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 4
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 1
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: Scale
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 1, y: 1, z: 1}
+      - useVariable: 1
+        name: ScaleDown
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: -2, y: -2, z: -2}
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnPoint
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 789205668}
+      - useVariable: 1
+        name: ObjectToSpawn
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: SetParent
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Parent
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 789205668}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ObjectsToSpawn
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 7354573403167432920, guid: 5eeaaab4763b7034e814162dc8a35fd8, type: 3}
+        - {fileID: 8633341840154399821, guid: 417e3a4004f2ce548ae43eae6eb21b15, type: 3}
+        - {fileID: 5611419086149858093, guid: 59c87f68d7837164ca380b61dc53ec85, type: 3}
+        - {fileID: 2771676333167263598, guid: ddbc48dd1a5a43745947a7fbb355f30b, type: 3}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 86eac9eb454c65c46a004c18b1fb35b7, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &789205671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789205668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &789304295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22184,36 +23086,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 813090830}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &813530480
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 813530481}
-  m_Layer: 0
-  m_Name: Stage_01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &813530481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813530480}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5073180}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &815337042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28258,6 +29130,274 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1014515207}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1015571489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1015571490}
+  - component: {fileID: 1015571492}
+  - component: {fileID: 1015571491}
+  m_Layer: 0
+  m_Name: TargetSpawner-2-1
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1015571490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015571489}
+  m_LocalRotation: {x: -0, y: 0.28628275, z: -0, w: 0.9581452}
+  m_LocalPosition: {x: -64.49, y: 0.54, z: -15.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462228637}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 33.271, z: 0}
+--- !u!114 &1015571491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015571489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 4
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 1
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: Scale
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 1, y: 1, z: 1}
+      - useVariable: 1
+        name: ScaleDown
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: -2, y: -2, z: -2}
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnPoint
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1015571489}
+      - useVariable: 1
+        name: ObjectToSpawn
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: SetParent
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Parent
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1015571489}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ObjectsToSpawn
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 2771676333167263598, guid: ddbc48dd1a5a43745947a7fbb355f30b, type: 3}
+        - {fileID: 8633341840154399821, guid: c783a363e230f074890c5b9e1a9db868, type: 3}
+        - {fileID: 5611419086149858093, guid: 071ca886cd73a3a40859723d509f8965, type: 3}
+        - {fileID: 2771676333167263598, guid: ddbc48dd1a5a43745947a7fbb355f30b, type: 3}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 86eac9eb454c65c46a004c18b1fb35b7, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1015571492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015571489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &1016899382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37937,6 +39077,274 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1371557140}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1379630029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379630030}
+  - component: {fileID: 1379630032}
+  - component: {fileID: 1379630031}
+  m_Layer: 0
+  m_Name: TargetSpawner-2-2
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1379630030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379630029}
+  m_LocalRotation: {x: -0, y: 0.9045677, z: -0, w: 0.42633012}
+  m_LocalPosition: {x: -64.49, y: 0.54, z: 19.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462228637}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 129.53, z: 0}
+--- !u!114 &1379630031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379630029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 4
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 1
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: Scale
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 1, y: 1, z: 1}
+      - useVariable: 1
+        name: ScaleDown
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: -2, y: -2, z: -2}
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnPoint
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1379630029}
+      - useVariable: 1
+        name: ObjectToSpawn
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: SetParent
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Parent
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1379630029}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ObjectsToSpawn
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 8633341840154399821, guid: c783a363e230f074890c5b9e1a9db868, type: 3}
+        - {fileID: 8633341840154399821, guid: c783a363e230f074890c5b9e1a9db868, type: 3}
+        - {fileID: 5611419086149858093, guid: 071ca886cd73a3a40859723d509f8965, type: 3}
+        - {fileID: 2771676333167263598, guid: ddbc48dd1a5a43745947a7fbb355f30b, type: 3}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 86eac9eb454c65c46a004c18b1fb35b7, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1379630032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379630029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &1381642939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41661,37 +43069,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 73eee08c8171ed840bdc2fc0ce27cf87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000002413988
+      value: -0.3246488
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73eee08c8171ed840bdc2fc0ce27cf87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.8640464
+      value: 0.6886016
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73eee08c8171ed840bdc2fc0ce27cf87,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000015571713
+      value: 0.6463651
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73eee08c8171ed840bdc2fc0ce27cf87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.50341225
+      value: -0.05141296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73eee08c8171ed840bdc2fc0ce27cf87,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -22.374
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73eee08c8171ed840bdc2fc0ce27cf87,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -119.548
+      value: -147.966
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73eee08c8171ed840bdc2fc0ce27cf87,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -272.874
       objectReference: {fileID: 0}
     - target: {fileID: -5754084199372789682, guid: 73eee08c8171ed840bdc2fc0ce27cf87,
         type: 3}
@@ -42738,21 +44146,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a200b19ca1a9685429ed7e043c28e904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Resolution: 20
+  m_Resolution: 11
   m_Appearance:
     pathColor: {r: 0, g: 1, b: 0, a: 1}
     inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    width: 0.2
+    width: 1.49
   m_Looped: 0
   m_Waypoints:
   - position: {x: -52.71069, y: 1.11, z: 0.3779785}
     roll: 0
-  - position: {x: -68.7864, y: 0.694468, z: -2.1085653}
+  - position: {x: -70.724976, y: 0.24987036, z: -1.0843604}
     roll: 0
   - position: {x: -84.86211, y: -7.8546057, z: -1.0969343}
     roll: 0
-  - position: {x: -92.06423, y: -12.803462, z: -0.87994075}
-    roll: 0
+  - position: {x: -92.06423, y: -12.803462, z: -1.2806265}
+    roll: 12.42
   - position: {x: -99.31706, y: -17.257374, z: -4.679732}
     roll: 0
   - position: {x: -100.58015, y: -18.970959, z: -16.611462}
@@ -44919,12 +46327,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: b2cf1000
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: b2cf1000b2cf1000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -44936,6 +46346,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 1192691900}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 144605694}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -44962,26 +46380,43 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0000
+        byteData: 00000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000011000000110000000100000001000000
+        paramDataType: 14000000110000001100000001000000010000001400000011000000110000000100000001000000
         paramName:
         - gameObject
         - activate
         - recursive
         - resetOnExit
         - everyFrame
-        paramDataPos: 0000000000000000010000000000000001000000
-        paramByteDataSize: 0000000000000000000000000100000001000000
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        paramDataPos: 00000000000000000100000000000000010000000100000002000000030000000200000003000000
+        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000100000001000000
     - name: destroy
       description: 
       colorIndex: 0
@@ -47578,6 +49013,274 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1690737028}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1696555791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1696555792}
+  - component: {fileID: 1696555794}
+  - component: {fileID: 1696555793}
+  m_Layer: 0
+  m_Name: TargetSpawner-3-1
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1696555792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696555791}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -111.77, y: -18.71, z: -56.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 144605695}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1696555793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696555791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 4
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 1
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: Scale
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 1, y: 1, z: 1}
+      - useVariable: 1
+        name: ScaleDown
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: -2, y: -2, z: -2}
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnPoint
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1696555791}
+      - useVariable: 1
+        name: ObjectToSpawn
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: SetParent
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Parent
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1696555791}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ObjectsToSpawn
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 7354573403167432920, guid: 5eeaaab4763b7034e814162dc8a35fd8, type: 3}
+        - {fileID: 8633341840154399821, guid: 417e3a4004f2ce548ae43eae6eb21b15, type: 3}
+        - {fileID: 5611419086149858093, guid: 59c87f68d7837164ca380b61dc53ec85, type: 3}
+        - {fileID: 2771676333167263598, guid: ddbc48dd1a5a43745947a7fbb355f30b, type: 3}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 86eac9eb454c65c46a004c18b1fb35b7, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1696555794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696555791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &1697173354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49097,12 +50800,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: b2cf1000
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: b2cf1000b2cf1000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -49114,6 +50819,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 1045490283}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 462228636}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -49140,26 +50853,43 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0000
+        byteData: 00000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000011000000110000000100000001000000
+        paramDataType: 14000000110000001100000001000000010000001400000011000000110000000100000001000000
         paramName:
         - gameObject
         - activate
         - recursive
         - resetOnExit
         - everyFrame
-        paramDataPos: 0000000000000000010000000000000001000000
-        paramByteDataSize: 0000000000000000000000000100000001000000
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        paramDataPos: 00000000000000000100000000000000010000000100000002000000030000000200000003000000
+        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000100000001000000
     - name: destroy
       description: 
       colorIndex: 0
@@ -60457,7 +62187,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116815417}
-  m_LocalRotation: {x: -0.039854877, y: -0.7787274, z: -0.049727965, w: 0.62411726}
+  m_LocalRotation: {x: -0.0235718, y: -0.74073166, z: -0.026025973, w: 0.6708828}
   m_LocalPosition: {x: -52.71069, y: 1.11, z: 0.3779785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
