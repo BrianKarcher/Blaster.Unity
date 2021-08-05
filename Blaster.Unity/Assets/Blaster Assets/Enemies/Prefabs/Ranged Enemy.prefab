@@ -243,6 +243,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -267,6 +268,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &400418633649850322
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -367,6 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addToEntityContainer: 1
   _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
   _height: 1.8
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
@@ -506,8 +509,8 @@ MonoBehaviour:
   _componentRepository: {fileID: 400418634693020977}
   componentName: 
   _entityStats:
-    _maxHP: 3
-    _currentHP: 3
+    _maxHP: 1
+    _currentHP: 1
     _maxSP: 0
     _currentSP: 0
     _maxStamina: 0

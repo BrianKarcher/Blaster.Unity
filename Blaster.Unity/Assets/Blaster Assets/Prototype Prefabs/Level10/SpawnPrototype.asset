@@ -17,15 +17,15 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 11400000}
     name: FSM
-    startState: Spawn
+    startState: InitialDelay
     states:
     - name: Spawn
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
-        y: 116
+        x: 254
+        y: 122
         width: 100
         height: 32
       isBreakpoint: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Wait
+        toState: Kill
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -172,12 +172,12 @@ MonoBehaviour:
         - storeObject
         paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000100000002000000
         paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000000000000
-    - name: Wait
+    - name: Kill
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 384
+        x: 592
         y: 114
         width: 100
         height: 32
@@ -189,7 +189,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Spawn
+        toState: Estado 1
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -197,13 +197,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetParent
         - HutongGames.PlayMaker.Actions.RandomWait
+        - HutongGames.PlayMaker.Actions.FloatAdd
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000004000000
-        actionHashCodes: ea32a1050d5f5c01
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000400000008000000
+        actionHashCodes: ea32a1050d5f5c012a6e8a00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -235,16 +237,28 @@ MonoBehaviour:
         fsmFloatParams:
         - useVariable: 1
           name: minDelay
-          tooltip: 
+          tooltip: Time
           showInInspector: 1
           networkSync: 0
           value: 0
         - useVariable: 1
           name: maxDelay
-          tooltip: 
+          tooltip: Time
           showInInspector: 1
           networkSync: 0
           value: 0
+        - useVariable: 1
+          name: CurrentLife
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -266,12 +280,12 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
-        byteData: 00
+        byteData: 000101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001300000011000000110000000f0000000f0000001700000001000000
+        paramDataType: 140000001300000011000000110000000f0000000f00000017000000010000000f0000000f0000000100000001000000
         paramName:
         - gameObject
         - parent
@@ -281,25 +295,299 @@ MonoBehaviour:
         - max
         - finishEvent
         - realTime
-        paramDataPos: 0000000000000000000000000100000000000000010000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+        - floatVariable
+        - add
+        - everyFrame
+        - perSecond
+        paramDataPos: 000000000000000000000000010000000000000001000000000000000000000002000000030000000100000002000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000000000000000000000100000001000000
+    - name: InitialDelay
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 60
+        y: 117
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Spawn
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        - HutongGames.PlayMaker.Actions.FloatAdd
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 48c011012a6e8a00
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: InitialDelay
+          tooltip: Time
+          showInInspector: 1
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: CurrentLife
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: InitialDelay
+          tooltip: Time
+          showInInspector: 1
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - FINISHED
+        byteData: 000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f00000017000000010000000f0000000f0000000100000001000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        - floatVariable
+        - add
+        - everyFrame
+        - perSecond
+        paramDataPos: 00000000000000000000000001000000020000000100000002000000
+        paramByteDataSize: 00000000000000000100000000000000000000000100000001000000
+    - name: Destroy
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 794
+        y: 124
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.DestroySelf
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 62f95203
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 11000000
+        paramName:
+        - detachChildren
+        paramDataPos: 00000000
+        paramByteDataSize: 00000000
+    - name: Estado 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 593
+        y: 256
+        width: 100
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Spawn
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Kill
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Destroy
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.FloatCompare
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 1bcdca04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: CurrentLife
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: SpawnerLifetime
+          tooltip: Time
+          showInInspector: 1
+          networkSync: 0
+          value: 60
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Kill
+        - FINISHED
+        - Kill
+        byteData: 01
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f0000000f0000000f00000017000000170000001700000001000000
+        paramName:
+        - float1
+        - float2
+        - tolerance
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        paramDataPos: 00000000010000000200000000000000010000000200000000000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: Kill
+      isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables:
       - useVariable: 1
         name: minDelay
-        tooltip: 
+        tooltip: Time
         showInInspector: 1
         networkSync: 0
         value: 0
       - useVariable: 1
         name: maxDelay
-        tooltip: 
+        tooltip: Time
         showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
         networkSync: 0
         value: 0
       intVariables: []
@@ -355,7 +643,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
