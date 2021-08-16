@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2989123635096679802}
   - component: {fileID: 2989123635096679803}
   - component: {fileID: 2989123635096679804}
+  - component: {fileID: 6642145308029162843}
   m_Layer: 9
   m_Name: ENEMY SPAWNER
   m_TagString: Untagged
@@ -258,31 +259,13 @@ MonoBehaviour:
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 4
+        value: 3
       - useVariable: 1
         name: maxDelay
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 7
-      - useVariable: 1
-        name: InitialDelay
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 2
-      - useVariable: 1
-        name: SpawnerLifetime
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 30
-      - useVariable: 1
-        name: CurrentLife
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
+        value: 5
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -315,7 +298,13 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 2989123635096679801}
+        value: {fileID: 0}
+      - useVariable: 1
+        name: SpawnerController
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -333,13 +322,14 @@ MonoBehaviour:
         stringValues: []
         vector4Values: []
         objectReferences:
-        - {fileID: 3272481436684266986, guid: 4ee4956cc3e505f4e99de28074e8187c, type: 3}
+        - {fileID: 8345536390884858634, guid: 57e24e8797ab68b47be355e25df62420, type: 3}
+        - {fileID: 1554424433443792316, guid: a70aadb84a8bb594a92ca52a2bba9429, type: 3}
+        - {fileID: 400418634693020983, guid: 6b02d214b892350448000481004bc420, type: 3}
         - {fileID: 6645187692774858534, guid: d3781a35aab975c44a42d6f7de497cae, type: 3}
-        - {fileID: 8723050924986533005, guid: ec057085d7e62144e98670f86cd6d15a, type: 3}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -382,5 +372,23 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 405535ff26047ed439dd5241cbbe9211, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: 3a407d5b435bade4b9cb174b7ee6876f, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &6642145308029162843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2989123635096679801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
