@@ -203,9 +203,7 @@ namespace Assets.BlueOrb.Scripts.UI
 
             _setProjectileId = MessageDispatcher.Instance.StartListening("SetProjectile", ControllerName, (data) =>
             {
-                var projectileConfig = data.ExtraInfo as ProjectileConfig;
-                if (projectileConfig == null)
-                    throw new Exception("No Projectile Config");
+
 
 
             });

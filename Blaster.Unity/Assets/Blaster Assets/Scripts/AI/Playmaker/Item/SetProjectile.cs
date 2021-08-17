@@ -1,9 +1,4 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using HutongGames.PlayMaker;
-using BlueOrb.Base.Manager;
-using BlueOrb.Common.Container;
-using BlueOrb.Controller.Scene;
-using BlueOrb.Controller.Manager;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Messaging;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Item
@@ -16,8 +11,13 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Item
 
         public override void OnEnter()
         {
-            var player = EntityContainer.Instance.GetMainCharacter();
-            MessageDispatcher.Instance.DispatchMsg("SetProjectile", 0f, null, player.GetId(), Projectile.Value);
+            //var player = EntityContainer.Instance.GetMainCharacter();
+            //MessageDispatcher.Instance.DispatchMsg("SetProjectile", 0f, null, player.GetId(), Projectile.Value);
+
+            MessageDispatcher.Instance.DispatchMsg("SetProjectile", 0f, null, "Level State", Projectile.Value);
+
+            // Broadcast it
+            //MessageDispatcher.Instance.DispatchMsg("SetProjectile", 0f, null, null, Projectile.Value);
             Finish();
         }
     }
