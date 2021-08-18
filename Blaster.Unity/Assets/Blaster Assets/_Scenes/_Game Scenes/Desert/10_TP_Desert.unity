@@ -8314,6 +8314,7 @@ GameObject:
   - component: {fileID: 291812091}
   - component: {fileID: 291812090}
   - component: {fileID: 291812093}
+  - component: {fileID: 291812094}
   m_Layer: 9
   m_Name: ENEMY SPAWNER (1)
   m_TagString: Untagged
@@ -8477,31 +8478,13 @@ MonoBehaviour:
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 4
+        value: 2
       - useVariable: 1
         name: maxDelay
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 7
-      - useVariable: 1
-        name: InitialDelay
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 9
-      - useVariable: 1
-        name: SpawnerLifetime
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 60
-      - useVariable: 1
-        name: CurrentLife
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
+        value: 4
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -8516,7 +8499,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 291812088}
+        value: {fileID: 439951872}
       - useVariable: 1
         name: ObjectToSpawn
         tooltip: 
@@ -8534,7 +8517,13 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 291812088}
+        value: {fileID: 439951872}
+      - useVariable: 1
+        name: SpawnerController
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -8552,13 +8541,13 @@ MonoBehaviour:
         stringValues: []
         vector4Values: []
         objectReferences:
-        - {fileID: 6645187692774858534, guid: d3781a35aab975c44a42d6f7de497cae, type: 3}
-        - {fileID: 3272481436684266986, guid: 4ee4956cc3e505f4e99de28074e8187c, type: 3}
         - {fileID: 8723050924986533005, guid: ec057085d7e62144e98670f86cd6d15a, type: 3}
+        - {fileID: 3272481436684266986, guid: 4ee4956cc3e505f4e99de28074e8187c, type: 3}
+        - {fileID: 6645187692774858534, guid: d3781a35aab975c44a42d6f7de497cae, type: 3}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -8601,8 +8590,26 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 405535ff26047ed439dd5241cbbe9211, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: 3a407d5b435bade4b9cb174b7ee6876f, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &291812094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291812088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &300344888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12183,6 +12190,7 @@ GameObject:
   - component: {fileID: 439951875}
   - component: {fileID: 439951874}
   - component: {fileID: 439951877}
+  - component: {fileID: 439951878}
   m_Layer: 9
   m_Name: ENEMY SPAWNER
   m_TagString: Untagged
@@ -12346,31 +12354,13 @@ MonoBehaviour:
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 4
+        value: 2
       - useVariable: 1
         name: maxDelay
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 7
-      - useVariable: 1
-        name: InitialDelay
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 2
-      - useVariable: 1
-        name: SpawnerLifetime
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 30
-      - useVariable: 1
-        name: CurrentLife
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
+        value: 4
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -12404,6 +12394,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 439951872}
+      - useVariable: 1
+        name: SpawnerController
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -12421,13 +12417,13 @@ MonoBehaviour:
         stringValues: []
         vector4Values: []
         objectReferences:
+        - {fileID: 8723050924986533005, guid: ec057085d7e62144e98670f86cd6d15a, type: 3}
         - {fileID: 3272481436684266986, guid: 4ee4956cc3e505f4e99de28074e8187c, type: 3}
         - {fileID: 6645187692774858534, guid: d3781a35aab975c44a42d6f7de497cae, type: 3}
-        - {fileID: 8723050924986533005, guid: ec057085d7e62144e98670f86cd6d15a, type: 3}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -12470,8 +12466,26 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 405535ff26047ed439dd5241cbbe9211, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: 3a407d5b435bade4b9cb174b7ee6876f, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &439951878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439951872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &446048476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30370,6 +30384,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1045490284}
+  - component: {fileID: 1045490286}
+  - component: {fileID: 1045490285}
   m_Layer: 9
   m_Name: Stage 02
   m_TagString: Untagged
@@ -30394,6 +30410,218 @@ Transform:
   m_Father: {fileID: 95294838}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1045490285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045490283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 3
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 2
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnerToActivate
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: NextSpawnController
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1192691900}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: Spawners
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 1486782610}
+        - {fileID: 1969367348}
+        - {fileID: 1015571489}
+        - {fileID: 1379630029}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: a9295ed88f0a3f641b0c70f2e61cc389, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1045490286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045490283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &1045923444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34228,6 +34456,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1192691901}
+  - component: {fileID: 1192691903}
+  - component: {fileID: 1192691902}
   m_Layer: 9
   m_Name: Stage 03
   m_TagString: Untagged
@@ -34253,6 +34483,218 @@ Transform:
   m_Father: {fileID: 95294838}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1192691902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192691900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 3
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 2
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnerToActivate
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: NextSpawnController
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: Spawners
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 1970513455}
+        - {fileID: 291812088}
+        - {fileID: 1696555791}
+        - {fileID: 175859647}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: a9295ed88f0a3f641b0c70f2e61cc389, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1192691903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192691900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &1195637244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42554,6 +42996,7 @@ GameObject:
   - component: {fileID: 1486782614}
   - component: {fileID: 1486782613}
   - component: {fileID: 1486782612}
+  - component: {fileID: 1486782616}
   m_Layer: 9
   m_Name: ENEMY SPAWNER (1)
   m_TagString: Untagged
@@ -42654,31 +43097,13 @@ MonoBehaviour:
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 4
+        value: 2
       - useVariable: 1
         name: maxDelay
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 8
-      - useVariable: 1
-        name: InitialDelay
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 2
-      - useVariable: 1
-        name: SpawnerLifetime
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 60
-      - useVariable: 1
-        name: CurrentLife
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
+        value: 4
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -42712,6 +43137,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 1486782610}
+      - useVariable: 1
+        name: SpawnerController
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -42729,13 +43160,13 @@ MonoBehaviour:
         stringValues: []
         vector4Values: []
         objectReferences:
-        - {fileID: 6645187692774858534, guid: d3781a35aab975c44a42d6f7de497cae, type: 3}
-        - {fileID: 3272481436684266986, guid: 4ee4956cc3e505f4e99de28074e8187c, type: 3}
         - {fileID: 8723050924986533005, guid: ec057085d7e62144e98670f86cd6d15a, type: 3}
+        - {fileID: 3272481436684266986, guid: 4ee4956cc3e505f4e99de28074e8187c, type: 3}
+        - {fileID: 6645187692774858534, guid: d3781a35aab975c44a42d6f7de497cae, type: 3}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -42778,7 +43209,7 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 405535ff26047ed439dd5241cbbe9211, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: 3a407d5b435bade4b9cb174b7ee6876f, type: 2}
   eventHandlerComponentsAdded: 1
 --- !u!136 &1486782613
 CapsuleCollider:
@@ -42843,6 +43274,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486782610}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1486782616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486782610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &1487160172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56791,6 +57240,7 @@ GameObject:
   - component: {fileID: 1969367352}
   - component: {fileID: 1969367351}
   - component: {fileID: 1969367350}
+  - component: {fileID: 1969367354}
   m_Layer: 9
   m_Name: ENEMY SPAWNER (2)
   m_TagString: Untagged
@@ -56891,31 +57341,13 @@ MonoBehaviour:
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 4
+        value: 2
       - useVariable: 1
         name: maxDelay
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 8
-      - useVariable: 1
-        name: InitialDelay
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 7
-      - useVariable: 1
-        name: SpawnerLifetime
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 60
-      - useVariable: 1
-        name: CurrentLife
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
+        value: 4
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -56949,6 +57381,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 1969367348}
+      - useVariable: 1
+        name: SpawnerController
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -56966,13 +57404,13 @@ MonoBehaviour:
         stringValues: []
         vector4Values: []
         objectReferences:
-        - {fileID: 6645187692774858534, guid: d3781a35aab975c44a42d6f7de497cae, type: 3}
         - {fileID: 8723050924986533005, guid: ec057085d7e62144e98670f86cd6d15a, type: 3}
         - {fileID: 3272481436684266986, guid: 4ee4956cc3e505f4e99de28074e8187c, type: 3}
+        - {fileID: 6645187692774858534, guid: d3781a35aab975c44a42d6f7de497cae, type: 3}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -57015,7 +57453,7 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 405535ff26047ed439dd5241cbbe9211, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: 3a407d5b435bade4b9cb174b7ee6876f, type: 2}
   eventHandlerComponentsAdded: 1
 --- !u!136 &1969367351
 CapsuleCollider:
@@ -57080,6 +57518,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969367348}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1969367354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969367348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1 &1970513455
 GameObject:
   m_ObjectHideFlags: 0
@@ -57093,6 +57549,7 @@ GameObject:
   - component: {fileID: 1970513458}
   - component: {fileID: 1970513457}
   - component: {fileID: 1970513460}
+  - component: {fileID: 1970513461}
   m_Layer: 9
   m_Name: ENEMY SPAWNER
   m_TagString: Untagged
@@ -57256,31 +57713,13 @@ MonoBehaviour:
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 4
+        value: 2
       - useVariable: 1
         name: maxDelay
         tooltip: Time
         showInInspector: 1
         networkSync: 0
-        value: 7
-      - useVariable: 1
-        name: InitialDelay
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 2
-      - useVariable: 1
-        name: SpawnerLifetime
-        tooltip: Time
-        showInInspector: 1
-        networkSync: 0
-        value: 60
-      - useVariable: 1
-        name: CurrentLife
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
+        value: 4
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -57295,7 +57734,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 1970513455}
+        value: {fileID: 291812088}
       - useVariable: 1
         name: ObjectToSpawn
         tooltip: 
@@ -57314,6 +57753,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 1970513455}
+      - useVariable: 1
+        name: SpawnerController
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -57337,7 +57782,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -57380,8 +57825,26 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 405535ff26047ed439dd5241cbbe9211, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: 3a407d5b435bade4b9cb174b7ee6876f, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &1970513461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970513455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &1973561574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57561,6 +58024,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1982058278}
+  - component: {fileID: 1982058280}
+  - component: {fileID: 1982058279}
   m_Layer: 9
   m_Name: Stage 01
   m_TagString: Untagged
@@ -57585,6 +58050,217 @@ Transform:
   m_Father: {fileID: 95294838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982058279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982058277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: State 1
+    states:
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events: []
+    globalTransitions: []
+    variables:
+      floatVariables:
+      - useVariable: 1
+        name: minDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 3
+      - useVariable: 1
+        name: maxDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: InitialDelay
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 2
+      - useVariable: 1
+        name: SpawnerLifetime
+        tooltip: Time
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: CurrentLife
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      intVariables: []
+      boolVariables: []
+      stringVariables: []
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: SpawnerToActivate
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: NextSpawnController
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1045490283}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: Spawners
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 439951872}
+        - {fileID: 789205668}
+        - {fileID: 135436201}
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    RestartOnEnable: 1
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 3
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: a9295ed88f0a3f641b0c70f2e61cc389, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!114 &1982058280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982058277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1001 &1984868086
 PrefabInstance:
   m_ObjectHideFlags: 0
