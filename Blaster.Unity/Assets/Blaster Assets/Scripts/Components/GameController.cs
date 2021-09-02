@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace BlueOrb.Controller.Manager
 {
-    [AddComponentMenu("RQ/Manager/GameController")]
+    [AddComponentMenu("BlueOrb/Manager/GameController")]
     public class GameController : MonoBehaviour
     {
         [SerializeField]

@@ -1229,6 +1229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 473212483}
+  _speed: 5
 --- !u!65 &523428377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1987,6 +1988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 1550013330}
+  _speed: 5
 --- !u!65 &876751625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4509,6 +4511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 2054076553}
+  _speed: 5
 --- !u!65 &1873133891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4554,6 +4557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 2042056692}
+  _speed: 5
 --- !u!65 &1874478082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5205,6 +5209,53 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2068663517}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2068663521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8634725137116782661, guid: 0774fff9ed24de34ea9a79aa0e611638,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068663517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068663520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2068663522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7399406912262733259, guid: 0774fff9ed24de34ea9a79aa0e611638,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068663517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2068663523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4446972160777926136, guid: 0774fff9ed24de34ea9a79aa0e611638,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068663517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2068663524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068663523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 951968298, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 2068663521}
+  componentName: 
+  _projectileSpawnPoint: {fileID: 2068663522}
+  _spawnPointPosition: {fileID: 0}
+  maxRaycastDistance: 1000
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _changeProjectileReceiveMessage: 
+  _changeProjectileSendMessage: 
+  _shooterGameObject: {fileID: 2068663523}
 --- !u!1001 &2074108927
 PrefabInstance:
   m_ObjectHideFlags: 0

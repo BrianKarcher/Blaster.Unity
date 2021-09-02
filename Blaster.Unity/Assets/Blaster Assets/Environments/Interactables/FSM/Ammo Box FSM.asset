@@ -25,7 +25,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 50
-        y: 116
+        y: 100
         width: 100
         height: 32
       isBreakpoint: 0
@@ -84,8 +84,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 511
-        y: 114
+        x: 608
+        y: 105
         width: 100
         height: 16
       isBreakpoint: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 261
-        y: 117
+        y: 101
         width: 117
         height: 32
       isBreakpoint: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Destroy
+        toState: Set Projectile
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -248,6 +248,121 @@ MonoBehaviour:
         - GotoPreviousState
         paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
         paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+    - name: Set Projectile
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 437
+        y: 164
+        width: 108
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Destroy
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - BlueOrb.Scripts.AI.Playmaker.SendMessage
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 8cc5bb03
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: SetSecondaryProjectile
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - 
+        - 
+        byteData: 0100000000000000000001
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0b000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
+        paramDataType: 14000000130000002900000012000000280000000300000003000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramName:
+        - gameObject
+        - Recipient
+        - Recipients
+        - Message
+        - _atom
+        - Message
+        - ExtraInfo
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        paramDataPos: 0000000000000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
