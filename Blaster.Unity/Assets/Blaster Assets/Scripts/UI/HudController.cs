@@ -15,10 +15,18 @@ namespace Assets.BlueOrb.Scripts.UI
     [AddComponentMenu("BlueOrb/UI/HUD Controller")]
     public class HudController : ComponentBase<HudController>
     {
+        [SerializeField] private Image _secondaryProjectileImage;
+        [SerializeField] private string _changeProjectileMessage;
 
         private const string ControllerName = "Hud Controller";
 
         private long _setProjectileId;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _secondaryProjectileImage.gameObject.SetActive(false);
+        }
 
         //        public GameObject HpBar;
         //        public GameObject SpBar;
@@ -201,9 +209,11 @@ namespace Assets.BlueOrb.Scripts.UI
             base.StartListening();
             //            _setHpId = MessageDispatcher.Instance.StartListening("SetHp", "Hud Controller", _setHpDel);
 
-            _setProjectileId = MessageDispatcher.Instance.StartListening("SetProjectile", ControllerName, (data) =>
+            _setProjectileId = MessageDispatcher.Instance.StartListening(_changeProjectileMessage, ControllerName, (data) =>
             {
-
+                _secondaryProjectileImage.gameObject.SetActive(true);
+                var projectileConfig = data.ExtraInfo as ProjectileConfig;
+                _secondaryProjectileImage.sprite = projectileConfig.HUDImageSelected;
 
 
             });
@@ -276,7 +286,7 @@ namespace Assets.BlueOrb.Scripts.UI
         public override void StopListening()
         {
             base.StopListening();
-            MessageDispatcher.Instance.StopListening("SetProjectile", ControllerName, _setProjectileId);
+            MessageDispatcher.Instance.StopListening(_changeProjectileMessage, ControllerName, _setProjectileId);
         }
 
         //        private void DisplayMoldData()
