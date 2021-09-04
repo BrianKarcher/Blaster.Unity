@@ -270,6 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 142887405539735097}
+  - component: {fileID: 7042716911407830275}
   m_Layer: 8
   m_Name: Shooter
   m_TagString: Player
@@ -293,6 +294,29 @@ Transform:
   m_Father: {fileID: 7711831247389427738}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7042716911407830275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446972160777926136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 951968298, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 8634725137116782661}
+  componentName: 
+  _projectileSpawnPoint: {fileID: 7399406912262733259}
+  _spawnPointPosition: {fileID: 7399406912262733259}
+  maxRaycastDistance: 1000
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _changeProjectileReceiveMessage: 
+  _changeProjectileSendMessage: 
+  _shooterGameObject: {fileID: 4446972160777926136}
 --- !u!1 &5859423310681779695
 GameObject:
   m_ObjectHideFlags: 0

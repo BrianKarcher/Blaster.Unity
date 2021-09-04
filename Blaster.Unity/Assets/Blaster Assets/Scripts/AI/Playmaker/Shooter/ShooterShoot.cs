@@ -5,10 +5,12 @@ using BlueOrb.Controller.Component;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
-    [ActionCategory("RQ.Shooter")]
+    [ActionCategory("BlueOrb.Shooter")]
     //[Tooltip("Returns Success if Button is pressed.")]
     public class ShooterShoot : FsmStateAction
     {
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
         //public ShooterShootAtom _atom;
 
         //[HutongGames.PlayMaker.Tooltip("Event to send if the trigger event is detected.")]
@@ -20,7 +22,12 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 
         public override void OnEnter()
         {
-            var entity = Owner.GetComponent<IEntity>();
+            var go = Fsm.GetOwnerDefaultTarget(gameObject);
+            if (go == null)
+            {
+                return;
+            }
+            var entity = go.GetComponent<IEntity>();
             if (_playerShooterComponent == null)
             {
                 _playerShooterComponent = entity.Components.GetComponent<PlayerShooterComponent>();
@@ -33,6 +40,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             {
                 _playerShooterComponent.ShootSecondaryProjectile();
             }
+            // Todo: Create a projectile-specific delay so it doesn't finish right away
             Finish();
         }
 
