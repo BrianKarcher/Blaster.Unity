@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: m_ForestTree_A_FallingTrees
-  m_Shader: {fileID: -6465566751694194690, guid: 16226a07c73826f4eaa8b0e5401f282f,
+  m_Name: M_GhostableDoor
+  m_Shader: {fileID: -6465566751694194690, guid: 53664732d5e6c8845b574a91d23749ad,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,15 +21,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_85b342095f3045a381f9193fd4a8b5e6:
-        m_Texture: {fileID: 2800000, guid: f211147488e4a2d4da4e57461deadb81, type: 3}
+        m_Texture: {fileID: 2800000, guid: 866a5b1f0e1be8a4ebd03d21953e20f1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8915328c8b8841de894c01ab23c6e6ac:
-        m_Texture: {fileID: 2800000, guid: d27ddb192e8ab75498f11fde7eb48cc5, type: 3}
+        m_Texture: {fileID: 2800000, guid: f2e3046856238a346916a4ea142cf912, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_d1cb5b4e6e45427f9d541e8b02209ce4:
-        m_Texture: {fileID: 2800000, guid: e60219dbe5c85974d94fd06b62686e07, type: 3}
+        m_Texture: {fileID: 2800000, guid: dde7a595327c54e40ad71c4102cb590c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -89,14 +89,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1798d9eb60d541048ff5cdd73ab60027: -1.79
-    - Vector1_2bb00aa099c24888b689c24f8d7413ab: 3.96
+    - GhostTransition: 0
+    - Vector1_1798d9eb60d541048ff5cdd73ab60027: -1
+    - Vector1_2bb00aa099c24888b689c24f8d7413ab: 1
     - Vector1_6670d9d8b5384eb0a80dd6c51a1683c4: 1
     - Vector1_69101a957edc49c78048b6ea50c3344f: 1
     - Vector1_a2707daa08844194b789a0d03a40916a: 1
     - Vector1_a7cce95eb2264e1391d0523ed08d82d8: 2
-    - Vector1_b848590770444649a96fa7278658d109: 0.54
-    - Vector1_c41c3c676e1a4e84ae06a2bdfe2302a9: 1.57
+    - Vector1_b848590770444649a96fa7278658d109: 1
+    - Vector1_ba730ee2c3b94e58927ff1ff5c424b7d: 0
+    - Vector1_c41c3c676e1a4e84ae06a2bdfe2302a9: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -125,14 +127,14 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_57f5a59e888d48e48dd4be02ae735d6e: {r: 1, g: 1, b: 1, a: 0}
-    - Color_755ae32487924d3b86c00c3f0c628939: {r: 1, g: 0.3686278, b: 0, a: 0}
+    - Color_755ae32487924d3b86c00c3f0c628939: {r: 2.039216, g: 0, b: 8, a: 0}
     - Vector2_ca10044b5f54455b8fe5919f288bf062: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4713093502863700769
+--- !u!114 &8567212299060703270
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
