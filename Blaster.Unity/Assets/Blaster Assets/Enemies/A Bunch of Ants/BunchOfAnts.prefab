@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 423128955}
   - component: {fileID: 423128954}
   - component: {fileID: 7644410273755429241}
+  - component: {fileID: 7348975125452951989}
   m_Layer: 9
   m_Name: AntsShurikenSystem
   m_TagString: Untagged
@@ -4878,9 +4879,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 0.8
-  rangeToExplode: 5
+  rangeToExplode: 2
   ExplosionPrefab: {fileID: 8393646542160958322, guid: 05b5145855fc7dd4cbf6899b2167bc3c,
     type: 3}
+  FireAnts: {fileID: 187858532601836991, guid: 2175cec6820d72f44842c369c48c2612, type: 3}
+  IceAnts: {fileID: 7348900271326332097, guid: a6f01e6e4b89ba7439711757abae9534, type: 3}
+--- !u!114 &7348975125452951989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423128952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addToEntityContainer: 1
+  _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
+  _height: 0
+  _homePosition: {x: 0, y: 0, z: 0}
+  _parentRepo: {fileID: 0}
 --- !u!1 &729265629
 GameObject:
   m_ObjectHideFlags: 0

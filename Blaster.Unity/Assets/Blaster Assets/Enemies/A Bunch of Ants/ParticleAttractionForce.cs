@@ -10,8 +10,11 @@ public class ParticleAttractionForce : MonoBehaviour
     public Transform target;
     public float speed = 5;
 
-    public float rangeToExplode = 5;
+    public float rangeToExplode = 2;
     public GameObject ExplosionPrefab;
+
+    public GameObject FireAnts;
+    public GameObject IceAnts;
 
     private ParticleSystem pS;
 
@@ -43,6 +46,33 @@ public class ParticleAttractionForce : MonoBehaviour
 
             pS.SetParticles(particles, count);
         
+        }
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if(other.CompareTag("Projectile")){
+            string projectileName = other.name;
+            string result = projectileName.Substring(0, 3);
+            if (result == "Fir")
+            {
+                var count = pS.GetParticles(particles);
+
+                for (int i = 0; i < count; i++)
+                {
+                    Instantiate(FireAnts, particles[i].position, new Quaternion(0, 0, 0, 0));
+                    particles[i].remainingLifetime = 0;
+                }
+            }
+            else if (result == "Ice") {
+                var count = pS.GetParticles(particles);
+
+                for (int i = 0; i < count; i++)
+                {
+                    Instantiate(IceAnts, particles[i].position, new Quaternion(0, 0, 0, 0));
+                    particles[i].remainingLifetime = 0;
+                }
+            }
         }
     }
 
