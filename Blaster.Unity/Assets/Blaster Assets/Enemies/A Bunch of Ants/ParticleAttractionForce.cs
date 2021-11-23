@@ -1,10 +1,12 @@
+using BlueOrb.Common.Components;
+using BlueOrb.Messaging;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 [RequireComponent(typeof(ParticleSystem))]
-public class ParticleAttractionForce : MonoBehaviour
+public class ParticleAttractionForce : ComponentBase
 {
 
     public Transform target;
@@ -48,6 +50,18 @@ public class ParticleAttractionForce : MonoBehaviour
         
         }
     }
+
+
+    public override void StartListening()
+    {
+        base.StartListening();
+        MessageDispatcher.Instance.StartListening("ProjectileHit", _componentRepository.GetId(), (data) =>
+        {
+            GameObject.Destroy(_componentRepository.gameObject);
+        });
+    }
+
+
 
     private void OnParticleCollision(GameObject other)
     {
