@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tag: Cart
   _cartJoint: {fileID: 1778359090}
-  _speed: 5
+  _speed: 0
 --- !u!65 &55891217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -713,6 +713,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 814185533542217413, guid: 57e24e8797ab68b47be355e25df62420,
+        type: 3}
+      propertyPath: _entityStats._maxHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 814185533542217413, guid: 57e24e8797ab68b47be355e25df62420,
+        type: 3}
+      propertyPath: _entityStats._currentHP
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8345536390884858634, guid: 57e24e8797ab68b47be355e25df62420,
         type: 3}
       propertyPath: m_Name
@@ -721,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 8345536390884858634, guid: 57e24e8797ab68b47be355e25df62420,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8345536390884858635, guid: 57e24e8797ab68b47be355e25df62420,
         type: 3}
@@ -731,7 +741,7 @@ PrefabInstance:
     - target: {fileID: 8345536390884858635, guid: 57e24e8797ab68b47be355e25df62420,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.0805216
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 8345536390884858635, guid: 57e24e8797ab68b47be355e25df62420,
         type: 3}
@@ -741,7 +751,7 @@ PrefabInstance:
     - target: {fileID: 8345536390884858635, guid: 57e24e8797ab68b47be355e25df62420,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.76603127
+      value: -18.55
       objectReference: {fileID: 0}
     - target: {fileID: 8345536390884858635, guid: 57e24e8797ab68b47be355e25df62420,
         type: 3}
