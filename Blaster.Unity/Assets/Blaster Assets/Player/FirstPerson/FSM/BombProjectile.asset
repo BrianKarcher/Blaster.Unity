@@ -376,15 +376,36 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.CreateObject
         - HutongGames.PlayMaker.Actions.DestroyObject
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 9ff80c02
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: bf83c9009ff80c02
         unityObjectParams: []
         fsmGameObjectParams:
+        - useVariable: 1
+          name: Explosion
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 8393646542160958322, guid: 05b5145855fc7dd4cbf6899b2167bc3c,
+            type: 3}
+        - useVariable: 1
+          name: Main
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: Main
           tooltip: 
@@ -419,7 +440,19 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         fsmVector2Params: []
-        fsmVector3Params: []
+        fsmVector3Params:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -429,13 +462,18 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 130000000f00000011000000
+        paramDataType: 13000000130000001c0000001c00000013000000130000000f00000011000000
         paramName:
+        - gameObject
+        - spawnPoint
+        - position
+        - rotation
+        - storeObject
         - gameObject
         - delay
         - detachChildren
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000000000000
+        paramDataPos: 0000000001000000000000000100000002000000030000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000
     - name: Tailing Raycast Hit
       description: 
       colorIndex: 0
@@ -655,6 +693,13 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Explosion
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 8393646542160958322, guid: 05b5145855fc7dd4cbf6899b2167bc3c,
+          type: 3}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -662,7 +707,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0

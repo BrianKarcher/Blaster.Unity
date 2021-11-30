@@ -25,7 +25,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 254
-        y: 122
+        y: 106
         width: 100
         height: 48
       isBreakpoint: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101
+        actionEnabled: 010100
         actionIsOpen: 010101
         actionStartIndex: 000000000500000015000000
         actionHashCodes: 597887008cc5bb031a44e005
@@ -237,10 +237,10 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 613
-        y: 114
+        x: 608
+        y: 112
         width: 100
-        height: 32
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -250,6 +250,14 @@ MonoBehaviour:
           isSystemEvent: 1
           isGlobal: 0
         toState: CompareLifetime
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Kill
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Destroy
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -369,7 +377,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 60
-        y: 117
+        y: 101
         width: 100
         height: 32
       isBreakpoint: 0
@@ -459,7 +467,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 830
-        y: 203
+        y: 187
         width: 100
         height: 16
       isBreakpoint: 0
@@ -552,7 +560,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 598
-        y: 298
+        y: 282
         width: 132
         height: 48
       isBreakpoint: 0

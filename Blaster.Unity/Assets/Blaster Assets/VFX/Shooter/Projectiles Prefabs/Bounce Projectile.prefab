@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &8290023358592166349
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553805800673467690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0000005
+  m_Center: {x: -0.00000020861626, y: 0, z: 0.00000017881398}
 --- !u!114 &6180743177779903323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,19 +27,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _componentRepository: {fileID: 176277809001093969}
   componentName: 
---- !u!135 &8290023358592166349
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2553805800673467690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.0000005
-  m_Center: {x: -0.00000020861626, y: 0, z: 0.00000017881398}
 --- !u!1 &5090170921490079855
 GameObject:
   m_ObjectHideFlags: 0
@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 5090170921490079854}
   - component: {fileID: 5169206511766865632}
   - component: {fileID: 176277809001093969}
+  - component: {fileID: 5269850764410826447}
   m_Layer: 0
   m_Name: Bounce Projectile
   m_TagString: Projectile
@@ -95,6 +96,19 @@ MonoBehaviour:
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+--- !u!135 &5269850764410826447
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090170921490079855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6067325006345136097
 GameObject:
   m_ObjectHideFlags: 0
