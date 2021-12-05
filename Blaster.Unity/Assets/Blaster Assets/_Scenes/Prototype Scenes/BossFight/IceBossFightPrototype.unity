@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 374785965}
   - component: {fileID: 374785964}
   - component: {fileID: 374785966}
+  - component: {fileID: 374785967}
   m_Layer: 0
   m_Name: Dolly Cart
   m_TagString: Cart
@@ -727,6 +728,22 @@ MonoBehaviour:
   _componentRepository: {fileID: 374785965}
   componentName: 
   _target: {fileID: 1835440452}
+--- !u!114 &374785967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374785958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 699259968, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 374785965}
+  componentName: 
+  _cinemachineDollyCart: {fileID: 0}
+  _speedChangeType: 2
 --- !u!1001 &401573901
 PrefabInstance:
   m_ObjectHideFlags: 0
