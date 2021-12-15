@@ -85,7 +85,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 
             //var playerRelativeInputDirection = _playerController.transform.TransformDirection(axisInput.xz());
             var playerRelativeInputDirection = _entity.transform.TransformDirection(new Vector3(axisInput.x, 0, axisInput.y));
-            _physicsComponent.SetVelocity3(playerRelativeInputDirection * _physicsComponent.GetPhysicsData().MaxSpeed);
+            _physicsComponent.SetVelocity3(playerRelativeInputDirection.normalized * _physicsComponent.GetPhysicsData().MaxSpeed);
             //_playerController.SetTargetVelocity(playerRelativeInputDirection * _physicsComponent.GetPhysicsData().MaxSpeed);
             //if (inputData.TurnCrouchOn)
             //    _playerController.SetCrouch(true);
