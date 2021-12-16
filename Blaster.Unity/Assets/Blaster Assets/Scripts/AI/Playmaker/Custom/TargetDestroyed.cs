@@ -5,6 +5,8 @@ using UnityEngine;
 using BlueOrb.Scripts.UI;
 using TMPro;
 using Assets.Blaster_Assets.Scripts.Components;
+using BlueOrb.Controller.Manager;
+using BlueOrb.Messaging;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Camera
 {
@@ -36,39 +38,13 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 
             var worldPos = entity.GetPosition() + LabelOffset.Value;
 
-            var pos = UnityEngine.Camera.main.WorldToScreenPoint(worldPos);
-
-            // TODO This is bad and SLOW!
-            var uiController = GameObject.FindObjectOfType<UIController>();
-            if (uiController == null)
+            var points = new PointsData()
             {
-                Debug.LogError($"Cannot locate UIController.");
-                Finish();
-                return;
-            }
-
-            var canvas = uiController.GetCanvas();
-
-            //var extraInfo = ((Vector3 pos, string text, Color color))data.ExtraInfo;
-            var label = GameObject.Instantiate(Label.Value, pos, Quaternion.identity, canvas.transform);
-            // Calculate *screen* position (note, not a canvas/recttransform position)
-            var pinComponent = label.GetComponent<PinUIToWorldSpaceComponent>();            
-            pinComponent.SetWorldPosition(worldPos);
-
-            var textMeshPro = label.GetComponent<TextMeshProUGUI>();
-            string prefix = string.Empty;
-            //Color color;
-            //if (Points.Value >= 0)
-            //{
-            //    prefix = "+";
-            //    //color = 
-            //}
-            //else
-            //{
-            //    prefix = "-";
-            //}
-            textMeshPro.color = Color;
-            textMeshPro.SetText(prefix + Points.Value);
+                Points = Points.Value,
+                Color = Color,
+                Position = worldPos
+            };
+            MessageDispatcher.Instance.DispatchMsg("AddPoints", 0f, entity.GetId(), "Level Controller", points);
 
             //_atom.Start(entity);
             Finish();
