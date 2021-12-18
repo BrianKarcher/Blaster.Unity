@@ -300,17 +300,19 @@ MonoBehaviour:
         actionNames:
         - BlueOrb.Scripts.AI.Playmaker.TrailingSphereCast
         - HutongGames.PlayMaker.Actions.TriggerEvent
+        - BlueOrb.Scripts.AI.Playmaker.OverlapBoxCastAll
         customNames:
         - 
         - 
-        actionEnabled: 0001
-        actionIsOpen: 0101
-        actionStartIndex: 0000000009000000
-        actionHashCodes: 01d551039c512400
+        - 
+        actionEnabled: 000001
+        actionIsOpen: 010101
+        actionStartIndex: 00000000090000000e000000
+        actionHashCodes: 01d551039c5124006259e401
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
-          name: EnemiesHitted
+          name: 
           tooltip: 
           showInInspector: 1
           networkSync: 0
@@ -322,7 +324,7 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         - useVariable: 1
-          name: EnemiesHitted
+          name: 
           tooltip: 
           showInInspector: 1
           networkSync: 0
@@ -344,6 +346,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 2447867332712765820}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -359,7 +369,20 @@ MonoBehaviour:
           value: Enemy
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: EnemiesHitted
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 0
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 1
@@ -375,6 +398,24 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 9
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 9
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 10
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 11
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params:
@@ -384,6 +425,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {x: 0, y: 0, z: 0}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 5, y: 5, z: 5}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -391,13 +444,16 @@ MonoBehaviour:
         - FINISHED
         - FINISHED
         - HitEnemies
-        byteData: 01000000
-        arrayParamSizes: 01000000
+        - HitEnemies
+        - 
+        byteData: 0100000000
+        arrayParamSizes: 0100000003000000
         arrayParamTypes:
+        - HutongGames.PlayMaker.FsmInt
         - HutongGames.PlayMaker.FsmInt
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000000f0000000c00000010000000170000001700000013000000130000001c0000001400000007000000120000001700000013000000
+        paramDataType: 140000000f0000000c00000010000000170000001700000013000000130000001c0000001400000007000000120000001700000013000000140000001c0000001c0000000c00000010000000100000001000000017000000170000002900000001000000
         paramName:
         - gameObject
         - Radius
@@ -413,8 +469,19 @@ MonoBehaviour:
         - collideTag
         - sendEvent
         - storeCollider
-        paramDataPos: 0000000000000000000000000000000000000000010000000000000001000000000000000100000000000000000000000200000002000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000
+        - gameObject
+        - Offset
+        - HalfExtents
+        - Layer
+        - 
+        - 
+        - 
+        - HitEvent
+        - NotHitEvent
+        - storeEntity
+        - everyFrame
+        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000000000001000000000000000000000002000000020000000200000001000000020000000100000001000000020000000300000003000000040000000000000004000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: InitialDellay
       description: 
       colorIndex: 0
@@ -508,7 +575,7 @@ MonoBehaviour:
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
-          name: EnemiesHitted
+          name: 
           tooltip: 
           showInInspector: 1
           networkSync: 0
@@ -539,11 +606,11 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams:
         - useVariable: 1
-          name: 
+          name: EnemiesHitted
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          type: -1
+          type: 0
           objectTypeName: UnityEngine.Object
           floatValues: []
           intValues: 
@@ -628,19 +695,38 @@ MonoBehaviour:
       quaternionVariables: []
       gameObjectVariables:
       - useVariable: 1
-        name: EnemiesHitted
+        name: 
         tooltip: 
         showInInspector: 1
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Main
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 2447867332712765820}
       objectVariables: []
       materialVariables: []
       textureVariables: []
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: EnemiesHitted
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        type: 0
+        objectTypeName: UnityEngine.Object
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences: []
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0

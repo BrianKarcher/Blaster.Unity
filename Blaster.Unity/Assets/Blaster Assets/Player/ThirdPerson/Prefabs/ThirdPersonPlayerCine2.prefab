@@ -327,7 +327,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7928564443276624780}
   - component: {fileID: 1097626257968243996}
-  - component: {fileID: 4545499456925378724}
   m_Layer: 8
   m_Name: HammerSmash
   m_TagString: Untagged
@@ -503,24 +502,6 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: fb8dc6e836edd97469aa7a46724dcbdb, type: 2}
   eventHandlerComponentsAdded: 1
---- !u!114 &4545499456925378724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4805485987790071154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1503405451, guid: 339283910f46a6242b664963a1d5f397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _addToEntityContainer: 1
-  _target: {fileID: 0}
-  _defaultTargetIsPlayer: 1
-  _height: 0
-  _homePosition: {x: 0, y: 0, z: 0}
-  _parentRepo: {fileID: 0}
 --- !u!1 &5859423310681779695
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +579,8 @@ MonoBehaviour:
   componentName: 
   InvisibleCameraOrigin: {fileID: 5032431833510675783}
   _objectToRotate: {fileID: 7711831247389427738}
+  _objectToRotatePitch: {fileID: 0}
+  _objectToRotateYaw: {fileID: 0}
   _verticalAxisName: Rotate Camera Vertical
   _horizontalAxisName: Rotate Camera Horizontal
   _zoomButton: Zoom
