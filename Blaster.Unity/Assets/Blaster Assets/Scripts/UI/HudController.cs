@@ -18,6 +18,7 @@ namespace Assets.BlueOrb.Scripts.UI
     {
         [SerializeField] private Image _secondaryProjectileImage;
         [SerializeField] private TextMeshProUGUI _secondaryProjectileText;
+        [SerializeField] private TextMeshProUGUI _currentHpText;
         [SerializeField] private string _changeProjectileMessage;
         [SerializeField] private string _setAmmoMessage;
 
@@ -25,6 +26,7 @@ namespace Assets.BlueOrb.Scripts.UI
 
         private long _setProjectileId;
         private long _setAmmoId;
+        private long _setHp;
 
         protected override void Awake()
         {
@@ -58,6 +60,13 @@ namespace Assets.BlueOrb.Scripts.UI
             {
                 var ammo = (int)data.ExtraInfo;
                 _secondaryProjectileText.text = ammo.ToString();
+            });
+
+            _setHp = MessageDispatcher.Instance.StartListening("SetHp", ControllerName, (data) =>
+            {
+                var hp = ((float current, float max))data.ExtraInfo;
+                Debug.Log($"(HUD) Setting current hp to {hp.current}");
+                _currentHpText.text = Mathf.FloorToInt(hp.current).ToString();
             });
 
             //            MessageDispatcher.Instance.StartListening("SetShardCount", "Hud Controller", (data) =>

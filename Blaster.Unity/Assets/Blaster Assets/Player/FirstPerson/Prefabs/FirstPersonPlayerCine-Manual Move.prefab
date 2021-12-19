@@ -1039,6 +1039,7 @@ GameObject:
   - component: {fileID: 3239011891136494306}
   - component: {fileID: 6363887426511811140}
   - component: {fileID: 21997176818907432}
+  - component: {fileID: 9033980407924858626}
   m_Layer: 8
   m_Name: Character Logic
   m_TagString: Player
@@ -1237,6 +1238,37 @@ MonoBehaviour:
   _verticalAxis: Vertical
   _enablePlayerInput: 1
   _movementType: 0
+--- !u!114 &9033980407924858626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391379247307723887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2139407959, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
+  _entityStats:
+    _maxHP: 0
+    _currentHP: 0
+    _maxSP: 0
+    _currentSP: 0
+    _maxStamina: 0
+    _currentStamina: 0
+    _actionStaminas: []
+    _staminaRefreshAmount: 0
+    _staminaRefreshDelay: 0
+    _physicalAttackPower: 0
+    _magicalAttackPower: 0
+    _physicalDefense: 0
+    _magicalDefense: 0
+    _experience: 0
+    _level: 0
+    IsHiding: 0
 --- !u!1 &7391379248030444646
 GameObject:
   m_ObjectHideFlags: 0
