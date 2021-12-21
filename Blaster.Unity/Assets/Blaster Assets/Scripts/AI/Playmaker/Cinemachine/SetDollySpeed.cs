@@ -16,6 +16,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
         [RequiredField]
         public FsmOwnerDefault gameObject;
 
+        public FsmBool Immediate;
         public FsmFloat Speed;
         public FsmFloat SmoothTime;
 
@@ -50,7 +51,14 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
             data.SmoothTime = SmoothTime.Value;
             if (entity == null)
                 throw new Exception($"Could not locate entity in {Fsm.ActiveStateName}");
-            MessageDispatcher.Instance.DispatchMsg("SetSpeedTarget", 0f, string.Empty, entity.GetId(), data);
+            if (Immediate.Value)
+            {
+                MessageDispatcher.Instance.DispatchMsg("SetSpeed", 0f, string.Empty, entity.GetId(), Speed.Value);
+            }
+            else
+            {
+                MessageDispatcher.Instance.DispatchMsg("SetSpeedTarget", 0f, string.Empty, entity.GetId(), data);
+            }
             //_dollyCart.m_Speed = Speed.Value;
             //_atom.Start(entity);
             Finish();
