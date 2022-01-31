@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: ef7513b54a0670140b9b967af7620563, type: 3}
   m_Sun: {fileID: 114175327}
-  m_IndirectSpecularColor: {r: 0.64059347, g: 0.6092771, b: 0.5803185, a: 1}
+  m_IndirectSpecularColor: {r: 1.4139739, g: 0.2366598, b: 0.04090703, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1539,6 +1539,8 @@ MonoBehaviour:
   _tag: Cart
   _cartJoint: {fileID: 1778359090}
   _speed: 5
+  _immediate: 1
+  _smoothTime: 1
 --- !u!65 &55891217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9518,6 +9520,7 @@ GameObject:
   - component: {fileID: 593336951}
   - component: {fileID: 593336950}
   - component: {fileID: 593336948}
+  - component: {fileID: 593336949}
   m_Layer: 0
   m_Name: Dolly Cart
   m_TagString: Cart
@@ -9540,6 +9543,29 @@ MonoBehaviour:
   _componentRepository: {fileID: 593336950}
   componentName: 
   _target: {fileID: 0}
+--- !u!114 &593336949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593336947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 699259968, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 593336950}
+  componentName: 
+  _cinemachineDollyCart: {fileID: 0}
+  _speedChangeType: 2
+  _dollyJoint: {fileID: 593336947}
+  _targetSpeed: 0
+  _startSpeed: 0
+  _currentSpeed: 0
+  _updatingSpeed: 0
+  _smoothTime: 2
+  _speedDecreasing: 0
 --- !u!114 &593336950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13040,6 +13066,8 @@ MonoBehaviour:
   _tag: Cart
   _cartJoint: {fileID: 1955097152}
   _speed: 5
+  _immediate: 1
+  _smoothTime: 1
 --- !u!65 &919577684
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30206,6 +30234,8 @@ MonoBehaviour:
   _tag: Cart
   _cartJoint: {fileID: 1488320395}
   _speed: 5
+  _immediate: 1
+  _smoothTime: 1
 --- !u!65 &1745420489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33212,6 +33242,21 @@ PrefabInstance:
     - target: {fileID: 6128631322365642233, guid: ff24f7a7de79f654784af3184b2aba7f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128631322440886547, guid: ff24f7a7de79f654784af3184b2aba7f,
+        type: 3}
+      propertyPath: Damping.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128631322440886547, guid: ff24f7a7de79f654784af3184b2aba7f,
+        type: 3}
+      propertyPath: Damping.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128631322440886547, guid: ff24f7a7de79f654784af3184b2aba7f,
+        type: 3}
+      propertyPath: Damping.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7800461316856851211, guid: ff24f7a7de79f654784af3184b2aba7f,
