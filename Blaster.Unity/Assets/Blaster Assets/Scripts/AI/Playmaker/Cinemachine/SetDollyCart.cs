@@ -49,7 +49,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
             //}
             var entity = go.GetComponent<IEntity>();
             var dollyComponent = entity.Components.GetComponent<DollyCartComponent>();
-            dollyComponent.SetDollyCart(DollyCart.Value);
+            dollyComponent.SetDollyCartParent(DollyCart.Value);
             //MessageDispatcher.Instance.DispatchMsg("SetSpeedTarget", 0f, string.Empty, entity.GetId(), data);
             //_dollyCart.m_Speed = Speed.Value;
             //_atom.Start(entity);
