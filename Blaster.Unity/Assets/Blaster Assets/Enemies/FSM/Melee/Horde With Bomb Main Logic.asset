@@ -24,7 +24,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
+        x: 82
         y: 116
         width: 100
         height: 32
@@ -106,10 +106,10 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 231
+        x: 263
         y: 176
         width: 100
-        height: 48
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -130,9 +130,18 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: OtherHit
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: OtherHits
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.TriggerEvent
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - HutongGames.PlayMaker.Actions.TriggerEvent
         - HutongGames.PlayMaker.Actions.GetDistance
@@ -143,12 +152,19 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0001010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 00000000050000000d0000001200000016000000
-        actionHashCodes: 9c5124001a44e0059c51240036f094001bcdca04
+        - 
+        actionEnabled: 000101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 00000000050000000d000000150000001a0000001e000000
+        actionHashCodes: 9c5124001a44e0051a44e0059c51240036f094001bcdca04
         unityObjectParams: []
         fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         - useVariable: 1
           name: 
           tooltip: 
@@ -206,6 +222,14 @@ MonoBehaviour:
             showInInspector: 1
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -219,6 +243,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Projectile
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         - useVariable: 0
           name: 
           tooltip: 
@@ -272,23 +302,35 @@ MonoBehaviour:
         - FireProjectileHit
         - 
         - Hit
+        - ProjectileHit
+        - 
+        - OtherHit
         - NearPlayer
         - 
         - NearPlayer
         - 
-        byteData: 0000000000000000000101
+        byteData: 000000000000000000000101
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 02000000
+        customTypeSizes: 0200000002000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 14000000070000001200000017000000130000001400000028000000030000000300000017000000130000001200000001000000140000000700000012000000170000001300000014000000130000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 140000000700000012000000170000001300000014000000280000000300000003000000170000001300000012000000010000001400000028000000030000000300000017000000130000001200000001000000140000000700000012000000170000001300000014000000130000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
         paramName:
         - gameObject
         - trigger
         - collideTag
         - sendEvent
         - storeCollider
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
         - gameObject
         - _atom
         - Message
@@ -313,14 +355,14 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 000000000000000000000000000000000000000001000000000000000100000002000000030000000100000001000000040000000200000005000000020000000400000002000000030000000300000000000000090000000100000002000000030000000500000006000000070000000a000000
-        paramByteDataSize: 0000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000040000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000200000003000000010000000100000004000000020000000100000004000000050000000600000002000000020000000500000003000000060000000300000007000000030000000400000004000000000000000a00000001000000020000000300000008000000090000000a0000000b000000
+        paramByteDataSize: 00000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000040000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
     - name: Hit
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 221
+        x: 253
         y: 265
         width: 100
         height: 64
@@ -460,13 +502,13 @@ MonoBehaviour:
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams:
-        - useVariable: 0
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
           type: -1
-          objectTypeName: 
+          objectTypeName: UnityEngine.Object
           floatValues: []
           intValues: 
           boolValues: 
@@ -558,8 +600,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 432
-        y: 308
+        x: 546
+        y: 312
         width: 100
         height: 32
       isBreakpoint: 0
@@ -754,7 +796,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 455
+        x: 487
         y: 221
         width: 100
         height: 32
@@ -818,7 +860,7 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           type: -1
-          objectTypeName: 
+          objectTypeName: UnityEngine.Object
           floatValues: []
           intValues: 
           boolValues: 
@@ -869,7 +911,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 434
+        x: 466
         y: 114
         width: 148
         height: 32
@@ -963,7 +1005,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 683
+        x: 715
         y: 115
         width: 100
         height: 16
@@ -973,22 +1015,39 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - BlueOrb.Scripts.AI.Playmaker.Camera.TargetDestroyed
         - HutongGames.PlayMaker.Actions.DestroyObject
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 9ff80c02
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 17211b049ff80c02
         unityObjectParams: []
         fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 2707671265557584813, guid: 68f955f723f4ed240a0d7f57e05f1118,
+            type: 3}
         - useVariable: 1
           name: Main
           tooltip: 
           showInInspector: 1
           networkSync: 0
           value: {fileID: 0}
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -1007,7 +1066,13 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmIntParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 10
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -1016,23 +1081,244 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         fsmVector2Params: []
-        fsmVector3Params: []
+        fsmVector3Params:
+        - useVariable: 1
+          name: LabelOffset
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 
+        byteData: 000000000000803f000000000000803f
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 130000000f00000011000000
+        paramDataType: 14000000130000001c0000001000000004000000130000000f00000011000000
         paramName:
+        - gameObject
+        - Label
+        - LabelOffset
+        - Points
+        - Color
         - gameObject
         - delay
         - detachChildren
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000000000000
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000010000000000000000000000000000000
+    - name: OtherHits
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 52
+        y: 248
+        width: 100
+        height: 64
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Dead
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Destroy
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Hit
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Hit
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: AI On
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - BlueOrb.Scripts.AI.Playmaker.SendMessage
+        - BlueOrb.Scripts.AI.Playmaker.StopMoving
+        - BlueOrb.Scripts.AI.PlayMaker.Attack.AddHp
+        - HutongGames.PlayMaker.Actions.Wait
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0100010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000010000000120000001500000018000000
+        actionHashCodes: 8cc5bb0314d13203657e6f0148c011011a44e005
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: AIOff
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: -1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - AIOff
+        - 
+        - 
+        - Dead
+        - FINISHED
+        - FireProjectileHit
+        - 
+        - Hit
+        byteData: 01000000000000000000010000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 0b0000000000000002000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
+        - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000007000000010000001400000028000000140000000f000000170000000f00000017000000010000001400000028000000030000000300000017000000130000001200000001000000
+        paramName:
+        - gameObject
+        - Recipient
+        - Recipients
+        - Message
+        - _atom
+        - Message
+        - ExtraInfo
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - gameObject
+        - _atom
+        - gameObject
+        - Hp
+        - IsDead
+        - time
+        - finishEvent
+        - realTime
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
+        paramDataPos: 0000000000000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000010000000100000002000000000000000300000001000000040000000b000000030000000200000005000000060000000700000001000000010000000c000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -1046,15 +1332,12 @@ MonoBehaviour:
     - name: NearPlayer
       isSystemEvent: 0
       isGlobal: 0
+    - name: OtherHit
+      isSystemEvent: 0
+      isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables:
-      - useVariable: 1
-        name: 
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
       - useVariable: 1
         name: DistanceToPlayer
         tooltip: 
@@ -1095,7 +1378,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
