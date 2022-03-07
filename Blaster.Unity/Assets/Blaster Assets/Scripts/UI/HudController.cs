@@ -16,12 +16,18 @@ namespace Assets.BlueOrb.Scripts.UI
         [SerializeField] private TextMeshProUGUI _levelStartTimer;
         [SerializeField] private string _changeProjectileMessage;
         [SerializeField] private string _setAmmoMessage;
+        [SerializeField] private Color[] StartTimerColors;
+
 
         private const string ControllerName = "Hud Controller";
 
         private long _setProjectileId;
         private long _setAmmoId;
         private long _setHp;
+
+        private bool _isStartTimerVisible = false;
+        private float startTimerTime;
+        private float endTimerTime;
 
         protected override void Awake()
         {
@@ -72,7 +78,16 @@ namespace Assets.BlueOrb.Scripts.UI
             MessageDispatcher.Instance.StartListening("SetTimer", ControllerName, (data) =>
             {
                 int displayTime = (int)data.ExtraInfo;
-                _levelStartTimer.text = displayTime.ToString();
+                Debug.Log($"Showing display time {displayTime}");
+                if (displayTime >= StartTimerColors.Length)
+                {
+                    _levelStartTimer.color = StartTimerColors[StartTimerColors.Length - 1];
+                }
+                else
+                {
+                    _levelStartTimer.color = StartTimerColors[displayTime];
+                }
+                _levelStartTimer.text = displayTime == 0 ? "START" : displayTime.ToString();
             });
         }
 
