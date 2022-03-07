@@ -94,11 +94,6 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Variable
 
 		public float GetValue()
 		{
-			switch (Variable)
-			{
-				case FloatVariables.Stamina:
-					return _entityStatsComponent.GetStamina();
-			}
 			return 0f;
 		}
 	}

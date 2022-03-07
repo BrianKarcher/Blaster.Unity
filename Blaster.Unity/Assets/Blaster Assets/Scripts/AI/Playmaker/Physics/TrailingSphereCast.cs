@@ -1,10 +1,8 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using HutongGames.PlayMaker;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using UnityEngine;
 using TooltipAttribute = HutongGames.PlayMaker.TooltipAttribute;
 using System;
-using BlueOrb.Physics.Helpers;
 using BlueOrb.Controller.Block;
 
 namespace BlueOrb.Scripts.AI.Playmaker
@@ -18,8 +16,6 @@ namespace BlueOrb.Scripts.AI.Playmaker
         public FsmOwnerDefault gameObject;
 
         public FsmFloat Radius;
-
-        //public RaycastAtom _atom;
 
         [UIHint(UIHint.Layer)]
         [Tooltip("Layers to check.")]
@@ -72,11 +68,6 @@ namespace BlueOrb.Scripts.AI.Playmaker
             _entity = base.GetRepo(go);
             _previosPosition = _entity.GetPosition();
             _layerMask = ActionHelpers.LayerArrayToLayerMask(Layer, false);
-            //_atom.SetLayerMask();
-            //_atom.Start(entity);
-            //Tick();
-            //if (!everyFrame)
-            //    Finish();
         }
 
         public override void OnUpdate()
@@ -87,16 +78,12 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
         private void Tick()
         {
-            //bool isTrue = false;
             var newPos = _entity.GetPosition();
             var dir = newPos - _previosPosition;
             var hit = UnityEngine.Physics.SphereCast(_previosPosition, Radius.Value, dir, out var hitInfo, dir.magnitude, _layerMask);
-            //var hit = UnityEngine.Physics.Raycast(_previosPosition, dir, out var hitInfo, dir.magnitude, _layerMask);
-            //DrawBoxCast.DrawBox(_previosPosition, )
             Debug.DrawLine(_previosPosition, _previosPosition + dir, hit ? Color.red : Color.green, 5.0f);
             Debug.DrawLine(_previosPosition + (_entity.transform.right * -1f), _previosPosition + dir + (_entity.transform.right * -1f), hit ? Color.red : Color.green, 5.0f);
             Debug.DrawLine(_previosPosition + _entity.transform.right, _previosPosition + _entity.transform.right + dir, hit ? Color.red : Color.green, 5.0f);
-            //DrawBox();
 
             if (hit)
             {
@@ -141,29 +128,11 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
             // Update previous position with new
             _previosPosition = newPos;
-
-            //if (_atom.Check())
-            //{
-            //    //isTrue = true;
-
-            //    //Finish();
-            //}
-            //else
-            //{
-            //    isTrue = false;
-
-            //}
-            
-            //if (!storeResult.IsNone)
-            //{
-            //    storeResult.Value = isTrue;
-            //}
         }
 
         public override void OnExit()
         {
             base.OnExit();
-            //_atom.End();
         }
     }
 }

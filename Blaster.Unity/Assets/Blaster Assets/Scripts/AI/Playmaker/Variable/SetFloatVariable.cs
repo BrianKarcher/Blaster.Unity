@@ -5,8 +5,7 @@ using BlueOrb.Common.Container;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
-    [ActionCategory("RQ.Variable")]
-    //[Tooltip("Returns Success if Button is pressed.")]
+    [ActionCategory("BlueOrb.Variable")]
     public class SetFloatVariable : BasePlayMakerAction
     {
         [RequiredField]

@@ -1,14 +1,11 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using BlueOrb.Scripts.AI.Playmaker;
+﻿using BlueOrb.Scripts.AI.Playmaker;
 using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
-using BlueOrb.Base.Components;
 using UnityEngine;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
     [ActionCategory("BlueOrb.Variable")]
-    //[Tooltip("Returns Success if Button is pressed.")]
     public class SetGameObjectVariable : BasePlayMakerAction
     {
         public GameObjectVariableEnum GameObjectVariable;

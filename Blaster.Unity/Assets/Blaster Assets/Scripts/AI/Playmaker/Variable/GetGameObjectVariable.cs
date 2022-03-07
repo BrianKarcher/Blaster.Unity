@@ -7,15 +7,10 @@ using UnityEngine;
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
     [ActionCategory("RQ.Variable")]
-    //[Tooltip("Returns Success if Button is pressed.")]
     public class GetGameObjectVariable : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
-
-        //[RequiredField]
-        //[HutongGames.PlayMaker.Tooltip("The main GameObject.")]
-        //public FsmOwnerDefault gameObject;
 
         [UIHint(UIHint.Variable)]
         [HutongGames.PlayMaker.Tooltip("Fire when message is received.")]

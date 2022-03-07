@@ -1,10 +1,6 @@
-﻿using BlueOrb.Scripts.AI.AtomActions.Animation;
-using HutongGames.PlayMaker;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using UnityEngine;
-using BlueOrb.Scripts.UI;
-using TMPro;
-using Assets.Blaster_Assets.Scripts.Components;
 using BlueOrb.Controller.Manager;
 using BlueOrb.Messaging;
 
@@ -21,8 +17,6 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
         public FsmVector3 LabelOffset;
         public FsmInt Points;
         public Color Color = Color.white;
-
-        //public AddLayerWeightLerpAtom _atom;
 
         public override void OnEnter()
         {
@@ -46,7 +40,6 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
             };
             MessageDispatcher.Instance.DispatchMsg("AddPoints", 0f, entity.GetId(), "Level Controller", points);
 
-            //_atom.Start(entity);
             Finish();
         }
 
@@ -54,7 +47,6 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
         {
             Debug.Log("(TargetDestroyed) OnExit called");
             base.OnExit();
-            //_atom.End();
         }
     }
 }

@@ -1,8 +1,5 @@
-﻿using BlueOrb.Scripts.AI.AtomActions.Animation;
-using HutongGames.PlayMaker;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
-using UnityEngine;
-using Cinemachine;
 using BlueOrb.Messaging;
 using static BlueOrb.Controller.DollyCartComponent;
 using System;
@@ -20,8 +17,6 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
         public FsmFloat Speed;
         public FsmFloat SmoothTime;
 
-        //private CinemachineDollyCart _dollyCart;
-
         public override void Reset()
         {
             gameObject = null;
@@ -29,22 +24,14 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
             SmoothTime = 2;
         }
 
-        //public AddLayerWeightLerpAtom _atom;
-
         public override void OnEnter()
         {
-            //Debug.Log("(AddLayerWeightLerp) OnEnter called");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
                 return;
             }
-            //Debug.Log("(CenterCamera) OnEnter called");
-            //var entity = go.GetComponent<IEntity>();
-            //if (_dollyCart == null)
-            //{
-            //    _dollyCart = go.GetComponent<CinemachineDollyCart>();
-            //}
+
             var entity = go.GetComponent<IEntity>();
             SetSpeedData data = new SetSpeedData();
             data.TargetSpeed = Speed.Value;
@@ -59,16 +46,12 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
             {
                 MessageDispatcher.Instance.DispatchMsg("SetSpeedTarget", 0f, string.Empty, entity.GetId(), data);
             }
-            //_dollyCart.m_Speed = Speed.Value;
-            //_atom.Start(entity);
             Finish();
         }
 
         public override void OnExit()
         {
-            //Debug.Log("(AddLayerWeightLerp) OnExit called");
             base.OnExit();
-            //_atom.End();
         }
     }
 }

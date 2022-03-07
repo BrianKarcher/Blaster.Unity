@@ -1,5 +1,4 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using HutongGames.PlayMaker;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using UnityEngine;
 using BlueOrb.Physics;
@@ -10,7 +9,6 @@ using BlueOrb.Controller;
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
     [ActionCategory("BlueOrb.Player")]
-    //[Tooltip("Returns Success if Button is pressed.")]
     public class OverShoulderMovement : FsmStateAction
     {
         [RequiredField]
@@ -21,11 +19,6 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         private AnimationComponent _animationComponent;
         private long _inputMessageIndex;
         private IEntity _entity;
-
-        //        public OverShoulderMovementAtom _atom;
-
-        //        //[HutongGames.PlayMaker.Tooltip("Event to send if the trigger event is detected.")]
-        //        //public FsmEvent HangEvent;
 
         public override void Reset()
         {
@@ -46,7 +39,6 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                 _physicsComponent = _entity.Components.GetComponent<PhysicsComponent>();
             if (_animationComponent == null)
                 _animationComponent = _entity.Components.GetComponent<AnimationComponent>();
-            //_atom.Start(entity);
             StartListening();
         }
 
@@ -69,12 +61,10 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                 int i = 1;
             }
 
-            // _forwardAmount = axisInput.magnitude;
             var forwardAmount = axisInput.y;
             var _sideAmount = axisInput.x;
             float _turnAmount = 0f;
 
-            //_playerController.UpdateAnimator(_forwardAmount, _turnAmount, _sideAmount);
             _animationComponent?.SetForwardSpeed(forwardAmount);
             _animationComponent?.SetTurnSpeed(_turnAmount);
             _animationComponent?.SetSideSpeed(_sideAmount);
@@ -83,15 +73,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             else
                 _animationComponent?.SetVerticalSpeed(_physicsComponent.GetVelocity3().y);
 
-            //var playerRelativeInputDirection = _playerController.transform.TransformDirection(axisInput.xz());
             var playerRelativeInputDirection = _entity.transform.TransformDirection(new Vector3(axisInput.x, 0, axisInput.y));
             _physicsComponent.SetVelocity3(playerRelativeInputDirection.normalized * _physicsComponent.GetPhysicsData().MaxSpeed);
-            //_playerController.SetTargetVelocity(playerRelativeInputDirection * _physicsComponent.GetPhysicsData().MaxSpeed);
-            //if (inputData.TurnCrouchOn)
-            //    _playerController.SetCrouch(true);
-            //if (inputData.TurnCrouchOff)
-            //    _playerController.SetCrouch(false);
-
         }
 
         private void StopListening(IEntity entity)
@@ -102,20 +85,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         public override void OnExit()
         {
             base.OnExit();
-            //_atom.End();
             StopListening(_entity);
         }
-
-        //        public override void OnUpdate()
-        //        {
-        //            Tick();
-        //        }
-
-        //        private void Tick()
-        //        {
-        //            _atom.OnUpdate();
-        //            if (_atom.IsFinished)
-        //                Finish();
-        //        }
     }
 }

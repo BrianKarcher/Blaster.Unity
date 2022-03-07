@@ -4,9 +4,6 @@ using BlueOrb.Base.Components;
 using BlueOrb.Common.Container;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using TooltipAttribute = HutongGames.PlayMaker.TooltipAttribute;
 
@@ -48,8 +45,6 @@ namespace BlueOrb.Scripts.AI.Playmaker
 			{
 				return;
 			}
-            //var rqSM = Owner.GetComponent<PlayMakerStateMachineComponent>();
-            //_entity = rqSM.GetComponentRepository();
             _entity = go.GetComponent<IEntity>();
             if (Recipient.IsNone && Recipients.IsNone)
             {
@@ -57,31 +52,36 @@ namespace BlueOrb.Scripts.AI.Playmaker
             }
             else
             {
-                if (_targetIds == null)
-                    _targetIds = new List<string>();
-                _targetIds.Clear();
-                if (!Recipients.IsNone && Recipients.objectReferences != null)
-                {
-                    for (int i = 0; i < Recipients.objectReferences.Length; i++)
-                    {
-                        var recipientGO = Recipients.objectReferences[i] as GameObject;
-                        string recipientId = GetRecipientId(recipientGO);
-                        _targetIds.Add(recipientId);
-                    }
-                }
-                
-                if (!Recipient.IsNone)
-                {
-                    string recipientId = GetRecipientId(Recipient.Value);
-                    _targetIds.Add(recipientId);
-                }
-                _atom.TargetUniqueIds = _targetIds;
+                SetMessageTargets();
             }
             if (!Message.IsNone && !String.IsNullOrWhiteSpace(Message.Value))
             {
                 _atom.Message = Message.Value;
             }
             _atom.Start(_entity);
+        }
+
+        private void SetMessageTargets()
+        {
+            if (_targetIds == null)
+                _targetIds = new List<string>();
+            _targetIds.Clear();
+            if (!Recipients.IsNone && Recipients.objectReferences != null)
+            {
+                for (int i = 0; i < Recipients.objectReferences.Length; i++)
+                {
+                    var recipientGO = Recipients.objectReferences[i] as GameObject;
+                    string recipientId = GetRecipientId(recipientGO);
+                    _targetIds.Add(recipientId);
+                }
+            }
+
+            if (!Recipient.IsNone)
+            {
+                string recipientId = GetRecipientId(Recipient.Value);
+                _targetIds.Add(recipientId);
+            }
+            _atom.TargetUniqueIds = _targetIds;
         }
 
         private string GetRecipientId(GameObject recipient)

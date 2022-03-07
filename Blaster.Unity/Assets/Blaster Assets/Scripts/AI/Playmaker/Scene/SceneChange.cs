@@ -1,12 +1,10 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using HutongGames.PlayMaker;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Base.Manager;
-using BlueOrb.Common.Container;
 using BlueOrb.Controller.Scene;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Scene
 {
-    [ActionCategory("RQ.Scene")]
+    [ActionCategory("BlueOrb.Scene")]
     public class SceneChange : FsmStateAction
     {
         [Tooltip("Scene config to change to.")]
@@ -16,9 +14,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Scene
 
         public override void OnEnter()
         {
-            var entity = Owner.GetComponent<IEntity>();
             var sceneConfig = SceneConfig.Value as SceneConfig;
-            //var scene = (UnityEngine.SceneManagement.Scene)sceneConfig.Scene;
             GameStateController.Instance.LoadScene(sceneConfig.SceneName, SpawnPointUniqueId.Value);
             Finish();
         }
