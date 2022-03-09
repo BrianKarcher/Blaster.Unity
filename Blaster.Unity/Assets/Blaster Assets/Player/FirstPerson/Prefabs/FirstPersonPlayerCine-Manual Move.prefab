@@ -841,13 +841,7 @@ MonoBehaviour:
     events: []
     globalTransitions: []
     variables:
-      floatVariables:
-      - useVariable: 1
-        name: Invincibility
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: 0.5
+      floatVariables: []
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -863,14 +857,34 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 7391379248417117951}
+      - useVariable: 1
+        name: GameObjectToEnable
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: EnableOnStart
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 7391379247307723887}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -913,7 +927,7 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: 2181096e8e6a94d4daa6fba100c3694c, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: 39355dbc5a04c14468048c879484c7e7, type: 2}
   eventHandlerComponentsAdded: 1
 --- !u!1 &5209657055146455074
 GameObject:
@@ -1194,7 +1208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7391379247307723858
 Transform:
   m_ObjectHideFlags: 0
@@ -1403,20 +1417,6 @@ MonoBehaviour:
   _entityStats:
     _maxHP: 0
     _currentHP: 0
-    _maxSP: 0
-    _currentSP: 0
-    _maxStamina: 0
-    _currentStamina: 0
-    _actionStaminas: []
-    _staminaRefreshAmount: 0
-    _staminaRefreshDelay: 0
-    _physicalAttackPower: 0
-    _magicalAttackPower: 0
-    _physicalDefense: 0
-    _magicalDefense: 0
-    _experience: 0
-    _level: 0
-    IsHiding: 0
 --- !u!1 &7391379248030444646
 GameObject:
   m_ObjectHideFlags: 0
