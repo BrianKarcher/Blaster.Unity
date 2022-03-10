@@ -1199,7 +1199,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7391379247307723858}
   - component: {fileID: 3239011891136494306}
-  - component: {fileID: 6363887426511811140}
   - component: {fileID: 21997176818907432}
   - component: {fileID: 9033980407924858626}
   m_Layer: 8
@@ -1286,97 +1285,6 @@ MonoBehaviour:
   yaw: 0
   pitch: 0
   roll: 0
---- !u!114 &6363887426511811140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7391379247307723887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -237695263, guid: da931a18600ca9243bdb9b0c3530e8a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentRepository: {fileID: 2315920606805549931}
-  componentName: 
-  _controller:
-    _isGrounded: 0
-    _physicsData:
-      _instantForce: 0
-      _turnMode: 0
-      _autoTurn: 1
-      _autoApplyToAnimator: 0
-      _steeringData:
-        _waypointSeekDistSq: 0.1
-        _separationWeight: 1
-        _alignmentWeight: 1
-        _cohesionWeight: 2
-        _obstacleAvoidanceWeight: 10
-        _wallAvoidanceWeight: 10
-        _wanderWeight: 1
-        _seekWeight: 1
-        _fleeWeight: 1
-        _arriveWeight: 1
-        _pursuitWeight: 1
-        _offsetPursuitWeight: 1
-        _interposeWeight: 1
-        _hideWeight: 1
-        _evadeWeight: 1
-        _followPathWeight: 1
-        _radiusClampWeight: 0.5
-        _feelerOffset: 0
-        _boundingRadius: 0
-        _wanderRad: 1.2
-        _wanderDist: 3
-        _wanderJitterPerSec: 10
-        _wallDetectionFeelerLength: 2
-      _showDebug: 0
-      _gravity: -9.8
-      _gravityVector: {x: 0, y: -9.8, z: 0}
-      _applyGravity: 1
-      _movingTurnSpeed: 360
-      _stationaryTurnSpeed: 180
-      _initialVelocity: {x: 0, y: 0, z: 0}
-      _size: {x: 0, y: 0, z: 0}
-      _velocity: {x: 0, y: 0, z: 0}
-      _jumpVelocity: {x: 0, y: 0, z: 0}
-      _offset: {x: 0, y: 0, z: 0}
-      _mass: 1
-      _maxSpeed: 6
-      _maxSpeedMultiplier: 1
-      _maxDistanceToTarget: 0
-      _directionRotate: 0
-      _boundingRadius: 1
-      _maxForce: 6
-      _forceMultiplier: 1
-      _friction: 0
-      _maxTurnRate: 6
-      _foot: {fileID: 0}
-      _fieldOfView: 0
-      _lineOfSight: 0
-      LOSSquared: 0
-      _dragForce: 0
-      _avoidLayersMask:
-        serializedVersion: 2
-        m_Bits: 0
-      _groundCheckDistance: 0.4
-      _groundLayer:
-        serializedVersion: 2
-        m_Bits: 0
-      _terrainLayer:
-        serializedVersion: 2
-        m_Bits: 0
-  _applySpeedLimit: 1
-  _steering:
-    _drawDebug: 0
-    ProjectOnGround: 1
-    Target: {x: 0, y: 0, z: 0}
-    Offset: {x: 0, y: 0, z: 0}
-    SteeringMode: 
-    _steeringForce: {x: 0, y: 0, z: 0}
-  _isEnabled: 1
-  _animForwardSpeedVar: 
 --- !u!114 &21997176818907432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,6 +1370,7 @@ GameObject:
   - component: {fileID: 426527128820257248}
   - component: {fileID: 7386150340908324302}
   - component: {fileID: 4125628004082023982}
+  - component: {fileID: 8739317926851492684}
   m_Layer: 8
   m_Name: FirstPersonPlayerCine-Manual Move
   m_TagString: Player
@@ -1547,3 +1456,94 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8739317926851492684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391379248417117951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -237695263, guid: da931a18600ca9243bdb9b0c3530e8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 2315920606805549931}
+  componentName: 
+  _controller:
+    _isGrounded: 0
+    _physicsData:
+      _instantForce: 0
+      _turnMode: 0
+      _autoTurn: 1
+      _autoApplyToAnimator: 0
+      _steeringData:
+        _waypointSeekDistSq: 0.1
+        _separationWeight: 1
+        _alignmentWeight: 1
+        _cohesionWeight: 2
+        _obstacleAvoidanceWeight: 10
+        _wallAvoidanceWeight: 10
+        _wanderWeight: 1
+        _seekWeight: 1
+        _fleeWeight: 1
+        _arriveWeight: 1
+        _pursuitWeight: 1
+        _offsetPursuitWeight: 1
+        _interposeWeight: 1
+        _hideWeight: 1
+        _evadeWeight: 1
+        _followPathWeight: 1
+        _radiusClampWeight: 0.5
+        _feelerOffset: 0
+        _boundingRadius: 0
+        _wanderRad: 1.2
+        _wanderDist: 3
+        _wanderJitterPerSec: 10
+        _wallDetectionFeelerLength: 2
+      _showDebug: 0
+      _gravity: -9.8
+      _gravityVector: {x: 0, y: -9.8, z: 0}
+      _applyGravity: 1
+      _movingTurnSpeed: 360
+      _stationaryTurnSpeed: 180
+      _initialVelocity: {x: 0, y: 0, z: 0}
+      _size: {x: 0, y: 0, z: 0}
+      _velocity: {x: 0, y: 0, z: 0}
+      _jumpVelocity: {x: 0, y: 0, z: 0}
+      _offset: {x: 0, y: 0, z: 0}
+      _mass: 1
+      _maxSpeed: 6
+      _maxSpeedMultiplier: 1
+      _maxDistanceToTarget: 0
+      _directionRotate: 0
+      _boundingRadius: 1
+      _maxForce: 6
+      _forceMultiplier: 1
+      _friction: 0
+      _maxTurnRate: 6
+      _foot: {fileID: 0}
+      _fieldOfView: 0
+      _lineOfSight: 0
+      LOSSquared: 0
+      _dragForce: 0
+      _avoidLayersMask:
+        serializedVersion: 2
+        m_Bits: 0
+      _groundCheckDistance: 0.4
+      _groundLayer:
+        serializedVersion: 2
+        m_Bits: 0
+      _terrainLayer:
+        serializedVersion: 2
+        m_Bits: 0
+  _applySpeedLimit: 1
+  _steering:
+    _drawDebug: 0
+    ProjectOnGround: 1
+    Target: {x: 0, y: 0, z: 0}
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce: {x: 0, y: 0, z: 0}
+  _isEnabled: 1
+  _animForwardSpeedVar: 
