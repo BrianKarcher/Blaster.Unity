@@ -10,11 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5172934453791090795}
   - component: {fileID: 5172934453791090794}
-  - component: {fileID: 6561108640716020978}
   - component: {fileID: 1592405042331808492}
   - component: {fileID: 8619348078531414814}
   - component: {fileID: 5999318138077807120}
-  - component: {fileID: 5948032335322935235}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -58,23 +56,6 @@ MonoBehaviour:
   OverlayAnimator: {fileID: 0}
   OverlayImage: {fileID: 0}
   initialStartingPositionName: 
---- !u!114 &6561108640716020978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5172934453791090796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 643736232, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentRepository: {fileID: 5999318138077807120}
-  componentName: 
-  _currentScore: 0
-  _highScore: 0
-  _shooterComponent: {fileID: 5948032335322935235}
 --- !u!114 &1592405042331808492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,29 +103,6 @@ MonoBehaviour:
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
---- !u!114 &5948032335322935235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5172934453791090796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -170435940, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentRepository: {fileID: 5999318138077807120}
-  componentName: 
-  MessageId: Shooter Controller
-  _currentMainProjectileConfig: {fileID: 11400000, guid: b286edd6f01f1a84e9710816d4f6731b,
-    type: 2}
-  _currentSecondaryProjectileConfig: {fileID: 0}
-  _changeProjectileReceiveMessage: SetSecondaryProjectile
-  _changeProjectileSendMessage: SetSecondaryProjectile
-  _hudControllerName: Hud Controller
-  _ammoCount: 0
-  _setAmmoMessage: SetAmmo
 --- !u!1001 &4076466490438579827
 PrefabInstance:
   m_ObjectHideFlags: 0

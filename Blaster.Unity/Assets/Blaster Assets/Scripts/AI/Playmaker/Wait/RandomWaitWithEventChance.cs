@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Input
 {
-    [ActionCategory("RQ")]
+    [ActionCategory("BlueOrb")]
     [HutongGames.PlayMaker.Tooltip("Random Wait With Action Chance")]
     public class RandomWaitWithEventChance : FsmStateAction
     {

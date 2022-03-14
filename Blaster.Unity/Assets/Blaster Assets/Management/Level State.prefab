@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7318814327630136511}
   - component: {fileID: 7318814327630136510}
   - component: {fileID: 7318814327630136505}
+  - component: {fileID: 7393538647247138994}
   m_Layer: 0
   m_Name: Level State
   m_TagString: Untagged
@@ -68,7 +69,31 @@ MonoBehaviour:
   componentName: 
   _currentScore: 0
   _highScore: 0
-  _shooterComponent: {fileID: 0}
+  setLevelBeginMessage: SetLevelBegin
+  _shooterComponent: {fileID: 7393538647247138994}
+--- !u!114 &7393538647247138994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318814327630136508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -170435940, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 7318814327630136510}
+  componentName: 
+  MessageId: Shooter Controller
+  _currentMainProjectileConfig: {fileID: 11400000, guid: b286edd6f01f1a84e9710816d4f6731b,
+    type: 2}
+  _currentSecondaryProjectileConfig: {fileID: 0}
+  _changeProjectileReceiveMessage: SetSecondaryProjectile
+  _changeProjectileSendMessage: SetSecondaryProjectile
+  _hudControllerName: Hud Controller
+  _ammoCount: 0
+  _setAmmoMessage: SetAmmo
 --- !u!1 &7318814327642902001
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +351,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _componentRepository: {fileID: 7318814327842444357}
   componentName: 
-  _seconds: 3
-  _immediate: 0
   gameObjectsToEnable: []
+  _levelState: {fileID: 0}
+  StartText: START

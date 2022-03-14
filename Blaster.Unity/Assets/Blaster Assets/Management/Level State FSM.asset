@@ -104,13 +104,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
+        - BlueOrb.Scripts.AI.Playmaker.Input.WaitForLevelBegin
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: b2cf10001a44e005
+        - 
+        actionEnabled: 010100
+        actionIsOpen: 010101
+        actionStartIndex: 00000000050000000d000000
+        actionHashCodes: b2cf10001a44e0058d4bb503
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -124,6 +126,14 @@ MonoBehaviour:
           gameObject:
             useVariable: 1
             name: StartTimer
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
             tooltip: 
             showInInspector: 1
             networkSync: 0
@@ -183,7 +193,7 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 14000000110000001100000001000000010000001400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 1400000011000000110000000100000001000000140000002800000003000000030000001700000013000000120000000100000014000000
         paramName:
         - gameObject
         - activate
@@ -198,8 +208,9 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 00000000000000000100000000000000010000000100000000000000000000000100000002000000000000000000000002000000
-        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000000000000000000000000000000000001000000
+        - gameObject
+        paramDataPos: 0000000000000000010000000000000001000000010000000000000000000000010000000200000000000000000000000200000002000000
+        paramByteDataSize: 0000000000000000000000000100000001000000000000000000000000000000000000000000000000000000000000000100000000000000
     - name: Play
       description: 
       colorIndex: 0
@@ -404,7 +415,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
+          value: 0.25
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -450,12 +461,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - BlueOrb.Scripts.AI.Playmaker.SendMessage
+        - BlueOrb.Scripts.AI.Playmaker.Input.SetLevelBegin
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 8cc5bb03
+        - 
+        actionEnabled: 0001
+        actionIsOpen: 0101
+        actionStartIndex: 0000000010000000
+        actionHashCodes: 8cc5bb039bd6f801
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -465,6 +478,14 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -486,6 +507,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: SetLevelBegin
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams:
@@ -521,7 +548,7 @@ MonoBehaviour:
         customTypeSizes: 0b000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 14000000130000002900000012000000280000000300000003000000030000000100000001000000010000000100000001000000010000000700000001000000
+        paramDataType: 140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000007000000010000001400000012000000
         paramName:
         - gameObject
         - Recipient
@@ -539,8 +566,10 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
+        - gameObject
+        - LevelBeginMessage
+        paramDataPos: 0000000000000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a0000000100000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
