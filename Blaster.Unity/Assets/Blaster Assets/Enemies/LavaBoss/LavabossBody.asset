@@ -76,8 +76,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 284
-        y: 251.78906
+        x: 287
+        y: 277.78906
         width: 100
         height: 48
       isBreakpoint: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: 
+        toState: Wait 2
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -167,24 +167,16 @@ MonoBehaviour:
         x: 67
         y: 301
         width: 100
-        height: 80
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Hit
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Hit
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: 
+        toState: Hit
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
