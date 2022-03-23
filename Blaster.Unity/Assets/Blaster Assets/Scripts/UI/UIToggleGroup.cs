@@ -1,104 +1,117 @@
-﻿//using UnityEngine;
+﻿using BlueOrb.Base.Interfaces;
+using BlueOrb.Base.Item;
+using UnityEngine;
 
-//namespace BlueOrb.Source.UI
-//{
-//    public enum ToggleDirection
-//    {
-//        Right = 0,
-//        Left = 1
-//    }
+namespace BlueOrb.Source.UI
+{
+    [AddComponentMenu("BlueOrb/UI/Toggle Group")]
+    public class UIToggleGroup : MonoBehaviour
+    {
+        [SerializeField]
+        private UIToggleItem[] _items;
 
-//    [AddComponentMenu("RQ/UI/Toggle Group")]
-//    public class UIToggleGroup : MonoBehaviour
-//    {
-//        [SerializeField]
-//        private UIToggleItem[] _items;
-//        public ToggleDirection ToggleDirection = ToggleDirection.Right;
-        
-//        // TODO Remove serialization when done testing
-//        [SerializeField]
-//        // Starts at 1
-//        private int _currentItemCount;
-//        public int CurrentIndex;
+        // TODO Remove serialization when done testing
+        [SerializeField]
+        private int _currentItemCount;
+        public int CurrentIndex;
 
-//        public bool TogglingEnabled { get; set; }
+        public bool TogglingEnabled { get; set; }
 
-//        public void Awake()
-//        {
-//            //_items[CurrentItem].Selected();
-//            _currentItemCount = _items.Length;
-//            CurrentIndex = -1;
-//        }
+        public void Awake()
+        {
+            //_items[CurrentItem].Selected();
+            //_currentItemCount = _items.Length;
+            _currentItemCount = 0;
+            CurrentIndex = -1;
+            
+        }
 
-//        public void Start()
-//        {            
-//            SetCurrentItem(CurrentIndex);
-//        }
+        public void Start()
+        {
+            //SetCount(CurrentIndex);
+            ActivateDisplayItemsFromCount();
+        }
 
+        //public void SetCount(int count)
+        //{
+        //    _currentItemCount = count;
 
+        //    ActivateDisplayItemsFromCount();
+        //    // Perform a bounds check in case the shard slot is no longer available
+        //    SetCurrentItem(CurrentIndex);
+        //}
 
-//        private void CheckBounds()
-//        {
-//            if (CurrentIndex < 0)
-//                CurrentIndex = _currentItemCount - 1;
-//            if (CurrentIndex > _currentItemCount - 1)
-//                CurrentIndex = 0;
-//        }
+        public void AddItem(IProjectileItem projectileItem)
+        {
+            _currentItemCount++;
+            Debug.Log($"(UIToggleGroup) AddItem called, count is now {this._currentItemCount}");
+            PopulateItem(projectileItem, _currentItemCount - 1);
+            ActivateDisplayItemsFromCount();
+        }
 
-//        public void SetCount(int count)
-//        {
-//            _currentItemCount = count;
+        public void PopulateItem(IProjectileItem projectileItem, int index)
+        {
+            _items[index].SetItemConfig(projectileItem.ProjectileConfig);
+            _items[index].SetText(projectileItem.CurrentAmmo.ToString());
+        }
 
-//            ProcessDisplayItemsFromCount();
-//            // Perform a bounds check in case the shard slot is no longer available
-//            SetCurrentItem(CurrentIndex);
-//        }
+        public void RemoveItem(int index)
+        {
+            Debug.Log($"(UIToggleGroup) Removing Item {index}");
+            if (index < 0 || index >= _currentItemCount)
+            {
+                throw new System.Exception($"Attempt to remove invalid toggle index {index}");
+            }
+            // Remove an item by shifting items to the right of it left by one
+            for (int i = index + 1; i < _currentItemCount; i++)
+            {
+                _items[i].SetItemConfig(_items[i - 1].GetItemConfig());
+                _items[i].SetText(_items[i - 1].GetText());
+            }
+            // Then deactivate the last item.
+            _items[_currentItemCount - 1].gameObject.SetActive(false);
+            // Then subtract 1 from the count
+            _currentItemCount--;
+            ActivateDisplayItemsFromCount();
+        }
 
-//        /// <summary>
-//        /// Disable items that are less than the current count of items to display
-//        /// </summary>
-//        public void ProcessDisplayItemsFromCount()
-//        {
-//            for (int i = 0; i < _items.Length; i++)
-//            {
-//                var go = _items[i].gameObject;
-//                if (i < _currentItemCount)
-//                    go.SetActive(true);
-//                    //NGUITools.SetActive(go, true);
-//                else
-//                    go.SetActive(false);
-//                //NGUITools.SetActive(go, false);
-//            }
-//        }
+        /// <summary>
+        /// Disable items that are less than the current count of items to display
+        /// </summary>
+        public void ActivateDisplayItemsFromCount()
+        {
+            for (int i = 0; i < _items.Length; i++)
+            {
+                var go = _items[i].gameObject;
+                if (i < _currentItemCount)
+                    go.SetActive(true);
+                //NGUITools.SetActive(go, true);
+                else
+                    go.SetActive(false);
+                //NGUITools.SetActive(go, false);
+            }
+        }
 
-//        public void Toggle(bool right)
-//        {
-//            if (ToggleDirection != ToggleDirection.Right)
-//                right = !right;
-//            var newItem = right ? CurrentIndex - 1 : CurrentIndex + 1;
-//            SetCurrentItem(newItem);
-//        }
+        public void SelectItem(int index)
+        {
+            GetCurrentItem()?.UnSelect();
+            CurrentIndex = index;
+            //CheckBounds();
+            GetCurrentItem()?.Select();
+        }
 
-//        public void SetCurrentItem(int index)
-//        {
-//            GetCurrentItem()?.UnSelect();
-//            CurrentIndex = index;
-//            CheckBounds();
-//            GetCurrentItem()?.Select();
-//        }
+        public UIToggleItem GetCurrentItem()
+        {
+            if (CurrentIndex < 0)
+                return null;
+            if (CurrentIndex > _items.Length - 1)
+                return null;
+            return _items[CurrentIndex];
+        }
 
-//        public UIToggleItem GetCurrentItem()
-//        {
-//            if (CurrentIndex < 0)
-//                return null;
-//            if (CurrentIndex > _items.Length - 1)
-//                return null;
-//            return _items[CurrentIndex];
-//        }
-
-//        public UIToggleItem[] GetItems()
-//        {
-//            return _items;
-//        }
-//    }
-//}
+        public UIToggleItem[] GetItems()
+        {
+            return _items;
+        }
+    }
+}

@@ -83,7 +83,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
                 return;
             }
 
-            Debug.Log("CalculatePath returned a new path successfully.");
+            //Debug.Log("CalculatePath returned a new path successfully.");
             // Yay, now we can get a Vector3 representation of the path
             // from p.vectorPath
             _path = abp.vectorPath;

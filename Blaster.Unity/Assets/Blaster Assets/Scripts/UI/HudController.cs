@@ -1,6 +1,8 @@
-﻿using BlueOrb.Base.Item;
+﻿using BlueOrb.Base.Interfaces;
+using BlueOrb.Base.Item;
 using BlueOrb.Common.Components;
 using BlueOrb.Messaging;
+using BlueOrb.Source.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,59 +12,68 @@ namespace Assets.BlueOrb.Scripts.UI
     [AddComponentMenu("BlueOrb/UI/HUD Controller")]
     public class HudController : ComponentBase<HudController>
     {
-        [SerializeField] private Image _secondaryProjectileImage;
-        [SerializeField] private TextMeshProUGUI _secondaryProjectileText;
+        //[SerializeField] private Image _secondaryProjectileImage;
+        //[SerializeField] private TextMeshProUGUI _secondaryProjectileText;
         [SerializeField] private TextMeshProUGUI _currentHpText;
         [SerializeField] private TextMeshProUGUI _levelStartTimer;
-        [SerializeField] private string _changeProjectileMessage;
-        [SerializeField] private string _setAmmoMessage;
+        //[SerializeField] private string _changeProjectileMessage;
         [SerializeField] private Color[] StartTimerColors;
+
+        [SerializeField] 
+        private string _setAmmoMessage = "SetAmmo";
+
+        [SerializeField]
+        private string selectProjectileHudMessage = "SelectProjectile";
+
+        [SerializeField]
+        private string addProjectileTypeHudMessage = "AddProjectileType";
+
+        [SerializeField]
+        private string removeProjectileTypeHudMessage = "RemoveProjectileType";
+
+        [SerializeField]
+        private UIToggleGroup uiToggleGroup;
 
 
         private const string ControllerName = "Hud Controller";
 
-        private long _setProjectileId;
-        private long _setAmmoId;
-        private long _setHp;
-
-        private bool _isStartTimerVisible = false;
-        private float startTimerTime;
-        private float endTimerTime;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            _secondaryProjectileImage.gameObject.SetActive(false);
-        }
+        private long _setProjectileIndex, _addProjectileIndex, _removeProjectileIndex;
+        private long _setAmmoIndex;
+        private long _setHpIndex;
 
         public override void StartListening()
         {
             base.StartListening();
 
-            _setProjectileId = MessageDispatcher.Instance.StartListening(_changeProjectileMessage, ControllerName, (data) =>
+            _setProjectileIndex = MessageDispatcher.Instance.StartListening(selectProjectileHudMessage, ControllerName, (data) =>
             {
-                if (data.ExtraInfo == null)
-                {
-                    _secondaryProjectileImage.gameObject.SetActive(false);
-                    _secondaryProjectileImage.sprite = null;
-                    _secondaryProjectileText.text = null;
-                }
-                else
-                {
-                    _secondaryProjectileImage.gameObject.SetActive(true);
-                    var projectileConfig = data.ExtraInfo as ProjectileConfig;
-                    _secondaryProjectileImage.sprite = projectileConfig.HUDImageSelected;
-                    _secondaryProjectileText.text = projectileConfig.Ammo.ToString();
-                }
+                Debug.Log("(HudController) Select Projectile message");
+                int index = (int)data.ExtraInfo;
+                uiToggleGroup.SelectItem(index);
             });
 
-            _setAmmoId = MessageDispatcher.Instance.StartListening(_setAmmoMessage, ControllerName, (data) =>
+            _addProjectileIndex = MessageDispatcher.Instance.StartListening(addProjectileTypeHudMessage, ControllerName, (data) =>
             {
+                Debug.Log("(HudController) Add Projectile message");
+                IProjectileItem projectileItem = (IProjectileItem)data.ExtraInfo;
+                uiToggleGroup.AddItem(projectileItem);
+            });
+
+            _removeProjectileIndex = MessageDispatcher.Instance.StartListening(removeProjectileTypeHudMessage, ControllerName, (data) =>
+            {
+                Debug.Log("(HudController) Remove Projectile message");
+                int index = (int)data.ExtraInfo;
+                uiToggleGroup.RemoveItem(index);
+            });
+
+            _setAmmoIndex = MessageDispatcher.Instance.StartListening(_setAmmoMessage, ControllerName, (data) =>
+            {
+                Debug.Log("(HudController) Set Ammo message");
                 var ammo = (int)data.ExtraInfo;
-                _secondaryProjectileText.text = ammo.ToString();
+                uiToggleGroup.GetCurrentItem()?.SetText(ammo.ToString());
             });
 
-            _setHp = MessageDispatcher.Instance.StartListening("SetHp", ControllerName, (data) =>
+            _setHpIndex = MessageDispatcher.Instance.StartListening("SetHp", ControllerName, (data) =>
             {
                 var hp = ((float current, float max))data.ExtraInfo;
                 Debug.Log($"(HUD) Setting current hp to {hp.current}");
@@ -94,9 +105,11 @@ namespace Assets.BlueOrb.Scripts.UI
         public override void StopListening()
         {
             base.StopListening();
-            MessageDispatcher.Instance.StopListening(_changeProjectileMessage, ControllerName, _setProjectileId);
-            MessageDispatcher.Instance.StopListening(_setAmmoMessage, ControllerName, _setAmmoId);
-            MessageDispatcher.Instance.StopListening("SetHp", ControllerName, _setHp);
+            MessageDispatcher.Instance.StopListening(selectProjectileHudMessage, ControllerName, _setProjectileIndex);
+            MessageDispatcher.Instance.StopListening(addProjectileTypeHudMessage, ControllerName, _addProjectileIndex);
+            MessageDispatcher.Instance.StopListening(removeProjectileTypeHudMessage, ControllerName, _removeProjectileIndex);
+            MessageDispatcher.Instance.StopListening(_setAmmoMessage, ControllerName, _setAmmoIndex);
+            MessageDispatcher.Instance.StopListening("SetHp", ControllerName, _setHpIndex);
         }
     }
 }

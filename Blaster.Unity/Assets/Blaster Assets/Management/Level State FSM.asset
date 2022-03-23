@@ -235,22 +235,56 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.ScaleTime
+        - BlueOrb.Scripts.AI.Playmaker.Manager.LevelStatePlay
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 6cdd4504
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 6cdd4504c87ad400
         unityObjectParams: []
         fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: ToggleLeft
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: ToggleRight
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: ToggleProjectile
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Shooter Controller
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -281,13 +315,18 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000001100000001000000
+        paramDataType: 0f00000011000000010000001400000012000000120000001200000012000000
         paramName:
         - timeScale
         - adjustFixedDeltaTime
         - everyFrame
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
+        - gameObject
+        - ToggleLeftAction
+        - ToggleRightAction
+        - ToggleMessage
+        - ToggleMessageRecipient
+        paramDataPos: 0000000000000000000000000000000000000000010000000200000003000000
+        paramByteDataSize: 0000000000000000010000000000000000000000000000000000000000000000
     - name: Pause
       description: 
       colorIndex: 0
