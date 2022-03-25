@@ -65,8 +65,8 @@ namespace BlueOrb.Source.UI
             // Remove an item by shifting items to the right of it left by one
             for (int i = index + 1; i < _currentItemCount; i++)
             {
-                _items[i].SetItemConfig(_items[i - 1].GetItemConfig());
-                _items[i].SetText(_items[i - 1].GetText());
+                _items[i - 1].SetItemConfig(_items[i].GetItemConfig());
+                _items[i - 1].SetText(_items[i].GetText());
             }
             // Then deactivate the last item.
             _items[_currentItemCount - 1].gameObject.SetActive(false);

@@ -42,7 +42,10 @@ namespace BlueOrb.Source.UI
         public void Select()
         {
             Arrow?.SetActive(true);
-            SelectedObject.SetActive(true);
+            //if (SelectedObject != null)
+            //{
+            //    SelectedObject.SetActive(true);
+            //}
             Image.sprite = ItemConfig?.HUDImageSelected;
             //UnselectedGameObject.SetActive(false);
             //NGUITools.SetActive(Arrow, true);
@@ -51,7 +54,10 @@ namespace BlueOrb.Source.UI
         public void UnSelect()
         {
             Arrow?.SetActive(false);
-            SelectedObject.SetActive(true);
+            //if (SelectedObject != null)
+            //{
+            //    SelectedObject.SetActive(true);
+            //}
             Image.sprite = ItemConfig?.HUDImageSelected;
             //UnselectedGameObject.SetActive(true);
             //NGUITools.SetActive(Arrow, false);

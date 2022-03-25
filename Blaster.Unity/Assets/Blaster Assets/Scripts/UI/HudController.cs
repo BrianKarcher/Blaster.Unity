@@ -68,8 +68,8 @@ namespace Assets.BlueOrb.Scripts.UI
 
             _setAmmoIndex = MessageDispatcher.Instance.StartListening(_setAmmoMessage, ControllerName, (data) =>
             {
-                Debug.Log("(HudController) Set Ammo message");
                 var ammo = (int)data.ExtraInfo;
+                Debug.Log($"(HudController) Set Ammo to {ammo} message");
                 uiToggleGroup.GetCurrentItem()?.SetText(ammo.ToString());
             });
 

@@ -25,6 +25,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
         private IEntity entity;
         private Player player;
 
+        private int toggleDirectionPressed = 0;
+
         public override void Reset()
         {
             gameObject = null;
@@ -54,16 +56,40 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
         public override void OnUpdate()
         {
             base.OnUpdate();
-            if (player.GetButtonDown(ToggleRightAction.Value))
+            float toggleAxis = player.GetAxis("Toggle");
+            if (toggleAxis > 0.1f)
             {
-                Debug.Log("Toggle Right pressed");
-                MessageDispatcher.Instance.DispatchMsg(ToggleMessage.Value, 0, this.entity.GetId(), this.ToggleMessageRecipient.Value, 1.0f);
+                if (toggleDirectionPressed != 1)
+                {
+                    toggleDirectionPressed = 1;
+                    Debug.Log("Toggle Right pressed");
+                    MessageDispatcher.Instance.DispatchMsg(ToggleMessage.Value, 0, this.entity.GetId(), this.ToggleMessageRecipient.Value, 1.0f);
+                }
             }
-            else if (player.GetButtonDown(ToggleLeftAction.Value))
+            else if (toggleAxis < -0.1f)
             {
-                Debug.Log("Toggle Left pressed");
-                MessageDispatcher.Instance.DispatchMsg(ToggleMessage.Value, 0, this.entity.GetId(), this.ToggleMessageRecipient.Value, -1.0f);
+                if (toggleDirectionPressed != 1)
+                {
+                    toggleDirectionPressed = -1;
+                    Debug.Log("Toggle Left pressed");
+                    MessageDispatcher.Instance.DispatchMsg(ToggleMessage.Value, 0, this.entity.GetId(), this.ToggleMessageRecipient.Value, -1.0f);
+                }
             }
+            else
+            {
+                toggleDirectionPressed = 0;
+            }
+
+            //if (player.GetButtonDown(ToggleRightAction.Value))
+            //{
+            //    Debug.Log("Toggle Right pressed");
+            //    MessageDispatcher.Instance.DispatchMsg(ToggleMessage.Value, 0, this.entity.GetId(), this.ToggleMessageRecipient.Value, 1.0f);
+            //}
+            //else if (player.GetButtonDown(ToggleLeftAction.Value))
+            //{
+            //    Debug.Log("Toggle Left pressed");
+            //    MessageDispatcher.Instance.DispatchMsg(ToggleMessage.Value, 0, this.entity.GetId(), this.ToggleMessageRecipient.Value, -1.0f);
+            //}
         }
 
         public override void OnExit()
