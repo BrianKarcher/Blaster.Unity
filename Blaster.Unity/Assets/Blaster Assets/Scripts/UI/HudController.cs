@@ -68,9 +68,15 @@ namespace Assets.BlueOrb.Scripts.UI
 
             _setAmmoIndex = MessageDispatcher.Instance.StartListening(_setAmmoMessage, ControllerName, (data) =>
             {
-                var ammo = (int)data.ExtraInfo;
-                Debug.Log($"(HudController) Set Ammo to {ammo} message");
-                uiToggleGroup.GetCurrentItem()?.SetText(ammo.ToString());
+                var ammoData = ((string UniqueId, int CurrentAmmo))data.ExtraInfo;
+                Debug.Log($"(HudController) Set Ammo to {ammoData.CurrentAmmo} message");
+                var item = uiToggleGroup.GetItem(ammoData.UniqueId);
+                if (item == null)
+                {
+                    Debug.LogError($"Could not locate item {ammoData.UniqueId} to set ammo to");
+                    return;
+                }
+                item.SetText(ammoData.CurrentAmmo.ToString());
             });
 
             _setHpIndex = MessageDispatcher.Instance.StartListening("SetHp", ControllerName, (data) =>

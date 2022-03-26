@@ -46,6 +46,11 @@ namespace BlueOrb.Source.UI
             _currentItemCount++;
             Debug.Log($"(UIToggleGroup) AddItem called, count is now {this._currentItemCount}");
             PopulateItem(projectileItem, _currentItemCount - 1);
+            // We need to set the first item acquired to active
+            if (this._currentItemCount == 1)
+            {
+                SelectItem(0);
+            }
             ActivateDisplayItemsFromCount();
         }
 
@@ -107,6 +112,18 @@ namespace BlueOrb.Source.UI
             if (CurrentIndex > _items.Length - 1)
                 return null;
             return _items[CurrentIndex];
+        }
+
+        public UIToggleItem GetItem(string uniqueId)
+        {
+            for (int i = 0; i < _currentItemCount; i++)
+            {
+                if (_items[i].GetItemConfig().UniqueId == uniqueId)
+                {
+                    return _items[i];
+                }
+            }
+            return null;
         }
 
         public UIToggleItem[] GetItems()
