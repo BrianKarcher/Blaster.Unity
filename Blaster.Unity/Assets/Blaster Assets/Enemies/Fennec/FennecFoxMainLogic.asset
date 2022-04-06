@@ -173,9 +173,10 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - BlueOrb.Scripts.AI.Playmaker.EnableSteeringBehavior
-        - BlueOrb.Scripts.AI.Playmaker.EnableSteeringBehavior
         - BlueOrb.Scripts.AI.Playmaker.SetSteeringTargetToVector
+        - BlueOrb.Scripts.AI.Playmaker.EnableSteeringBehavior
+        - BlueOrb.Scripts.AI.Playmaker.EnableSteeringBehavior
+        - BlueOrb.Scripts.AI.Playmaker.EnableSteeringBehavior
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
@@ -186,10 +187,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101010101
-        actionIsOpen: 010101010101
-        actionStartIndex: 0000000003000000060000000f000000170000001f000000
-        actionHashCodes: 86fe5f0186fe5f01109b58041a44e0051a44e0051a44e005
+        - 
+        actionEnabled: 01010000010101
+        actionIsOpen: 01010101010101
+        actionStartIndex: 00000000090000000c0000000f000000120000001a00000022000000
+        actionHashCodes: 109b580486fe5f0186fe5f0186fe5f011a44e0051a44e0051a44e005
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -217,6 +219,14 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -314,25 +324,20 @@ MonoBehaviour:
         - ProjectileHit
         - 
         - SandShield
-        byteData: 010000000400000000000000000000000101000000
+        byteData: 00000000000000000101010000000400000023000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 010000000100000005000000020000000200000002000000
+        customTypeSizes: 05000000010000000100000001000000020000000200000002000000
         customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.EnableSteeringBehaviorAtom
-        - BlueOrb.Scripts.AI.AtomActions.EnableSteeringBehaviorAtom
         - BlueOrb.Scripts.AI.AtomActions.Physics.SetSteeringTargetToVectorAtom
+        - BlueOrb.Scripts.AI.AtomActions.EnableSteeringBehaviorAtom
+        - BlueOrb.Scripts.AI.AtomActions.EnableSteeringBehaviorAtom
+        - BlueOrb.Scripts.AI.AtomActions.EnableSteeringBehaviorAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 140000002800000007000000140000002800000007000000140000001300000028000000070000000000000001000000030000000300000001000000140000002800000003000000030000001700000013000000120000000100000014000000280000000300000003000000170000001300000012000000010000001400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 140000001300000028000000070000000000000001000000030000000300000001000000140000002800000007000000140000002800000007000000140000002800000007000000140000002800000003000000030000001700000013000000120000000100000014000000280000000300000003000000170000001300000012000000010000001400000028000000030000000300000017000000130000001200000001000000
         paramName:
-        - gameObject
-        - _atom
-        - behavior_Type
-        - gameObject
-        - _atom
-        - behavior_Type
         - gameObject
         - GoToGameObject
         - _atom
@@ -344,12 +349,13 @@ MonoBehaviour:
         - everyFrame
         - gameObject
         - _atom
-        - Message
-        - Data
-        - Received
-        - storeSender
-        - TagCheck
-        - GotoPreviousState
+        - behavior_Type
+        - gameObject
+        - _atom
+        - behavior_Type
+        - gameObject
+        - _atom
+        - behavior_Type
         - gameObject
         - _atom
         - Message
@@ -366,8 +372,16 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 000000000000000000000000010000000100000004000000020000000000000002000000080000000c0000001000000000000000010000001100000003000000030000000200000003000000040000000100000000000000120000000400000004000000050000000600000007000000020000000100000013000000050000000500000008000000090000000a000000030000000200000014000000
-        paramByteDataSize: 000000000000000004000000000000000000000004000000000000000000000000000000040000000400000001000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
+        paramDataPos: 00000000000000000000000000000000040000000800000000000000010000000900000001000000010000000a00000002000000020000000e00000003000000030000001200000004000000040000000200000003000000040000000100000000000000160000000500000005000000050000000600000007000000020000000100000017000000060000000600000008000000090000000a000000030000000200000018000000
+        paramByteDataSize: 000000000000000000000000040000000400000001000000000000000000000001000000000000000000000004000000000000000000000004000000000000000000000004000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000
     - name: SandShield
       description: 
       colorIndex: 0
