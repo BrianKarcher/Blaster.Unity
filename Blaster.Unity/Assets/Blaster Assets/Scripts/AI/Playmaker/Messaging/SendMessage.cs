@@ -11,7 +11,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Messaging")]
     [Tooltip("Sends a message.")]
-    public class SendMessage : FsmStateAction
+    public class SendMessage : BasePlayMakerAction
     {
         [RequiredField]
 		[CheckForComponent(typeof(EntityCommonComponent))]
@@ -45,7 +45,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
 			{
 				return;
 			}
-            _entity = go.GetComponent<IEntity>();
+            _entity = base.GetEntityBase(go);
+            //_entity = go.GetComponent<IEntity>();
             if (Recipient.IsNone && Recipients.IsNone)
             {
                 _atom.TargetUniqueIds = null;

@@ -65,7 +65,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 return;
             }
 
-            _entity = base.GetRepo(go);
+            _entity = base.GetEntityBase(go);
             _previosPosition = _entity.GetPosition();
             _layerMask = ActionHelpers.LayerArrayToLayerMask(Layer, false);
         }

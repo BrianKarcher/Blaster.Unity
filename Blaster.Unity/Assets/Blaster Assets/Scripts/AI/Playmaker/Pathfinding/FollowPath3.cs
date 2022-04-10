@@ -36,7 +36,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 return;
             }
 
-            var entity = base.GetRepo(go);
+            var entity = base.GetEntityBase(go);
             List<Vector3> newPath = new List<Vector3>(vectorArray.vector4Values.Length);
             for (int i = 0; i < vectorArray.vector4Values.Length; i++)
             {

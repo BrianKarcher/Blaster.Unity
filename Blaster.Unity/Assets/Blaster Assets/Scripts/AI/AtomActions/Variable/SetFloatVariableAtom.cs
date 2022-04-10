@@ -8,7 +8,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public enum FloatVariableEnum
         {
             MaxSpeed = 0,
-            Gravity = 1
+            MaxForce = 1,
+            ForceMultiplier = 2
         }
 
         public FloatVariableEnum FloatVariable;
@@ -50,8 +51,11 @@ namespace BlueOrb.Scripts.AI.AtomActions
                 case FloatVariableEnum.MaxSpeed:
                     _physicsComponent.Controller.GetPhysicsData().MaxSpeed = value;
                     break;
-                case FloatVariableEnum.Gravity:
-                    _physicsComponent.Controller.GetPhysicsData().Gravity = value;
+                case FloatVariableEnum.MaxForce:
+                    _physicsComponent.Controller.GetPhysicsData().MaxForce = value;
+                    break;
+                case FloatVariableEnum.ForceMultiplier:
+                    _physicsComponent.Controller.GetPhysicsData().ForceMultiplier = value;
                     break;
             }
         }
@@ -62,8 +66,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
             {
                 case FloatVariableEnum.MaxSpeed:
                     return _physicsComponent.Controller.GetPhysicsData().MaxSpeed;
-                case FloatVariableEnum.Gravity:
-                    return _physicsComponent.Controller.GetPhysicsData().Gravity;
+                case FloatVariableEnum.MaxForce:
+                    return _physicsComponent.Controller.GetPhysicsData().MaxForce;
+                case FloatVariableEnum.ForceMultiplier:
+                    return _physicsComponent.Controller.GetPhysicsData().ForceMultiplier;
             }
             return 0f;
         }
@@ -74,6 +80,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
             {
                 case FloatVariableEnum.MaxSpeed:
                     return _physicsComponent.Controller.GetOriginalPhysicsData().MaxSpeed;
+                case FloatVariableEnum.MaxForce:
+                    return _physicsComponent.Controller.GetOriginalPhysicsData().MaxForce;
+                case FloatVariableEnum.ForceMultiplier:
+                    return _physicsComponent.Controller.GetOriginalPhysicsData().ForceMultiplier;
             }
             return 0f;
         }

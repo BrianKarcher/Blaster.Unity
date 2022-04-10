@@ -25,7 +25,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
         public override void OnEnter()
         {
-            var entity = base.GetRepo(Owner);
+            var entity = base.GetEntityBase(Owner);
             _atom.Start(entity);
             Tick();
             if (!everyFrame)

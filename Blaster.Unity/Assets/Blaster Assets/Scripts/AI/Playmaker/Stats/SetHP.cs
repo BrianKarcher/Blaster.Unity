@@ -22,7 +22,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 
         public override void OnEnter()
         {
-            var entity = base.GetRepo(Owner);
+            var entity = base.GetEntityBase(Owner);
             string receiver = entity?.GetId();
             if (SetOnMainPlayer)
             {

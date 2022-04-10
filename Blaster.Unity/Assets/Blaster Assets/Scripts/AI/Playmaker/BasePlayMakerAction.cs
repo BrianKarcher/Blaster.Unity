@@ -7,11 +7,20 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     public class BasePlayMakerAction : FsmStateAction
     {
-        public IEntity GetRepo(GameObject owner)
+        public IEntity GetEntityBase(GameObject owner)
         {
             //var rqSM = owner.GetComponent<IComponentBase>();
             //return rqSM.GetComponentRepository();
-            var entity = owner.GetComponent<IEntity>();
+            IEntity entity = null;
+            Transform currentTransform = owner.transform;
+            while (entity == null)
+            {
+                entity = currentTransform.GetComponent<IEntity>();
+                if (entity == null)
+                {
+                    currentTransform = currentTransform.parent;
+                }
+            }
             return entity;
         }
     }
