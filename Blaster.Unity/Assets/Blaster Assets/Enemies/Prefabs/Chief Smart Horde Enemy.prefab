@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875595137590843984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.94, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.88, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1875595138571161782}
   m_RootOrder: 1
@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875595137590843984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -338,10 +338,11 @@ Transform:
   m_GameObject: {fileID: 1875595138571161783}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -100.51973, y: 2.1000004, z: 3.5785518}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1875595138810439980}
   - {fileID: 1875595137590843987}
+  - {fileID: 3471437962252915160}
   - {fileID: 7946980910143877472}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -419,6 +420,7 @@ MonoBehaviour:
         _evadeWeight: 1
         _followPathWeight: 1
         _radiusClampWeight: 0.5
+        _lateralWaveWeight: 1
         _feelerOffset: 0
         _boundingRadius: 0
         _wanderRad: 1.2
@@ -426,7 +428,6 @@ MonoBehaviour:
         _wanderJitterPerSec: 10
         _wallDetectionFeelerLength: 2
       _showDebug: 0
-      _gravity: -15
       _gravityVector: {x: 0, y: -15, z: 0}
       _applyGravity: 1
       _movingTurnSpeed: 720
@@ -502,20 +503,6 @@ MonoBehaviour:
   _entityStats:
     _maxHP: 50
     _currentHP: 50
-    _maxSP: 0
-    _currentSP: 0
-    _maxStamina: 0
-    _currentStamina: 0
-    _actionStaminas: []
-    _staminaRefreshAmount: 0
-    _staminaRefreshDelay: 0
-    _physicalAttackPower: 0
-    _magicalAttackPower: 0
-    _physicalDefense: 0
-    _magicalDefense: 0
-    _experience: 0
-    _level: 0
-    IsHiding: 0
 --- !u!1 &1875595138810439981
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,12 +640,42 @@ MonoBehaviour:
     events: []
     globalTransitions: []
     variables:
-      floatVariables: []
-      intVariables: []
+      floatVariables:
+      - useVariable: 1
+        name: DeadDelay
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      intVariables:
+      - useVariable: 1
+        name: RegularPoints
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 25
+      - useVariable: 1
+        name: SpecialPoints
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 100
       boolVariables: []
       stringVariables: []
       vector2Variables: []
-      vector3Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: LabelOffset
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {x: 0, y: 0, z: 0}
+      - useVariable: 1
+        name: ExplodePosition
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 0, y: 0, z: 0}
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
@@ -669,6 +686,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 1875595138571161783}
+      - useVariable: 1
+        name: Animator
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 3471437962252881400}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -676,7 +699,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -840,7 +863,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 0}
+        value: {fileID: 1875595138571161783}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -925,7 +948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1875595138571161782}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1994713730877363837
 MonoBehaviour:
@@ -1004,3 +1027,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &7268021682240233005
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1875595138571161782}
+    m_Modifications:
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120450552014279637, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+        type: 3}
+      propertyPath: m_Name
+      value: Hobgoblin_PBR
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 01c66aca1c8b6ce4895096e89131f5fa, type: 3}
+--- !u!1 &3471437962252881400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6120450552014279637, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 7268021682240233005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3471437962252915160 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6120450552013787125, guid: 01c66aca1c8b6ce4895096e89131f5fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 7268021682240233005}
+  m_PrefabAsset: {fileID: 0}
