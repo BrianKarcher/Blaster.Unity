@@ -33,8 +33,8 @@ namespace BlueOrb.Scripts.AI.AtomActions.Attack
             base.StartListening(entity);
             _deflectId = MessageDispatcher.Instance.StartListening(DeflectMessage, entity.GetId(), (data) =>
             {
-                var raycastHit = (RaycastHit) data.ExtraInfo;
-                var otherEntity = raycastHit.collider?.attachedRigidbody?.GetComponent<EntityCommonComponent>();
+                var otherCollider = (Collider) data.ExtraInfo;
+                var otherEntity = otherCollider.attachedRigidbody?.GetComponent<EntityCommonComponent>();
                 var dirBetweenEntities = _entity.transform.position - otherEntity.transform.position;
                 _hitPos = otherEntity.transform.position + (dirBetweenEntities.normalized) + new Vector3(0f, 1f, 0f);
                 //_hitPos = otherEntity.GetPosition();

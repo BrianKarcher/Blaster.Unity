@@ -25,23 +25,23 @@ namespace BlueOrb.Scripts.AI.AtomActions.Attack
             //_attackComponent.Attacked += _attackComponent_Attacked;
 
             //var delay = _attackComponent.GetAttackData().StrikeDelay;
-            _attackComponent.InitiateAttack();
-            if (_attackComponent.AttackComplete)
-            {
-                //_attackComponent.ProcessAttackNow();
-                Finish();
-                return;
-            }
+            //_attackComponent.InitiateAttack();
+            //if (_attackComponent.AttackComplete)
+            //{
+            //    //_attackComponent.ProcessAttackNow();
+            //    Finish();
+            //    return;
+            //}
 
             //_attackTime = Time.time + delay;
         }
 
         public override void OnUpdate()
         {
-            if (_attackComponent.AttackComplete)
-            {
-                Finish();
-            }
+            //if (_attackComponent.AttackComplete)
+            //{
+            //    Finish();
+            //}
             //if (Time.time > _attackTime)
             //{
             //    _attackComponent.ProcessAttackNow();
@@ -53,7 +53,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Attack
         {
             base.End();
             // Stop any delayed attacks in case we get aborted early
-            _attackComponent.Stop();
+            //_attackComponent.Stop();
         }
     }
 }
