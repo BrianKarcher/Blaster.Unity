@@ -59,7 +59,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             var halfExtent = Size.Value / 2f;
             //if (IsDebug.Value)
             //{
-            //    DisplayDebugInfo(entity, halfExtent);
+            DisplayDebugInfo(entity, halfExtent);
             //}
 
             //DrawBoxCast.DrawBoxCastBox(attackPos, halfExtent, transform.rotation, transform.forward, _attackData.Distance, Color.red, 1f);
@@ -75,32 +75,34 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             Finish();
         }
 
-        //private void DisplayDebugInfo(IEntity entity, Vector3 halfExtent)
-        //{
-        //    var leftUpBack = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(-1f, 1f, -1f)));
-        //    var rightUpBack = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(1f, 1f, -1f)));
-        //    var rightDownBack = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(1f, -1f, -1f)));
-        //    var leftDownBack = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(-1f, -1f, -1f)));
+        private void DisplayDebugInfo(IEntity entity, Vector3 halfExtent)
+        {
+            var leftUpBack = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(-1f, 1f, -1f)));
+            var rightUpBack = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(1f, 1f, -1f)));
+            var rightDownBack = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(1f, -1f, -1f)));
+            var leftDownBack = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(-1f, -1f, -1f)));
 
-        //    var leftUpForward = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(-1f, 1f, 1f)));
-        //    var rightUpForward = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(1f, 1f, 1f)));
-        //    var rightDownForward = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(1f, -1f, 1f)));
-        //    var leftDownForward = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(-1f, -1f, 1f)));
+            var leftUpForward = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(-1f, 1f, 1f)));
+            var rightUpForward = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(1f, 1f, 1f)));
+            var rightDownForward = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(1f, -1f, 1f)));
+            var leftDownForward = entity.transform.TransformPoint(Offset.Value + Vector3.Scale(halfExtent, new Vector3(-1f, -1f, 1f)));
 
-        //    // Draw box outline of the attack.                
-        //    Debug.DrawLine(leftUpBack, leftUpForward, Color.red, 5f);
-        //    Debug.DrawLine(leftUpForward, rightUpForward, Color.red, 5f);
-        //    Debug.DrawLine(rightUpForward, rightUpBack, Color.red, 5f);
-        //    Debug.DrawLine(rightUpBack, leftUpBack, Color.red, 5f);
+            // Draw box outline of the attack.                
+            Debug.DrawLine(leftUpBack, leftUpForward, Color.red, 5f);
+            Debug.DrawLine(leftUpForward, rightUpForward, Color.red, 5f);
+            Debug.DrawLine(rightUpForward, rightUpBack, Color.red, 5f);
+            Debug.DrawLine(rightUpBack, leftUpBack, Color.red, 5f);
 
-        //    Debug.DrawLine(leftUpBack, rightUpBack, Color.red, 5f);
-        //    Debug.DrawLine(rightUpBack, rightDownBack, Color.red, 5f);
-        //    Debug.DrawLine(rightDownBack, leftDownBack, Color.red, 5f);
-        //    Debug.DrawLine(leftDownBack, leftUpBack, Color.red, 5f);
-        //}
+            Debug.DrawLine(leftUpBack, rightUpBack, Color.red, 5f);
+            Debug.DrawLine(rightUpBack, rightDownBack, Color.red, 5f);
+            Debug.DrawLine(rightDownBack, leftDownBack, Color.red, 5f);
+            Debug.DrawLine(leftDownBack, leftUpBack, Color.red, 5f);
+        }
 
         public override void OnDrawActionGizmos()
         {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(Vector3.zero, new Vector3(100, 100, 100));
             if (IsDebug.Value)
             {
                 if (hitDetect)

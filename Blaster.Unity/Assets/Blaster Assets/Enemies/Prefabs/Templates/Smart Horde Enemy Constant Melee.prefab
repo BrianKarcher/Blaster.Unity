@@ -938,10 +938,16 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 1
+        value: 3
       intVariables: []
       boolVariables: []
-      stringVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: AttackAnimTrigger
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: Attack
       vector2Variables: []
       vector3Variables:
       - useVariable: 1
@@ -950,6 +956,18 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {x: 0, y: 0, z: 0}
+      - useVariable: 1
+        name: AttackOffset
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {x: 0, y: 0.5, z: 1}
+      - useVariable: 1
+        name: AttackSize
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {x: 3, y: 3, z: 3}
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
@@ -966,6 +984,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Animator
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 4749780522506859949}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -986,7 +1010,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0

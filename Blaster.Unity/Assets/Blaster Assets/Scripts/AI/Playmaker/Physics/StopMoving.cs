@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Physics")]
     [Tooltip("Stop moving.")]
-    public class StopMoving : FsmStateAction
+    public class StopMoving : BasePlayMakerAction
     {
         [RequiredField]
         [Tooltip("The main GameObject.")]
@@ -27,7 +27,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 return;
             }
 
-            var entity = go.GetComponent<IEntity>();
+            var entity = base.GetEntityBase(go);
 
             //var rqSM = Owner.GetComponent<PlayMakerStateMachineComponent>();
             //_entity = rqSM.GetComponentRepository();
