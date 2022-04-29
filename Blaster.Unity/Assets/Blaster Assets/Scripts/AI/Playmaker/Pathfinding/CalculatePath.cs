@@ -73,6 +73,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Physics
         public override void OnUpdate()
         {
             base.OnUpdate();
+            _atom.Target = Target.Value;
             _atom.OnUpdate();
             if (_atom.IsFinished)
             {
