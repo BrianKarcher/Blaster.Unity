@@ -223,7 +223,7 @@ MonoBehaviour:
   startEndModifier:
     addPoints: 0
     exactStartPoint: 1
-    exactEndPoint: 3
+    exactEndPoint: 1
     useRaycasting: 0
     mask:
       serializedVersion: 2
@@ -439,6 +439,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 4749780522506859949}
+      - useVariable: 1
+        name: ControlledFSM
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 8345536392524183722}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -446,7 +452,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -832,7 +838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8345536392524183723
 Transform:
   m_ObjectHideFlags: 0
@@ -938,7 +944,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 3
+        value: 1
       intVariables: []
       boolVariables: []
       stringVariables:
