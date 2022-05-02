@@ -687,8 +687,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 841
-        y: 432
+        x: 861
+        y: 434
         width: 103
         height: 32
       isBreakpoint: 0
@@ -705,17 +705,17 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.Wait
         - BlueOrb.Scripts.AI.Playmaker.StopMoving
         - HutongGames.PlayMaker.Actions.SetAnimatorBool
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
+        actionEnabled: 010100
         actionIsOpen: 010101
-        actionStartIndex: 000000000300000005000000
-        actionHashCodes: 48c0110114d132035f913504
+        actionStartIndex: 000000000200000007000000
+        actionHashCodes: 14d132035f91350448c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -773,18 +773,15 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
+        - FINISHED
         byteData: 000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 00000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
-        paramDataType: 0f000000170000000100000014000000280000001400000012000000110000000100000007000000
+        paramDataType: 140000002800000014000000120000001100000001000000070000000f0000001700000001000000
         paramName:
-        - time
-        - finishEvent
-        - realTime
         - gameObject
         - _atom
         - gameObject
@@ -792,8 +789,11 @@ MonoBehaviour:
         - Value
         - everyFrame
         - everyFrameOption
-        paramDataPos: 00000000000000000000000000000000000000000100000000000000000000000100000002000000
-        paramByteDataSize: 00000000000000000100000000000000000000000000000000000000000000000100000004000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000000000000100000000000000000000000000000001000000000000000000000005000000
+        paramByteDataSize: 00000000000000000000000000000000000000000100000004000000000000000000000001000000
     - name: Cooldown
       description: 
       colorIndex: 0
@@ -817,16 +817,26 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - BlueOrb.Scripts.AI.PlayMaker.Attack.SetFloatVariable
         - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 48c01101
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000006000000
+        actionHashCodes: a566e60348c01101
         unityObjectParams: []
         fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -854,25 +864,32 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
-        byteData: 00
+        byteData: 000000000000e040010000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 0f0000001700000001000000
+        customTypeSizes: 04000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.SetFloatVariableAtom
+        paramDataType: 1400000028000000070000000200000001000000010000000f0000001700000001000000
         paramName:
+        - gameObject
+        - _atom
+        - FloatVariable
+        - Value
+        - SetToOriginalValue
+        - RevertOnExit
         - time
         - finishEvent
         - realTime
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
+        paramDataPos: 00000000000000000000000004000000080000000900000000000000000000000a000000
+        paramByteDataSize: 000000000000000004000000040000000100000001000000000000000000000001000000
     - name: Attack
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 666
-        y: 533
+        x: 858
+        y: 540
         width: 100
         height: 32
       isBreakpoint: 0
@@ -883,19 +900,21 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Calculate Flee Path
+        toState: StartRunning
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
         - BlueOrb.Scripts.AI.PlayMaker.Attack.AttackOverlapBox
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: c58f3f00
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000007000000
+        actionHashCodes: c58f3f0048c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -919,6 +938,12 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         - useVariable: 0
           name: 
           tooltip: 
@@ -956,14 +981,15 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - FINISHED
+        byteData: 00
         arrayParamSizes: 01000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmInt
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000000c000000100000001c0000001c0000000f00000011000000
+        paramDataType: 140000000c000000100000001c0000001c0000000f000000110000000f0000001700000001000000
         paramName:
         - gameObject
         - Layer
@@ -972,8 +998,11 @@ MonoBehaviour:
         - Offset
         - Damage
         - IsDebug
-        paramDataPos: 00000000000000000000000000000000010000000000000000000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000000000000000000000000000010000000000000000000000010000000000000000000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: TurnTowardsPlayer
       description: 
       colorIndex: 0
@@ -1218,7 +1247,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 000100000101000101
+        actionEnabled: 000101000101000101
         actionIsOpen: 010101010101010101
         actionStartIndex: 00000000070000000e000000110000001a00000022000000290000003300000037000000
         actionHashCodes: 4472bd0458e46b0086fe5f01109b58041a44e0055552ad05458e6b0436f094001bcdca04
@@ -1441,7 +1470,7 @@ MonoBehaviour:
         - FINISHED
         - 
         - FINISHED
-        byteData: 00000000000000000000000000000000000000000000000002000000000000000000000001000000000000010000003f010000003f01000000000101
+        byteData: 00000000000000000000000000000000000000000000000023000000000000000000000001000000000000010000003f010000003f01000000000101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 020000000200000001000000050000000200000005000000
@@ -1771,6 +1800,83 @@ MonoBehaviour:
         - Delay
         paramDataPos: 00000000000000000000000001000000020000000000000004000000010000000100000000000000000000000000000005000000
         paramByteDataSize: 00000000000000000000000000000000000000000400000001000000000000000000000000000000000000000000000004000000
+    - name: StartRunning
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 667
+        y: 466
+        width: 107
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Calculate Flee Path
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - BlueOrb.Scripts.AI.PlayMaker.Attack.SetFloatVariable
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: a566e603
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 00000000000070410000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 04000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.SetFloatVariableAtom
+        paramDataType: 140000002800000007000000020000000100000001000000
+        paramName:
+        - gameObject
+        - _atom
+        - FloatVariable
+        - Value
+        - SetToOriginalValue
+        - RevertOnExit
+        paramDataPos: 000000000000000000000000040000000800000009000000
+        paramByteDataSize: 000000000000000004000000040000000100000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
