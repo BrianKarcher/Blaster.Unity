@@ -1,16 +1,14 @@
 ﻿using BlueOrb.Scripts.AI.AtomActions.Physics;
 using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
 using PM = HutongGames.PlayMaker;
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
+using System;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Physics
 {
     [ActionCategory("RQ.Pathfinding")]
     [PM.Tooltip("Calculate a new Flee path - used by FollowPath.")]
-    public class CalculateFleePath : FsmStateAction
+    public class CalculateFleePath : BasePlayMakerAction
     {
         [RequiredField]
         [PM.Tooltip("The main GameObject.")]
@@ -46,7 +44,11 @@ namespace BlueOrb.Scripts.AI.Playmaker.Physics
                 return;
             }
 
-            var entity = go.GetComponent<IEntity>();
+            var entity = base.GetEntityBase(go);
+            if (entity == null || entity.Components == null)
+            {
+                throw new Exception($"Could not locate Entity Common for {Fsm.Name}");
+            }
             _atom.FleeFromTarget = FleeFromTarget.Value;
             _atom.Start(entity);
 

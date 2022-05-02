@@ -1,7 +1,6 @@
 ﻿using Pathfinding;
 using BlueOrb.Common.Container;
 using BlueOrb.Controller.Inventory;
-using BlueOrb.Controller.Physics;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +19,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
         public bool IsPathError => _isPathError;
         public float Delay = 0f;
         private float _timeToCalculate;
+        private bool _canSearchAgain = true;
 
         public override void Start(IEntity entity)
         {
@@ -36,7 +36,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
         public override void OnUpdate()
         {
             base.OnUpdate();
-            if (Time.time > _timeToCalculate)
+            if (Time.time > _timeToCalculate && _canSearchAgain)
             {
                 CalculatePath();
             }
@@ -44,6 +44,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
 
         private void CalculatePath()
         {
+            _canSearchAgain = false;
             // Call a FleePath call like this, assumes that a Seeker is attached to the GameObject
             Vector3 thePointToFleeFrom = FleeFromTarget;
             // The path will be returned when the path is over a specified length (or more accurately when the traversal cost is greater than a specified value).
@@ -71,6 +72,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
 
         public void OnPathComplete(Path p)
         {
+            _canSearchAgain = true;
             //We got our path back
             if (p.error)
             {
