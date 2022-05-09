@@ -19,11 +19,22 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
+                Debug.LogError($"Entity not found in {Fsm.Name}");
                 return;
             }
             var entity = base.GetEntityBase(go);
+            if (entity == null)
+            {
+                Debug.LogError($"Entity not found in {Fsm.Name}");
+                return;
+            }
             var receiverEntity = base.GetEntityBase(Receiver.Value);
-            MessageDispatcher.Instance.DispatchMsg(Message.Value, 0f, entity.GetId(), receiverEntity.GetId(), Collider.Value);
+            if (receiverEntity == null)
+            {
+                Debug.LogError($"Receiver Entity not found in {Fsm.Name}");
+                return;
+            }
+            MessageDispatcher.Instance.DispatchMsg(Message.Value, entity.GetId(), receiverEntity.GetId(), Collider.Value);
             Finish();
         }
     }

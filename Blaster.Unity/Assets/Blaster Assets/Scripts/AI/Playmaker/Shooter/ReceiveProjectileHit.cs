@@ -28,6 +28,11 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                 return;
             }
             this.entity = base.GetEntityBase(go);
+            if (this.entity == null)
+            {
+                Debug.LogError($"Entity not found in {Fsm.Name}");
+                return;
+            }
             StartListening(entity);
         }
 
@@ -49,6 +54,11 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 
         public override void OnExit()
         {
+            if (this.entity == null)
+            {
+                Debug.LogError($"Entity not found in {Fsm.Name}");
+                return;
+            }
             StopListening(this.entity);
             base.OnExit();
         }
