@@ -15,7 +15,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         public FsmOwnerDefault gameObject;
         public string InputMessage;
         private Animator _animator;
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         private AnimationComponent _animationComponent;
         private long _inputMessageIndex;
         private IEntity _entity;
@@ -36,7 +36,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             if (_animator == null)
                 _animator = _entity.transform.GetComponent<Animator>();
             if (_physicsComponent == null)
-                _physicsComponent = _entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = _entity.Components.GetComponent<IPhysicsComponent>();
             if (_animationComponent == null)
                 _animationComponent = _entity.Components.GetComponent<AnimationComponent>();
             StartListening();
@@ -74,7 +74,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                 _animationComponent?.SetVerticalSpeed(_physicsComponent.GetVelocity3().y);
 
             var playerRelativeInputDirection = _entity.transform.TransformDirection(new Vector3(axisInput.x, 0, axisInput.y));
-            _physicsComponent.SetVelocity3(playerRelativeInputDirection.normalized * _physicsComponent.GetPhysicsData().MaxSpeed);
+            _physicsComponent.Move(playerRelativeInputDirection.normalized * _physicsComponent.GetPhysicsData().MaxSpeed);
         }
 
         private void StopListening(IEntity entity)

@@ -132,16 +132,16 @@ namespace BlueOrb.Scripts.AI.AtomActions
             IEntity newEntity = null;
             if (newObject != null)
                 newEntity = newObject.GetComponent<IEntity>();
-            PhysicsComponent newPhysicsComponent;
+            IPhysicsComponent newPhysicsComponent;
             if (newEntity == null)
             {
                 // Not an Entity Common Component
-                newPhysicsComponent = newObject.GetComponent<PhysicsComponent>();
+                newPhysicsComponent = newObject.GetComponent<IPhysicsComponent>();
             }
             else
             {
                 // Get the Physics Component through the Entity Common Component
-                newPhysicsComponent = newEntity.Components.GetComponent<PhysicsComponent>();
+                newPhysicsComponent = newEntity.Components.GetComponent<IPhysicsComponent>();
             }
 
             if (newPhysicsComponent == null)

@@ -13,7 +13,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
             //return rqSM.GetComponentRepository();
             IEntity entity = null;
             Transform currentTransform = owner.transform;
-            while (entity == null)
+            while (entity == null && currentTransform != null)
             {
                 entity = currentTransform.GetComponent<IEntity>();
                 if (entity == null)

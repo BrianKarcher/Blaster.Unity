@@ -6,13 +6,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
 {
     public class GetIsGroundedAtom : AtomActionBase
     {
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
 
         public override void Start(IEntity entity)
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
         }
 
         public bool GetIsGrounded()

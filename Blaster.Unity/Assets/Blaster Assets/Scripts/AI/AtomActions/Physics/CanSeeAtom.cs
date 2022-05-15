@@ -16,7 +16,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public bool CheckDistance;
         public bool CheckFOV;
 
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         //protected EntityCommonComponent _entityCommon;
         private int _obstacleLayerMask = -1;
         //private bool _result;
@@ -25,7 +25,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
             //if (_entityCommon == null)
             //    _entityCommon = ent
         }

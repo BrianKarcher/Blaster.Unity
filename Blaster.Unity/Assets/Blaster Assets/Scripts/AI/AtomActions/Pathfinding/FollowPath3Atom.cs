@@ -13,7 +13,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public string _physicsComponentName;
         //private System.Action Complete;
         private BlueOrb.Physics.SteeringBehaviors3D.FollowPath3 _behavior;
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         private List<Vector3> Path;
         public Vector3 _offset;
         private long newPathId;
@@ -23,7 +23,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>(_physicsComponentName);
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>(_physicsComponentName);
             if (_waypointComponent == null)
                 _waypointComponent = entity.Components.GetComponent<WaypointComponent>();
             if (_physicsComponent == null)

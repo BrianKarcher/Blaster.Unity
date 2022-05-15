@@ -8,14 +8,14 @@ namespace BlueOrb.Scripts.AI.AtomActions
     {
         public float Force;
 
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         private Vector2 _dragForce;
 
         public override void Start(IEntity entity)
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
 
             var currentVelocity = _physicsComponent.GetVelocity2();
             var oppositeNormalized = currentVelocity.normalized * -1f;

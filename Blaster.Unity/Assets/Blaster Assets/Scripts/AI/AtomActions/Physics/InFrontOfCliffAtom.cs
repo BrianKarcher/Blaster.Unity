@@ -9,13 +9,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public float Distance;
         private bool _isFacingBigDrop;
         public bool IsFacingBigDrop => _isFacingBigDrop;
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
 
         public override void Start(IEntity entity)
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
 
             _isFacingBigDrop = false;
         }

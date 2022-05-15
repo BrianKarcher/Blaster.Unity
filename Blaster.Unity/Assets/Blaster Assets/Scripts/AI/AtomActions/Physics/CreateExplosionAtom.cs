@@ -27,13 +27,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
         //public Vector3 Position { get; set; }
         private float _startTime { get; set; }
         //private bool _result;
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
 
         public override void Start(IEntity entity)
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
             //if (_entityCommon == null)
             //    _entityCommon = ent
             _startTime = Time.time + Delay;

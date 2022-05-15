@@ -17,7 +17,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Attack
         private Vector3 _hitNormal;
         public Vector3 HitNormal => _hitNormal;
         private DamageComponent _damageComponent;
-        private PhysicsComponent _physicsComponet;
+        private IPhysicsComponent _physicsComponet;
 
         public override void Start(IEntity entity)
         {
@@ -25,7 +25,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Attack
             if (_damageComponent == null)
                 _damageComponent = entity.Components.GetComponent<DamageComponent>();
             if (_physicsComponet == null)
-                _physicsComponet = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponet = entity.Components.GetComponent<IPhysicsComponent>();
         }
 
         public override void StartListening(IEntity entity)

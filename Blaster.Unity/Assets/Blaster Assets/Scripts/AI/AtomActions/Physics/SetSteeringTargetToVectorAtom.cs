@@ -30,7 +30,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
         public string physicsComponentName;
         public string waypointName;
 
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         private GameObject _goToGameObject;
         //private AIComponent _aIComponent;
         //private SteeringBehaviorManager _steering;
@@ -39,7 +39,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>(physicsComponentName);
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>(physicsComponentName);
             //if (_aIComponent == null)
             //    _aIComponent = entity.Components.GetComponent<AIComponent>();
             Tick();

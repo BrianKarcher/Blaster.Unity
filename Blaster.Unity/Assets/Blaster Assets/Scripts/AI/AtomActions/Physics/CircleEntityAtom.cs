@@ -13,7 +13,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public float RotateSpeed;
 
         private GameObject _target;
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         private AnimationComponent _animationComponent;
         private int _direction = 1;
         //private float _angle;
@@ -23,7 +23,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
             if (_animationComponent == null)
                 _animationComponent = entity.Components.GetComponent<AnimationComponent>();
 

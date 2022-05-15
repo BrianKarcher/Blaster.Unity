@@ -23,7 +23,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 
         private float _originalValue;
 
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
 
         public override void Reset()
         {
@@ -39,7 +39,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             }
             var entity = base.GetEntityBase(go);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
 
             float value;
             _originalValue = GetCurrentValue();
@@ -64,13 +64,13 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             switch (FloatVariable)
             {
                 case FloatVariableEnum.MaxSpeed:
-                    _physicsComponent.Controller.GetPhysicsData().MaxSpeed = value;
+                    _physicsComponent.GetPhysicsData().MaxSpeed = value;
                     break;
                 case FloatVariableEnum.MaxForce:
-                    _physicsComponent.Controller.GetPhysicsData().MaxForce = value;
+                    _physicsComponent.GetPhysicsData().MaxForce = value;
                     break;
                 case FloatVariableEnum.ForceMultiplier:
-                    _physicsComponent.Controller.GetPhysicsData().ForceMultiplier = value;
+                    _physicsComponent.GetPhysicsData().ForceMultiplier = value;
                     break;
             }
         }
@@ -80,11 +80,11 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             switch (FloatVariable)
             {
                 case FloatVariableEnum.MaxSpeed:
-                    return _physicsComponent.Controller.GetPhysicsData().MaxSpeed;
+                    return _physicsComponent.GetPhysicsData().MaxSpeed;
                 case FloatVariableEnum.MaxForce:
-                    return _physicsComponent.Controller.GetPhysicsData().MaxForce;
+                    return _physicsComponent.GetPhysicsData().MaxForce;
                 case FloatVariableEnum.ForceMultiplier:
-                    return _physicsComponent.Controller.GetPhysicsData().ForceMultiplier;
+                    return _physicsComponent.GetPhysicsData().ForceMultiplier;
             }
             return 0f;
         }
@@ -94,11 +94,11 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             switch (FloatVariable)
             {
                 case FloatVariableEnum.MaxSpeed:
-                    return _physicsComponent.Controller.GetOriginalPhysicsData().MaxSpeed;
+                    return _physicsComponent.GetOriginalPhysicsData().MaxSpeed;
                 case FloatVariableEnum.MaxForce:
-                    return _physicsComponent.Controller.GetOriginalPhysicsData().MaxForce;
+                    return _physicsComponent.GetOriginalPhysicsData().MaxForce;
                 case FloatVariableEnum.ForceMultiplier:
-                    return _physicsComponent.Controller.GetOriginalPhysicsData().ForceMultiplier;
+                    return _physicsComponent.GetOriginalPhysicsData().ForceMultiplier;
             }
             return 0f;
         }

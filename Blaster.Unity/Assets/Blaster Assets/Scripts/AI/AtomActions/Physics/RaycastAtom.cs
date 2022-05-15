@@ -16,7 +16,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public float Distance;
         public bool Debug;
 
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         //protected EntityCommonComponent _entityCommon;
         private int _layerMask = -1;
         public Vector3 _offset;
@@ -29,7 +29,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
             //if (_entityCommon == null)
             //    _entityCommon = ent
         }

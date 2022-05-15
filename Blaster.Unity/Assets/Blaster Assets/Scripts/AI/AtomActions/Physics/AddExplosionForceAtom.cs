@@ -23,7 +23,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         //private GameObject _otherEntity;
         //public GameObject OtherEntity => _otherEntity;
 
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         private EntityStatsComponent _entityStatsComponent;
 
         //private Action<Telegram> _explodedDel;
@@ -33,7 +33,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
             if (_entityStatsComponent == null)
                 _entityStatsComponent = entity.Components.GetComponent<EntityStatsComponent>();
 

@@ -19,13 +19,13 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
         private float _originalValue;
 
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
 
         public override void Start(IEntity entity)
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
 
             float value;
             _originalValue = GetCurrentValue();

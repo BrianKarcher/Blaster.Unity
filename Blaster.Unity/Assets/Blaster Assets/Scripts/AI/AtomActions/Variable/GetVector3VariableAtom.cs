@@ -16,7 +16,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public Vector3VariableEnum Variable;
         public Vector3 Value;
 
-        private PhysicsComponent _physicsComponent;
+        private IPhysicsComponent _physicsComponent;
         //private PlayerController _playerController;
         //private PlayerParryComponent _playerParryComponent;
         private AnimationComponent _animator;
@@ -25,7 +25,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             base.Start(entity);
             if (_physicsComponent == null)
-                _physicsComponent = entity.Components.GetComponent<PhysicsComponent>();
+                _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
             //if (_playerController == null)
             //    _playerController = entity.Components.GetComponent<PlayerController>();
             if (_animator == null)
