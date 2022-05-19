@@ -41,7 +41,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             this.messageId = MessageDispatcher.Instance.StartListening(Message.Value, entity.GetId(), (data) =>
             {
                 GameObject collider = data.ExtraInfo as GameObject;
-                if (collider != null && collider.CompareTag(ShieldTag.Value))
+                if (collider != null && !string.IsNullOrEmpty(collider.tag) && !ShieldTag.IsNone && !string.IsNullOrEmpty(ShieldTag.Value) && collider.CompareTag(ShieldTag.Value))
                 {
                     Fsm.Event(ShieldHit);
                 }

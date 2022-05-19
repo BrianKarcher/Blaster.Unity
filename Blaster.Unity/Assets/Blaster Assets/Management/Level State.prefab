@@ -70,6 +70,8 @@ MonoBehaviour:
   _currentScore: 0
   _highScore: 0
   setLevelBeginMessage: SetLevelBegin
+  currentHp: 5
+  maxHp: 5
   _shooterComponent: {fileID: 7393538647247138994}
 --- !u!114 &7393538647247138994
 MonoBehaviour:
@@ -86,13 +88,15 @@ MonoBehaviour:
   _componentRepository: {fileID: 7318814327630136510}
   componentName: 
   MessageId: Shooter Controller
+  projectileToggle:
+    selectProjectileHudMessage: SelectProjectile
+    addProjectileTypeHudMessage: AddProjectileType
+    removeProjectileTypeHudMessage: RemoveProjectileType
   _currentMainProjectileConfig: {fileID: 11400000, guid: b286edd6f01f1a84e9710816d4f6731b,
     type: 2}
-  _currentSecondaryProjectileConfig: {fileID: 0}
-  _changeProjectileReceiveMessage: SetSecondaryProjectile
-  _changeProjectileSendMessage: SetSecondaryProjectile
+  _ammoBoxShotMessage: AmmoBoxShot
+  toggleProjectileMessage: ToggleProjectile
   _hudControllerName: Hud Controller
-  _ammoCount: 0
   _setAmmoMessage: SetAmmo
 --- !u!1 &7318814327642902001
 GameObject:

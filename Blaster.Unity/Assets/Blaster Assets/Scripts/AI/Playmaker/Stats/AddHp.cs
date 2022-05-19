@@ -2,6 +2,7 @@
 using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using BlueOrb.Controller.Damage;
+using UnityEngine;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
@@ -13,7 +14,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 
         public FsmFloat Hp;
         public FsmEvent IsDead;
-        private EntityStatsComponent _entityStatsComponent;
+        private IEntityStatsComponent _entityStatsComponent;
 
         public override void Reset()
         {
@@ -27,10 +28,15 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+            IEntity entity = base.GetEntityBase(go);
+            if (entity == null)
+            {
+                Debug.LogError($"Entity not found in {Fsm.Name}");
+                return;
+            }
             if (_entityStatsComponent == null)
             {
-                _entityStatsComponent = entity.Components.GetComponent<EntityStatsComponent>();
+                _entityStatsComponent = entity.Components.GetComponent<IEntityStatsComponent>();
             }
             _entityStatsComponent.AddHp(Hp.Value);
             if (_entityStatsComponent.IsDead())
