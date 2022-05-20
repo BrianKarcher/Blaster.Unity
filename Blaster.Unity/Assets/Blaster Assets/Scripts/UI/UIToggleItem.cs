@@ -74,10 +74,25 @@ namespace BlueOrb.Source.UI
             Image.sprite = ItemConfig.HUDImageSelected;
         }
 
-        public void SetText(string text)
+        public void SetText(string text, float time = 1)
         {
+            int.TryParse(Label.text, out int currentAmmo);
+            int.TryParse(text, out int targetAmmo);
+            iTween.ValueTo(gameObject, iTween.Hash("name", TweenName(), "from", currentAmmo, "to", targetAmmo, "time", time, "onupdate", "UpdateAmmo"));
+        }
+
+        public void UpdateAmmo(int val)
+        {
+            Label.text = val.ToString();
+        }
+
+        public void SetTextImmediate(string text)
+        {
+            iTween.StopByName(gameObject, TweenName());
             Label.text = text;
         }
+
+        private string TweenName() => $"{this.GetInstanceID()}_tween";
 
         public string GetText() => Label.text;
 

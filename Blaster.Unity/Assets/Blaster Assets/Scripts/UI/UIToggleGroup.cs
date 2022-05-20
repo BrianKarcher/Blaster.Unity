@@ -71,10 +71,11 @@ namespace BlueOrb.Source.UI
             for (int i = index + 1; i < _currentItemCount; i++)
             {
                 _items[i - 1].SetItemConfig(_items[i].GetItemConfig());
-                _items[i - 1].SetText(_items[i].GetText());
+                _items[i - 1].SetTextImmediate(_items[i].GetText());
             }
             // Then deactivate the last item.
             _items[_currentItemCount - 1].gameObject.SetActive(false);
+            _items[_currentItemCount - 1].SetTextImmediate("0");
             // Then subtract 1 from the count
             _currentItemCount--;
             ActivateDisplayItemsFromCount();
