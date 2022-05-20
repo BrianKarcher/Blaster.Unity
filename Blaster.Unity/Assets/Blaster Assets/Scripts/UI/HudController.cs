@@ -34,6 +34,9 @@ namespace Assets.BlueOrb.Scripts.UI
         [SerializeField]
         private UIToggleGroup uiToggleGroup;
 
+        [SerializeField]
+        private GameObject lifeBar;
+
 
         private const string ControllerName = "Hud Controller";
 
@@ -84,6 +87,9 @@ namespace Assets.BlueOrb.Scripts.UI
                 var hp = ((float current, float max))data.ExtraInfo;
                 Debug.Log($"(HUD) Setting current hp to {hp.current}");
                 _currentHpText.text = Mathf.FloorToInt(hp.current).ToString();
+                iTween.ScaleTo(this.lifeBar, new Vector3(hp.current / hp.max, 1, 1), 1);
+                //float.TryParse(_currentHpText.text, out float currentHp);
+                //iTween.ValueTo(this, iTween.Hash("from", currentHp, "to", hp.current))
             });
 
             MessageDispatcher.Instance.StartListening("ShowTimer", ControllerName, (data) =>

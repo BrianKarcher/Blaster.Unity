@@ -10,8 +10,13 @@ namespace Assets.Blaster_Assets.Scripts.UI
 
         public void SetScore(int score)
         {
-            // TODO: Do something fancy graphically here
-            _textMeshProUGUI.text = score.ToString();
+            int.TryParse(_textMeshProUGUI.text, out int currentScore);
+            iTween.ValueTo(gameObject, iTween.Hash("from", currentScore, "to", score, "time", 1, "onupdate", "UpdateScore"));
+        }
+
+        public void UpdateScore(int val)
+        {
+            _textMeshProUGUI.text = val.ToString();
         }
     }
 }
