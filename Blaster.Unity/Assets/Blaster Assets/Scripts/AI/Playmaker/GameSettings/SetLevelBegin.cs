@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
 {
     [ActionCategory("BlueOrb.GameSettings")]
     [HutongGames.PlayMaker.Tooltip("Set Level Begin variable")]
-    public class SetLevelBegin : FsmStateAction
+    public class SetLevelBegin : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -25,7 +25,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             MessageDispatcher.Instance.DispatchMsg(LevelBeginMessage.Value, 0f, entity.GetId(), entity.GetId(), null);
             Finish();
         }

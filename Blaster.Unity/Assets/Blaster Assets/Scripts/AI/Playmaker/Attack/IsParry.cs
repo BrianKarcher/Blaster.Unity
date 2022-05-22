@@ -26,7 +26,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _attackAtom.Start(entity);
             if (_attackAtom.IsFinished)
                 Finish();

@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Attack
 {
     [ActionCategory("RQ.Attack")]
     [Tooltip("Get Is Deflected.")]
-    public class IsDeflected : FsmStateAction
+    public class IsDeflected : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -32,7 +32,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Attack
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.Start(entity);
         }
 

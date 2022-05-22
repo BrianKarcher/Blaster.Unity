@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Physics")]
     [Tooltip("Set Apply Gravity.")]
-    public class SetApplyGravity : FsmStateAction
+    public class SetApplyGravity : BasePlayMakerAction
     {
         [RequiredField]
         [Tooltip("The main GameObject.")]
@@ -26,9 +26,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            //var rqSM = Owner.GetComponent<PlayMakerStateMachineComponent>();
-            //_entity = rqSM.GetComponentRepository();
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.Start(entity);            
         }
 

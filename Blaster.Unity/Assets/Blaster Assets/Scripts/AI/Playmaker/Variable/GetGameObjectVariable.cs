@@ -31,7 +31,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             if (entity == null)
                 Debug.LogError($"Error in {Fsm.ActiveStateName}, IEntity not found in {gameObject.GameObject.Name}");
             _atom.Start(entity);

@@ -10,7 +10,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Physics
 {
     [ActionCategory("RQ.Pathfinding")]
     [PM.Tooltip("Calculate a new path - used by FollowPath.")]
-    public class CalculatePath : FsmStateAction
+    public class CalculatePath : BasePlayMakerAction
     {
         [RequiredField]
         [PM.Tooltip("The main GameObject.")]
@@ -46,7 +46,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Physics
                 return;
             }
 
-            var entity = go.GetComponent<IEntity>();
+            var entity = base.GetEntityBase(go);
             _atom.Target = Target.Value;
             _atom.Start(entity);
 

@@ -7,7 +7,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 {
     [ActionCategory("RQ.Animation")]
     [HutongGames.PlayMaker.Tooltip("Add a layer weight lerp (gradual transition).")]
-    public class AddLayerWeightLerp : FsmStateAction
+    public class AddLayerWeightLerp : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -22,8 +22,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
             {
                 return;
             }
-            Debug.Log("(CenterCamera) OnEnter called");
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.Start(entity);
             Finish();
         }

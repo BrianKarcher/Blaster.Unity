@@ -12,7 +12,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 {
     [ActionCategory("BlueOrb.Cinemachine")]
     [HutongGames.PlayMaker.Tooltip("Get speed of dolly cart.")]
-    public class GetDollySpeed : FsmStateAction
+    public class GetDollySpeed : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -32,7 +32,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
                 return;
             }
 
-            var entity = go.GetComponent<IEntity>();
+            var entity = base.GetEntityBase(go);
             _dolly = entity.Components.GetComponent<DollyCartComponent>();
             Tick();
             if (!everyFrame)

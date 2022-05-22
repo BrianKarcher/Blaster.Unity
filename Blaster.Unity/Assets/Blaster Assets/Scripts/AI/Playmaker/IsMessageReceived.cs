@@ -46,7 +46,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             if (entity == null)
                 throw new Exception($"Entity not found in {Fsm.Name}-{Fsm.ActiveStateName}, {_atom.Message}");
             //var rqSM = Owner.GetComponent<PlayMakerStateMachineComponent>();

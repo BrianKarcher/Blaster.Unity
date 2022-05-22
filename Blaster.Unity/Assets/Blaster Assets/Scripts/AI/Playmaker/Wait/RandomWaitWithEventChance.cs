@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
 {
     [ActionCategory("BlueOrb")]
     [HutongGames.PlayMaker.Tooltip("Random Wait With Action Chance")]
-    public class RandomWaitWithEventChance : FsmStateAction
+    public class RandomWaitWithEventChance : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -51,7 +51,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             //_atom.Start(entity);
             time = Random.Range(min.Value, max.Value);
 

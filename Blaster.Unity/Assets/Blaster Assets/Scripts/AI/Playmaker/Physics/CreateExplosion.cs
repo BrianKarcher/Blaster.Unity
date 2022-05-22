@@ -9,7 +9,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Physics")]
     [PM.Tooltip("Create an explosion.")]
-    public class CreateExplosion : FsmStateAction
+    public class CreateExplosion : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -44,7 +44,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             var layerMask = ActionHelpers.LayerArrayToLayerMask(Layer, false);
             _atom.LayerMask = layerMask;
             _atom.Damage = Damage.Value;

@@ -14,7 +14,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
 {
     [ActionCategory("BlueOrb.Manager")]
     [HutongGames.PlayMaker.Tooltip("Level State Play Mode.")]
-    public class LevelStatePlay : FsmStateAction
+    public class LevelStatePlay : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -39,7 +39,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
             {
                 return;
             }
-            this.entity = go.GetComponent<IEntity>();
+
+            this.entity = base.GetEntityBase(go);
             if (this.entity == null)
                 throw new Exception($"Entity not found in {Fsm.ActiveStateName}");
 

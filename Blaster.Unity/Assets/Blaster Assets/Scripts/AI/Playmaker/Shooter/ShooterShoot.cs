@@ -2,12 +2,13 @@
 using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using BlueOrb.Controller.Component;
+using BlueOrb.Scripts.AI.Playmaker;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
     [ActionCategory("BlueOrb.Shooter")]
     //[Tooltip("Returns Success if Button is pressed.")]
-    public class ShooterShoot : FsmStateAction
+    public class ShooterShoot : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -27,7 +28,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             if (_playerShooterComponent == null)
             {
                 _playerShooterComponent = entity.Components.GetComponent<PlayerShooterComponent>();

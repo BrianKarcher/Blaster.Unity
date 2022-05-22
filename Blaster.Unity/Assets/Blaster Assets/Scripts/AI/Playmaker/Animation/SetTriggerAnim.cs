@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 {
     [ActionCategory("RQ.Animation")]
     [HutongGames.PlayMaker.Tooltip("Set boolean anim parameter.")]
-    public class SetTriggerAnim : FsmStateAction
+    public class SetTriggerAnim : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -20,7 +20,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.Start(entity);
             Finish();
         }

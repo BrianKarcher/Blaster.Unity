@@ -58,7 +58,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Variable
 			{
 				return;
 			}
-			var entity = go.GetComponent<IEntity>();
+
+			var entity = base.GetEntityBase(go);
 			if (_entityStatsComponent == null)
 				_entityStatsComponent = entity.Components.GetComponent<EntityStatsComponent>();
 

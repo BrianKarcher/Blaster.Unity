@@ -8,7 +8,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 {
     [ActionCategory("RQ.Custom")]
     [HutongGames.PlayMaker.Tooltip("Add a layer weight lerp (gradual transition).")]
-    public class TargetDestroyed : FsmStateAction
+    public class TargetDestroyed : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -27,7 +27,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
                 return;
             }
 
-            var entity = go.GetComponent<IEntity>();
+            var entity = base.GetEntityBase(go);
 
 
             var worldPos = entity.GetPosition() + LabelOffset.Value;

@@ -37,8 +37,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             {
                 return;
             }
-            if (_entity == null)
-                _entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
 
             GameObject value;
             _originalValue = GetCurrentValue();

@@ -5,7 +5,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
 {
     [ActionCategory("BlueOrb")]
     [HutongGames.PlayMaker.Tooltip("Wait until level has begun")]
-    public class WaitForLevelBegin : FsmStateAction
+    public class WaitForLevelBegin : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -22,7 +22,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             if (CheckComplete())
             {
                 Finish();

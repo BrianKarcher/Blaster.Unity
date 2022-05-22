@@ -37,7 +37,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.Start(entity);
             //Finish();
         }

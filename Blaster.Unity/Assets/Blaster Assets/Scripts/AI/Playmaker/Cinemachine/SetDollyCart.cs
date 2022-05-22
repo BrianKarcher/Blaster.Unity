@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 {
     [ActionCategory("BlueOrb.Cinemachine")]
     [HutongGames.PlayMaker.Tooltip("Set dolly cart.")]
-    public class SetDollyCart : FsmStateAction
+    public class SetDollyCart : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -25,7 +25,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             var dollyComponent = entity.Components.GetComponent<DollyCartComponent>();
             dollyComponent.SetDollyCartParent(DollyCart.Value);
             Finish();

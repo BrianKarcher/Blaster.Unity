@@ -8,7 +8,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 {
     [ActionCategory("BlueOrb.Cinemachine")]
     [HutongGames.PlayMaker.Tooltip("Set speed of dolly cart.")]
-    public class SetDollySpeed : FsmStateAction
+    public class SetDollySpeed : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -32,7 +32,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
                 return;
             }
 
-            var entity = go.GetComponent<IEntity>();
+            var entity = base.GetEntityBase(go);
             SetSpeedData data = new SetSpeedData();
             data.TargetSpeed = Speed.Value;
             data.SmoothTime = SmoothTime.Value;

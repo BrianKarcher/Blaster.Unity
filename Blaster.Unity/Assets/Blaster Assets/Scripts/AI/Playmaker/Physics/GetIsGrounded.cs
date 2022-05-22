@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Physics")]
     [Tooltip("Get Is Grounded.")]
-    public class GetIsGrounded : FsmStateAction
+    public class GetIsGrounded : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -31,7 +31,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.Start(entity);
             Tick();
             if (!everyFrame)

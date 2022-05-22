@@ -5,11 +5,12 @@ using BlueOrb.Physics;
 using BlueOrb.Messaging;
 using BlueOrb.Controller.Player;
 using BlueOrb.Controller;
+using BlueOrb.Scripts.AI.Playmaker;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
     [ActionCategory("BlueOrb.Player")]
-    public class OverShoulderMovement : FsmStateAction
+    public class OverShoulderMovement : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -32,7 +33,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             {
                 return;
             }
-            _entity = go.GetComponent<IEntity>();
+
+            _entity = base.GetEntityBase(go);
             if (_animator == null)
                 _animator = _entity.transform.GetComponent<Animator>();
             if (_physicsComponent == null)

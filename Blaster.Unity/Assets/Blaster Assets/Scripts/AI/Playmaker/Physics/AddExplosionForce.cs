@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Physics")]
     [Tooltip("Apply explosion force.")]
-    public class AddExplosionForce : FsmStateAction
+    public class AddExplosionForce : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -33,7 +33,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.SetProperties(Damage.Value, Force.Value, Radius.Value, UpwardsModifier.Value);
             _atom.Start(entity);
         }

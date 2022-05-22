@@ -6,7 +6,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Physics")]
     [Tooltip("Shoot an object.")]
-    public class ShootObject : FsmStateAction
+    public class ShootObject : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -36,7 +36,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.SetLayerMask(lMask);
             _atom.SetObjectToShoot(ObjectToShoot.Value);
             if (!SpawnPoint.IsNone)

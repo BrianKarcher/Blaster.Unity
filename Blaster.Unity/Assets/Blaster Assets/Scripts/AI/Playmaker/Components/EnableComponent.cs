@@ -7,7 +7,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
 {
     [ActionCategory("RQ.Component")]
     [Tooltip("Enable Component")]
-    public class EnableComponent : FsmStateAction
+    public class EnableComponent : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -26,7 +26,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.Start(entity);
             Finish();
         }

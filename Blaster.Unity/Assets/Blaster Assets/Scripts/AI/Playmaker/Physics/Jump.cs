@@ -1,21 +1,27 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
+﻿using HutongGames.PlayMaker;
+using BlueOrb.Physics;
 
 namespace BlueOrb.Scripts.AI.Playmaker
 {
-    [ActionCategory("RQ.Physics")]
-    [Tooltip("Enable RQ Physics.")]
-    public class Jump : FsmStateAction
+    [ActionCategory("BlueOrb.Physics")]
+    [Tooltip("Performs a full jump.")]
+    public class Jump : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
 
-        public JumpAtom _atom;
+        public FsmInt Count;
+        public FsmEvent Landed;
+
+        private IPhysicsComponent physicsComponent;
+        private bool isAirborn;
+        private int currentCount;
 
         public override void Reset()
         {
             gameObject = null;
+            Landed = null;
+            Count = null;
         }
 
         public override void OnEnter()
@@ -25,15 +31,40 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
-            _atom.Start(entity);
-            Finish();
+
+            var entity = base.GetEntityBase(go);
+            this.physicsComponent ??= entity.Components.GetComponent<IPhysicsComponent>();
+            this.isAirborn = false;
+            this.currentCount = 0;
+            JumpNow();
         }
 
-        public override void OnExit()
+        public override void OnUpdate()
         {
-            base.OnExit();
-            _atom.End();
+            base.OnUpdate();
+            if (this.isAirborn == false && this.physicsComponent.GetIsGrounded == false)
+            {
+                this.isAirborn = true;
+            }
+            else if (this.isAirborn == true && this.physicsComponent.GetIsGrounded == true)
+            {
+                this.isAirborn = false;
+                if (this.currentCount >= this.Count.Value)
+                {
+                    Fsm.Event(Landed);
+                    Finish();
+                }
+                else
+                {
+                    JumpNow();
+                }
+            }
+        }
+
+        private void JumpNow()
+        {
+            this.physicsComponent.Jump();
+            this.currentCount++;
         }
     }
 }

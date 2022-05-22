@@ -12,7 +12,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("RQ.Physics")]
     [HutongGames.PlayMaker.Tooltip("Circle an entity.")]
-    public class CircleEntity : FsmStateAction
+    public class CircleEntity : BasePlayMakerAction
     {
         [RequiredField]
         [CheckForComponent(typeof(Rigidbody))]
@@ -44,7 +44,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 return;
             }
-            var entity = go.GetComponent<IEntity>();
+
+            var entity = base.GetEntityBase(go);
             _atom.SetTarget(Target.Value);
             _atom.Start(entity);
         }
