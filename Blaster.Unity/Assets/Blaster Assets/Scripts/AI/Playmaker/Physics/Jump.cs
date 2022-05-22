@@ -41,12 +41,13 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
         public override void OnUpdate()
         {
+            bool isGrounded = this.physicsComponent.GetIsGrounded();
             base.OnUpdate();
-            if (this.isAirborn == false && this.physicsComponent.GetIsGrounded == false)
+            if (this.isAirborn == false && isGrounded == false)
             {
                 this.isAirborn = true;
             }
-            else if (this.isAirborn == true && this.physicsComponent.GetIsGrounded == true)
+            else if (this.isAirborn == true && isGrounded == true)
             {
                 this.isAirborn = false;
                 if (this.currentCount >= this.Count.Value)
