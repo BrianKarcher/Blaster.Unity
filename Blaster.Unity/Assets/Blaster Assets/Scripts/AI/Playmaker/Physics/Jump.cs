@@ -34,7 +34,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
             var entity = base.GetEntityBase(go);
             this.physicsComponent ??= entity.Components.GetComponent<IPhysicsComponent>();
-            this.isAirborn = false;
+            this.isAirborn = !this.physicsComponent.GetIsGrounded();
             this.currentCount = 0;
             JumpNow();
         }

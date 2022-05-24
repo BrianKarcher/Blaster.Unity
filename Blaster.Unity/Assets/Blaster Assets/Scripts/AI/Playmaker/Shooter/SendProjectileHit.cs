@@ -31,7 +31,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             var receiverEntity = base.GetEntityBase(Receiver.Value);
             if (receiverEntity == null)
             {
-                Debug.LogError($"Receiver Entity not found in {Fsm.Name}");
+                Debug.Log($"Receiver Entity not found in {Fsm.Name}");
                 return;
             }
             MessageDispatcher.Instance.DispatchMsg(Message.Value, entity.GetId(), receiverEntity.GetId(), Collider.Value);

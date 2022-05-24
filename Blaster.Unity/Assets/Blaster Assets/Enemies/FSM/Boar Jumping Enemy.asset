@@ -1835,14 +1835,16 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
         - BlueOrb.Scripts.AI.PlayMaker.Attack.SetFloatVariable2
         - HutongGames.PlayMaker.Actions.SetDrag
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000200000007000000
-        actionHashCodes: 9bd6f801c2084a0232d59402
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000002000000070000000a000000
+        actionHashCodes: 9bd6f801c2084a0232d5940248c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -1900,6 +1902,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -1907,13 +1915,14 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 00000000010001
+        stringParams:
+        - FINISHED
+        byteData: 0000000001000100
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001200000014000000070000000f0000000100000001000000140000000f00000001000000
+        paramDataType: 140000001200000014000000070000000f0000000100000001000000140000000f000000010000000f0000001700000001000000
         paramName:
         - gameObject
         - trigger
@@ -1925,8 +1934,11 @@ MonoBehaviour:
         - gameObject
         - drag
         - everyFrame
-        paramDataPos: 00000000000000000100000000000000000000000400000005000000020000000100000006000000
-        paramByteDataSize: 00000000000000000000000004000000000000000100000001000000000000000000000001000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000000000000100000000000000000000000400000005000000020000000100000006000000020000000000000007000000
+        paramByteDataSize: 00000000000000000000000004000000000000000100000001000000000000000000000001000000000000000000000001000000
     - name: ReturnWander
       description: 
       colorIndex: 0
