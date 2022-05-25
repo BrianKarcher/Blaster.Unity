@@ -9,7 +9,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
         {
             MaxSpeed = 0,
             MaxForce = 1,
-            ForceMultiplier = 2
+            ForceMultiplier = 2,
+            DragForce = 3
         }
 
         public FloatVariableEnum FloatVariable;
@@ -57,6 +58,9 @@ namespace BlueOrb.Scripts.AI.AtomActions
                 case FloatVariableEnum.ForceMultiplier:
                     _physicsComponent.Controller.GetPhysicsData().ForceMultiplier = value;
                     break;
+                case FloatVariableEnum.DragForce:
+                    _physicsComponent.Controller.GetPhysicsData().DragForce = value;
+                    break;
             }
         }
 
@@ -70,6 +74,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
                     return _physicsComponent.Controller.GetPhysicsData().MaxForce;
                 case FloatVariableEnum.ForceMultiplier:
                     return _physicsComponent.Controller.GetPhysicsData().ForceMultiplier;
+                case FloatVariableEnum.DragForce:
+                    return _physicsComponent.Controller.GetPhysicsData().DragForce;
             }
             return 0f;
         }
@@ -84,6 +90,8 @@ namespace BlueOrb.Scripts.AI.AtomActions
                     return _physicsComponent.Controller.GetOriginalPhysicsData().MaxForce;
                 case FloatVariableEnum.ForceMultiplier:
                     return _physicsComponent.Controller.GetOriginalPhysicsData().ForceMultiplier;
+                case FloatVariableEnum.DragForce:
+                    return _physicsComponent.Controller.GetOriginalPhysicsData().DragForce;
             }
             return 0f;
         }

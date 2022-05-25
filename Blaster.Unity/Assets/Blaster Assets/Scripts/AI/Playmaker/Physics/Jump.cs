@@ -1,10 +1,11 @@
 ﻿using HutongGames.PlayMaker;
 using BlueOrb.Physics;
+using UnityEngine;
 
 namespace BlueOrb.Scripts.AI.Playmaker
 {
     [ActionCategory("BlueOrb.Physics")]
-    [Tooltip("Performs a full jump.")]
+    [HutongGames.PlayMaker.Tooltip("Performs a full jump.")]
     public class Jump : BasePlayMakerAction
     {
         [RequiredField]
@@ -64,6 +65,9 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
         private void JumpNow()
         {
+            Vector3 velocity = this.physicsComponent.GetVelocity3();
+            velocity.y = 0;
+            this.physicsComponent.SetVelocity3(velocity);
             this.physicsComponent.Jump();
             this.currentCount++;
         }
