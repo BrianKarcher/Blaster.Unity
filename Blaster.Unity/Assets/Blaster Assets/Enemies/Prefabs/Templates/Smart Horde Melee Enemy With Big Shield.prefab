@@ -214,6 +214,32 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 0a5643f308f72e4469ced6dd7b40db7a, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &7888675775479611366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380401135426884824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -130085838, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 2383524180553693817}
+  componentName: 
+  _runAnim: 
+  _turnSpeedAnim: TurnSpeed
+  _forwardSpeedAnim: VelZ
+  _verticalSpeedAnim: 
+  _isBlockingAnim: 
+  _attackAnim: []
+  _sideSpeedAnim: 
+  _strafeAnim: VelX
+  _crouchAnimTrigger: 
+  _ikActive: 0
+  _rightHandObj: {fileID: 0}
+  _lookObj: {fileID: 0}
 --- !u!65 &7606430637420449563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -298,7 +324,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -438,7 +464,7 @@ MonoBehaviour:
       _initialVelocity: {x: 0, y: 0, z: 0}
       _size: {x: 0, y: 0, z: 0}
       _velocity: {x: 0, y: 0, z: 0}
-      _jumpVelocity: {x: 0, y: 0, z: 0}
+      _jumpVelocity: {x: 0, y: 19.8, z: 0}
       _offset: {x: 0, y: 0, z: 0}
       _mass: 1
       _maxSpeed: 6
@@ -461,7 +487,7 @@ MonoBehaviour:
       _groundCheckDistance: 0.4
       _groundLayer:
         serializedVersion: 2
-        m_Bits: 0
+        m_Bits: 1024
       _terrainLayer:
         serializedVersion: 2
         m_Bits: 0
@@ -1180,8 +1206,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2730412527616541545, guid: 90d641864f25fd14bbb9c882b2d00fc0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 88d00206c0d12ae42b659d3c22cdfde2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90d641864f25fd14bbb9c882b2d00fc0, type: 3}
+--- !u!1 &1380401135426884834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2730412527607165299, guid: 90d641864f25fd14bbb9c882b2d00fc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3948658786740692369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1380401135426884824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2730412527607165257, guid: 90d641864f25fd14bbb9c882b2d00fc0,
@@ -1191,12 +1228,6 @@ GameObject:
 --- !u!4 &1380401135427111096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2730412527607000361, guid: 90d641864f25fd14bbb9c882b2d00fc0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3948658786740692369}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1380401135426884834 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2730412527607165299, guid: 90d641864f25fd14bbb9c882b2d00fc0,
     type: 3}
   m_PrefabInstance: {fileID: 3948658786740692369}
   m_PrefabAsset: {fileID: 0}
