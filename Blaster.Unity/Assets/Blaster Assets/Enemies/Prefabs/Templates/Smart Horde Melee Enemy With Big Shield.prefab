@@ -234,9 +234,7 @@ MonoBehaviour:
   _verticalSpeedAnim: 
   _isBlockingAnim: 
   _attackAnim: []
-  _sideSpeedAnim: 
-  _strafeAnim: VelX
-  _crouchAnimTrigger: 
+  _sideSpeedAnim: VelX
   _ikActive: 0
   _rightHandObj: {fileID: 0}
   _lookObj: {fileID: 0}
@@ -430,7 +428,7 @@ MonoBehaviour:
       _instantForce: 0
       _turnMode: 0
       _autoTurn: 1
-      _autoApplyToAnimator: 0
+      _autoApplyToAnimator: 1
       _steeringData:
         _waypointSeekDistSq: 0.1
         _separationWeight: 1
@@ -459,8 +457,8 @@ MonoBehaviour:
       _showDebug: 0
       _gravityVector: {x: 0, y: -9.8, z: 0}
       _applyGravity: 1
-      _movingTurnSpeed: 540
-      _stationaryTurnSpeed: 720
+      _movingTurnSpeed: 180
+      _stationaryTurnSpeed: 360
       _initialVelocity: {x: 0, y: 0, z: 0}
       _size: {x: 0, y: 0, z: 0}
       _velocity: {x: 0, y: 0, z: 0}
@@ -735,24 +733,127 @@ MonoBehaviour:
     events: []
     globalTransitions: []
     variables:
-      floatVariables: []
+      floatVariables:
+      - useVariable: 1
+        name: DistanceToTarget
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: MeleeAttackDistance
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 3
+      - useVariable: 1
+        name: AttackCooldown
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 1
+      - useVariable: 1
+        name: RechaseDistance
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: Speed
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: StrafeSpeed
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 3
       intVariables: []
       boolVariables: []
-      stringVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: AttackAnimTrigger
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 
+      - useVariable: 1
+        name: AnimTurnVariable
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: TurnSpeed
+      - useVariable: 1
+        name: AnimSpeedVariable
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: Speed
       vector2Variables: []
-      vector3Variables: []
+      vector3Variables:
+      - useVariable: 1
+        name: TargetPos
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 0, y: 0, z: 0}
+      - useVariable: 1
+        name: AttackOffset
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {x: 0, y: 0, z: 1}
+      - useVariable: 1
+        name: AttackSize
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {x: 2, y: 2, z: 2}
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: Main
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 2383524180553693823}
+      - useVariable: 1
+        name: Target
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Animator
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1380401135426884824}
       objectVariables: []
       materialVariables: []
       textureVariables: []
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: Path
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        type: 0
+        objectTypeName: UnityEngine.Object
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences: []
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -762,7 +863,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -795,7 +896,7 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 0}
+  fsmTemplate: {fileID: 11400000, guid: 77dd26a1cbe6a5b4989ac30aa882e926, type: 2}
   eventHandlerComponentsAdded: 1
 --- !u!114 &2383524181934528985
 MonoBehaviour:
