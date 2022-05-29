@@ -87,6 +87,11 @@ namespace Assets.BlueOrb.Scripts.UI
                 var hp = ((float current, float max))data.ExtraInfo;
                 Debug.Log($"(HUD) Setting current hp to {hp.current}");
                 _currentHpText.text = Mathf.FloorToInt(hp.current).ToString();
+                if (hp.max == 0)
+                {
+                    Debug.LogError("HP Max is zero, divide by zero error!");
+                    return;
+                }
                 iTween.ScaleTo(this.lifeBar, new Vector3(hp.current / hp.max, 1, 1), 1);
                 //float.TryParse(_currentHpText.text, out float currentHp);
                 //iTween.ValueTo(this, iTween.Hash("from", currentHp, "to", hp.current))
