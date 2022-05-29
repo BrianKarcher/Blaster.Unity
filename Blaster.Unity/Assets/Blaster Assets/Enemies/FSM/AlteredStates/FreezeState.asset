@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: BurningState
+  m_Name: FreezeState
   m_EditorClassIdentifier: 
   category: General
   fsm:
@@ -24,7 +24,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 226
+        x: 242
         y: 116
         width: 100
         height: 32
@@ -36,7 +36,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: BurnDamage
+        toState: FreezeState
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -120,15 +120,15 @@ MonoBehaviour:
         - realTime
         paramDataPos: 00000000000000000400000001000000020000000500000006000000030000000000000007000000
         paramByteDataSize: 04000000000000000100000000000000000000000100000001000000000000000000000001000000
-    - name: BurnDamage
+    - name: FreezeState
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 429
+        x: 445
         y: 124
-        width: 106
-        height: 64
+        width: 102
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -142,41 +142,73 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
-          name: Death
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Death
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
           name: EndState
           isSystemEvent: 0
           isGlobal: 0
-        toState: DisableBurn
+        toState: DisableFreeze
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
-        - BlueOrb.Scripts.AI.PlayMaker.Attack.AddHp
+        - BlueOrb.Scripts.AI.Playmaker.StopMoving
+        - BlueOrb.Scripts.AI.PlayMaker.Attack.SetFloatVariable2
+        - HutongGames.PlayMaker.Actions.SetAnimatorFloat
+        - HutongGames.PlayMaker.Actions.GetSpeed
+        - HutongGames.PlayMaker.Actions.SetAnimatorFloat
         - HutongGames.PlayMaker.Actions.FloatCompare
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 657e6f011bcdca04
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000002000000070000000d0000001000000016000000
+        actionHashCodes: 14d13203c2084a02f9cb720032d59402f9cb72001bcdca04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
-        - ownerOption: 0
+        - ownerOption: 1
           gameObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Main
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
             networkSync: 0
             value: {fileID: 0}
         animationCurveParams: []
@@ -185,18 +217,60 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: AnimTurnVariable
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: TurnSpeed
+        - useVariable: 1
+          name: AnimSpeedVariable
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: Speed
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 1
-          name: DamagePerSecond
+          name: MaxSpeedWhenFreeze
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: -1
+          value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Speed
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Speed
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: CurrentDuration
           tooltip: 
@@ -223,20 +297,39 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Death
         - EndState
         - EndState
         - FINISHED
-        byteData: 00
+        byteData: 000000000000000000000001010000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 140000000f000000170000000f0000000f0000000f00000017000000170000001700000001000000
+        customTypeSizes: 00000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
+        paramDataType: 140000002800000014000000070000000f000000010000000100000014000000120000000f0000000f0000000100000007000000140000000f0000000100000014000000120000000f0000000f00000001000000070000000f0000000f0000000f00000017000000170000001700000001000000
         paramName:
         - gameObject
-        - Hp
-        - IsDead
+        - _atom
+        - gameObject
+        - FloatVariable
+        - Value
+        - SetToOriginalValue
+        - RevertOnExit
+        - gameObject
+        - parameter
+        - Value
+        - dampTime
+        - everyFrame
+        - everyFrameOption
+        - gameObject
+        - storeResult
+        - everyFrame
+        - gameObject
+        - parameter
+        - Value
+        - dampTime
+        - everyFrame
+        - everyFrameOption
         - float1
         - float2
         - tolerance
@@ -244,16 +337,16 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 00000000000000000000000001000000020000000300000001000000020000000300000000000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000001000000
-    - name: Death
+        paramDataPos: 0000000000000000010000000000000000000000040000000500000002000000000000000100000002000000060000000700000003000000030000000b000000040000000100000004000000050000000c0000000d00000006000000070000000800000000000000010000000200000011000000
+        paramByteDataSize: 0000000000000000000000000400000000000000010000000100000000000000000000000000000000000000010000000400000000000000000000000100000000000000000000000000000000000000010000000400000000000000000000000000000000000000000000000000000001000000
+    - name: DisableFreeze
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 644
-        y: 153
-        width: 100
+        x: 443
+        y: 254
+        width: 114
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -261,13 +354,17 @@ MonoBehaviour:
       transitions: []
       actionData:
         actionNames:
+        - BlueOrb.Scripts.AI.PlayMaker.Attack.SetFloatVariable2
         - BlueOrb.Scripts.AI.Playmaker.SendMessage
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 8cc5bb03
+        - 
+        - 
+        actionEnabled: 010100
+        actionIsOpen: 010101
+        actionStartIndex: 000000000500000015000000
+        actionHashCodes: c2084a028cc5bb03b2cf1000
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -285,107 +382,6 @@ MonoBehaviour:
             showInInspector: 1
             networkSync: 0
             value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Death
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          type: -1
-          objectTypeName: UnityEngine.Object
-          floatValues: []
-          intValues: 
-          boolValues: 
-          stringValues: []
-          vector4Values: []
-          objectReferences: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - Death
-        - 
-        - 
-        byteData: 0000000000000000000001
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 0b000000
-        customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 14000000130000002900000012000000280000000300000003000000030000000100000001000000010000000100000001000000010000000700000001000000
-        paramName:
-        - gameObject
-        - Recipient
-        - Recipients
-        - Message
-        - _atom
-        - Message
-        - ExtraInfo
-        - collideTag
-        - _sendToSelf
-        - _sendToAll
-        - _sendToMainCharacter
-        - _sendToUsableController
-        - _sendToGameController
-        - _sendToUIManager
-        - SendMessageTime
-        - _finishOnFirstMessageSent
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000
-    - name: DisableBurn
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 427
-        y: 254
-        width: 101
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames:
-        - BlueOrb.Scripts.AI.Playmaker.SendMessage
-        - HutongGames.PlayMaker.Actions.ActivateGameObject
-        customNames:
-        - 
-        - 
-        actionEnabled: 0100
-        actionIsOpen: 0101
-        actionStartIndex: 0000000010000000
-        actionHashCodes: 8cc5bb03b2cf1000
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: Main
-          tooltip: 
-          showInInspector: 1
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -414,7 +410,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: StopBurn
+          value: StopFreeze
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams:
@@ -432,7 +428,13 @@ MonoBehaviour:
           vector4Values: []
           objectReferences: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -453,17 +455,22 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - StopFreeze
         - 
         - 
-        - 
-        byteData: 00000000000000000000010000
+        byteData: 00000000010000000000000000000000010000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0b000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000007000000010000001400000011000000110000000100000001000000
+        paramDataType: 14000000070000000f0000000100000001000000140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000007000000010000001400000011000000110000000100000001000000
         paramName:
+        - gameObject
+        - FloatVariable
+        - Value
+        - SetToOriginalValue
+        - RevertOnExit
         - gameObject
         - Recipient
         - Recipients
@@ -485,15 +492,15 @@ MonoBehaviour:
         - recursive
         - resetOnExit
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a0000000100000000000000010000000b0000000c000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000000000000100000001000000
+        paramDataPos: 00000000000000000000000004000000050000000100000000000000000000000000000000000000000000000100000002000000060000000700000008000000090000000a0000000b0000000c000000100000000200000000000000010000001100000012000000
+        paramByteDataSize: 0000000004000000000000000100000001000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000004000000010000000000000000000000000000000100000001000000
     - name: Setup
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 64
-        y: 105
+        x: 55.40625
+        y: 110.33594
         width: 100
         height: 32
       isBreakpoint: 0
@@ -511,22 +518,74 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetFloatValue
+        - BlueOrb.Scripts.AI.PlayMaker.Attack.SetFloatVariable2
+        - HutongGames.PlayMaker.Actions.SetAnimatorFloat
+        - HutongGames.PlayMaker.Actions.GetSpeed
+        - HutongGames.PlayMaker.Actions.SetAnimatorFloat
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 9845b305
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000003000000080000000e00000011000000
+        actionHashCodes: 9845b305c2084a02f9cb720032d59402f9cb7200
         unityObjectParams: []
         fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: AnimTurnVariable
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: TurnSpeed
+        - useVariable: 1
+          name: AnimSpeedVariable
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: Speed
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -544,6 +603,42 @@ MonoBehaviour:
           showInInspector: 1
           networkSync: 0
           value: 4
+        - useVariable: 1
+          name: MaxSpeedWhenFreeze
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Speed
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Speed
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -552,18 +647,38 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 00
+        byteData: 000000000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f00000001000000
+        paramDataType: 0f0000000f0000000100000014000000070000000f000000010000000100000014000000120000000f0000000f0000000100000007000000140000000f0000000100000014000000120000000f0000000f0000000100000007000000
         paramName:
         - floatVariable
         - floatValue
         - everyFrame
-        paramDataPos: 000000000100000000000000
-        paramByteDataSize: 000000000000000001000000
+        - gameObject
+        - FloatVariable
+        - Value
+        - SetToOriginalValue
+        - RevertOnExit
+        - gameObject
+        - parameter
+        - Value
+        - dampTime
+        - everyFrame
+        - everyFrameOption
+        - gameObject
+        - storeResult
+        - everyFrame
+        - gameObject
+        - parameter
+        - Value
+        - dampTime
+        - everyFrame
+        - everyFrameOption
+        paramDataPos: 000000000100000000000000000000000100000002000000050000000600000001000000000000000300000004000000070000000800000002000000050000000c000000030000000100000006000000070000000d0000000e000000
+        paramByteDataSize: 0000000000000000010000000000000004000000000000000100000001000000000000000000000000000000000000000100000004000000000000000000000001000000000000000000000000000000000000000100000004000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -596,6 +711,18 @@ MonoBehaviour:
         networkSync: 0
         value: 0
       - useVariable: 1
+        name: MaxSpeedWhenFreeze
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 3
+      - useVariable: 1
+        name: Speed
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
         name: CurrentDuration
         tooltip: 
         showInInspector: 0
@@ -603,7 +730,19 @@ MonoBehaviour:
         value: 0
       intVariables: []
       boolVariables: []
-      stringVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: AnimSpeedVariable
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: Speed
+      - useVariable: 1
+        name: AnimTurnVariable
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: TurnSpeed
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
@@ -616,6 +755,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Animator
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -623,7 +768,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
