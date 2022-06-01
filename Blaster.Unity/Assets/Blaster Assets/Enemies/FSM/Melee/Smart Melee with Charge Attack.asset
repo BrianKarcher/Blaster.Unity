@@ -109,7 +109,7 @@ MonoBehaviour:
         x: 495
         y: 149.5
         width: 113
-        height: 80
+        height: 96
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -146,11 +146,20 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: Scared
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: StopScared
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - BlueOrb.Scripts.AI.Playmaker.FollowPath3
         - BlueOrb.Scripts.AI.Playmaker.SetSteeringTargetToVector
         - BlueOrb.Scripts.AI.Playmaker.EnableSteeringBehavior
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - HutongGames.PlayMaker.Actions.GetPosition
         - BlueOrb.Scripts.AI.Playmaker.Physics.CalculatePath
@@ -171,13 +180,20 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0100000001010101010101
-        actionIsOpen: 0101010101010101010101
-        actionStartIndex: 000000000700000010000000130000001b000000220000002c00000030000000370000003d00000040000000
-        actionHashCodes: 58e46b00109b580486fe5f011a44e0055552ad05458e6b0436f094001bcdca04f9cb720032d59402f9cb7200
+        - 
+        actionEnabled: 010000010001010101010101
+        actionIsOpen: 010101010101010101010101
+        actionStartIndex: 000000000700000010000000130000001b000000230000002a00000034000000380000003f0000004500000048000000
+        actionHashCodes: 58e46b00109b580486fe5f011a44e0051a44e0055552ad05458e6b0436f094001bcdca04f9cb720032d59402f9cb7200
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
           name: 
           tooltip: 
           showInInspector: 0
@@ -196,6 +212,14 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -283,6 +307,12 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         - useVariable: 0
           name: 
           tooltip: 
@@ -429,6 +459,9 @@ MonoBehaviour:
         - 
         - 
         - 
+        - Scared
+        - 
+        - Scared
         - AIOff
         - 
         - Off
@@ -436,17 +469,18 @@ MonoBehaviour:
         - ChargeAttack
         - ChargeAttack
         - 
-        byteData: 00000000000000000000000000000000000000000101010000000000000000010000003f010000003f010000000001010000000000010100000000
+        byteData: 0000000000000000000000000000000000000000010101000000000000000000010000003f010000003f010000000001010000000000010100000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000005000000010000000200000005000000
+        customTypeSizes: 020000000500000001000000020000000200000005000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.FollowPath3Atom
         - BlueOrb.Scripts.AI.AtomActions.Physics.SetSteeringTargetToVectorAtom
         - BlueOrb.Scripts.AI.AtomActions.EnableSteeringBehaviorAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.Physics.CalculatePathAtom
-        paramDataType: 140000002800000003000000090000001700000017000000290000001400000013000000280000000700000000000000010000000300000003000000010000001400000028000000070000001400000028000000030000000300000017000000130000001200000001000000140000001c0000000f0000000f0000000f0000000700000001000000140000001c000000290000001700000028000000020000000100000002000000010000000200000014000000130000000f000000010000000f0000000f0000000f0000001700000017000000170000000100000014000000120000000f0000000f0000000100000007000000140000000f0000000100000014000000120000000f0000000f0000000100000007000000
+        paramDataType: 1400000028000000030000000900000017000000170000002900000014000000130000002800000007000000000000000100000003000000030000000100000014000000280000000700000014000000280000000300000003000000170000001300000012000000010000001400000028000000030000000300000017000000130000001200000001000000140000001c0000000f0000000f0000000f0000000700000001000000140000001c000000290000001700000028000000020000000100000002000000010000000200000014000000130000000f000000010000000f0000000f0000000f0000001700000017000000170000000100000014000000120000000f0000000f0000000100000007000000140000000f0000000100000014000000120000000f0000000f0000000100000007000000
         paramName:
         - gameObject
         - _atom
@@ -467,6 +501,14 @@ MonoBehaviour:
         - gameObject
         - _atom
         - behavior_Type
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
         - gameObject
         - _atom
         - Message
@@ -518,15 +560,15 @@ MonoBehaviour:
         - dampTime
         - everyFrame
         - everyFrameOption
-        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000010000000c0000001000000014000000030000000400000015000000020000000200000016000000030000000300000005000000060000000700000001000000000000001a00000004000000000000000000000001000000020000001b0000001f0000000500000001000000010000000800000004000000200000002400000025000000290000002a0000000600000002000000030000002e000000040000000500000006000000090000000a0000000b0000002f00000007000000010000000700000008000000300000003100000008000000090000003500000009000000020000000a0000000b0000003600000037000000
-        paramByteDataSize: 0000000000000000000000000c000000000000000000000000000000000000000000000000000000040000000400000001000000000000000000000001000000000000000000000004000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000400000001000000000000000000000000000000000000000000000004000000010000000400000001000000040000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000100000004000000000000000000000001000000000000000000000000000000000000000100000004000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000010000000c0000001000000014000000030000000400000015000000020000000200000016000000030000000300000005000000060000000700000001000000000000001a000000040000000400000008000000090000000a00000002000000010000001b00000005000000000000000000000001000000020000001c000000200000000600000001000000010000000b000000050000002100000025000000260000002a0000002b0000000700000003000000030000002f0000000400000005000000060000000c0000000d0000000e000000300000000800000002000000070000000800000031000000320000000900000009000000360000000a000000030000000a0000000b0000003700000038000000
+        paramByteDataSize: 0000000000000000000000000c0000000000000000000000000000000000000000000000000000000400000004000000010000000000000000000000010000000000000000000000040000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000400000001000000000000000000000000000000000000000000000004000000010000000400000001000000040000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000100000004000000000000000000000001000000000000000000000000000000000000000100000004000000
     - name: LegsOff
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 704
-        y: 140.5
+        x: 721
+        y: 102.5
         width: 100
         height: 32
       isBreakpoint: 0
@@ -785,7 +827,7 @@ MonoBehaviour:
         x: 585
         y: 363.5
         width: 103
-        height: 32
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -798,6 +840,14 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: Scared
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: StopScared
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.Wait
@@ -805,18 +855,26 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetAnimatorBool
         - HutongGames.PlayMaker.Actions.SetAnimatorFloat
         - HutongGames.PlayMaker.Actions.SetAnimatorFloat
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         customNames:
         - 
         - 
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000003000000050000000a00000010000000
-        actionHashCodes: 48c0110114d132035f913504f9cb7200f9cb7200
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000003000000050000000a0000001000000016000000
+        actionHashCodes: 48c0110114d132035f913504f9cb7200f9cb72001a44e005
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
         - ownerOption: 0
           gameObject:
@@ -850,6 +908,14 @@ MonoBehaviour:
             showInInspector: 1
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -875,6 +941,12 @@ MonoBehaviour:
           showInInspector: 1
           networkSync: 0
           value: Speed
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -925,13 +997,17 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        byteData: 00000000000000000000000000000000
+        - Scared
+        - 
+        - Scared
+        byteData: 0000000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 00000000
+        customTypeSizes: 0000000002000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
-        paramDataType: 0f00000017000000010000001400000028000000140000001200000011000000010000000700000014000000120000000f0000000f000000010000000700000014000000120000000f0000000f0000000100000007000000
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 0f00000017000000010000001400000028000000140000001200000011000000010000000700000014000000120000000f0000000f000000010000000700000014000000120000000f0000000f00000001000000070000001400000028000000030000000300000017000000130000001200000001000000
         paramName:
         - time
         - finishEvent
@@ -955,8 +1031,16 @@ MonoBehaviour:
         - dampTime
         - everyFrame
         - everyFrameOption
-        paramDataPos: 00000000000000000000000000000000000000000100000000000000000000000100000002000000020000000100000001000000020000000600000007000000030000000200000003000000040000000b0000000c000000
-        paramByteDataSize: 00000000000000000100000000000000000000000000000000000000000000000100000004000000000000000000000000000000000000000100000004000000000000000000000000000000000000000100000004000000
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
+        paramDataPos: 00000000000000000000000000000000000000000100000000000000000000000100000002000000020000000100000001000000020000000600000007000000030000000200000003000000040000000b0000000c0000000400000001000000010000000200000003000000000000000300000010000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000001000000040000000000000000000000000000000000000001000000040000000000000000000000000000000000000001000000040000000000000000000000000000000000000000000000000000000000000001000000
     - name: Cooldown
       description: 
       colorIndex: 0
@@ -965,7 +1049,7 @@ MonoBehaviour:
         x: 84
         y: 379.5
         width: 100
-        height: 32
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -978,25 +1062,55 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: Scared
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: StopScared
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 48c01101
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000008000000
+        actionHashCodes: 1a44e00548c01101
         unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -1016,19 +1130,31 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - Scared
         - 
-        byteData: 00
+        - Scared
+        - 
+        byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 0f0000001700000001000000
+        customTypeSizes: 02000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 14000000280000000300000003000000170000001300000012000000010000000f0000001700000001000000
         paramName:
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
         - time
         - finishEvent
         - realTime
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
+        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000000000000300000001000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000000000000000000001000000
     - name: Attack
       description: 
       colorIndex: 0
@@ -2059,6 +2185,206 @@ MonoBehaviour:
         - delay
         paramDataPos: 00000000000000000100000001000000000000000100000002000000
         paramByteDataSize: 00000000000000000000000000000000000000000000000000000000
+    - name: IsMessageReceived
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 1061
+        y: 152
+        width: 148
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Scared
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: StopScared
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 1a44e005
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Scared
+        - 
+        - Scared
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 02000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000
+        paramName:
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
+        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+    - name: StopScared
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 1286
+        y: 289
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Calculate Path
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000008000000
+        actionHashCodes: 1a44e00548c01101
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 10
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - StopScared
+        - 
+        - FINISHED
+        - FINISHED
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 02000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 14000000280000000300000003000000170000001300000012000000010000000f0000001700000001000000
+        paramName:
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000000000000300000001000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -2076,6 +2402,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: Off
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Scared
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
@@ -2138,6 +2467,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: ChargeAttack
+      - useVariable: 1
+        name: PreviosState
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 
       vector2Variables: []
       vector3Variables:
       - useVariable: 1
@@ -2206,7 +2541,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
