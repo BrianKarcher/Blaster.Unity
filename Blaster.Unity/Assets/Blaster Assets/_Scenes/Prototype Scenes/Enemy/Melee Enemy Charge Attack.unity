@@ -801,6 +801,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 438021223}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &451272126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451272128}
+  - component: {fileID: 451272127}
+  m_Layer: 0
+  m_Name: SceneSetup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &451272127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451272126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1378270347, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneConfig: {fileID: 11400000, guid: 18bb0e9efe4a42441a3c2d1b48599fe0, type: 2}
+  SpawnPoints: {fileID: 0}
+  _actorsRoot: {fileID: 1739888731}
+  _startCountdownImmediately: 1
+--- !u!4 &451272128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451272126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.99926, y: 9.897163, z: 34.51792}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &482490634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1152,7 +1199,7 @@ MonoBehaviour:
   _defaultTargetIsPlayer: 1
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
-  _parentRepo: {fileID: 0}
+  _parentRepo: {fileID: 681075236}
 --- !u!1001 &689134990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4716,6 +4763,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5669849008517551420, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669849008517551420, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
+        type: 3}
       propertyPath: fsm.preprocessed
       value: 0
       objectReference: {fileID: 0}
@@ -4776,6 +4828,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5669849008517551420, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
         type: 3}
+      propertyPath: fsm.variables.floatVariables.Array.data[2].showInInspector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669849008517551420, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
+        type: 3}
       propertyPath: fsm.variables.floatVariables.Array.data[6].showInInspector
       value: 1
       objectReference: {fileID: 0}
@@ -4802,12 +4859,12 @@ PrefabInstance:
     - target: {fileID: 6543691795631591568, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
         type: 3}
       propertyPath: fsm.variables.gameObjectVariables.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6543691795631591568, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
         type: 3}
       propertyPath: fsm.variables.variableCategoryIDs.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6543691795631591568, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
         type: 3}
@@ -4823,6 +4880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fsm.variables.gameObjectVariables.Array.data[3].name
       value: FreezeState
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543691795631591568, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
+        type: 3}
+      propertyPath: fsm.variables.gameObjectVariables.Array.data[5].name
+      value: MainFSM
       objectReference: {fileID: 0}
     - target: {fileID: 6543691795631591568, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
         type: 3}
@@ -4842,6 +4904,11 @@ PrefabInstance:
     - target: {fileID: 6543691795631591568, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
         type: 3}
       propertyPath: fsm.variables.gameObjectVariables.Array.data[3].useVariable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543691795631591568, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
+        type: 3}
+      propertyPath: fsm.variables.gameObjectVariables.Array.data[5].useVariable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6543691795631591568, guid: 65f58e87f5c9b6f4b86b1bb5deb6392c,
