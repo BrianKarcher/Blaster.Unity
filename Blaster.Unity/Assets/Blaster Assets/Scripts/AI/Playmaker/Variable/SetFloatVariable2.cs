@@ -21,6 +21,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         public FsmFloat Value;
         public bool SetToOriginalValue;
         public bool RevertOnExit;
+        public bool ByPercent;
 
         private float _originalValue;
 
@@ -31,6 +32,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         public override void Reset()
         {
             gameObject = null;
+            ByPercent = false;
+            RevertOnExit = false;
         }
 
         public override void OnEnter()
@@ -50,6 +53,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             _originalValue = GetCurrentValue();
             if (SetToOriginalValue)
                 value = GetOriginalValue();
+            else if (ByPercent)
+                value = _originalValue * (Value.Value / 100f);
             else
                 value = Value.Value;
 
