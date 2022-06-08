@@ -804,7 +804,7 @@ MonoBehaviour:
       _instantForce: 0
       _turnMode: 2
       _autoTurn: 1
-      _autoApplyToAnimator: 1
+      _autoApplyToAnimator: 0
       _steeringData:
         _waypointSeekDistSq: 0.1
         _separationWeight: 1
@@ -861,10 +861,10 @@ MonoBehaviour:
       _groundCheckDistance: 0.4
       _groundLayer:
         serializedVersion: 2
-        m_Bits: 1
+        m_Bits: 1024
       _terrainLayer:
         serializedVersion: 2
-        m_Bits: 1
+        m_Bits: 1024
   _applySpeedLimit: 1
   _steering:
     _drawDebug: 1
@@ -921,11 +921,12 @@ MonoBehaviour:
   _componentRepository: {fileID: 0}
   componentName: 
   _attackData:
-    TargetTags: []
+    TargetTags:
+    - Player
     DeflectTags: []
     Layers:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 256
   _messageToSend: 
   _hitVFX: {fileID: 0}
   _attackAnim: -1

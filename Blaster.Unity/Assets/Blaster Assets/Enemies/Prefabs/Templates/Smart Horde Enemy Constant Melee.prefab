@@ -648,10 +648,10 @@ MonoBehaviour:
       _groundCheckDistance: 0.4
       _groundLayer:
         serializedVersion: 2
-        m_Bits: 1
+        m_Bits: 1024
       _terrainLayer:
         serializedVersion: 2
-        m_Bits: 1
+        m_Bits: 1024
   _applySpeedLimit: 1
   _steering:
     _drawDebug: 1
@@ -708,7 +708,8 @@ MonoBehaviour:
   _componentRepository: {fileID: 8345536390884858636}
   componentName: 
   _attackData:
-    TargetTags: []
+    TargetTags:
+    - Player
     DeflectTags: []
     Layers:
       serializedVersion: 2
