@@ -45,10 +45,11 @@ GameObject:
   - component: {fileID: 2302228103584012944}
   - component: {fileID: 2302228103584012951}
   - component: {fileID: 2302228103584012948}
-  - component: {fileID: 2302228103584012950}
   - component: {fileID: 2302228103584012949}
   - component: {fileID: 7453162780230285150}
   - component: {fileID: 3859979676176225410}
+  - component: {fileID: -6319302682828548422}
+  - component: {fileID: 447385514622097547}
   m_Layer: 9
   m_Name: Boar Enemy
   m_TagString: Enemy
@@ -108,97 +109,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2302228103584012950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2302228103584012945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -237695263, guid: da931a18600ca9243bdb9b0c3530e8a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentRepository: {fileID: 2302228103584012951}
-  componentName: 
-  _controller:
-    _isGrounded: 0
-    _physicsData:
-      _instantForce: 0
-      _turnMode: 0
-      _autoTurn: 1
-      _autoApplyToAnimator: 0
-      _steeringData:
-        _waypointSeekDistSq: 0.1
-        _separationWeight: 1
-        _alignmentWeight: 1
-        _cohesionWeight: 2
-        _obstacleAvoidanceWeight: 10
-        _wallAvoidanceWeight: 10
-        _wanderWeight: 1
-        _seekWeight: 1
-        _fleeWeight: 1
-        _arriveWeight: 1
-        _pursuitWeight: 1
-        _offsetPursuitWeight: 1
-        _interposeWeight: 1
-        _hideWeight: 1
-        _evadeWeight: 1
-        _followPathWeight: 1
-        _radiusClampWeight: 0.5
-        _lateralWaveWeight: 1
-        _feelerOffset: 0
-        _boundingRadius: 0
-        _wanderRad: 1.2
-        _wanderDist: 3
-        _wanderJitterPerSec: 10
-        _wallDetectionFeelerLength: 2
-      _showDebug: 0
-      _gravityVector: {x: 0, y: -15, z: 0}
-      _applyGravity: 1
-      _movingTurnSpeed: 720
-      _stationaryTurnSpeed: 540
-      _initialVelocity: {x: 0, y: 0, z: 0}
-      _size: {x: 0, y: 0, z: 0}
-      _velocity: {x: 0, y: 0, z: 0}
-      _jumpVelocity: {x: 0, y: 0, z: 0}
-      _offset: {x: 0, y: 0, z: 0}
-      _mass: 1
-      _maxSpeed: 7
-      _maxSpeedMultiplier: 1
-      _maxDistanceToTarget: 0
-      _directionRotate: 0
-      _boundingRadius: 1
-      _maxForce: 7
-      _forceMultiplier: 1
-      _friction: 0
-      _maxTurnRate: 6
-      _foot: {fileID: 0}
-      _fieldOfView: 0
-      _lineOfSight: 0
-      LOSSquared: 0
-      _dragForce: 0
-      _avoidLayersMask:
-        serializedVersion: 2
-        m_Bits: 0
-      _groundCheckDistance: 0.4
-      _groundLayer:
-        serializedVersion: 2
-        m_Bits: 1
-      _terrainLayer:
-        serializedVersion: 2
-        m_Bits: 1
-  _applySpeedLimit: 1
-  _steering:
-    _drawDebug: 1
-    ProjectOnGround: 1
-    Target: {x: 0, y: 0, z: 0}
-    Offset: {x: 0, y: 0, z: 0}
-    SteeringMode: 
-    _steeringForce: {x: 0, y: 0, z: 0}
-  _isEnabled: 1
-  _animForwardSpeedVar: 
 --- !u!136 &2302228103584012949
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -254,6 +164,115 @@ MonoBehaviour:
   _messageToSend: 
   _hitVFX: {fileID: 0}
   _attackAnim: -1
+--- !u!143 &-6319302682828548422
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302228103584012945}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.48, z: 0}
+--- !u!114 &447385514622097547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302228103584012945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1690866350, guid: da931a18600ca9243bdb9b0c3530e8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
+  _controller:
+    _isGrounded: 0
+    _physicsData:
+      _instantForce: 0
+      _turnMode: 0
+      _autoTurn: 1
+      _autoApplyToAnimator: 0
+      _steeringData:
+        _waypointSeekDistSq: 0.1
+        _separationWeight: 1
+        _alignmentWeight: 1
+        _cohesionWeight: 2
+        _obstacleAvoidanceWeight: 10
+        _wallAvoidanceWeight: 10
+        _wanderWeight: 1
+        _seekWeight: 1
+        _fleeWeight: 1
+        _arriveWeight: 1
+        _pursuitWeight: 1
+        _offsetPursuitWeight: 1
+        _interposeWeight: 1
+        _hideWeight: 1
+        _evadeWeight: 1
+        _followPathWeight: 1
+        _radiusClampWeight: 0.5
+        _lateralWaveWeight: 1
+        _feelerOffset: 0
+        _boundingRadius: 0
+        _wanderRad: 3
+        _wanderDist: 3
+        _wanderJitterPerSec: 10
+        _wallDetectionFeelerLength: 2
+      _showDebug: 0
+      _gravityVector: {x: 0, y: -19.8, z: 0}
+      _applyGravity: 1
+      _movingTurnSpeed: 720
+      _stationaryTurnSpeed: 540
+      _initialVelocity: {x: 0, y: 0, z: 0}
+      _size: {x: 0, y: 0, z: 0}
+      _velocity: {x: 0, y: 0, z: 0}
+      _jumpVelocity: {x: 0, y: 9.8, z: 0}
+      _offset: {x: 0, y: 0, z: 0}
+      _mass: 1
+      _maxSpeed: 7
+      _maxSpeedMultiplier: 1
+      _maxDistanceToTarget: 0
+      _directionRotate: 0
+      _boundingRadius: 1
+      _maxForce: 7
+      _forceMultiplier: 1
+      _friction: 0
+      _maxTurnRate: 6
+      _foot: {fileID: 0}
+      _fieldOfView: 30
+      _lineOfSight: 30
+      LOSSquared: 0
+      _dragForce: 0
+      _avoidLayersMask:
+        serializedVersion: 2
+        m_Bits: 0
+      _groundCheckDistance: 0.55
+      _groundLayer:
+        serializedVersion: 2
+        m_Bits: 1024
+      _terrainLayer:
+        serializedVersion: 2
+        m_Bits: 0
+  _applySpeedLimit: 1
+  _steering:
+    _drawDebug: 0
+    ProjectOnGround: 1
+    Target: {x: 0, y: 0, z: 0}
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce: {x: 0, y: 0, z: 0}
+  _isEnabled: 1
+  _animForwardSpeedVar: 
 --- !u!1 &2302228104300329265
 GameObject:
   m_ObjectHideFlags: 0
