@@ -2559,7 +2559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1397556518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3679,17 +3679,23 @@ MonoBehaviour:
       quaternionVariables: []
       gameObjectVariables:
       - useVariable: 1
-        name: StartTimer
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: {fileID: 0}
-      - useVariable: 1
         name: Main
         tooltip: 
         showInInspector: 1
         networkSync: 0
         value: {fileID: 1346124392}
+      - useVariable: 1
+        name: Level State
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 5172934453828029767}
+      - useVariable: 1
+        name: UI Manager
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 5172934453828029768}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -3697,7 +3703,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -4588,7 +4594,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5172934453828029759}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5172934453828029768}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 988dd02e0980efe4da0896aeac003ace, type: 3}
@@ -4609,6 +4615,18 @@ GameObject:
 --- !u!4 &5172934453828029766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5172934453791090795, guid: d78d773348b4b9441bb014e9a747cdbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5172934453828029759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5172934453828029767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6442253568552247903, guid: d78d773348b4b9441bb014e9a747cdbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5172934453828029759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5172934453828029768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3170826581845525990, guid: d78d773348b4b9441bb014e9a747cdbd,
     type: 3}
   m_PrefabInstance: {fileID: 5172934453828029759}
   m_PrefabAsset: {fileID: 0}

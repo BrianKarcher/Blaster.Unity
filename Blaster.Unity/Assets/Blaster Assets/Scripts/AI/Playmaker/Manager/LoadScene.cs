@@ -1,14 +1,7 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Rewired;
-using BlueOrb.Messaging;
-using UnityEngine;
+﻿using HutongGames.PlayMaker;
+using BlueOrb.Controller.Scene;
+using BlueOrb.Base.Manager;
+using BlueOrb.Base.Global;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Manager
 {
@@ -19,6 +12,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
         [RequiredField]
         public FsmOwnerDefault gameObject;
         public FsmObject SceneConfig;
+        public bool isLoadNextScene = false;
 
         public override void Reset()
         {
@@ -35,7 +29,10 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
             }
             var entity = base.GetEntityBase(go);
 
-
+            SceneConfig sceneConfig = this.SceneConfig.Value as SceneConfig;
+            string sceneName = isLoadNextScene ? GlobalStatic.NextScene : sceneConfig.SceneName;
+            GameStateController.Instance.LoadScene(sceneName);
+            Finish();
         }
 
         public override void OnExit()
