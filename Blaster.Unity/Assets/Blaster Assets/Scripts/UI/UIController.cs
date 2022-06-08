@@ -3,6 +3,8 @@ using Assets.Blaster_Assets.Scripts.UI;
 using BlueOrb.Common.Components;
 using BlueOrb.Controller.Manager;
 using BlueOrb.Messaging;
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +14,10 @@ namespace BlueOrb.Scripts.UI
     [AddComponentMenu("RQ/UI/UI Controller")]
     public class UIController : ComponentBase<UIController>
     {
+        public const string UIControllerId = "UI Controller";
+        public const string EnableCanvasEvent = "EnableCanvas";
+        public const string DisableCanvasEvent = "DisableCanvas";
+
         [SerializeField]
         private Image OverlayImage;
         [SerializeField]
@@ -22,9 +28,25 @@ namespace BlueOrb.Scripts.UI
         [SerializeField]
         private GameObject TempLabel;
 
+        [SerializeField]
+        private List<Canvas> canvases;
+
+        //private Dictionary<string, Canvas> canvasesDict;
+
         public override string GetId()
         {
-            return "UI Controller";
+            return UIControllerId;
+        }
+
+        protected override void Awake()
+        {
+            //canvasesDict = new Dictionary<string, Canvas>();
+            for (int i = 0; i < this.canvases.Count; i++)
+            {
+                //canvasesDict.Add(canvases[i].name, canvases[i]);
+                canvases[i].gameObject.SetActive(false);
+            }
+            base.Awake();
         }
 
         public override void StartListening()
@@ -58,11 +80,36 @@ namespace BlueOrb.Scripts.UI
                 var currentScore = (int)data.ExtraInfo;
                 _currentScore.SetScore(currentScore);
             });
+            //MessageDispatcher.Instance.StartListening(EnableCanvasEvent, GetId(), (data) =>
+            //{
+            //    string canvas = (string)data.ExtraInfo;
+            //    if (!canvasesDict.ContainsKey(canvas))
+            //    {
+            //        Debug.LogError($"Canvas {canvas} does not exist");
+            //        return;
+            //    }
+            //    canvasesDict[canvas].gameObject.SetActive(true);
+            //});
+            //MessageDispatcher.Instance.StartListening(DisableCanvasEvent, GetId(), (data) =>
+            //{
+            //    string canvas = (string)data.ExtraInfo;
+            //    if (!canvasesDict.ContainsKey(canvas))
+            //    {
+            //        Debug.LogError($"Canvas {canvas} does not exist");
+            //        return;
+            //    }
+            //    canvasesDict[canvas].gameObject.SetActive(false);
+            //});
         }
 
         public Canvas GetCanvas()
         {
             return Canvas;
+        }
+
+        public void ButtonClicked(string button)
+        {
+            MessageDispatcher.Instance.DispatchMsg("ButtonClicked", 0f, GetId(), _componentRepository.GetId(), button);
         }
     }
 }
