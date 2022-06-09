@@ -120,5 +120,11 @@ namespace BlueOrb.Scripts.UI
             GlobalStatic.NextSceneConfig = sceneConfig;
             MessageDispatcher.Instance.DispatchMsg("LevelSelected", 0f, GetId(), GetId(), null);
         }
+
+        public void SetDifficulty(string difficulty)
+        {
+            GlobalStatic.Difficulty = difficulty;
+            MessageDispatcher.Instance.DispatchMsg("DifficultySelected", 0f, GetId(), GetId(), null);
+        }
     }
 }

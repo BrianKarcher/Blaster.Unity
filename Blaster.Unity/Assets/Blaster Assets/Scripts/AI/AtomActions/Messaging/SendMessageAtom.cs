@@ -30,6 +30,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public bool _sendToMainCharacter;
         public bool _sendToUsableController;
         public bool _sendToGameController;
+        public bool _sendToLevelController;
         public bool _sendToUIManager;
         public SendMessageTime SendMessageTime;
         public bool _finishOnFirstMessageSent = true;
@@ -99,6 +100,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
             else if (_sendToGameController)
             {
                 Process("Game Controller");
+            }
+            else if (_sendToLevelController)
+            {
+                Process("Level Controller");
             }
             else
             {
