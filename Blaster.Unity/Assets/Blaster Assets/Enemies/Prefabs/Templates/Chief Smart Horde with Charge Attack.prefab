@@ -380,7 +380,8 @@ MonoBehaviour:
   _defaultTargetIsPlayer: 1
   _height: 1.8
   _homePosition: {x: 0, y: 0, z: 0}
-  _parentRepo: {fileID: 0}
+  _parentRepo: {fileID: 714508596768723167}
+  customId: 
 --- !u!54 &714508596768723164
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -393,7 +394,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -505,8 +506,8 @@ MonoBehaviour:
       _showDebug: 0
       _gravityVector: {x: 0, y: -9.8, z: 0}
       _applyGravity: 1
-      _movingTurnSpeed: 720
-      _stationaryTurnSpeed: 540
+      _movingTurnSpeed: 360
+      _stationaryTurnSpeed: 360
       _initialVelocity: {x: 0, y: 0, z: 0}
       _size: {x: 0, y: 0, z: 0}
       _velocity: {x: 0, y: 0, z: 0}
@@ -533,7 +534,7 @@ MonoBehaviour:
       _groundCheckDistance: 0.4
       _groundLayer:
         serializedVersion: 2
-        m_Bits: 0
+        m_Bits: 1024
       _terrainLayer:
         serializedVersion: 2
         m_Bits: 0
@@ -547,6 +548,30 @@ MonoBehaviour:
     _steeringForce: {x: 0, y: 0, z: 0}
   _isEnabled: 1
   _animForwardSpeedVar: 
+--- !u!114 &1637082103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576063866010373526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -130085838, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 714508596768723167}
+  componentName: 
+  _runAnim: 
+  _turnSpeedAnim: TurnSpeed
+  _forwardSpeedAnim: VelZ
+  _verticalSpeedAnim: 
+  _isBlockingAnim: 
+  _attackAnim: []
+  _sideSpeedAnim: VelX
+  _ikActive: 0
+  _rightHandObj: {fileID: 0}
+  _lookObj: {fileID: 0}
 --- !u!1 &4240422705421675440
 GameObject:
   m_ObjectHideFlags: 0

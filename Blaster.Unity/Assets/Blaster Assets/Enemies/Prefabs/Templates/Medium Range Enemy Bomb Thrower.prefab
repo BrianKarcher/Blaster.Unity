@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2294087245711763426}
   - component: {fileID: 7443289642384050729}
   - component: {fileID: 7784314810757260269}
+  - component: {fileID: 2106115597667258903}
+  - component: {fileID: 5752998671054287853}
   m_Layer: 9
   m_Name: Medium Range Enemy Bomb Thrower
   m_TagString: Enemy
@@ -58,6 +60,7 @@ MonoBehaviour:
   _height: 1.8
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+  customId: 
 --- !u!54 &2294087245711763427
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -174,7 +177,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2294087245711763430}
   m_Material: {fileID: 13400000, guid: a3d8bd354a4fed149b11e9ebb242cdfd, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -220,6 +223,115 @@ MonoBehaviour:
   _messageToSend: 
   _hitVFX: {fileID: 0}
   _attackAnim: -1
+--- !u!143 &2106115597667258903
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2294087245711763430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5752998671054287853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2294087245711763430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1690866350, guid: da931a18600ca9243bdb9b0c3530e8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
+  _controller:
+    _isGrounded: 0
+    _physicsData:
+      _instantForce: 0
+      _turnMode: 0
+      _autoTurn: 1
+      _autoApplyToAnimator: 1
+      _steeringData:
+        _waypointSeekDistSq: 0.1
+        _separationWeight: 1
+        _alignmentWeight: 1
+        _cohesionWeight: 2
+        _obstacleAvoidanceWeight: 10
+        _wallAvoidanceWeight: 10
+        _wanderWeight: 1
+        _seekWeight: 1
+        _fleeWeight: 1
+        _arriveWeight: 1
+        _pursuitWeight: 1
+        _offsetPursuitWeight: 1
+        _interposeWeight: 1
+        _hideWeight: 1
+        _evadeWeight: 1
+        _followPathWeight: 1
+        _radiusClampWeight: 0.5
+        _lateralWaveWeight: 1
+        _feelerOffset: 0
+        _boundingRadius: 0
+        _wanderRad: 1.2
+        _wanderDist: 3
+        _wanderJitterPerSec: 10
+        _wallDetectionFeelerLength: 2
+      _showDebug: 0
+      _gravityVector: {x: 0, y: -9.8, z: 0}
+      _applyGravity: 1
+      _movingTurnSpeed: 360
+      _stationaryTurnSpeed: 180
+      _initialVelocity: {x: 0, y: 0, z: 0}
+      _size: {x: 0, y: 0, z: 0}
+      _velocity: {x: 0, y: 0, z: 0}
+      _jumpVelocity: {x: 0, y: 19.8, z: 0}
+      _offset: {x: 0, y: 0, z: 0}
+      _mass: 1
+      _maxSpeed: 6
+      _maxSpeedMultiplier: 1
+      _maxDistanceToTarget: 0
+      _directionRotate: 0
+      _boundingRadius: 1
+      _maxForce: 6
+      _forceMultiplier: 1
+      _friction: 0
+      _maxTurnRate: 6
+      _foot: {fileID: 0}
+      _fieldOfView: 60
+      _lineOfSight: 20
+      LOSSquared: 0
+      _dragForce: 0
+      _avoidLayersMask:
+        serializedVersion: 2
+        m_Bits: 0
+      _groundCheckDistance: 0.4
+      _groundLayer:
+        serializedVersion: 2
+        m_Bits: 1024
+      _terrainLayer:
+        serializedVersion: 2
+        m_Bits: 0
+  _applySpeedLimit: 1
+  _steering:
+    _drawDebug: 0
+    ProjectOnGround: 1
+    Target: {x: 0, y: 0, z: 0}
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce: {x: 0, y: 0, z: 0}
+  _isEnabled: 1
+  _animForwardSpeedVar: 
 --- !u!1 &2294087246638374524
 GameObject:
   m_ObjectHideFlags: 0
