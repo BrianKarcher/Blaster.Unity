@@ -1,7 +1,9 @@
 ﻿using Assets.Blaster_Assets.Scripts.Components;
 using Assets.Blaster_Assets.Scripts.UI;
+using BlueOrb.Base.Global;
 using BlueOrb.Common.Components;
 using BlueOrb.Controller.Manager;
+using BlueOrb.Controller.Scene;
 using BlueOrb.Messaging;
 using System;
 using System.Collections.Generic;
@@ -110,6 +112,13 @@ namespace BlueOrb.Scripts.UI
         public void ButtonClicked(string button)
         {
             MessageDispatcher.Instance.DispatchMsg("ButtonClicked", 0f, GetId(), _componentRepository.GetId(), button);
+        }
+
+        public void LevelSelect(SceneConfig sceneConfig)
+        {
+            GlobalStatic.NextScene = sceneConfig.SceneName;
+            GlobalStatic.NextSceneConfig = sceneConfig;
+            MessageDispatcher.Instance.DispatchMsg("LevelSelected", 0f, GetId(), GetId(), null);
         }
     }
 }
