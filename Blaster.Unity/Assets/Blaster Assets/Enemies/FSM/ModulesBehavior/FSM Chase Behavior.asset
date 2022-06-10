@@ -493,15 +493,17 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - BlueOrb.Scripts.AI.Playmaker.StopMoving
+        - BlueOrb.Scripts.AI.PlayMaker.Attack.SetFloatVariable2
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000008000000
-        actionHashCodes: 1a44e00514d13203
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000008000000
+        actionHashCodes: 14d13203802b10021a44e005
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -511,6 +513,14 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -544,7 +554,13 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -555,16 +571,24 @@ MonoBehaviour:
         stringParams:
         - AIOn
         - 
-        - 
-        byteData: 00
+        - FINISHED
+        byteData: 0000000000010000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000000000000
+        customTypeSizes: 0000000002000000
         customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
-        paramDataType: 14000000280000000300000003000000170000001300000012000000010000001400000028000000
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 140000002800000014000000070000000f0000000100000001000000010000001400000028000000030000000300000017000000130000001200000001000000
         paramName:
+        - gameObject
+        - _atom
+        - gameObject
+        - FloatVariable
+        - Value
+        - SetToOriginalValue
+        - RevertOnExit
+        - ByPercent
         - gameObject
         - _atom
         - Message
@@ -573,10 +597,8 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        - gameObject
-        - _atom
-        paramDataPos: 00000000000000000000000001000000020000000000000000000000000000000100000001000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000010000000000000000000000
+        paramDataPos: 00000000000000000100000000000000000000000400000005000000060000000200000001000000000000000100000002000000000000000000000007000000
+        paramByteDataSize: 00000000000000000000000004000000000000000100000001000000010000000000000000000000000000000000000000000000000000000000000001000000
     - name: Calculate Path
       description: 
       colorIndex: 0

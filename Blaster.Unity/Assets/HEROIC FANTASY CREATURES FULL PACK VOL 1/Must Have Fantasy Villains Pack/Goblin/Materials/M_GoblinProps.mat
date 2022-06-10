@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_GoblinProps
-  m_Shader: {fileID: -6465566751694194690, guid: 03e9fead37443b242a9ac186206ef0d5,
-    type: 3}
+  m_Shader: {fileID: 4800000, guid: 7af7228bb16f577438be72a6e191a434, type: 3}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,6 +31,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 586a82176bbb6174fbb6eb8a68d715bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: f7e218e12afac4f4e812eb92f1dd9f60, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 586a82176bbb6174fbb6eb8a68d715bb, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -48,6 +51,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DissolveMask:
+        m_Texture: {fileID: 2800000, guid: e28dc97a9541e3642a48c0e3886688c5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,8 +63,16 @@ Material:
         m_Texture: {fileID: 2800000, guid: f7e218e12afac4f4e812eb92f1dd9f60, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Masks:
+        m_Texture: {fileID: 2800000, guid: c32047ee83d765940b30de4a999422e4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 0b4925d6a5a10be46b8c4e612161c7a0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 586a82176bbb6174fbb6eb8a68d715bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -65,6 +80,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture0:
+        m_Texture: {fileID: 2800000, guid: 64e7766099ad46747a07014e44d0aea1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -88,19 +111,33 @@ Material:
     - Vector1_a2707daa08844194b789a0d03a40916a: 1
     - Vector1_b848590770444649a96fa7278658d109: 1
     - Vector1_c41c3c676e1a4e84ae06a2bdfe2302a9: 1
+    - _AlphaCutoff: 0.5
+    - _Brightness: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DissolveDistorsionAmount: 0.08
+    - _DissolveIntensity: 10
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
+    - _GlossinessMultiplier: 1
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _OpacityMask: -1
+    - _OutlineDistance: 2
+    - _OutlineWidth: 0.0026
     - _Parallax: 0.02
+    - _RampDissolveScale: 10
+    - _RimPower: 1
+    - _ShadowThreshold: 0
+    - _ShadowToony: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpecularIntensity: 1
+    - _SpecularTransition: 0
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
@@ -108,5 +145,13 @@ Material:
     - Color_57f5a59e888d48e48dd4be02ae735d6e: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_ca10044b5f54455b8fe5919f288bf062: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveColor: {r: 1, g: 0.29396662, b: 0, a: 0}
+    - _DissolveDistorsionSpeed: {r: 1, g: -1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 0}
+    - _ShadowTint: {r: 0.23584905, g: 0.23584905, b: 0.23584905, a: 0}
+    - _SpecularColor: {r: 0.34905657, g: 0.34905657, b: 0.34905657, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _VTInfoBlock: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

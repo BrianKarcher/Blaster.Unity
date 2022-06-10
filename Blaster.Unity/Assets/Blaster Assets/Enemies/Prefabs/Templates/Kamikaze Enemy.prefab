@@ -414,7 +414,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2275933924242023642}
-  m_LocalRotation: {x: -0, y: -0.998175, z: -0, w: 0.06038724}
+  m_LocalRotation: {x: 0, y: -0.9981751, z: 0, w: 0.060386665}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -442,7 +442,8 @@ MonoBehaviour:
   _defaultTargetIsPlayer: 1
   _height: 1.8
   _homePosition: {x: 0, y: 0, z: 0}
-  _parentRepo: {fileID: 0}
+  _parentRepo: {fileID: 2275933924242023644}
+  customId: 
 --- !u!54 &2275933924242023647
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -530,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: -1690866350, guid: da931a18600ca9243bdb9b0c3530e8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentRepository: {fileID: 0}
+  _componentRepository: {fileID: 2275933924242023644}
   componentName: 
   _controller:
     _isGrounded: 0
@@ -538,7 +539,7 @@ MonoBehaviour:
       _instantForce: 0
       _turnMode: 0
       _autoTurn: 1
-      _autoApplyToAnimator: 0
+      _autoApplyToAnimator: 1
       _steeringData:
         _waypointSeekDistSq: 0.1
         _separationWeight: 1
@@ -595,10 +596,10 @@ MonoBehaviour:
       _groundCheckDistance: 0.4
       _groundLayer:
         serializedVersion: 2
-        m_Bits: 0
+        m_Bits: 1024
       _terrainLayer:
         serializedVersion: 2
-        m_Bits: 0
+        m_Bits: 1024
   _applySpeedLimit: 1
   _steering:
     _drawDebug: 0
@@ -733,7 +734,13 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 100
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: isScared
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables:
@@ -771,14 +778,46 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 2275933922384856954}
+      - useVariable: 1
+        name: DissolveElement
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
-      materialVariables: []
+      materialVariables:
+      - useVariable: 1
+        name: Dissolve Material
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: UnityEngine.Object
+        value: {fileID: 0}
       textureVariables: []
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ElementsToDissolve
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 3291687957016758869}
+        - {fileID: 3291687957016758871}
+        - {fileID: 3291687957016758865}
+        - {fileID: 3291687957016758867}
+        - {fileID: 3291687957016758857}
+        - {fileID: 3291687957016758859}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -823,6 +862,30 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 0a5643f308f72e4469ced6dd7b40db7a, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &6276720395139862534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291687957016758909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -130085838, guid: 339283910f46a6242b664963a1d5f397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 2275933924242023644}
+  componentName: 
+  _runAnim: 
+  _turnSpeedAnim: TurnSpeed
+  _forwardSpeedAnim: VelZ
+  _verticalSpeedAnim: 
+  _isBlockingAnim: 
+  _attackAnim: []
+  _sideSpeedAnim: VelX
+  _ikActive: 0
+  _rightHandObj: {fileID: 0}
+  _lookObj: {fileID: 0}
 --- !u!1 &4104162511972913477
 GameObject:
   m_ObjectHideFlags: 0
@@ -6029,6 +6092,42 @@ Transform:
 --- !u!4 &3291687957016991329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2730412527607000405, guid: 90d641864f25fd14bbb9c882b2d00fc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 597346506154408756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3291687957016758869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2730412527607165281, guid: 90d641864f25fd14bbb9c882b2d00fc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 597346506154408756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3291687957016758865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2730412527607165285, guid: 90d641864f25fd14bbb9c882b2d00fc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 597346506154408756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3291687957016758867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2730412527607165287, guid: 90d641864f25fd14bbb9c882b2d00fc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 597346506154408756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3291687957016758857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2730412527607165309, guid: 90d641864f25fd14bbb9c882b2d00fc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 597346506154408756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3291687957016758859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2730412527607165311, guid: 90d641864f25fd14bbb9c882b2d00fc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 597346506154408756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3291687957016758871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2730412527607165283, guid: 90d641864f25fd14bbb9c882b2d00fc0,
     type: 3}
   m_PrefabInstance: {fileID: 597346506154408756}
   m_PrefabAsset: {fileID: 0}
