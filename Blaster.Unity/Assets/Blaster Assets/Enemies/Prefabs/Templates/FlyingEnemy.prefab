@@ -124,7 +124,13 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 100
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: isScared
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables:
@@ -162,14 +168,41 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 2925429185147607242}
+      - useVariable: 1
+        name: DissolveElement
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
-      materialVariables: []
+      materialVariables:
+      - useVariable: 1
+        name: Dissolve Material
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: UnityEngine.Object
+        value: {fileID: 0}
       textureVariables: []
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ElementsToDissolve
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 8569932820169019736}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -550,6 +583,7 @@ MonoBehaviour:
   _height: 1.8
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+  customId: 
 --- !u!54 &2925429185797077871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1125,6 +1159,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 841d106db852c1c4a9e0762b79a8af85, type: 3}
+--- !u!1 &8569932820169019736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5839478387944894328, guid: 841d106db852c1c4a9e0762b79a8af85,
+    type: 3}
+  m_PrefabInstance: {fileID: 2875401960534867488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8569932820169179826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5839478387944537234, guid: 841d106db852c1c4a9e0762b79a8af85,
