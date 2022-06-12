@@ -1,6 +1,7 @@
 ﻿using BlueOrb.Common.Components;
 using Rewired.Integration.UnityUI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace BlueOrb.Controller.Inventory
 {
@@ -10,12 +11,14 @@ namespace BlueOrb.Controller.Inventory
         [SerializeField]
         private RewiredEventSystem rewiredEventSystem;
         [SerializeField]
-        private GameObject firstSelectedGameObject;
+        private Selectable firstSelectedGameObject;
 
         public override void OnEnable()
         {
             base.OnEnable();
-            rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject);
+            Debug.Log($"Setting selected object to {firstSelectedGameObject.name}");
+            firstSelectedGameObject.Select();
+            rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
         }
     }
 }

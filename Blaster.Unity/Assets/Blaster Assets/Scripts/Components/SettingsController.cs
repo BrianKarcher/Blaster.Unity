@@ -2,6 +2,7 @@
 using BlueOrb.Common.Components;
 using BlueOrb.Controller.Persistence;
 using BlueOrb.Messaging;
+using BlueOrb.Scripts.UI;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -74,8 +75,9 @@ namespace Assets.Blaster_Assets.Scripts.Components
 
         public void BackClicked()
         {
+            Debug.Log($"Button Clicked: Back");
             this.gameState.PersistenceController.Save(this.gameState.PersistenceController.DataFileName, this.settingsData);
-            MessageDispatcher.Instance.DispatchMsg("BackClicked", 0f, GetId(), GetId(), null);
+            MessageDispatcher.Instance.DispatchMsg("BackClicked", 0f, GetId(), UIController.UIControllerId, null);
         }
     }
 }

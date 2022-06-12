@@ -5,7 +5,6 @@ using BlueOrb.Common.Components;
 using BlueOrb.Controller.Manager;
 using BlueOrb.Controller.Scene;
 using BlueOrb.Messaging;
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -117,6 +116,7 @@ namespace BlueOrb.Scripts.UI
 
         public void ButtonClicked(string button)
         {
+            Debug.Log($"Button Clicked: {button}");
             MessageDispatcher.Instance.DispatchMsg("ButtonClicked", 0f, GetId(), _componentRepository.GetId(), button);
         }
 
@@ -129,6 +129,7 @@ namespace BlueOrb.Scripts.UI
 
         public void SetDifficulty(string difficulty)
         {
+            Debug.Log($"Button Clicked: {difficulty}");
             GlobalStatic.Difficulty = difficulty;
             MessageDispatcher.Instance.DispatchMsg("DifficultySelected", 0f, GetId(), GetId(), null);
         }
