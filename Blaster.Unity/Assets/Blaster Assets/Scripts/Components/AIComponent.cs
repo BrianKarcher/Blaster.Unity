@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BlueOrb.Controller.Inventory
 {
-    [AddComponentMenu("RQ/Components/AI Component")]
+    [AddComponentMenu("BlueOrb/Components/AI Component")]
     public class AIComponent : ComponentBase<AIComponent>
     {
         [SerializeField]
