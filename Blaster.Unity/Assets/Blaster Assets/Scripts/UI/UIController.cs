@@ -30,7 +30,6 @@ namespace BlueOrb.Scripts.UI
         [SerializeField]
         private GameObject TempLabel;
 
-        [SerializeField]
         private List<Canvas> canvases;
 
         //private Dictionary<string, Canvas> canvasesDict;
@@ -42,10 +41,17 @@ namespace BlueOrb.Scripts.UI
 
         protected override void Awake()
         {
-            //canvasesDict = new Dictionary<string, Canvas>();
+            canvases = new List<Canvas>();
+            foreach (Transform child in transform)
+            {
+                Canvas canvas = child.GetComponent<Canvas>();
+                if (canvas != null)
+                {
+                    canvases.Add(canvas);
+                }
+            }
             for (int i = 0; i < this.canvases.Count; i++)
             {
-                //canvasesDict.Add(canvases[i].name, canvases[i]);
                 canvases[i].gameObject.SetActive(false);
             }
             base.Awake();

@@ -89,7 +89,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
         {
             if (recipient == null || recipient.gameObject == null)
             {
-                Debug.Log($"{_entity.name}.{Fsm.ActiveStateName} (SendMessage) Could not locate Game Object {recipient.name}");
+                Debug.Log($"{_entity?.name}.{Fsm?.ActiveStateName} (SendMessage) Could not locate recipient");
                 Finish();
                 return null;
             }

@@ -29,14 +29,11 @@ namespace Assets.Blaster_Assets.Scripts.Components
         {
             base.Awake();
             this.settingsData = LoadSettings();
-            if (this.settingsData == null)
+            this.settingsData ??= new SettingsData
             {
-                this.settingsData = new SettingsData
-                {
-                    MusicVolume = 0,
-                    SoundEffectVolume = 0
-                };
-            }
+                MusicVolume = 0, // 0 is 100% volume, -80 is mute
+                SoundEffectVolume = 0
+            };
             SetMusicVolume(this.settingsData.MusicVolume);
             SetEffectVolume(this.settingsData.SoundEffectVolume);
             this.musicSlider.value = this.settingsData.MusicVolume;
@@ -49,12 +46,28 @@ namespace Assets.Blaster_Assets.Scripts.Components
 
         public void SetEffectVolume(float volume)
         {
+            this.soundEffectSlider.value = volume;
+            SetEffectVolume();
+        }
+
+        public void SetEffectVolume()
+        {
+            float volume = this.soundEffectSlider.value;
+            Debug.Log($"Setting Sfx Volume to {volume}");
             this.settingsData.SoundEffectVolume = volume;
             this.masterMixer.SetFloat(effectAudioParameter, volume);
         }
 
         public void SetMusicVolume(float volume)
         {
+            this.musicSlider.value = volume;
+            SetMusicVolume();
+        }
+
+        public void SetMusicVolume()
+        {
+            float volume = this.musicSlider.value;
+            Debug.Log($"Setting Music Volume to {volume}");
             this.settingsData.MusicVolume = volume;
             this.masterMixer.SetFloat(musicAudioParameter, volume);
         }

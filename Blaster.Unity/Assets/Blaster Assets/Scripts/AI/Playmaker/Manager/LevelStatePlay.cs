@@ -45,6 +45,11 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
                 throw new Exception($"Entity not found in {Fsm.ActiveStateName}");
 
             player = ReInput.players.GetPlayer(0);
+            if (player == null)
+            {
+                Debug.LogError("Could not locate Rewired Player");
+                return;
+            }
 
             StartListening(this.entity);
         }
@@ -57,6 +62,10 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
         public override void OnUpdate()
         {
             base.OnUpdate();
+            if (player == null)
+            {
+                return;
+            }
             float toggleAxis = player.GetAxis("Toggle");
             if (toggleAxis > 0.1f)
             {
