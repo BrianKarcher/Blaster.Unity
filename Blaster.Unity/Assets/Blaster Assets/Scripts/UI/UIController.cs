@@ -1,6 +1,7 @@
 ﻿using Assets.Blaster_Assets.Scripts.Components;
 using Assets.Blaster_Assets.Scripts.UI;
 using BlueOrb.Base.Global;
+using BlueOrb.Base.Manager;
 using BlueOrb.Common.Components;
 using BlueOrb.Controller.Manager;
 using BlueOrb.Controller.Scene;
@@ -23,11 +24,19 @@ namespace BlueOrb.Scripts.UI
         private Image OverlayImage;
         [SerializeField]
         private CurrentScore _currentScore;
+        [SerializeField]
+        private GameStateController gameStateController;
 
         [SerializeField]
         private Canvas Canvas;
         [SerializeField]
         private GameObject TempLabel;
+        [SerializeField]
+        private Slider musicSlider;
+        [SerializeField]
+        private Slider soundEffectSlider;
+        [SerializeField]
+        private Slider sensitivitySlider;
 
         private List<Canvas> canvases;
 
@@ -54,6 +63,13 @@ namespace BlueOrb.Scripts.UI
                 canvases[i].gameObject.SetActive(false);
             }
             base.Awake();
+        }
+
+        private void Start()
+        {
+            SettingsController2 settingsController2 = this.gameStateController.SettingsController;
+            this.musicSlider.value = settingsController2.GetMusicVolume();
+            this.soundEffectSlider.value = settingsController2.GetEffectVolume();
         }
 
         public override void StartListening()
@@ -132,6 +148,32 @@ namespace BlueOrb.Scripts.UI
             Debug.Log($"Button Clicked: {difficulty}");
             GlobalStatic.Difficulty = difficulty;
             MessageDispatcher.Instance.DispatchMsg("DifficultySelected", 0f, GetId(), GetId(), null);
+        }
+
+        public void SetEffectVolume()
+        {
+            float volume = this.soundEffectSlider.value;
+            Debug.Log($"Setting Sfx Volume to {volume}");
+            this.gameStateController.SettingsController.SetEffectVolume(volume);
+        }
+
+        public void SetMusicVolume()
+        {
+            float volume = this.musicSlider.value;
+            Debug.Log($"Setting Music Volume to {volume}");
+            this.gameStateController.SettingsController.SetMusicVolume(volume);
+        }
+
+        public void SetSensitivity()
+        {
+            this.gameStateController.SettingsController.SetSensitivity(this.sensitivitySlider.value);
+        }
+
+        public void SettingsBackClicked()
+        {
+            Debug.Log($"Button Clicked: Back");
+            this.gameStateController.SettingsController.SaveSettings();
+            MessageDispatcher.Instance.DispatchMsg("BackClicked", 0f, GetId(), UIController.UIControllerId, null);
         }
     }
 }

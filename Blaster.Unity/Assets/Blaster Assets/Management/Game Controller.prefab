@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1592405042331808492}
   - component: {fileID: 8619348078531414814}
   - component: {fileID: 5999318138077807120}
-  - component: {fileID: 2182886198921349965}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -91,6 +90,7 @@ MonoBehaviour:
   persistenceController:
     saveFileName: Blaster.sav
     dataFileName: Blaster.dat
+  settingsController: {fileID: 0}
   _sceneController: {fileID: 5172934453791090794}
   audioSource: {fileID: 68980949485315699}
   musicAudioSource: {fileID: 392768165820723131}
@@ -113,26 +113,6 @@ MonoBehaviour:
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
   customId: Game Controller
---- !u!114 &2182886198921349965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5172934453791090796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8abc37daea0c6ee4e93fe0efb9ac95f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentRepository: {fileID: 0}
-  componentName: 
-  gameState: {fileID: 8619348078531414814}
-  musicSlider: {fileID: 0}
-  soundEffectSlider: {fileID: 0}
-  masterMixer: {fileID: 24100000, guid: 117d16c2476f17a4dbca115d9451a08b, type: 2}
-  musicAudioParameter: MusicVolume
-  effectAudioParameter: EffectsVolume
 --- !u!1 &5531187209572871361
 GameObject:
   m_ObjectHideFlags: 0
