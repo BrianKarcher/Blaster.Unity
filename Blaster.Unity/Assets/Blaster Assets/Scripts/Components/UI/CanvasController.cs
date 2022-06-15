@@ -16,8 +16,8 @@ namespace BlueOrb.Controller.Inventory
         public override void OnEnable()
         {
             base.OnEnable();
-            Debug.Log($"Setting selected object to {firstSelectedGameObject.name}");
-            firstSelectedGameObject.Select();
+            //Debug.Log($"Setting selected object to {firstSelectedGameObject.name}");
+            //firstSelectedGameObject.Select();
             rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
         }
     }

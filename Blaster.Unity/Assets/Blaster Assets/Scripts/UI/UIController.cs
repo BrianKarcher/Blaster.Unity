@@ -28,7 +28,9 @@ namespace BlueOrb.Scripts.UI
         private GameStateController gameStateController;
 
         [SerializeField]
-        private Canvas Canvas;
+        private Canvas canvas;
+        [SerializeField]
+        private GameObject HUD;
         [SerializeField]
         private GameObject TempLabel;
         [SerializeField]
@@ -50,17 +52,9 @@ namespace BlueOrb.Scripts.UI
         protected override void Awake()
         {
             canvases = new List<Canvas>();
-            foreach (Transform child in transform)
+            foreach (Transform child in canvas.transform)
             {
-                Canvas canvas = child.GetComponent<Canvas>();
-                if (canvas != null)
-                {
-                    canvases.Add(canvas);
-                }
-            }
-            for (int i = 0; i < this.canvases.Count; i++)
-            {
-                canvases[i].gameObject.SetActive(false);
+                child.gameObject.SetActive(false);
             }
             base.Awake();
         }
@@ -68,8 +62,8 @@ namespace BlueOrb.Scripts.UI
         private void Start()
         {
             SettingsController2 settingsController2 = this.gameStateController.SettingsController;
-            this.musicSlider.value = settingsController2.GetMusicVolume();
-            this.soundEffectSlider.value = settingsController2.GetEffectVolume();
+            this.musicSlider.SetValueWithoutNotify(settingsController2.GetMusicVolume());
+            this.soundEffectSlider.SetValueWithoutNotify(settingsController2.GetEffectVolume());
         }
 
         public override void StartListening()
@@ -96,7 +90,7 @@ namespace BlueOrb.Scripts.UI
             MessageDispatcher.Instance.StartListening("CreateTempLabel", GetId(), (data) =>
             {
                 var extraInfo = ((Vector3 pos, string text, Color color))data.ExtraInfo;
-                var label = GameObject.Instantiate(TempLabel, Canvas.transform);
+                var label = GameObject.Instantiate(TempLabel, HUD.transform);
             });
             MessageDispatcher.Instance.StartListening("SetCurrentScore", GetId(), (data) =>
             {
@@ -125,9 +119,9 @@ namespace BlueOrb.Scripts.UI
             //});
         }
 
-        public Canvas GetCanvas()
+        public GameObject GetCanvas()
         {
-            return Canvas;
+            return HUD;
         }
 
         public void ButtonClicked(string button)
