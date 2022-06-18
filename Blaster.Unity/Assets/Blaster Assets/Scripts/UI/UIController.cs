@@ -6,6 +6,7 @@ using BlueOrb.Common.Components;
 using BlueOrb.Controller.Manager;
 using BlueOrb.Controller.Scene;
 using BlueOrb.Messaging;
+using Rewired.Integration.UnityUI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -26,6 +27,8 @@ namespace BlueOrb.Scripts.UI
         private CurrentScore _currentScore;
         [SerializeField]
         private GameStateController gameStateController;
+        [SerializeField]
+        private RewiredEventSystem rewiredEventSystem;
 
         [SerializeField]
         private Canvas canvas;
