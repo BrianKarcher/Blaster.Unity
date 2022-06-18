@@ -20,5 +20,14 @@ namespace BlueOrb.Controller.Inventory
             firstSelectedGameObject.Select();
             rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
         }
+
+        public override void OnDisable()
+        {
+            base.OnDisable();
+            if (rewiredEventSystem.currentSelectedGameObject != null)
+            {
+                this.firstSelectedGameObject = rewiredEventSystem.currentSelectedGameObject.GetComponent<Selectable>();
+            }
+        }
     }
 }
