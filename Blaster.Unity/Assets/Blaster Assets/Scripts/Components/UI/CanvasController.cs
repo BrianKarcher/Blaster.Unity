@@ -16,17 +16,22 @@ namespace BlueOrb.Controller.Inventory
 
         private Rewired.Player _player;
 
-        public override void OnEnable()
+        protected override void Awake()
         {
-            base.OnEnable();
+            base.Awake();
             _player = Rewired.ReInput.players.GetPlayer(0);
             if (inputModule == null)
             {
                 inputModule = GameObject.FindObjectOfType<RewiredStandaloneInputModule>();
             }
-            rewiredEventSystem.SetSelectedGameObject(null);
+        }
+
+        public override void OnEnable()
+        {
+            base.OnEnable();
+            //rewiredEventSystem.SetSelectedGameObject(null);
             //rewiredEventSystem.
-            //rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
+            rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
 
         }
 
@@ -48,16 +53,16 @@ namespace BlueOrb.Controller.Inventory
             //base.start();
             //Debug.Log($"Setting selected object to {firstSelectedGameObject.name}");
             //firstSelectedGameObject.Select();
-            //rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
+            rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
         }
 
         public override void OnDisable()
         {
             base.OnDisable();
-            //if (rewiredEventSystem.currentSelectedGameObject != null)
-            //{
-            //    this.firstSelectedGameObject = rewiredEventSystem.currentSelectedGameObject.GetComponent<Selectable>();
-            //}
+            if (rewiredEventSystem.currentSelectedGameObject != null)
+            {
+                this.firstSelectedGameObject = rewiredEventSystem.currentSelectedGameObject.GetComponent<Selectable>();
+            }
         }
     }
 }
