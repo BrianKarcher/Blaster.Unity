@@ -16,6 +16,11 @@ namespace BlueOrb.Scripts.AI.AtomActions
                 _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
             //if (_playerController == null)
             //    _playerController = entity.Components.GetComponent<PlayerController>();
+            Tick();
+        }
+
+        public void Tick()
+        {
             _physicsComponent.Stop();
         }
     }

@@ -12,12 +12,47 @@ namespace BlueOrb.Controller.Inventory
         private RewiredEventSystem rewiredEventSystem;
         [SerializeField]
         private Selectable firstSelectedGameObject;
+        private RewiredStandaloneInputModule inputModule;
+
+        private Rewired.Player _player;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _player = Rewired.ReInput.players.GetPlayer(0);
+            if (inputModule == null)
+            {
+                inputModule = GameObject.FindObjectOfType<RewiredStandaloneInputModule>();
+            }
+        }
 
         public override void OnEnable()
         {
             base.OnEnable();
-            Debug.Log($"Setting selected object to {firstSelectedGameObject.name}");
-            firstSelectedGameObject.Select();
+            //rewiredEventSystem.SetSelectedGameObject(null);
+            //rewiredEventSystem.
+            rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
+
+        }
+
+        public void Update()
+        {
+            if (rewiredEventSystem.currentSelectedGameObject == null)
+            {
+                var currentHAxis = _player.GetAxis(inputModule.horizontalAxis);
+                var currentVAxis = _player.GetAxis(inputModule.verticalAxis);
+                if (Mathf.Abs(currentHAxis) > 0.3f || Mathf.Abs(currentVAxis) > 0.3f)
+                {
+                    rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
+                }
+            }
+        }
+
+        public void Start()
+        {
+            //base.start();
+            //Debug.Log($"Setting selected object to {firstSelectedGameObject.name}");
+            //firstSelectedGameObject.Select();
             rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
         }
 

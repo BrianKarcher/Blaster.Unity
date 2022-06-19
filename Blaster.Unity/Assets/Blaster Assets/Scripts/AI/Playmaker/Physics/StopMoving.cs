@@ -13,10 +13,12 @@ namespace BlueOrb.Scripts.AI.Playmaker
         public FsmOwnerDefault gameObject;
 
         public StopMovingAtom _atom;
+        public bool everyFrame;
 
         public override void Reset()
         {
             gameObject = null;
+            everyFrame = false;
         }
 
         public override void OnEnter()
@@ -33,7 +35,14 @@ namespace BlueOrb.Scripts.AI.Playmaker
             //_entity = rqSM.GetComponentRepository();
             //var entity = Owner.GetComponent<IEntity>();
             _atom.Start(entity);
-            Finish();
+            if (!everyFrame)
+                Finish();
+        }
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+            _atom.Tick();
         }
 
         public override void OnExit()
