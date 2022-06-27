@@ -52,6 +52,7 @@ MonoBehaviour:
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+  customId: 
 --- !u!114 &6145381362877558180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +187,27 @@ MonoBehaviour:
     events: []
     globalTransitions: []
     variables:
-      floatVariables: []
+      floatVariables:
+      - useVariable: 1
+        name: GlobalScale
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0.1
+      - useVariable: 1
+        name: Time
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       intVariables: []
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: SendMessageToSpawner
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 1
       stringVariables: []
       vector2Variables: []
       vector3Variables: []
@@ -202,6 +221,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 3064982645621225113}
+      - useVariable: 1
+        name: Spawner
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -209,7 +234,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -269,6 +294,7 @@ MonoBehaviour:
   _componentRepository: {fileID: 8769010253013433694}
   componentName: 
   _item: {fileID: 11400000, guid: 24617fd723cadd741a4b583f99bd523d, type: 2}
+  ammoBoxShotMessage: AmmoBoxShot
 --- !u!1001 &4245149730104752270
 PrefabInstance:
   m_ObjectHideFlags: 0
