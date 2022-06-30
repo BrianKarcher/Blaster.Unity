@@ -44,15 +44,23 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetMaterialFloat
         - HutongGames.PlayMaker.Actions.EnableFSM
+        - BlueOrb.Scripts.AI.Playmaker.SendMessage
         customNames:
         - 
         - 
-        actionEnabled: 0001
-        actionIsOpen: 0101
-        actionStartIndex: 0000000006000000
-        actionHashCodes: b8ee810087aa9700
+        - 
+        actionEnabled: 000001
+        actionIsOpen: 010101
+        actionStartIndex: 00000000060000000a000000
+        actionHashCodes: b8ee810087aa97008cc5bb03
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: DissolveElement
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
         - ownerOption: 1
           gameObject:
@@ -66,6 +74,14 @@ MonoBehaviour:
           gameObject:
             useVariable: 1
             name: DissolveElement
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
             tooltip: 
             showInInspector: 1
             networkSync: 0
@@ -89,6 +105,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Dissolve
         fsmObjectParams:
         - useVariable: 0
           name: 
@@ -98,7 +120,20 @@ MonoBehaviour:
           typeName: 
           value: {fileID: 0}
         fsmVarParams: []
-        fsmArrayParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 1
@@ -132,13 +167,17 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 01
+        stringParams:
+        - Dissolve
+        - 
+        - 
+        byteData: 01000000000000000000000001
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 140000001000000020000000120000000f0000000100000014000000120000001100000011000000
+        customTypeSizes: 0c000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
+        paramDataType: 140000001000000020000000120000000f00000001000000140000001200000011000000110000001400000013000000290000001200000028000000030000000300000003000000010000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - gameObject
         - materialIndex
@@ -150,8 +189,25 @@ MonoBehaviour:
         - fsmName
         - enable
         - resetOnExit
-        paramDataPos: 00000000000000000000000000000000000000000000000001000000010000000000000001000000
-        paramByteDataSize: 00000000000000000000000000000000000000000100000000000000000000000000000000000000
+        - gameObject
+        - Recipient
+        - Recipients
+        - Message
+        - _atom
+        - Message
+        - ExtraInfo
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToLevelController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        paramDataPos: 00000000000000000000000000000000000000000000000001000000010000000000000001000000020000000000000000000000020000000000000000000000010000000200000001000000020000000300000004000000050000000600000007000000080000000c000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000
     - name: Finish
       description: 
       colorIndex: 0
@@ -234,6 +290,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Main
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -241,7 +303,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
