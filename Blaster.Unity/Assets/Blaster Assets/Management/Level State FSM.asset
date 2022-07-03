@@ -252,8 +252,8 @@ MonoBehaviour:
         serializedVersion: 2
         x: 459
         y: 334
-        width: 100
-        height: 32
+        width: 154
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -263,6 +263,14 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 0
         toState: Pause
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: OnConversationStart
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Conversation
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -978,11 +986,98 @@ MonoBehaviour:
         - _finishOnFirstMessageSent
         paramDataPos: 000000000000000000000000000000000000000000000000010000000200000000000000010000000200000003000000040000000500000006000000070000000b000000
         paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000
+    - name: Conversation
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 715
+        y: 295
+        width: 146
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: OnConversationEnd
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Play
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.ScaleTime
+        - BlueOrb.Scripts.AI.PlayMaker.Attack.EnableInput
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 6cdd4504d98b4403
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 000001
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f00000011000000010000000100000001000000
+        paramName:
+        - timeScale
+        - adjustFixedDeltaTime
+        - everyFrame
+        - Enable
+        - RevertOnExit
+        paramDataPos: 0000000000000000000000000100000002000000
+        paramByteDataSize: 0000000000000000010000000100000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
     - name: EndStage
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: OnConversationEnd
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: OnConversationStart
       isSystemEvent: 0
       isGlobal: 0
     - name: Pause
