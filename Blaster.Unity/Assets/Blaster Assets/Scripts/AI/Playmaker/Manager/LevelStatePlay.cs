@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Rewired;
 using BlueOrb.Messaging;
 using UnityEngine;
+using BlueOrb.Controller.Manager;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Manager
 {
@@ -24,6 +25,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
         public FsmString ToggleMessageRecipient = "Shooter Controller";
         private IEntity entity;
         private Player player;
+        private LevelStateController levelStateController;
 
         private int toggleDirectionPressed = 0;
 
@@ -44,6 +46,11 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
             if (this.entity == null)
                 throw new Exception($"Entity not found in {Fsm.ActiveStateName}");
 
+            if (levelStateController == null)
+            {
+                levelStateController = GameObject.FindObjectOfType<LevelStateController>();
+            }
+            levelStateController.EnableInput = true;
             player = ReInput.players.GetPlayer(0);
             if (player == null)
             {
