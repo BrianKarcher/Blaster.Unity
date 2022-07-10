@@ -100,6 +100,7 @@ namespace Assets.BlueOrb.Scripts.UI
             MessageDispatcher.Instance.StartListening("ShowTimer", ControllerName, (data) =>
             {
                 bool show = (bool)data.ExtraInfo;
+                Debug.Log($"Setting timer display to {show}");
                 _levelStartTimer.gameObject.SetActive(show);
             });
 

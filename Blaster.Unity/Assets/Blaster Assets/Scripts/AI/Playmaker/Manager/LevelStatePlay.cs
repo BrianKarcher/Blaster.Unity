@@ -23,6 +23,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
         public FsmString ToggleRightAction = "ToggleRight";
         public FsmString ToggleMessage = "ToggleProjectile";
         public FsmString ToggleMessageRecipient = "Shooter Controller";
+        public FsmEvent DeadEvent;
         private IEntity entity;
         private Player player;
         private LevelStateController levelStateController;
@@ -71,6 +72,11 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
             base.OnUpdate();
             if (player == null)
             {
+                return;
+            }
+            if (levelStateController.GetCurrentHp() <= 0)
+            {
+                Fsm.Event(DeadEvent);
                 return;
             }
             float toggleAxis = player.GetAxis("Toggle");
