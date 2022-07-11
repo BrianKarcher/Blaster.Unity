@@ -128,15 +128,17 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetAnimatorBool
         - HutongGames.PlayMaker.Actions.SetAnimatorFloat
         - HutongGames.PlayMaker.Actions.SetAnimatorFloat
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
         - 
         - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 0000000003000000080000000e000000
-        actionHashCodes: 10d526045f913504f9cb7200f9cb7200
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000003000000080000000e00000014000000
+        actionHashCodes: 10d526045f913504f9cb7200f9cb720048c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -226,6 +228,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 1
+          name: AttackAnimDelay
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 1
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -239,14 +247,15 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 00000000000000000000000000000000
+        stringParams:
+        - 
+        byteData: 0000000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 00000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
-        paramDataType: 140000002800000001000000140000001200000011000000010000000700000014000000120000000f0000000f000000010000000700000014000000120000000f0000000f0000000100000007000000
+        paramDataType: 140000002800000001000000140000001200000011000000010000000700000014000000120000000f0000000f000000010000000700000014000000120000000f0000000f00000001000000070000000f0000001700000001000000
         paramName:
         - gameObject
         - _atom
@@ -268,8 +277,11 @@ MonoBehaviour:
         - dampTime
         - everyFrame
         - everyFrameOption
-        paramDataPos: 0000000000000000000000000100000000000000000000000100000002000000020000000100000000000000010000000600000007000000030000000200000002000000030000000b0000000c000000
-        paramByteDataSize: 0000000000000000010000000000000000000000000000000100000004000000000000000000000000000000000000000100000004000000000000000000000000000000000000000100000004000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000000000000100000000000000000000000100000002000000020000000100000000000000010000000600000007000000030000000200000002000000030000000b0000000c000000040000000000000010000000
+        paramByteDataSize: 0000000000000000010000000000000000000000000000000100000004000000000000000000000000000000000000000100000004000000000000000000000000000000000000000100000004000000000000000000000001000000
     - name: Attack
       description: 
       colorIndex: 0
@@ -603,6 +615,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 1
+      - useVariable: 1
+        name: AttackAnimDelay
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 1
       intVariables: []
       boolVariables: []
       stringVariables:
@@ -667,7 +685,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0

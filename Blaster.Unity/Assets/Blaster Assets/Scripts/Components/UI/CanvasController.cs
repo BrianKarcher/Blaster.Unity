@@ -29,10 +29,7 @@ namespace BlueOrb.Controller.Inventory
         public override void OnEnable()
         {
             base.OnEnable();
-            //rewiredEventSystem.SetSelectedGameObject(null);
-            //rewiredEventSystem.
-            rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
-
+            SetFirstSelected();
         }
 
         public void Update()
@@ -50,10 +47,15 @@ namespace BlueOrb.Controller.Inventory
 
         public void Start()
         {
-            //base.start();
-            //Debug.Log($"Setting selected object to {firstSelectedGameObject.name}");
-            //firstSelectedGameObject.Select();
-            rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
+            SetFirstSelected();
+        }
+
+        private void SetFirstSelected()
+        {
+            if (firstSelectedGameObject != null)
+            {
+                rewiredEventSystem?.SetSelectedGameObject(firstSelectedGameObject.gameObject);
+            }
         }
 
         public override void OnDisable()

@@ -2090,7 +2090,6 @@ MonoBehaviour:
   _controller:
     _isGrounded: 0
     _physicsData:
-      _instantForce: 0
       _turnMode: 0
       _autoTurn: 1
       _autoApplyToAnimator: 1
@@ -2418,6 +2417,24 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 1
+      - useVariable: 1
+        name: RechaseDistance
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
+        name: Speed
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: AttackAnimDelay
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0.6
       intVariables: []
       boolVariables: []
       stringVariables:
@@ -2427,6 +2444,18 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: Attack
+      - useVariable: 1
+        name: AnimTurnVariable
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: TurnSpeed
+      - useVariable: 1
+        name: AnimSpeedVariable
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: Speed
       vector2Variables: []
       vector3Variables:
       - useVariable: 1
@@ -2489,7 +2518,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
