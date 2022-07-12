@@ -1799,13 +1799,13 @@ PrefabInstance:
     - target: {fileID: 8419787942268983078, guid: 2598401d9d0a20240a0b6bf2f14c78d2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8419787942268983078, guid: 2598401d9d0a20240a0b6bf2f14c78d2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5172934453828029761}
+      objectReference: {fileID: 5172934453828029765}
     - target: {fileID: 8419787942268983078, guid: 2598401d9d0a20240a0b6bf2f14c78d2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1814,12 +1814,12 @@ PrefabInstance:
     - target: {fileID: 8419787942268983078, guid: 2598401d9d0a20240a0b6bf2f14c78d2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ButtonClicked
+      value: OnDiedOkClicked
       objectReference: {fileID: 0}
     - target: {fileID: 8419787942268983078, guid: 2598401d9d0a20240a0b6bf2f14c78d2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BlueOrb.Scripts.UI.UIController, Assembly-CSharp
+      value: BlueOrb.Controller.Manager.LevelStateController, BlueOrb.Controller
       objectReference: {fileID: 0}
     - target: {fileID: 8419787942268983078, guid: 2598401d9d0a20240a0b6bf2f14c78d2,
         type: 3}
@@ -9538,6 +9538,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5172934453828029765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6442253568552247898, guid: d78d773348b4b9441bb014e9a747cdbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5172934453828029759}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 643736232, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5478256677060037373
