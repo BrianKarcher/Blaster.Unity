@@ -1,6 +1,9 @@
 ﻿using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using BlueOrb.Messaging;
+using UnityEngine;
+using BlueOrb.Controller.Manager;
+using BlueOrb.Base.Global;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Input
 {
@@ -27,6 +30,11 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
             }
 
             var entity = base.GetEntityBase(go);
+            SceneSetup sceneSetup = GameObject.FindObjectOfType<SceneSetup>();
+            if (sceneSetup != null)
+            {
+                GlobalStatic.NextSceneConfig = sceneSetup.SceneConfig;
+            }
             MessageDispatcher.Instance.DispatchMsg(LevelBeginMessage.Value, 0f, entity.GetId(), entity.GetId(), null);
             Finish();
         }
