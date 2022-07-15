@@ -13,13 +13,13 @@ namespace BlueOrb.Controller.Inventory
     public class LevelDetailPanel : ComponentBase<LevelDetailPanel>
     {
         [SerializeField]
-        private GameObject currentScore;
+        private GameObject currentScoreGo;
+
+        [SerializeField]
+        private GameObject currentScoreText;
 
         [SerializeField]
         private GameObject pb;
-
-        [SerializeField]
-        private TextMeshProUGUI levelDetail;
 
         [SerializeField]
         private GameObject newHighScore;
@@ -33,17 +33,19 @@ namespace BlueOrb.Controller.Inventory
             if (currentSceneConfig != null && !string.IsNullOrEmpty(currentSceneConfig.UniqueId))
             {
                 TextMeshProUGUI pbText = this.pb.GetComponent<TextMeshProUGUI>();
-                pbText.text = GameStateController.Instance.GetHighScore(currentSceneConfig.UniqueId).ToString();
+                string temp = GameStateController.Instance.GetHighScore(currentSceneConfig.UniqueId).ToString();
+                pbText.SetText(temp);
             }
-            if (currentScore != 0)
+            if (GlobalStatic.StageComplete)
             {
-                this.currentScore.SetActive(true);
-                TextMeshProUGUI currentScoreText = this.currentScore.GetComponent<TextMeshProUGUI>();
-                currentScoreText.text = currentScore.ToString();
+                GlobalStatic.StageComplete = false;
+                this.currentScoreGo.SetActive(true);
+                TextMeshProUGUI currentScoreText = this.currentScoreText.GetComponent<TextMeshProUGUI>();
+                currentScoreText.SetText(currentScore.ToString());
             }
             else
             {
-                this.currentScore.SetActive(false);
+                this.currentScoreGo.SetActive(false);
             }
             if (GlobalStatic.NewHighScore)
             {
