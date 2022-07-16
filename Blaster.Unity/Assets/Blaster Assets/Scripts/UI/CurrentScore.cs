@@ -14,6 +14,11 @@ namespace Assets.Blaster_Assets.Scripts.UI
             iTween.ValueTo(gameObject, iTween.Hash("from", currentScore, "to", score, "time", 1, "onupdate", "UpdateScore"));
         }
 
+        public void SetScoreImmediate(int score)
+        {
+            UpdateScore(score);
+        }
+
         public void UpdateScore(int val)
         {
             _textMeshProUGUI.text = val.ToString();

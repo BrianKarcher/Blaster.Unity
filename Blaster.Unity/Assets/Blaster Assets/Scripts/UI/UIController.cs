@@ -97,8 +97,15 @@ namespace BlueOrb.Scripts.UI
             });
             MessageDispatcher.Instance.StartListening("SetCurrentScore", GetId(), (data) =>
             {
-                var currentScore = (int)data.ExtraInfo;
-                _currentScore.SetScore(currentScore);
+                var currentScoreData = ((int Score, bool Immediate))data.ExtraInfo;
+                if (currentScoreData.Immediate)
+                {
+                    _currentScore.SetScoreImmediate(currentScoreData.Score);
+                }
+                else
+                {
+                    _currentScore.SetScore(currentScoreData.Score);
+                }
             });
             //MessageDispatcher.Instance.StartListening(EnableCanvasEvent, GetId(), (data) =>
             //{

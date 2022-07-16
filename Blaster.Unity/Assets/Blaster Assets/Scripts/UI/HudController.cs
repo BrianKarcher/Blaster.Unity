@@ -84,17 +84,24 @@ namespace Assets.BlueOrb.Scripts.UI
 
             _setHpIndex = MessageDispatcher.Instance.StartListening("SetHp", ControllerName, (data) =>
             {
-                var hp = ((float current, float max))data.ExtraInfo;
-                Debug.Log($"(HUD) Setting current hp to {hp.current}");
+                (float current, float max, bool Immediate) hp = ((float current, float max, bool Immediate))data.ExtraInfo;
+                Debug.Log($"(HUD) Setting current hp to {hp.current} {hp.Immediate}");
                 _currentHpText.text = Mathf.FloorToInt(hp.current).ToString();
                 if (hp.max == 0)
                 {
                     Debug.LogError("HP Max is zero, divide by zero error!");
                     return;
                 }
-                iTween.ScaleTo(this.lifeBar, new Vector3(hp.current / hp.max, 1, 1), 1);
-                //float.TryParse(_currentHpText.text, out float currentHp);
-                //iTween.ValueTo(this, iTween.Hash("from", currentHp, "to", hp.current))
+                Vector3 scale = new Vector3(hp.current / hp.max, 1, 1);
+                if (hp.Immediate)
+                {
+                    iTween.StopByName(gameObject, TweenName());
+                    this.lifeBar.transform.localScale = scale;
+                }
+                else
+                {
+                    iTween.ScaleTo(gameObject, iTween.Hash("name", TweenName(), "scale", scale, "time", 1));
+                }
             });
 
             MessageDispatcher.Instance.StartListening("ShowTimer", ControllerName, (data) =>
@@ -119,6 +126,9 @@ namespace Assets.BlueOrb.Scripts.UI
                 _levelStartTimer.text = displayTime == 0 ? "START" : displayTime.ToString();
             });
         }
+
+        private string TweenName() => $"{this.GetInstanceID()}_sethptween";
+
 
         public override void StopListening()
         {
