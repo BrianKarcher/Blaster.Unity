@@ -1,6 +1,8 @@
 ﻿using HutongGames.PlayMaker;
 #if UNITY_EDITOR
 using UnityEditor;
+#else
+using UnityEngine;
 #endif
 
 namespace BlueOrb.Scripts.AI.Playmaker.Manager
