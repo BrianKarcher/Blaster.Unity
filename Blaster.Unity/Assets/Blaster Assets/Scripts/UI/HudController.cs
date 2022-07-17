@@ -93,14 +93,15 @@ namespace Assets.BlueOrb.Scripts.UI
                     return;
                 }
                 Vector3 scale = new Vector3(hp.current / hp.max, 1, 1);
+                Debug.Log($"(HudController) Setting hp bar to {scale}");
                 if (hp.Immediate)
                 {
-                    iTween.StopByName(gameObject, TweenName());
+                    iTween.StopByName(lifeBar, TweenName());
                     this.lifeBar.transform.localScale = scale;
                 }
                 else
                 {
-                    iTween.ScaleTo(gameObject, iTween.Hash("name", TweenName(), "scale", scale, "time", 1));
+                    iTween.ScaleTo(lifeBar, iTween.Hash("name", TweenName(), "scale", scale, "time", 1));
                 }
             });
 

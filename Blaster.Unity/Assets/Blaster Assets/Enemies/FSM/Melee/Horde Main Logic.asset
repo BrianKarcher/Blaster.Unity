@@ -1134,6 +1134,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.Wait
         - HutongGames.PlayMaker.Actions.TriggerEvent
         - HutongGames.PlayMaker.Actions.CollisionEvent
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
         - 
@@ -1141,10 +1142,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010100010001
-        actionIsOpen: 010101010101
-        actionStartIndex: 00000000030000000a000000100000001300000018000000
-        actionHashCodes: 10d52604ed711102e94a400448c011019c512400beb33100
+        - 
+        actionEnabled: 01010001000101
+        actionIsOpen: 01010101010101
+        actionStartIndex: 00000000030000000a0000001000000013000000180000001e000000
+        actionHashCodes: 10d52604ed711102e94a400448c011019c512400beb33100b2cf1000
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -1196,6 +1198,14 @@ MonoBehaviour:
           gameObject:
             useVariable: 1
             name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: ControlledFSM
             tooltip: 
             showInInspector: 1
             networkSync: 0
@@ -1279,7 +1289,19 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params:
         - useVariable: 1
@@ -1295,14 +1317,14 @@ MonoBehaviour:
         - Dead
         - Dead
         - Dead
-        byteData: 000100000000000000000000000000
+        byteData: 0001000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0000000000000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
         - BlueOrb.Scripts.AI.AtomActions.AddExplosionForceAtom
-        paramDataType: 140000002800000001000000140000001c0000000f0000000f0000000f0000000700000001000000140000000f0000000f0000000f0000000f000000280000000f0000001700000001000000140000000700000012000000170000001300000014000000070000001200000017000000130000000f000000
+        paramDataType: 140000002800000001000000140000001c0000000f0000000f0000000f0000000700000001000000140000000f0000000f0000000f0000000f000000280000000f0000001700000001000000140000000700000012000000170000001300000014000000070000001200000017000000130000000f0000001400000011000000110000000100000001000000
         paramName:
         - gameObject
         - _atom
@@ -1334,8 +1356,13 @@ MonoBehaviour:
         - sendEvent
         - storeCollider
         - storeForce
-        paramDataPos: 000000000000000000000000010000000000000000000000010000000200000001000000050000000200000003000000040000000500000006000000010000000700000000000000060000000300000007000000000000000100000000000000040000000b00000001000000020000000100000008000000
-        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000004000000010000000000000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000000000000400000000000000000000000000000000000000
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        paramDataPos: 000000000000000000000000010000000000000000000000010000000200000001000000050000000200000003000000040000000500000006000000010000000700000000000000060000000300000007000000000000000100000000000000040000000b000000010000000200000001000000080000000500000000000000010000000f00000010000000
+        paramByteDataSize: 0000000000000000010000000000000000000000000000000000000000000000040000000100000000000000000000000000000000000000000000000000000000000000000000000100000000000000040000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000100000001000000
     - name: Tower Destroyed, dead
       description: 
       colorIndex: 0
