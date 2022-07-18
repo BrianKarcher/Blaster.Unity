@@ -7400,7 +7400,6 @@ MonoBehaviour:
   m_Script: {fileID: -1206179825, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstScene: Assets/Blaster Assets/_Scenes/Base/Main Screen.unity
   fadeDuration: 0.5
   FadeOutAnimTriggerName: FadeOUT
   FadeInAnimTriggerName: FadeIN
@@ -8518,7 +8517,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
-        actionEnabled: 01
+        actionEnabled: 00
         actionIsOpen: 01
         actionStartIndex: 00000000
         actionHashCodes: 48c01101
@@ -8894,8 +8893,8 @@ MonoBehaviour:
         - 
         actionEnabled: 00010101
         actionIsOpen: 01010101
-        actionStartIndex: 00000000030000000b00000013000000
-        actionHashCodes: 04d814021a44e0051a44e0058cc5bb03
+        actionStartIndex: 00000000040000000c00000014000000
+        actionHashCodes: 4b4eb9021a44e0051a44e0058cc5bb03
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -9000,7 +8999,13 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -9024,11 +9029,12 @@ MonoBehaviour:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 140000001800000001000000140000002800000003000000030000001700000013000000120000000100000014000000280000000300000003000000170000001300000012000000010000001400000013000000290000001200000028000000030000000300000003000000010000000100000001000000010000000100000001000000010000000700000001000000
+        paramDataType: 14000000180000000100000011000000140000002800000003000000030000001700000013000000120000000100000014000000280000000300000003000000170000001300000012000000010000001400000013000000290000001200000028000000030000000300000003000000010000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - gameObject
         - SceneConfig
         - isLoadNextScene
+        - PerformFade
         - gameObject
         - _atom
         - Message
@@ -9062,8 +9068,8 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 000000000000000000000000010000000000000000000000010000000200000000000000000000000100000002000000010000000300000004000000050000000100000001000000020000000300000002000000000000000200000002000000060000000700000008000000030000000400000005000000060000000700000008000000090000000a0000000e000000
-        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000
+        paramDataPos: 00000000000000000000000000000000010000000000000000000000010000000200000000000000000000000100000002000000010000000300000004000000050000000100000001000000020000000300000002000000000000000200000002000000060000000700000008000000030000000400000005000000060000000700000008000000090000000a0000000e000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000
     - name: QuickStart
       description: 
       colorIndex: 0
@@ -9094,8 +9100,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 04d814028cc5bb03
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 4b4eb9028cc5bb03
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -9160,7 +9166,13 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -9176,11 +9188,12 @@ MonoBehaviour:
         customTypeSizes: 0c000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 1400000018000000010000001400000013000000290000001200000028000000030000000300000003000000010000000100000001000000010000000100000001000000010000000700000001000000
+        paramDataType: 140000001800000001000000110000001400000013000000290000001200000028000000030000000300000003000000010000000100000001000000010000000100000001000000010000000700000001000000
         paramName:
         - gameObject
         - SceneConfig
         - isLoadNextScene
+        - PerformFade
         - gameObject
         - Recipient
         - Recipients
@@ -9198,8 +9211,8 @@ MonoBehaviour:
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
-        paramDataPos: 000000000000000000000000010000000000000000000000000000000000000000000000010000000200000001000000020000000300000004000000050000000600000007000000080000000c000000
-        paramByteDataSize: 0000000000000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000
+        paramDataPos: 00000000000000000000000000000000010000000000000000000000000000000000000000000000010000000200000001000000020000000300000004000000050000000600000007000000080000000c000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000
     - name: StartChosenLevel
       description: 
       colorIndex: 0
@@ -9229,7 +9242,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 04d81402
+        actionHashCodes: 4b4eb902
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -9261,7 +9274,13 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -9273,13 +9292,14 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001800000001000000
+        paramDataType: 14000000180000000100000011000000
         paramName:
         - gameObject
         - SceneConfig
         - isLoadNextScene
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
+        - PerformFade
+        paramDataPos: 00000000000000000000000000000000
+        paramByteDataSize: 00000000000000000100000000000000
     - name: Level Start
       description: 
       colorIndex: 0
@@ -9480,8 +9500,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 04d814026cdd4504
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 4b4eb9026cdd4504
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -9526,6 +9546,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -9537,16 +9563,17 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000018000000010000000f0000001100000001000000
+        paramDataType: 140000001800000001000000110000000f0000001100000001000000
         paramName:
         - gameObject
         - SceneConfig
         - isLoadNextScene
+        - PerformFade
         - timeScale
         - adjustFixedDeltaTime
         - everyFrame
-        paramDataPos: 000000000000000000000000000000000000000001000000
-        paramByteDataSize: 000000000000000001000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000000000000100000001000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000001000000
     - name: LoadMainScreen
       description: 
       colorIndex: 0
@@ -9576,7 +9603,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 04d81402
+        actionHashCodes: 4b4eb902
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -9608,7 +9635,13 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -9620,13 +9653,14 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001800000001000000
+        paramDataType: 14000000180000000100000011000000
         paramName:
         - gameObject
         - SceneConfig
         - isLoadNextScene
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
+        - PerformFade
+        paramDataPos: 00000000000000000000000000000000
+        paramByteDataSize: 00000000000000000100000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
