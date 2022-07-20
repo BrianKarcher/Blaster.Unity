@@ -16,6 +16,7 @@ namespace Assets.BlueOrb.Scripts.UI
         //[SerializeField] private TextMeshProUGUI _secondaryProjectileText;
         [SerializeField] private TextMeshProUGUI _currentHpText;
         [SerializeField] private TextMeshProUGUI _levelStartTimer;
+        [SerializeField] private GameObject notificationObject;
         //[SerializeField] private string _changeProjectileMessage;
         [SerializeField] private Color[] StartTimerColors;
 
@@ -32,6 +33,9 @@ namespace Assets.BlueOrb.Scripts.UI
         private string removeProjectileTypeHudMessage = "RemoveProjectileType";
 
         [SerializeField]
+        private string notificationHudMessage = "Notification";
+
+        [SerializeField]
         private UIToggleGroup uiToggleGroup;
 
         [SerializeField]
@@ -43,6 +47,13 @@ namespace Assets.BlueOrb.Scripts.UI
         private long _setProjectileIndex, _addProjectileIndex, _removeProjectileIndex;
         private long _setAmmoIndex;
         private long _setHpIndex;
+        private TextMeshProUGUI notificationText;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            this.notificationText = notificationObject.GetComponent<TextMeshProUGUI>();
+        }
 
         public override void StartListening()
         {
@@ -96,12 +107,12 @@ namespace Assets.BlueOrb.Scripts.UI
                 Debug.Log($"(HudController) Setting hp bar to {scale}");
                 if (hp.Immediate)
                 {
-                    iTween.StopByName(lifeBar, TweenName());
+                    iTween.StopByName(lifeBar, TweenName);
                     this.lifeBar.transform.localScale = scale;
                 }
                 else
                 {
-                    iTween.ScaleTo(lifeBar, iTween.Hash("name", TweenName(), "scale", scale, "time", 1));
+                    iTween.ScaleTo(lifeBar, iTween.Hash("name", TweenName, "scale", scale, "time", 1));
                 }
             });
 
@@ -126,10 +137,22 @@ namespace Assets.BlueOrb.Scripts.UI
                 }
                 _levelStartTimer.text = displayTime == 0 ? "START" : displayTime.ToString();
             });
+
+            MessageDispatcher.Instance.StartListening(this.notificationHudMessage, ControllerName, (data) =>
+            {
+                string text = (string)data.ExtraInfo;
+                this.notificationText.text = text;
+                iTween.ValueTo(gameObject, iTween.Hash("name", NotificationAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetNotificationAlpha"));
+            });
         }
 
-        private string TweenName() => $"{this.GetInstanceID()}_sethptween";
+        public void SetNotificationAlpha(float alpha)
+        {
+            this.notificationText.alpha = alpha;
+        }
 
+        private string TweenName => $"{this.GetInstanceID()}_sethptween";
+        private string NotificationAlhpaTweenName => $"{this.GetInstanceID()}_notificationalphatween";
 
         public override void StopListening()
         {
