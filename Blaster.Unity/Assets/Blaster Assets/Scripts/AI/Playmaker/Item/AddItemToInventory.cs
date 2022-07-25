@@ -4,7 +4,7 @@ using BlueOrb.Common.Container;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Item
 {
-    [ActionCategory("RQ.Item")]
+    [ActionCategory("BlueOrb.Item")]
     //[Tooltip("Returns Success if Button is pressed.")]
     public class AddItemToInventory : FsmSimpleAction<AddItemToInventoryAtom>
     {

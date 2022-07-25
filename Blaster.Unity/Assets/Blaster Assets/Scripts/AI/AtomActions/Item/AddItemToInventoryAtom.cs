@@ -38,10 +38,5 @@ namespace BlueOrb.Scripts.AI.AtomActions
         //    if (buttonDown)
         //        _bufferState = true;
         //}
-
-        public override void End()
-        {
-
-        }
     }
 }
