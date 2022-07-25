@@ -138,13 +138,15 @@ MonoBehaviour:
         actionNames:
         - BlueOrb.Scripts.AI.PlayMaker.Attack.GetGameObjectVariable
         - BlueOrb.Scripts.AI.PlayMaker.Attack.AddHp
+        - BlueOrb.Scripts.AI.Playmaker.Notification
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: ceb8f602657e6f01
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000500000008000000
+        actionHashCodes: ceb8f602657e6f019bd6f801
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -170,13 +172,27 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: HEALED
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -203,7 +219,7 @@ MonoBehaviour:
         customTypeSizes: 01000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.GetGameObjectVariableAtom
-        paramDataType: 1400000013000000280000000700000001000000140000000f00000017000000
+        paramDataType: 1400000013000000280000000700000001000000140000000f000000170000001400000012000000
         paramName:
         - gameObject
         - StoreObject
@@ -213,8 +229,10 @@ MonoBehaviour:
         - gameObject
         - Hp
         - IsDead
-        paramDataPos: 0000000000000000000000000000000004000000010000000000000000000000
-        paramByteDataSize: 0000000000000000000000000400000001000000000000000000000000000000
+        - gameObject
+        - NotificationMessage
+        paramDataPos: 00000000000000000000000000000000040000000100000000000000000000000200000000000000
+        paramByteDataSize: 00000000000000000000000004000000010000000000000000000000000000000000000000000000
     - name: Destroy
       description: 
       colorIndex: 0
