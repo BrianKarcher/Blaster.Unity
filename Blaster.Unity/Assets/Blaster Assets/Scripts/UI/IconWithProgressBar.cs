@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using BlueOrb.Controller.UI;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Blaster_Assets.Scripts.UI
 {
-    public class IconWithProgressBar : MonoBehaviour
+    public class IconWithProgressBar : MonoBehaviour, IIconWithProgressBar
     {
         [SerializeField]
         private GameObject bar;
@@ -17,9 +18,9 @@ namespace Assets.Blaster_Assets.Scripts.UI
 
         public void SetImage(Sprite image) => this.image.sprite = image;
 
-        public void SetValue(float scale)
+        public void SetValue(float value)
         {
-            this.scale = scale;
+            this.scale = value;
             SetScrollbarScale(this.scale);
             //int.TryParse(_textMeshProUGUI.text, out int currentScore);
             //iTween.ScaleTo
