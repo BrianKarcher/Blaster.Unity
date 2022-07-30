@@ -5,6 +5,7 @@ using BlueOrb.Base.Manager;
 using BlueOrb.Common.Components;
 using BlueOrb.Controller.Manager;
 using BlueOrb.Controller.Scene;
+using BlueOrb.Controller.UI;
 using BlueOrb.Messaging;
 using Rewired.Integration.UnityUI;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ using UnityEngine.UI;
 namespace BlueOrb.Scripts.UI
 {
     [AddComponentMenu("RQ/UI/UI Controller")]
-    public class UIController : ComponentBase<UIController>
+    public class UIController : ComponentBase<UIController>, IUIController
     {
         public const string UIControllerId = "UI Controller";
         public const string EnableCanvasEvent = "EnableCanvas";
@@ -46,6 +47,8 @@ namespace BlueOrb.Scripts.UI
         private List<Canvas> canvases;
 
         //private Dictionary<string, Canvas> canvasesDict;
+        private IHudController hudController;
+        public IHudController Hud => hudController;
 
         public override string GetId()
         {
@@ -54,6 +57,7 @@ namespace BlueOrb.Scripts.UI
 
         protected override void Awake()
         {
+            this.hudController = HUD.GetComponent<IHudController>();
             canvases = new List<Canvas>();
             foreach (Transform child in canvas.transform)
             {
