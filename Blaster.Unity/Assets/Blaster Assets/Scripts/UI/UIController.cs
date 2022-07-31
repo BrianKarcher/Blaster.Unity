@@ -1,10 +1,12 @@
 ﻿using Assets.Blaster_Assets.Scripts.Components;
 using Assets.Blaster_Assets.Scripts.UI;
+using Assets.BlueOrb.Scripts.UI;
 using BlueOrb.Base.Global;
 using BlueOrb.Base.Manager;
 using BlueOrb.Common.Components;
 using BlueOrb.Controller.Manager;
 using BlueOrb.Controller.Scene;
+using BlueOrb.Controller.UI;
 using BlueOrb.Messaging;
 using Rewired.Integration.UnityUI;
 using System.Collections.Generic;
@@ -15,7 +17,7 @@ using UnityEngine.UI;
 namespace BlueOrb.Scripts.UI
 {
     [AddComponentMenu("RQ/UI/UI Controller")]
-    public class UIController : ComponentBase<UIController>
+    public class UIController : ComponentBase<UIController>, IUIController
     {
         public const string UIControllerId = "UI Controller";
         public const string EnableCanvasEvent = "EnableCanvas";
@@ -45,7 +47,9 @@ namespace BlueOrb.Scripts.UI
 
         private List<Canvas> canvases;
 
-        //private Dictionary<string, Canvas> canvasesDict;
+        [SerializeField]
+        private HudController hudController;
+        public IHudController HudController => hudController;
 
         public override string GetId()
         {

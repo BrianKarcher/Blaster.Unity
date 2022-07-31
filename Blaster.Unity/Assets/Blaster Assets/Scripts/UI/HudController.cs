@@ -1,16 +1,18 @@
 ﻿using BlueOrb.Base.Interfaces;
 using BlueOrb.Base.Item;
 using BlueOrb.Common.Components;
+using BlueOrb.Controller.UI;
 using BlueOrb.Messaging;
 using BlueOrb.Source.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace Assets.BlueOrb.Scripts.UI
 {
     [AddComponentMenu("BlueOrb/UI/HUD Controller")]
-    public class HudController : ComponentBase<HudController>
+    public class HudController : ComponentBase<HudController>, IHudController
     {
         //[SerializeField] private Image _secondaryProjectileImage;
         //[SerializeField] private TextMeshProUGUI _secondaryProjectileText;
@@ -41,6 +43,11 @@ namespace Assets.BlueOrb.Scripts.UI
         [SerializeField]
         private GameObject lifeBar;
 
+        [SerializeField]
+        private GameObject buffPrefab;
+
+        [SerializeField]
+        private ScrollRect scrollRect;
 
         private const string ControllerName = "Hud Controller";
 
@@ -145,6 +152,9 @@ namespace Assets.BlueOrb.Scripts.UI
                 iTween.ValueTo(gameObject, iTween.Hash("name", NotificationAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetNotificationAlpha"));
             });
         }
+
+        public GameObject CreateBuffUI()
+            => GameObject.Instantiate(this.buffPrefab, this.scrollRect.content.transform);
 
         public void SetNotificationAlpha(float alpha)
         {
