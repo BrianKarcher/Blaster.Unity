@@ -1,5 +1,6 @@
 ﻿using Assets.Blaster_Assets.Scripts.Components;
 using Assets.Blaster_Assets.Scripts.UI;
+using Assets.BlueOrb.Scripts.UI;
 using BlueOrb.Base.Global;
 using BlueOrb.Base.Manager;
 using BlueOrb.Common.Components;
@@ -46,9 +47,9 @@ namespace BlueOrb.Scripts.UI
 
         private List<Canvas> canvases;
 
-        //private Dictionary<string, Canvas> canvasesDict;
-        private IHudController hudController;
-        public IHudController Hud => hudController;
+        [SerializeField]
+        private HudController hudController;
+        public IHudController HudController => hudController;
 
         public override string GetId()
         {
@@ -57,7 +58,6 @@ namespace BlueOrb.Scripts.UI
 
         protected override void Awake()
         {
-            this.hudController = HUD.GetComponent<IHudController>();
             canvases = new List<Canvas>();
             foreach (Transform child in canvas.transform)
             {
