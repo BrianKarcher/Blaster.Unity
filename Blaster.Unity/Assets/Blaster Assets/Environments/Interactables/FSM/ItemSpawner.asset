@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: HealthItemSpawner
+  m_Name: ItemSpawner
   m_EditorClassIdentifier: 
   category: General
   fsm:
@@ -140,7 +140,7 @@ MonoBehaviour:
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
-          name: HealthItem
+          name: ItemToSpawn
           tooltip: 
           showInInspector: 1
           networkSync: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
       quaternionVariables: []
       gameObjectVariables:
       - useVariable: 1
-        name: HealthItem
+        name: ItemToSpawn
         tooltip: 
         showInInspector: 1
         networkSync: 0
