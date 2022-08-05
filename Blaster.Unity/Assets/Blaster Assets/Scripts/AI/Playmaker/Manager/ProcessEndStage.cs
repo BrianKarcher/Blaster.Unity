@@ -1,5 +1,5 @@
 ﻿using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
+using BlueOrb.Base.Manager;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Manager
 {
@@ -9,7 +9,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
     {
         public override void OnEnter()
         {
-            EntityContainer.Instance.LevelStateController.ProcessEndStage();
+            GameStateController.Instance.LevelStateController.ProcessEndStage();
             Finish();
         }
     }

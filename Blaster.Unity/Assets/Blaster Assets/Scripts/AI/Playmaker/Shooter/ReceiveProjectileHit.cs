@@ -15,6 +15,10 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         [UIHint(UIHint.Tag)]
         public FsmString ShieldTag;
 
+        [UIHint(UIHint.Variable)]
+        [HutongGames.PlayMaker.Tooltip("The sender game object to store")]
+        public FsmGameObject storeSender;
+
         public FsmEvent Hit;
         public FsmEvent ShieldHit;
         private IEntity entity;

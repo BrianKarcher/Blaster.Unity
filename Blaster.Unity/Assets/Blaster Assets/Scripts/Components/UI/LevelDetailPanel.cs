@@ -1,8 +1,6 @@
 ﻿using BlueOrb.Base.Global;
 using BlueOrb.Base.Manager;
 using BlueOrb.Common.Components;
-using BlueOrb.Common.Container;
-using BlueOrb.Controller.Manager;
 using BlueOrb.Controller.Scene;
 using TMPro;
 using UnityEngine;
@@ -29,7 +27,7 @@ namespace BlueOrb.Controller.Inventory
             base.OnEnable();
             newHighScore.SetActive(GlobalStatic.NewHighScore);
             SceneConfig currentSceneConfig = GlobalStatic.NextSceneConfig;
-            int currentScore = EntityContainer.Instance.LevelStateController.GetCurrentScore();
+            int currentScore = GameStateController.Instance.LevelStateController.GetCurrentScore();
             if (currentSceneConfig != null && !string.IsNullOrEmpty(currentSceneConfig.UniqueId))
             {
                 TextMeshProUGUI pbText = this.pb.GetComponent<TextMeshProUGUI>();

@@ -4,7 +4,6 @@ using UnityEngine;
 using BlueOrb.Physics;
 using BlueOrb.Controller;
 using BlueOrb.Base.Manager;
-using BlueOrb.Common.Container;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
@@ -97,7 +96,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                 case BoolVariableEnum.ImmediateStartGame:
                     return GameStateController.Instance.GameSettingsConfig.ImmediateStartGame;
                 case BoolVariableEnum.IsInputEnabled:
-                    return EntityContainer.Instance.LevelStateController.EnableInput;
+                    return GameStateController.Instance.LevelStateController.EnableInput;
             }
             throw new System.Exception("Enum " + Variable.ToString() + " not found");
         }

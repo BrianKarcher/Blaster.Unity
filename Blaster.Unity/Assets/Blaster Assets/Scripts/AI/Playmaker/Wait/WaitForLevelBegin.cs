@@ -1,5 +1,5 @@
 ﻿using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
+using BlueOrb.Base.Manager;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Input
 {
@@ -40,7 +40,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Input
 
         private bool CheckComplete()
         {
-            return EntityContainer.Instance.LevelStateController.HasLevelBegun;
+            return GameStateController.Instance.LevelStateController.HasLevelBegun;
         }
     }
 }
