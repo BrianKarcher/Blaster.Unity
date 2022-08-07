@@ -1,5 +1,4 @@
 ﻿using BlueOrb.Base.Interfaces;
-using BlueOrb.Base.Item;
 using BlueOrb.Common.Components;
 using BlueOrb.Controller.UI;
 using BlueOrb.Messaging;
@@ -7,7 +6,6 @@ using BlueOrb.Source.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 namespace Assets.BlueOrb.Scripts.UI
 {
@@ -18,6 +16,7 @@ namespace Assets.BlueOrb.Scripts.UI
         //[SerializeField] private TextMeshProUGUI _secondaryProjectileText;
         [SerializeField] private TextMeshProUGUI _currentHpText;
         [SerializeField] private TextMeshProUGUI _levelStartTimer;
+        [SerializeField] private TextMeshProUGUI multiplier;
         [SerializeField] private GameObject notificationObject;
         //[SerializeField] private string _changeProjectileMessage;
         [SerializeField] private Color[] StartTimerColors;
@@ -33,6 +32,8 @@ namespace Assets.BlueOrb.Scripts.UI
 
         [SerializeField]
         private string removeProjectileTypeHudMessage = "RemoveProjectileType";
+
+        private string setMultiplierMessage = "SetMultiplier";
 
         [SerializeField]
         private string notificationHudMessage = "Notification";
@@ -126,14 +127,14 @@ namespace Assets.BlueOrb.Scripts.UI
             MessageDispatcher.Instance.StartListening("ShowTimer", ControllerName, (data) =>
             {
                 bool show = (bool)data.ExtraInfo;
-                Debug.Log($"Setting timer display to {show}");
+                //Debug.Log($"Setting timer display to {show}");
                 _levelStartTimer.gameObject.SetActive(show);
             });
 
             MessageDispatcher.Instance.StartListening("SetTimer", ControllerName, (data) =>
             {
                 int displayTime = (int)data.ExtraInfo;
-                Debug.Log($"Showing display time {displayTime}");
+                //Debug.Log($"Showing display time {displayTime}");
                 if (displayTime >= StartTimerColors.Length)
                 {
                     _levelStartTimer.color = StartTimerColors[StartTimerColors.Length - 1];
@@ -148,8 +149,14 @@ namespace Assets.BlueOrb.Scripts.UI
             MessageDispatcher.Instance.StartListening(this.notificationHudMessage, ControllerName, (data) =>
             {
                 string text = (string)data.ExtraInfo;
-                this.notificationText.text = text;
+                this.notificationText?.SetText(text);
                 iTween.ValueTo(gameObject, iTween.Hash("name", NotificationAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetNotificationAlpha"));
+            });
+
+            MessageDispatcher.Instance.StartListening(this.setMultiplierMessage, ControllerName, (data) =>
+            {
+                string text = (string)data.ExtraInfo;
+                this.multiplier?.SetText(text);
             });
         }
 

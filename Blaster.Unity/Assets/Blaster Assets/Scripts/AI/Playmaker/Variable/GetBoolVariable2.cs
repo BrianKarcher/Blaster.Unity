@@ -78,7 +78,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             }
             if (value)
             {
-                Debug.LogWarning($"Running True bool event in {Fsm.ActiveStateName}");
+                //Debug.LogWarning($"Running True bool event in {Fsm.ActiveStateName}");
                 Fsm.Event(IfTrue);
             }
             if (!value)
