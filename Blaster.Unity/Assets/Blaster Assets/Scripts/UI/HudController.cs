@@ -16,7 +16,8 @@ namespace Assets.BlueOrb.Scripts.UI
         //[SerializeField] private TextMeshProUGUI _secondaryProjectileText;
         [SerializeField] private TextMeshProUGUI _currentHpText;
         [SerializeField] private TextMeshProUGUI _levelStartTimer;
-        [SerializeField] private TextMeshProUGUI multiplier;
+        [SerializeField] private TextMeshProUGUI multiplierText;
+        [SerializeField] private TextMeshProUGUI consecutiveHitsText;
         [SerializeField] private GameObject notificationObject;
         //[SerializeField] private string _changeProjectileMessage;
         [SerializeField] private Color[] StartTimerColors;
@@ -33,10 +34,11 @@ namespace Assets.BlueOrb.Scripts.UI
         [SerializeField]
         private string removeProjectileTypeHudMessage = "RemoveProjectileType";
 
-        private string setMultiplierMessage = "SetMultiplier";
-
         [SerializeField]
         private string notificationHudMessage = "Notification";
+
+        private const string SetMultiplierMessage = "SetMultiplier";
+        private const string SetConsecutiveHitsMessage = "SetConsecutiveHits";
 
         [SerializeField]
         private UIToggleGroup uiToggleGroup;
@@ -153,10 +155,16 @@ namespace Assets.BlueOrb.Scripts.UI
                 iTween.ValueTo(gameObject, iTween.Hash("name", NotificationAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetNotificationAlpha"));
             });
 
-            MessageDispatcher.Instance.StartListening(this.setMultiplierMessage, ControllerName, (data) =>
+            MessageDispatcher.Instance.StartListening(SetMultiplierMessage, ControllerName, (data) =>
             {
                 string text = (string)data.ExtraInfo;
-                this.multiplier?.SetText(text);
+                this.multiplierText?.SetText(text);
+            });
+
+            MessageDispatcher.Instance.StartListening(SetConsecutiveHitsMessage, ControllerName, (data) =>
+            {
+                int text = (int)data.ExtraInfo;
+                this.consecutiveHitsText?.SetText(text.ToString());
             });
         }
 

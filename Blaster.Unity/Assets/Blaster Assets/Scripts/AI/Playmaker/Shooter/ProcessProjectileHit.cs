@@ -4,6 +4,7 @@ using BlueOrb.Messaging;
 using UnityEngine;
 using BlueOrb.Scripts.AI.Playmaker;
 using BlueOrb.Base.Manager;
+using BlueOrb.Controller.Buff;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
@@ -16,6 +17,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         public FsmGameObject EntityHit;
         [UIHint(UIHint.Tag)]
         public FsmString[] IncrementTag;
+        //[SerializeField]
+        public BuffConfig multiplierShieldBuffConfig;
 
         public override void OnEnter()
         {
@@ -33,6 +36,13 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                     Finish();
                     return;
                 }
+            }
+            if (this.multiplierShieldBuffConfig != null
+                && GameStateController.Instance.LevelStateController.InventoryComponent.ContainsItem(this.multiplierShieldBuffConfig.UniqueId))
+            {
+                // As long as you have the item in inventory, that means Multiplier Shield is active. So just return.
+                Finish();
+                return;
             }
             GameStateController.Instance.LevelStateController.PointsMultiplier().ResetConsecutiveHits();
             Finish();
