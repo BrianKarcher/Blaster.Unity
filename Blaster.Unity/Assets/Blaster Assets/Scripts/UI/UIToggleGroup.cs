@@ -1,5 +1,7 @@
 ﻿using BlueOrb.Base.Interfaces;
-using BlueOrb.Base.Item;
+using BlueOrb.Common.Container;
+using BlueOrb.Messaging;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace BlueOrb.Source.UI
@@ -8,11 +10,15 @@ namespace BlueOrb.Source.UI
     public class UIToggleGroup : MonoBehaviour
     {
         [SerializeField]
-        private UIToggleItem[] _items;
+        private UIToggleItem itemPrefab;
 
-        // TODO Remove serialization when done testing
         [SerializeField]
-        private int _currentItemCount;
+        private GameObject parent;
+
+        [SerializeField]
+        private string selectProjectileHudMessage = "SelectProjectile";
+
+        private List<UIToggleItem> items = new List<UIToggleItem>();
         public int CurrentIndex;
 
         public bool TogglingEnabled { get; set; }
@@ -21,80 +27,40 @@ namespace BlueOrb.Source.UI
         {
             //_items[CurrentItem].Selected();
             //_currentItemCount = _items.Length;
-            _currentItemCount = 0;
             CurrentIndex = -1;
-            
         }
 
         public void Start()
         {
             //SetCount(CurrentIndex);
-            ActivateDisplayItemsFromCount();
+            //ActivateDisplayItemsFromCount();
         }
-
-        //public void SetCount(int count)
-        //{
-        //    _currentItemCount = count;
-
-        //    ActivateDisplayItemsFromCount();
-        //    // Perform a bounds check in case the shard slot is no longer available
-        //    SetCurrentItem(CurrentIndex);
-        //}
 
         public void AddItem(IProjectileItem projectileItem)
         {
-            _currentItemCount++;
-            Debug.Log($"(UIToggleGroup) AddItem called, count is now {this._currentItemCount}");
-            PopulateItem(projectileItem, _currentItemCount - 1);
+            UIToggleItem newItem = GameObject.Instantiate<UIToggleItem>(itemPrefab, parent.transform);
+            newItem.SetItemConfig(projectileItem.ProjectileConfig);
+            newItem.SetText(projectileItem.CurrentAmmo.ToString());
+            this.items.Add(newItem);
+            Debug.Log($"(UIToggleGroup) AddItem called, count is now {this.items.Count}");
             // We need to set the first item acquired to active
-            if (this._currentItemCount == 1)
+            if (this.items.Count == 1)
             {
                 SelectItem(0);
             }
-            ActivateDisplayItemsFromCount();
         }
 
-        public void PopulateItem(IProjectileItem projectileItem, int index)
+        public void RemoveItem(string uniqueId)
         {
-            _items[index].SetItemConfig(projectileItem.ProjectileConfig);
-            _items[index].SetText(projectileItem.CurrentAmmo.ToString());
-        }
-
-        public void RemoveItem(int index)
-        {
-            Debug.Log($"(UIToggleGroup) Removing Item {index}");
-            if (index < 0 || index >= _currentItemCount)
+            for (int i = 0; i < items.Count; i++)
             {
-                throw new System.Exception($"Attempt to remove invalid toggle index {index}");
-            }
-            // Remove an item by shifting items to the right of it left by one
-            for (int i = index + 1; i < _currentItemCount; i++)
-            {
-                _items[i - 1].SetItemConfig(_items[i].GetItemConfig());
-                _items[i - 1].SetTextImmediate(_items[i].GetText());
-            }
-            // Then deactivate the last item.
-            _items[_currentItemCount - 1].gameObject.SetActive(false);
-            _items[_currentItemCount - 1].SetTextImmediate("0");
-            // Then subtract 1 from the count
-            _currentItemCount--;
-            ActivateDisplayItemsFromCount();
-        }
-
-        /// <summary>
-        /// Disable items that are less than the current count of items to display
-        /// </summary>
-        public void ActivateDisplayItemsFromCount()
-        {
-            for (int i = 0; i < _items.Length; i++)
-            {
-                var go = _items[i].gameObject;
-                if (i < _currentItemCount)
-                    go.SetActive(true);
-                //NGUITools.SetActive(go, true);
-                else
-                    go.SetActive(false);
-                //NGUITools.SetActive(go, false);
+                if (items[i].GetItemConfig().UniqueId == uniqueId)
+                {
+                    Debug.Log($"(UIToggleGroup) Removing Item {i}");
+                    GameObject.Destroy(items[i]);
+                    items.RemoveAt(i);
+                    return;
+                }
             }
         }
 
@@ -102,34 +68,62 @@ namespace BlueOrb.Source.UI
         {
             GetCurrentItem()?.UnSelect();
             CurrentIndex = index;
-            //CheckBounds();
+            CurrentIndex = CheckBounds(CurrentIndex);
             GetCurrentItem()?.Select();
+        }
+
+        private int CheckBounds(int index)
+        {
+            if (items.Count == 0)
+            {
+                return -1;
+            }
+            if (index < 0)
+            {
+                return items.Count - 1;
+            }
+            if (index > items.Count - 1)
+            {
+                return 0;
+            }
+            return index;
         }
 
         public UIToggleItem GetCurrentItem()
         {
             if (CurrentIndex < 0)
                 return null;
-            if (CurrentIndex > _items.Length - 1)
+            if (CurrentIndex > items.Count - 1)
                 return null;
-            return _items[CurrentIndex];
+            return items[CurrentIndex];
+        }
+
+        public void Toggle(bool isRight)
+        {
+            if (items.Count == 0)
+            {
+                CurrentIndex = 0;
+                return;
+            }
+            var newItem = isRight ? CurrentIndex + 1 : CurrentIndex - 1;
+            SelectItem(newItem);
+            var mainPlayer = EntityContainer.Instance.GetMainCharacter();
+            // Inform player object the projectile has changed
+            MessageDispatcher.Instance.DispatchMsg(this.selectProjectileHudMessage, 0f, null, mainPlayer.GetId(), CurrentIndex);
         }
 
         public UIToggleItem GetItem(string uniqueId)
         {
-            for (int i = 0; i < _currentItemCount; i++)
+            for (int i = 0; i < items.Count; i++)
             {
-                if (_items[i].GetItemConfig().UniqueId == uniqueId)
+                if (items[i].GetItemConfig().UniqueId == uniqueId)
                 {
-                    return _items[i];
+                    return items[i];
                 }
             }
             return null;
         }
 
-        public UIToggleItem[] GetItems()
-        {
-            return _items;
-        }
+        public List<UIToggleItem> GetItems() => items;
     }
 }

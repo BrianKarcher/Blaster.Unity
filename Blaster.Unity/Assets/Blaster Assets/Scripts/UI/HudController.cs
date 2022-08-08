@@ -25,8 +25,8 @@ namespace Assets.BlueOrb.Scripts.UI
         [SerializeField] 
         private string _setAmmoMessage = "SetAmmo";
 
-        [SerializeField]
-        private string selectProjectileHudMessage = "SelectProjectile";
+        //[SerializeField]
+        //private string selectProjectileHudMessage = "SelectProjectile";
 
         [SerializeField]
         private string addProjectileTypeHudMessage = "AddProjectileType";
@@ -41,7 +41,7 @@ namespace Assets.BlueOrb.Scripts.UI
         private const string SetConsecutiveHitsMessage = "SetConsecutiveHits";
 
         [SerializeField]
-        private UIToggleGroup uiToggleGroup;
+        private UIToggleGroup projectileToggleGroup;
 
         [SerializeField]
         private GameObject lifeBar;
@@ -50,13 +50,10 @@ namespace Assets.BlueOrb.Scripts.UI
         private GameObject buffPrefab;
 
         [SerializeField]
-        private ScrollRect scrollRect;
+        private ScrollRect buffScrollRect;
 
         private const string ControllerName = "Hud Controller";
 
-        private long _setProjectileIndex, _addProjectileIndex, _removeProjectileIndex;
-        private long _setAmmoIndex;
-        private long _setHpIndex;
         private TextMeshProUGUI notificationText;
 
         protected override void Awake()
@@ -69,32 +66,32 @@ namespace Assets.BlueOrb.Scripts.UI
         {
             base.StartListening();
 
-            _setProjectileIndex = MessageDispatcher.Instance.StartListening(selectProjectileHudMessage, ControllerName, (data) =>
-            {
-                Debug.Log("(HudController) Select Projectile message");
-                int index = (int)data.ExtraInfo;
-                uiToggleGroup.SelectItem(index);
-            });
+            //_setProjectileIndex = MessageDispatcher.Instance.StartListening(selectProjectileHudMessage, ControllerName, (data) =>
+            //{
+            //    Debug.Log("(HudController) Select Projectile message");
+            //    int index = (int)data.ExtraInfo;
+            //    projectileToggleGroup.SelectItem(index);
+            //});
 
-            _addProjectileIndex = MessageDispatcher.Instance.StartListening(addProjectileTypeHudMessage, ControllerName, (data) =>
+            MessageDispatcher.Instance.StartListening(addProjectileTypeHudMessage, ControllerName, (data) =>
             {
                 Debug.Log("(HudController) Add Projectile message");
                 IProjectileItem projectileItem = (IProjectileItem)data.ExtraInfo;
-                uiToggleGroup.AddItem(projectileItem);
+                projectileToggleGroup.AddItem(projectileItem);
             });
 
-            _removeProjectileIndex = MessageDispatcher.Instance.StartListening(removeProjectileTypeHudMessage, ControllerName, (data) =>
+            MessageDispatcher.Instance.StartListening(removeProjectileTypeHudMessage, ControllerName, (data) =>
             {
                 Debug.Log("(HudController) Remove Projectile message");
-                int index = (int)data.ExtraInfo;
-                uiToggleGroup.RemoveItem(index);
+                string uniqueId = (string) data.ExtraInfo;
+                projectileToggleGroup.RemoveItem(uniqueId);
             });
 
-            _setAmmoIndex = MessageDispatcher.Instance.StartListening(_setAmmoMessage, ControllerName, (data) =>
+            MessageDispatcher.Instance.StartListening(_setAmmoMessage, ControllerName, (data) =>
             {
                 var ammoData = ((string UniqueId, int CurrentAmmo))data.ExtraInfo;
                 Debug.Log($"(HudController) Set Ammo to {ammoData.CurrentAmmo} message");
-                var item = uiToggleGroup.GetItem(ammoData.UniqueId);
+                var item = projectileToggleGroup.GetItem(ammoData.UniqueId);
                 if (item == null)
                 {
                     Debug.LogError($"Could not locate item {ammoData.UniqueId} to set ammo to");
@@ -103,7 +100,7 @@ namespace Assets.BlueOrb.Scripts.UI
                 item.SetText(ammoData.CurrentAmmo.ToString());
             });
 
-            _setHpIndex = MessageDispatcher.Instance.StartListening("SetHp", ControllerName, (data) =>
+            MessageDispatcher.Instance.StartListening("SetHp", ControllerName, (data) =>
             {
                 (float current, float max, bool Immediate) hp = ((float current, float max, bool Immediate))data.ExtraInfo;
                 Debug.Log($"(HUD) Setting current hp to {hp.current} {hp.Immediate}");
@@ -169,7 +166,7 @@ namespace Assets.BlueOrb.Scripts.UI
         }
 
         public GameObject CreateBuffUI()
-            => GameObject.Instantiate(this.buffPrefab, this.scrollRect.content.transform);
+            => GameObject.Instantiate(this.buffPrefab, this.buffScrollRect.content.transform);
 
         public void SetNotificationAlpha(float alpha)
         {
@@ -178,15 +175,5 @@ namespace Assets.BlueOrb.Scripts.UI
 
         private string TweenName => $"{this.GetInstanceID()}_sethptween";
         private string NotificationAlhpaTweenName => $"{this.GetInstanceID()}_notificationalphatween";
-
-        public override void StopListening()
-        {
-            base.StopListening();
-            MessageDispatcher.Instance.StopListening(selectProjectileHudMessage, ControllerName, _setProjectileIndex);
-            MessageDispatcher.Instance.StopListening(addProjectileTypeHudMessage, ControllerName, _addProjectileIndex);
-            MessageDispatcher.Instance.StopListening(removeProjectileTypeHudMessage, ControllerName, _removeProjectileIndex);
-            MessageDispatcher.Instance.StopListening(_setAmmoMessage, ControllerName, _setAmmoIndex);
-            MessageDispatcher.Instance.StopListening("SetHp", ControllerName, _setHpIndex);
-        }
     }
 }
