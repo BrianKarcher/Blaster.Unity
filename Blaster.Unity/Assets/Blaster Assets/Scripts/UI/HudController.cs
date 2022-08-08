@@ -25,8 +25,8 @@ namespace Assets.BlueOrb.Scripts.UI
         [SerializeField] 
         private string _setAmmoMessage = "SetAmmo";
 
-        //[SerializeField]
-        //private string selectProjectileHudMessage = "SelectProjectile";
+        [SerializeField]
+        private string toggleProjectileHudMessage = "ToggleProjectile";
 
         [SerializeField]
         private string addProjectileTypeHudMessage = "AddProjectileType";
@@ -66,12 +66,12 @@ namespace Assets.BlueOrb.Scripts.UI
         {
             base.StartListening();
 
-            //_setProjectileIndex = MessageDispatcher.Instance.StartListening(selectProjectileHudMessage, ControllerName, (data) =>
-            //{
-            //    Debug.Log("(HudController) Select Projectile message");
-            //    int index = (int)data.ExtraInfo;
-            //    projectileToggleGroup.SelectItem(index);
-            //});
+            MessageDispatcher.Instance.StartListening(toggleProjectileHudMessage, ControllerName, (data) =>
+            {
+                Debug.Log("(HudController) Toggle Projectile message");
+                bool isRight = (bool)data.ExtraInfo;
+                projectileToggleGroup.Toggle(isRight);
+            });
 
             MessageDispatcher.Instance.StartListening(addProjectileTypeHudMessage, ControllerName, (data) =>
             {

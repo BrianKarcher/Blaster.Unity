@@ -1,4 +1,5 @@
 ﻿using BlueOrb.Base.Interfaces;
+using BlueOrb.Base.Manager;
 using BlueOrb.Common.Container;
 using BlueOrb.Messaging;
 using System.Collections.Generic;
@@ -70,6 +71,8 @@ namespace BlueOrb.Source.UI
             CurrentIndex = index;
             CurrentIndex = CheckBounds(CurrentIndex);
             GetCurrentItem()?.Select();
+            string currentProjectileConfig = CurrentIndex < 0 ? null : this.items[CurrentIndex].GetItemConfig()?.UniqueId;
+            GameStateController.Instance.LevelStateController.ShooterComponent.SetSecondaryProjectile(currentProjectileConfig);
         }
 
         private int CheckBounds(int index)
