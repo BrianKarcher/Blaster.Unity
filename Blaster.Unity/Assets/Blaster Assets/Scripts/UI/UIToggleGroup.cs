@@ -57,9 +57,14 @@ namespace BlueOrb.Source.UI
             {
                 if (items[i].GetItemConfig().UniqueId == uniqueId)
                 {
-                    Debug.Log($"(UIToggleGroup) Removing Item {i}");
-                    GameObject.Destroy(items[i]);
+                    Debug.LogError($"(UIToggleGroup) Removing Item {i}");
+                    GameObject.Destroy(items[i].gameObject);
                     items.RemoveAt(i);
+                    if (CurrentIndex == i)
+                    {
+                        CurrentIndex = CheckBounds(CurrentIndex);
+                    }
+                    SelectItem(CurrentIndex);
                     return;
                 }
             }
