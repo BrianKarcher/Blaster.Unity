@@ -112,8 +112,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 402
-        y: 121
+        x: 395
+        y: 112
         width: 100
         height: 32
       isBreakpoint: 0
@@ -249,10 +249,10 @@ MonoBehaviour:
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams:
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: WaitTime
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: 15
         fsmIntParams: []
@@ -282,7 +282,13 @@ MonoBehaviour:
       isGlobal: 0
     globalTransitions: []
     variables:
-      floatVariables: []
+      floatVariables:
+      - useVariable: 1
+        name: WaitTime
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 15
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -311,7 +317,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
