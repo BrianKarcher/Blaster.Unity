@@ -1,6 +1,4 @@
 ﻿using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
-using BlueOrb.Messaging;
 using UnityEngine;
 using BlueOrb.Scripts.AI.Playmaker;
 using BlueOrb.Base.Manager;
@@ -13,11 +11,20 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
-        [RequiredField]
+
+        [UIHint(UIHint.Variable)]
+        [ArrayEditor(VariableType.GameObject)]
+        public FsmArray EntityHits;
+
         public FsmGameObject EntityHit;
+
         [UIHint(UIHint.Tag)]
         public FsmString[] IncrementTag;
-        //[SerializeField]
+
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        public FsmInt Counter;
+
         public BuffConfig multiplierShieldBuffConfig;
 
         public override void OnEnter()
@@ -27,25 +34,40 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             {
                 return;
             }
+            if (CheckTags(EntityHit.Value))
+            {
+                GameStateController.Instance.LevelStateController.PointsMultiplier().IncrementConsecutiveHits();
+                Counter.Value++;
+            }
+            for (int k = 0; k < EntityHits.Length; k++)
+            {
+                GameObject entityHit = (GameObject)EntityHits.objectReferences[k];
+                if (CheckTags(entityHit))
+                {
+                    GameStateController.Instance.LevelStateController.PointsMultiplier().IncrementConsecutiveHits();
+                    Counter.Value++;
+                    Debug.Log($"Incrementing Cons Hit counter to {Counter.Value}");
+                }
+            }
+
+            Finish();
+        }
+
+        private bool CheckTags(GameObject entityHit)
+        {
+            if (entityHit == null)
+            {
+                return false;
+            }
             for (int i = 0; i < IncrementTag.Length; i++)
             {
                 string tag = IncrementTag[i].Value;
-                if (EntityHit.Value.CompareTag(tag))
+                if (entityHit.CompareTag(tag))
                 {
-                    GameStateController.Instance.LevelStateController.PointsMultiplier().IncrementConsecutiveHits();
-                    Finish();
-                    return;
+                    return true;
                 }
             }
-            if (this.multiplierShieldBuffConfig != null
-                && GameStateController.Instance.LevelStateController.InventoryComponent.ContainsItem(this.multiplierShieldBuffConfig.UniqueId))
-            {
-                // As long as you have the item in inventory, that means Multiplier Shield is active. So just return.
-                Finish();
-                return;
-            }
-            GameStateController.Instance.LevelStateController.PointsMultiplier().ResetConsecutiveHits();
-            Finish();
+            return false;
         }
     }
 }

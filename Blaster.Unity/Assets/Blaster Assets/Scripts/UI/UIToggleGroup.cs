@@ -133,5 +133,14 @@ namespace BlueOrb.Source.UI
         }
 
         public List<UIToggleItem> GetItems() => items;
+
+        public void Clear()
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                GameObject.Destroy(items[i].gameObject);
+            }
+            items.Clear();
+        }
     }
 }

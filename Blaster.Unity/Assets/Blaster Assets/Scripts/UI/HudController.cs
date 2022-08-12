@@ -163,15 +163,20 @@ namespace Assets.BlueOrb.Scripts.UI
                 int text = (int)data.ExtraInfo;
                 this.consecutiveHitsText?.SetText(text.ToString());
             });
+
+            MessageDispatcher.Instance.StartListening("Clear", ControllerName, (data) =>
+            {
+                projectileToggleGroup.Clear();
+                this.consecutiveHitsText.SetText("0");
+                this.multiplierText.SetText("1");
+                this.notificationText.SetText("");
+            });
         }
 
         public GameObject CreateBuffUI()
             => GameObject.Instantiate(this.buffPrefab, this.buffScrollRect.content.transform);
 
-        public void SetNotificationAlpha(float alpha)
-        {
-            this.notificationText.alpha = alpha;
-        }
+        public void SetNotificationAlpha(float alpha) => this.notificationText.alpha = alpha;
 
         private string TweenName => $"{this.GetInstanceID()}_sethptween";
         private string NotificationAlhpaTweenName => $"{this.GetInstanceID()}_notificationalphatween";
