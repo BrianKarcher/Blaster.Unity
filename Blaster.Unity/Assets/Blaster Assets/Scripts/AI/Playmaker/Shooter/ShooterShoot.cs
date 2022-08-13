@@ -1,8 +1,8 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Controller.Component;
 using BlueOrb.Scripts.AI.Playmaker;
+using UnityEngine;
+using BlueOrb.Base.Manager;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
@@ -20,6 +20,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 
         public FsmBool ShootMainProjectile;
         public FsmBool ShootSecondaryProjectile;
+        private float endTime;
 
         public override void OnEnter()
         {
@@ -37,13 +38,13 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             if (ShootMainProjectile.Value)
             {
                 _playerShooterComponent.ShootMainProjectile();
+                endTime = Time.time + GameStateController.Instance.LevelStateController.ShooterComponent.CurrentMainProjectileConfig.Cooldown;
             }
             if (ShootSecondaryProjectile.Value)
             {
                 _playerShooterComponent.ShootSecondaryProjectile();
+                endTime = Time.time + GameStateController.Instance.LevelStateController.ShooterComponent.GetSecondaryProjectile().ProjectileConfig.Cooldown;
             }
-            // Todo: Create a projectile-specific delay so it doesn't finish right away
-            Finish();
         }
 
         public override void OnExit()
@@ -51,10 +52,13 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             base.OnExit();
         }
 
-        //public override void OnUpdate()
-        //{
-        //    Tick();
-        //}
+        public override void OnUpdate()
+        {
+            if (Time.time > endTime)
+            {
+                Finish();
+            }
+        }
 
         //private void Tick()
         //{

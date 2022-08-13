@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 851542049967933991}
   m_Layer: 10
   m_Name: AmmoBox-Bounce
-  m_TagString: Environment
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +52,7 @@ MonoBehaviour:
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+  customId: 
 --- !u!114 &851542049967933991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +82,7 @@ GameObject:
   - component: {fileID: 9099666902661034539}
   m_Layer: 10
   m_Name: FSM
-  m_TagString: Environment
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,6 +270,7 @@ MonoBehaviour:
   _componentRepository: {fileID: 8769010253013433694}
   componentName: 
   _item: {fileID: 11400000, guid: a45e0d1d9fd188548a39e8838504374d, type: 2}
+  ammoBoxShotMessage: AmmoBoxShot
 --- !u!1001 &4245149730104752270
 PrefabInstance:
   m_ObjectHideFlags: 0
