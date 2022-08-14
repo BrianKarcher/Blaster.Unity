@@ -34,6 +34,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
         public bool _sendToUIManager;
         public SendMessageTime SendMessageTime;
         public bool _finishOnFirstMessageSent = true;
+        public string customRecipient;
 
         //public bool _sendOnFirstUpdate = false;
         private System.Action DebugEvent;
@@ -108,6 +109,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
             else if (_sendToLevelController)
             {
                 Process("Level Controller");
+            }
+            else if (!string.IsNullOrEmpty(customRecipient))
+            {
+                Process(customRecipient);
             }
             else
             {
