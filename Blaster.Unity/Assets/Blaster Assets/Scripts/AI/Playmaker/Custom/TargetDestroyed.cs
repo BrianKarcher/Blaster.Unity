@@ -19,7 +19,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Camera
 
         public override void OnEnter()
         {
-            Debug.Log("(TargetDestroyed) OnEnter called");
+            //Debug.Log("(TargetDestroyed) OnEnter called");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {

@@ -1,9 +1,6 @@
-﻿using BlueOrb.Scripts.AI.AtomActions.Physics;
-using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
+﻿using HutongGames.PlayMaker;
 using PM = HutongGames.PlayMaker;
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Physics
 {
@@ -48,6 +45,12 @@ namespace BlueOrb.Scripts.AI.Playmaker.Physics
                 //{
                 //    _points.Add(_waypoints.transform.GetChild(i).position);
                 //}
+                if (Waypoints.Value == null || Waypoints?.Value?.transform == null)
+                {
+                    StoreVectorArray.vector4Values = new Vector4[0];
+                    Finish();
+                    return;
+                }
 
                 Vector4[] vector4s = new Vector4[Waypoints.Value.transform.childCount];
                 for (int i = 0; i < Waypoints.Value.transform.childCount; i++)

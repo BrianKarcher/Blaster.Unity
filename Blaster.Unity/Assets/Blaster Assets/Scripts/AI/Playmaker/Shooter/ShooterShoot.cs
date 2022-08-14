@@ -3,6 +3,7 @@ using BlueOrb.Controller.Component;
 using BlueOrb.Scripts.AI.Playmaker;
 using UnityEngine;
 using BlueOrb.Base.Manager;
+using BlueOrb.Base.Interfaces;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 {
@@ -43,6 +44,12 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             if (ShootSecondaryProjectile.Value)
             {
                 _playerShooterComponent.ShootSecondaryProjectile();
+                IProjectileItem secondaryProjectile = GameStateController.Instance.LevelStateController.ShooterComponent.GetSecondaryProjectile();
+                if (secondaryProjectile == null)
+                {
+                    Finish();
+                    return;
+                }    
                 endTime = Time.time + GameStateController.Instance.LevelStateController.ShooterComponent.GetSecondaryProjectile().ProjectileConfig.Cooldown;
             }
         }

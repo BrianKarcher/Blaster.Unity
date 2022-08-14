@@ -58,6 +58,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
             if (SendMessageTime == SendMessageTime.Immediately)
             {
                 SendMessage(entity);
+                if (_finishOnFirstMessageSent)
+                {
+                    Finish();
+                }
             }
         }
 
