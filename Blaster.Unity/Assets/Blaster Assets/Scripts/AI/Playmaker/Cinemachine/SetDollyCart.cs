@@ -28,7 +28,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 
             var entity = base.GetEntityBase(go);
             var dollyComponent = entity.Components.GetComponent<DollyCartComponent>();
-            dollyComponent.SetDollyCartParent(DollyCart.Value);
+            dollyComponent.SetDollyCart(DollyCart.Value);
             Finish();
         }
 
