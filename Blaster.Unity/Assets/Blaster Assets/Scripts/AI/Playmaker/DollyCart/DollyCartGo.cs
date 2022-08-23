@@ -18,6 +18,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         //public FsmInt[] Layer;
 
         public FsmEvent EnemyCollision;
+        public FsmEvent Idle;
 
         private DollyCartComponent dollyCart;
         //private int layerMask;
@@ -45,13 +46,13 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
             var entity = base.GetEntityBase(go);
             dollyCart ??= entity.GetComponent<DollyCartComponent>();
+            if (!dollyCart.HasCart)
+            {
+                Fsm.Event(Idle);
+            }
 
             //layerMask = ActionHelpers.LayerArrayToLayerMask(Layer, false);
-            dollyCart.StartAcceleration(new DollyCartComponent.SetSpeedData()
-            {
-                SmoothTime = dollyCart.SmoothTime,
-                TargetSpeed = dollyCart.GetTargetSpeed
-            });
+            dollyCart.StartAcceleration(dollyCart.TargetSpeed, dollyCart.SmoothTime);
         }
 
         public override void OnFixedUpdate()

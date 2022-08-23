@@ -13,6 +13,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         [RequiredField]
         public FsmOwnerDefault gameObject;
         private DollyCartComponent dollyCart;
+        private float oldTargetSpeed;
 
         public override void Reset()
         {
@@ -44,7 +45,14 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
                 Debug.LogError($"Could not locate Dolly Cart Component");
                 return;
             }
+            oldTargetSpeed = dollyCart.TargetSpeed;
             dollyCart.Brake();
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            dollyCart.SetTargetSpeed(oldTargetSpeed);
         }
 
         public override void OnFixedUpdate()
@@ -55,7 +63,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
                 return;
             }
             dollyCart.ProcessDollyCartSpeedChange();
-            if (dollyCart.GetSpeed() < 0.001f)
+            if (dollyCart.Speed < 0.001f)
             {
                 dollyCart.Stop();
                 Finish();

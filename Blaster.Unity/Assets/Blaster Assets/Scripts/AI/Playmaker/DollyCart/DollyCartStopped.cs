@@ -53,7 +53,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
             {
                 return;
             }
-            if (!CheckEnemyCollision())
+            if (!CheckEnemyCollision() && dollyCart.HasCart)
             {
                 Fsm.Event(Go);
             }

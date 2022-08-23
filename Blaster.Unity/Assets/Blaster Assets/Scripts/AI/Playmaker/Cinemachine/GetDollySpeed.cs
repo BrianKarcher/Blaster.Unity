@@ -1,11 +1,4 @@
-﻿using BlueOrb.Scripts.AI.AtomActions.Animation;
-using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
-using UnityEngine;
-using Cinemachine;
-using BlueOrb.Messaging;
-using static BlueOrb.Controller.DollyCartComponent;
-using System;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Controller;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
@@ -52,7 +45,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 
         private void Tick()
         {
-            Speed.Value = _dolly.GetSpeed();
+            Speed.Value = _dolly.Speed;
         }
     }
 }
