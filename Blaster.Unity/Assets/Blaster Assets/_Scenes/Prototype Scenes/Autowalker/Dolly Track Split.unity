@@ -777,6 +777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 295725311}
   - component: {fileID: 295725310}
+  - component: {fileID: 295725312}
   m_Layer: 0
   m_Name: Track B Joint
   m_TagString: Untagged
@@ -815,6 +816,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 28.5, z: 0}
+--- !u!114 &295725312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295725309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -364732887, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinemachineDollyCart: {fileID: 0}
+  _speedChangeType: 2
+  startSpeed: 0
+  speed: 0
+  targetSpeed: 0
+  updatingSpeed: 0
+  _smoothTime: 2
+  _speedDecreasing: 0
+  emergencyBrakeTime: 0.5
 --- !u!1 &332591142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,6 +1912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 959515129}
   - component: {fileID: 959515128}
+  - component: {fileID: 959515130}
   m_Layer: 0
   m_Name: Track C Joint
   m_TagString: Untagged
@@ -1928,6 +1951,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &959515130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959515127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -364732887, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinemachineDollyCart: {fileID: 0}
+  _speedChangeType: 2
+  startSpeed: 0
+  speed: 0
+  targetSpeed: 0
+  updatingSpeed: 0
+  _smoothTime: 2
+  _speedDecreasing: 0
+  emergencyBrakeTime: 0.5
 --- !u!1 &962928090
 GameObject:
   m_ObjectHideFlags: 0
@@ -4117,6 +4161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1935038352}
   - component: {fileID: 1935038353}
+  - component: {fileID: 1935038354}
   m_Layer: 0
   m_Name: Track A Joint
   m_TagString: Untagged
@@ -4155,6 +4200,27 @@ MonoBehaviour:
   m_PositionUnits: 1
   m_Speed: 0
   m_Position: 0
+--- !u!114 &1935038354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935038351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -364732887, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinemachineDollyCart: {fileID: 0}
+  _speedChangeType: 2
+  startSpeed: 0
+  speed: 0
+  targetSpeed: 0
+  updatingSpeed: 0
+  _smoothTime: 2
+  _speedDecreasing: 0
+  emergencyBrakeTime: 0.5
 --- !u!1 &1944187110
 GameObject:
   m_ObjectHideFlags: 3
