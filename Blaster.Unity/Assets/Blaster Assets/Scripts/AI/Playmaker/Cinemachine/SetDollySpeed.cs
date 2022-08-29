@@ -1,5 +1,4 @@
 ﻿using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
 using BlueOrb.Messaging;
 using static BlueOrb.Controller.DollyCartComponent;
 using System;
@@ -36,16 +35,21 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
             SetSpeedData data = new SetSpeedData();
             data.TargetSpeed = Speed.Value;
             data.SmoothTime = SmoothTime.Value;
+            data.Immediate = Immediate.Value;
             if (entity == null)
                 throw new Exception($"Could not locate entity in {Fsm.ActiveStateName}");
-            if (Immediate.Value)
-            {
-                MessageDispatcher.Instance.DispatchMsg("SetSpeed", 0f, string.Empty, entity.GetId(), Speed.Value);
-            }
-            else
-            {
-                MessageDispatcher.Instance.DispatchMsg("SetSpeedTarget", 0f, string.Empty, entity.GetId(), data);
-            }
+
+            MessageDispatcher.Instance.DispatchMsg("SetSpeed", 0f, string.Empty, entity.GetId(), data);
+
+            //if (Immediate.Value)
+            //{
+            //    SetSpeedData setSpeedData = new() { TargetSpeed = Speed.Value, Immediate = true, SmoothTime = 0f };
+            //    MessageDispatcher.Instance.DispatchMsg("SetSpeed", 0f, string.Empty, entity.GetId(), setSpeedData);
+            //}
+            //else
+            //{
+            //    MessageDispatcher.Instance.DispatchMsg("SetSpeedTarget", 0f, string.Empty, entity.GetId(), data);
+            //}
             Finish();
         }
 

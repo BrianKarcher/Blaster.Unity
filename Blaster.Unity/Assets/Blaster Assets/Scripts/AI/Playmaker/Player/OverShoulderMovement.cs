@@ -76,7 +76,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                 _animationComponent?.SetVerticalSpeed(_physicsComponent.GetVelocity3().y);
 
             var playerRelativeInputDirection = _entity.transform.TransformDirection(new Vector3(axisInput.x, 0, axisInput.y));
-            _physicsComponent.Move(playerRelativeInputDirection.normalized * _physicsComponent.GetPhysicsData().MaxSpeed);
+            //_physicsComponent.Move(playerRelativeInputDirection.normalized * _physicsComponent.GetPhysicsData().MaxSpeed);
+            _physicsComponent.SetVelocity3(playerRelativeInputDirection.normalized * _physicsComponent.GetPhysicsData().MaxSpeed);
         }
 
         private void StopListening(IEntity entity)
