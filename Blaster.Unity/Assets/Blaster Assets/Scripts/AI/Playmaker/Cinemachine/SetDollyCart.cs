@@ -12,10 +12,12 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
         public FsmOwnerDefault gameObject;
 
         public FsmGameObject DollyCart;
+        public DollyCartComponent.CartStartPosition CartStartPosition;
 
         public override void Reset()
         {
             gameObject = null;
+            CartStartPosition = DollyCartComponent.CartStartPosition.Reset;
         }
 
         public override void OnEnter()
@@ -28,7 +30,11 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 
             var entity = base.GetEntityBase(go);
             var dollyComponent = entity.Components.GetComponent<DollyCartComponent>();
-            dollyComponent.SetDollyCart(DollyCart.Value);
+            dollyComponent.SetDollyCart(new DollyCartComponent.SetJointData()
+            {
+                Joint = DollyCart.Value,
+                CartStartPosition = CartStartPosition
+            });
             Finish();
         }
 

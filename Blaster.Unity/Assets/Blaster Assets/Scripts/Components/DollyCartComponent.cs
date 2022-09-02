@@ -58,7 +58,13 @@ namespace Assets.Blaster_Assets.Scripts.Components
 
         public Quaternion GetWorldRotation() => this.transform.rotation;
 
-        public void SetPosition(float pos) => _cinemachineDollyCart.m_Position = pos;
+        public void SetPosition(float pos)
+        {
+            float standardizedUnit = _cinemachineDollyCart.m_Path.StandardizeUnit(pos, _cinemachineDollyCart.m_PositionUnits);
+            _cinemachineDollyCart.m_Position = _cinemachineDollyCart.m_Path.FromPathNativeUnits(standardizedUnit, _cinemachineDollyCart.m_PositionUnits);
+            base.transform.position = _cinemachineDollyCart.m_Path.EvaluatePositionAtUnit(_cinemachineDollyCart.m_Position, _cinemachineDollyCart.m_PositionUnits);
+            base.transform.rotation = _cinemachineDollyCart.m_Path.EvaluateOrientationAtUnit(_cinemachineDollyCart.m_Position, _cinemachineDollyCart.m_PositionUnits);
+        }
 
         public void Reset() => this._cinemachineDollyCart.m_Position = 0;
 
