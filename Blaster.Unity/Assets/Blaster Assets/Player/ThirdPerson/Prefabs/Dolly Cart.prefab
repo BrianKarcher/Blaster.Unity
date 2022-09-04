@@ -76,6 +76,8 @@ GameObject:
   - component: {fileID: 4851965367688820524}
   - component: {fileID: 4851965367688820525}
   - component: {fileID: 124991980789547146}
+  - component: {fileID: 7754752180204939850}
+  - component: {fileID: 1290289756062005807}
   m_Layer: 8
   m_Name: Dolly Cart
   m_TagString: Cart
@@ -226,7 +228,6 @@ MonoBehaviour:
   _componentRepository: {fileID: 4851965367688820526}
   componentName: 
   _speedChangeType: 2
-  dollyCart: {fileID: 0}
   _dollyJoint: {fileID: 4851965367688820523}
   enemyTag: Enemy
   enemyCheckOffset: {x: 0, y: 0, z: 2}
@@ -234,9 +235,6 @@ MonoBehaviour:
   yaw: 0
   pitch: 0
   roll: 0
-  oldyaw: 0
-  oldpitch: 0
-  oldroll: 0
 --- !u!114 &124991980789547146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +376,114 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: fe6b0cf852ad08b4694225bdb0f3b36a, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!143 &7754752180204939850
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851965367688820523}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.58
+  m_Radius: 0.33
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.78, z: 0}
+--- !u!114 &1290289756062005807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851965367688820523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1690866350, guid: da931a18600ca9243bdb9b0c3530e8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 4851965367688820526}
+  componentName: 
+  _controller:
+    _isGrounded: 0
+    _physicsData:
+      _turnMode: 0
+      _autoTurn: 0
+      _autoApplyToAnimator: 1
+      _steeringData:
+        _waypointSeekDistSq: 0.1
+        _separationWeight: 1
+        _alignmentWeight: 1
+        _cohesionWeight: 2
+        _obstacleAvoidanceWeight: 10
+        _wallAvoidanceWeight: 10
+        _wanderWeight: 1
+        _seekWeight: 1
+        _fleeWeight: 1
+        _arriveWeight: 1
+        _pursuitWeight: 1
+        _offsetPursuitWeight: 1
+        _interposeWeight: 1
+        _hideWeight: 1
+        _evadeWeight: 1
+        _followPathWeight: 1
+        _radiusClampWeight: 0.5
+        _lateralWaveWeight: 1
+        _feelerOffset: 0
+        _boundingRadius: 0
+        _wanderRad: 1.2
+        _wanderDist: 3
+        _wanderJitterPerSec: 10
+        _wallDetectionFeelerLength: 2
+      _showDebug: 0
+      _gravityVector: {x: 0, y: -9.8, z: 0}
+      _applyGravity: 1
+      _movingTurnSpeed: 360
+      _stationaryTurnSpeed: 180
+      _initialVelocity: {x: 0, y: 0, z: 0}
+      _size: {x: 0, y: 0, z: 0}
+      _velocity: {x: 0, y: 0, z: 0}
+      _jumpVelocity: {x: 0, y: 19.8, z: 0}
+      _offset: {x: 0, y: 0, z: 0}
+      _mass: 1
+      _maxSpeed: 6
+      _maxSpeedMultiplier: 1
+      _maxDistanceToTarget: 0
+      _directionRotate: 0
+      _boundingRadius: 1
+      _maxForce: 6
+      _forceMultiplier: 1
+      _friction: 0
+      _maxTurnRate: 6
+      _foot: {fileID: 0}
+      _fieldOfView: 60
+      _lineOfSight: 20
+      LOSSquared: 0
+      _dragForce: 0
+      _avoidLayersMask:
+        serializedVersion: 2
+        m_Bits: 0
+      _groundCheckDistance: 0.4
+      _groundLayer:
+        serializedVersion: 2
+        m_Bits: 0
+      _terrainLayer:
+        serializedVersion: 2
+        m_Bits: 0
+  _applySpeedLimit: 0
+  _steering:
+    _drawDebug: 0
+    ProjectOnGround: 1
+    Target: {x: 0, y: 0, z: 0}
+    Offset: {x: 0, y: 0, z: 0}
+    SteeringMode: 
+    _steeringForce: {x: 0, y: 0, z: 0}
+  _isEnabled: 1
+  _animForwardSpeedVar: 
 --- !u!114 &4576543498185804320
 MonoBehaviour:
   m_ObjectHideFlags: 0
