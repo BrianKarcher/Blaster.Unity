@@ -1,5 +1,5 @@
 ﻿using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
+using static BlueOrb.Controller.DollyCartJointComponent;
 using BlueOrb.Controller;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
@@ -12,12 +12,12 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
         public FsmOwnerDefault gameObject;
 
         public FsmGameObject DollyCart;
-        public DollyCartComponent.CartStartPosition CartStartPosition;
+        public CartStartPosition CartStartPosition;
 
         public override void Reset()
         {
             gameObject = null;
-            CartStartPosition = DollyCartComponent.CartStartPosition.Reset;
+            CartStartPosition = CartStartPosition.Reset;
         }
 
         public override void OnEnter()
@@ -29,8 +29,8 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
             }
 
             var entity = base.GetEntityBase(go);
-            var dollyComponent = entity.Components.GetComponent<DollyCartComponent>();
-            dollyComponent.SetDollyCart(new DollyCartComponent.SetJointData()
+            var dollyComponent = entity.Components.GetComponent<DollyCartJointComponent>();
+            dollyComponent.SetDollyCart(new SetJointData()
             {
                 Joint = DollyCart.Value,
                 CartStartPosition = CartStartPosition

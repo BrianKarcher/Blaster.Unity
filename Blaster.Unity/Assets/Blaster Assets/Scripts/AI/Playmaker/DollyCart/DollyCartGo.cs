@@ -3,6 +3,9 @@ using HutongGames.PlayMaker;
 using BlueOrb.Controller;
 using UnityEngine;
 using Tooltip = HutongGames.PlayMaker.TooltipAttribute;
+using BlueOrb.Messaging;
+using BlueOrb.Common.Container;
+using Assets.Blaster_Assets.Scripts.Components;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 {
@@ -10,6 +13,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
     [Tooltip("Dolly cart driving!.")]
     public class DollyCartGo : BasePlayMakerAction
     {
+        private const string StopCartTimerMessage = "StopCartTimerMessage";
+
         [RequiredField]
         public FsmOwnerDefault gameObject;
 
@@ -19,10 +24,15 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
         public FsmEvent EnemyCollision;
         public FsmEvent Idle;
+        public FsmEvent TimerBrake;
+        public FsmFloat StopTime;
 
         private DollyCartComponent dollyCart;
         //private int layerMask;
         private Collider[] colliders = new Collider[20];
+
+        private long stopMessageTimerId;
+        private IEntity entity;
 
         public override void Reset()
         {
@@ -44,40 +54,42 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
                 return;
             }
 
-            var entity = base.GetEntityBase(go);
+            this.entity = base.GetEntityBase(go);
             dollyCart ??= entity.GetComponent<DollyCartComponent>();
-            if (!dollyCart.HasCart)
-            {
-                Fsm.Event(Idle);
-            }
+            //if (!dollyCart.HasCart)
+            //{
+            //    Fsm.Event(Idle);
+            //}
 
             //layerMask = ActionHelpers.LayerArrayToLayerMask(Layer, false);
             dollyCart.StartAcceleration(dollyCart.TargetSpeed, dollyCart.SmoothTime);
+            StartListening(this.entity);
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+        }
+
+        public void StartListening(IEntity entity)
+        {
+            this.stopMessageTimerId = MessageDispatcher.Instance.StartListening(StopCartTimerMessage, entity.GetId(), (data) =>
+            {
+                float time = (float)data.ExtraInfo;
+                StopTime.Value = time;
+                Fsm.Event(TimerBrake);
+            });
+        }
+
+        public void StopListening()
+        {
+            MessageDispatcher.Instance.StopListening(StopCartTimerMessage, this.entity.GetId(), this.stopMessageTimerId);
         }
 
         public override void OnFixedUpdate()
         {
             base.OnFixedUpdate();
-            if (CheckEnemyCollision())
-            {
-                Fsm.Event(EnemyCollision);
-                return;
-            }
             dollyCart.ProcessDollyCartSpeedChange();
-        }
-
-        private bool CheckEnemyCollision()
-        {
-            int count = UnityEngine.Physics.OverlapBoxNonAlloc(dollyCart.transform.TransformPoint(dollyCart.EnemyCheckOffset),
-                dollyCart.EnemyCheckHalfExtents, colliders, Quaternion.identity);
-            for (int i = 0; i < count; i++)
-            {
-                if (this.colliders[i].CompareTag(dollyCart.EnemyTag))
-                {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }

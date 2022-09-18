@@ -1,11 +1,13 @@
-﻿using BlueOrb.Controller.DollyCart;
+﻿using BlueOrb.Common.Components;
+using BlueOrb.Controller.DollyCart;
 using Cinemachine;
 using UnityEngine;
+using static BlueOrb.Controller.DollyCartJointComponent;
 
 namespace Assets.Blaster_Assets.Scripts.Components
 {
     [AddComponentMenu("BlueOrb/Components/Dolly Cart Component")]
-    public class DollyCartComponent : MonoBehaviour, IDollyCart
+    public class DollyCartComponent : ComponentBase<DollyCartComponent>, IDollyCart
     {
         [SerializeField]
         private CinemachineDollyCart _cinemachineDollyCart;
@@ -41,10 +43,13 @@ namespace Assets.Blaster_Assets.Scripts.Components
 
         public float GetSpeed() => _cinemachineDollyCart.m_Speed;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _cinemachineDollyCart = GetComponent<CinemachineDollyCart>();
         }
+
+        public override string GetId() => GetComponentRepository().GetId();
 
         public void SetSpeed(float speed)
         {
@@ -66,7 +71,7 @@ namespace Assets.Blaster_Assets.Scripts.Components
             base.transform.rotation = _cinemachineDollyCart.m_Path.EvaluateOrientationAtUnit(_cinemachineDollyCart.m_Position, _cinemachineDollyCart.m_PositionUnits);
         }
 
-        public void Reset() => this._cinemachineDollyCart.m_Position = 0;
+        public void ResetPosition() => this._cinemachineDollyCart.m_Position = 0;
 
         public void Stop()
         {

@@ -1,7 +1,7 @@
 ﻿using HutongGames.PlayMaker;
 using BlueOrb.Messaging;
-using static BlueOrb.Controller.DollyCartComponent;
 using System;
+using static BlueOrb.Controller.DollyCartJointComponent;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 {

@@ -1,5 +1,6 @@
 ﻿using HutongGames.PlayMaker;
 using BlueOrb.Controller;
+using Assets.Blaster_Assets.Scripts.Components;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 {

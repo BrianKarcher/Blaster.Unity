@@ -1,4 +1,4 @@
-﻿using BlueOrb.Controller;
+﻿using Assets.Blaster_Assets.Scripts.Components;
 using BlueOrb.Scripts.AI.Playmaker;
 using HutongGames.PlayMaker;
 using UnityEngine;
@@ -12,7 +12,6 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         [RequiredField]
         public FsmOwnerDefault gameObject;
         private DollyCartComponent dollyCart;
-        private Collider[] colliders = new Collider[20];
         public FsmEvent Go;
 
         public override void Reset()
@@ -35,42 +34,13 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
             }
 
             var entity = base.GetEntityBase(go);
-            if (dollyCart == null)
-            {
-                dollyCart = entity.GetComponent<DollyCartComponent>();
-            }
+            dollyCart ??= entity.GetComponent<DollyCartComponent>();
             if (dollyCart == null)
             {
                 Debug.LogError($"Could not locate Dolly Cart Component");
                 return;
             }
-        }
-
-        public override void OnFixedUpdate()
-        {
-            base.OnFixedUpdate();
-            if (dollyCart == null)
-            {
-                return;
-            }
-            if (!CheckEnemyCollision() && dollyCart.HasCart)
-            {
-                Fsm.Event(Go);
-            }
-        }
-
-        private bool CheckEnemyCollision()
-        {
-            int count = UnityEngine.Physics.OverlapBoxNonAlloc(dollyCart.transform.TransformPoint(dollyCart.EnemyCheckOffset),
-                dollyCart.EnemyCheckHalfExtents, colliders, Quaternion.identity);
-            for (int i = 0; i < count; i++)
-            {
-                if (this.colliders[i].CompareTag(dollyCart.EnemyTag))
-                {
-                    return true;
-                }
-            }
-            return false;
+            this.dollyCart.Stop();
         }
     }
 }

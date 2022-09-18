@@ -1,8 +1,8 @@
 ﻿using BlueOrb.Scripts.AI.Playmaker;
 using HutongGames.PlayMaker;
-using BlueOrb.Controller;
 using UnityEngine;
 using Tooltip = HutongGames.PlayMaker.TooltipAttribute;
+using Assets.Blaster_Assets.Scripts.Components;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 {
