@@ -5,13 +5,12 @@ using UnityEngine;
 using Tooltip = HutongGames.PlayMaker.TooltipAttribute;
 using BlueOrb.Messaging;
 using BlueOrb.Common.Container;
-using Assets.Blaster_Assets.Scripts.Components;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 {
-    [ActionCategory("BlueOrb.DollyCart")]
-    [Tooltip("Dolly cart driving!.")]
-    public class DollyCartGo : BasePlayMakerAction
+    [ActionCategory("BlueOrb.DollyCartJoint")]
+    [Tooltip("Dolly cart driving!")]
+    public class DollyCartJointGo : BasePlayMakerAction
     {
         private const string StopCartTimerMessage = "StopCartTimerMessage";
 
@@ -27,7 +26,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public FsmEvent TimerBrake;
         public FsmFloat StopTime;
 
-        private DollyCartComponent dollyCart;
+        private DollyCartJointComponent dollyCart;
         //private int layerMask;
         private Collider[] colliders = new Collider[20];
 
@@ -47,7 +46,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
         public override void OnEnter()
         {
-            Debug.Log("DollyCartGo Entered");
+            Debug.Log("DollyCartJointGo Entered");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
@@ -55,11 +54,11 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
             }
 
             this.entity = base.GetEntityBase(go);
-            dollyCart ??= entity.GetComponent<DollyCartComponent>();
-            //if (!dollyCart.HasCart)
-            //{
-            //    Fsm.Event(Idle);
-            //}
+            dollyCart ??= entity.GetComponent<DollyCartJointComponent>();
+            if (!dollyCart.HasCart)
+            {
+                Fsm.Event(Idle);
+            }
 
             //layerMask = ActionHelpers.LayerArrayToLayerMask(Layer, false);
             dollyCart.StartAcceleration(dollyCart.TargetSpeed, dollyCart.SmoothTime);
@@ -69,7 +68,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public override void OnExit()
         {
             base.OnExit();
-            Debug.Log("DollyCartGo Exited");
+            Debug.Log("DollyCartJointGo Exited");
         }
 
         public void StartListening(IEntity entity)
@@ -90,7 +89,25 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public override void OnFixedUpdate()
         {
             base.OnFixedUpdate();
-            dollyCart.ProcessDollyCartSpeedChange();
+            if (CheckEnemyCollision())
+            {
+                Fsm.Event(EnemyCollision);
+                return;
+            }
+        }
+
+        private bool CheckEnemyCollision()
+        {
+            int count = UnityEngine.Physics.OverlapBoxNonAlloc(dollyCart.transform.TransformPoint(dollyCart.EnemyCheckOffset),
+                dollyCart.EnemyCheckHalfExtents, colliders, Quaternion.identity);
+            for (int i = 0; i < count; i++)
+            {
+                if (this.colliders[i].CompareTag(dollyCart.EnemyTag))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

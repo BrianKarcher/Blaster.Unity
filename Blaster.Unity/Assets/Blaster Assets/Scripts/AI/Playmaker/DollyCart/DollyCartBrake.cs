@@ -7,8 +7,8 @@ using Assets.Blaster_Assets.Scripts.Components;
 namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 {
     [ActionCategory("BlueOrb.DollyCart")]
-    [Tooltip("Enemy in the way, brake cart to zero.")]
-    public class DollyCartBrakeForEnemy : BasePlayMakerAction
+    [Tooltip("Brake cart to zero.")]
+    public class DollyCartBrake : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
@@ -28,7 +28,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
         public override void OnEnter()
         {
-            Debug.Log("DollyCartBrakeForEnemy Entered");
+            Debug.Log("DollyCartBrake Entered");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
@@ -52,7 +52,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public override void OnExit()
         {
             base.OnExit();
-            Debug.Log("DollyCartBrakeForEnemy Exited");
+            Debug.Log("DollyCartBrake Exited");
             dollyCart.SetTargetSpeed(oldTargetSpeed);
         }
 

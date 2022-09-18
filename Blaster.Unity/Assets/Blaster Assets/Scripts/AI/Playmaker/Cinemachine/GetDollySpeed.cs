@@ -1,5 +1,6 @@
 ﻿using HutongGames.PlayMaker;
 using BlueOrb.Controller;
+using Assets.Blaster_Assets.Scripts.Components;
 
 namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
 {
@@ -15,7 +16,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
         //private CinemachineDollyCart _dollyCart;
 
         //public AddLayerWeightLerpAtom _atom;
-        private DollyCartComponent _dolly;
+        private DollyCartJointComponent _dolly;
 
         public override void OnEnter()
         {
@@ -26,7 +27,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Cinemachine
             }
 
             var entity = base.GetEntityBase(go);
-            _dolly = entity.Components.GetComponent<DollyCartComponent>();
+            _dolly = entity.Components.GetComponent<DollyCartJointComponent>();
             Tick();
             if (!everyFrame)
                 Finish();

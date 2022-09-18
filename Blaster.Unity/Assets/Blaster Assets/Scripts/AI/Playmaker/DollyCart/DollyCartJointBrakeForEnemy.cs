@@ -1,18 +1,18 @@
 ﻿using BlueOrb.Scripts.AI.Playmaker;
 using HutongGames.PlayMaker;
+using BlueOrb.Controller;
 using UnityEngine;
 using Tooltip = HutongGames.PlayMaker.TooltipAttribute;
-using Assets.Blaster_Assets.Scripts.Components;
 
 namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 {
-    [ActionCategory("BlueOrb.DollyCart")]
+    [ActionCategory("BlueOrb.DollyCartJoint")]
     [Tooltip("Enemy in the way, brake cart to zero.")]
-    public class DollyCartBrakeForEnemy : BasePlayMakerAction
+    public class DollyCartJointBrakeForEnemy : BasePlayMakerAction
     {
         [RequiredField]
         public FsmOwnerDefault gameObject;
-        private DollyCartComponent dollyCart;
+        private DollyCartJointComponent dollyCart;
         private float oldTargetSpeed;
 
         public override void Reset()
@@ -28,7 +28,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
         public override void OnEnter()
         {
-            Debug.Log("DollyCartBrakeForEnemy Entered");
+            Debug.Log("DollyCartJointBrakeForEnemy Entered");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
@@ -36,10 +36,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
             }
 
             var entity = base.GetEntityBase(go);
-            if (dollyCart == null)
-            {
-                dollyCart = entity.GetComponent<DollyCartComponent>();
-            }
+            dollyCart ??= entity.GetComponent<DollyCartJointComponent>();
             if (dollyCart == null)
             {
                 Debug.LogError($"Could not locate Dolly Cart Component");
@@ -52,7 +49,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public override void OnExit()
         {
             base.OnExit();
-            Debug.Log("DollyCartBrakeForEnemy Exited");
+            Debug.Log("DollyCartJointBrakeForEnemy Exited");
             dollyCart.SetTargetSpeed(oldTargetSpeed);
         }
 
@@ -63,7 +60,6 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
             {
                 return;
             }
-            dollyCart.ProcessDollyCartSpeedChange();
             if (dollyCart.Speed < 0.001f)
             {
                 dollyCart.Stop();
