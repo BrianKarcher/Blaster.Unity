@@ -27,6 +27,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
         public override void OnEnter()
         {
+            Debug.Log("DollyCartStopped Entered");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
@@ -41,6 +42,12 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
                 return;
             }
             this.dollyCart.Stop();
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            Debug.Log("DollyCartStopped Exited");
         }
     }
 }

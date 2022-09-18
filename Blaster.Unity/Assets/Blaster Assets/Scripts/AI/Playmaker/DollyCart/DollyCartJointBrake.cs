@@ -28,7 +28,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
         public override void OnEnter()
         {
-            Debug.Log("Entering DollyCartBrakeForEnemy");
+            Debug.Log("DollyCartJointBrake Entered");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
@@ -49,6 +49,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public override void OnExit()
         {
             base.OnExit();
+            Debug.Log("DollyCartJointBrake Exited");
             dollyCart.SetTargetSpeed(oldTargetSpeed);
         }
 

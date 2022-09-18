@@ -49,7 +49,7 @@ namespace Assets.Blaster_Assets.Scripts.Components
             _cinemachineDollyCart = GetComponent<CinemachineDollyCart>();
         }
 
-        public override string GetId() => GetComponentRepository().GetId();
+        public override string GetId() => GetComponentRepository()?.GetId();
 
         public void SetSpeed(float speed)
         {

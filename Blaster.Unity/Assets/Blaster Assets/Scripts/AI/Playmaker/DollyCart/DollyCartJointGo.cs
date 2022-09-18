@@ -46,7 +46,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
         public override void OnEnter()
         {
-            Debug.Log("Entering DollyCartGo");
+            Debug.Log("DollyCartJointGo Entered");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
@@ -68,6 +68,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public override void OnExit()
         {
             base.OnExit();
+            Debug.Log("DollyCartJointGo Exited");
         }
 
         public void StartListening(IEntity entity)

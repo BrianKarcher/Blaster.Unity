@@ -28,6 +28,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
 
         public override void OnEnter()
         {
+            Debug.Log("DollyCartJointStopped Entered");
             var go = Fsm.GetOwnerDefaultTarget(gameObject);
             if (go == null)
             {
@@ -41,6 +42,12 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
                 Debug.LogError($"Could not locate Dolly Cart Component");
                 return;
             }
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            Debug.Log("DollyCartJointStopped Exited");
         }
 
         public override void OnFixedUpdate()
