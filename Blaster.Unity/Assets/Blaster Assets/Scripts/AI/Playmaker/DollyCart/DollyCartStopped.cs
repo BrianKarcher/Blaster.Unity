@@ -22,7 +22,6 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public override void OnPreprocess()
         {
             base.OnPreprocess();
-            Fsm.HandleFixedUpdate = true;
         }
 
         public override void OnEnter()
