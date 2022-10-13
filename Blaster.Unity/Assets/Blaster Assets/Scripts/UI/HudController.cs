@@ -19,6 +19,7 @@ namespace Assets.BlueOrb.Scripts.UI
         [SerializeField] private TextMeshProUGUI multiplierText;
         [SerializeField] private TextMeshProUGUI consecutiveHitsText;
         [SerializeField] private GameObject notificationObject;
+        [SerializeField] private GameObject alertObject;
         //[SerializeField] private string _changeProjectileMessage;
         [SerializeField] private Color[] StartTimerColors;
 
@@ -36,6 +37,9 @@ namespace Assets.BlueOrb.Scripts.UI
 
         [SerializeField]
         private string notificationHudMessage = "Notification";
+
+        [SerializeField]
+        private string alertHudMessage = "Alert";
 
         private const string SetMultiplierMessage = "SetMultiplier";
         private const string SetConsecutiveHitsMessage = "SetConsecutiveHits";
@@ -55,11 +59,13 @@ namespace Assets.BlueOrb.Scripts.UI
         private const string ControllerName = "Hud Controller";
 
         private TextMeshProUGUI notificationText;
+        private TextMeshProUGUI alertText;
 
         protected override void Awake()
         {
             base.Awake();
             this.notificationText = notificationObject.GetComponent<TextMeshProUGUI>();
+            this.alertText = alertObject.GetComponent<TextMeshProUGUI>();
         }
 
         public override void StartListening()
@@ -152,6 +158,9 @@ namespace Assets.BlueOrb.Scripts.UI
                 iTween.ValueTo(gameObject, iTween.Hash("name", NotificationAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetNotificationAlpha"));
             });
 
+            MessageDispatcher.Instance.StartListening(this.alertHudMessage, ControllerName, (data) =>
+                CreateAlert((string)data.ExtraInfo));
+
             MessageDispatcher.Instance.StartListening(SetMultiplierMessage, ControllerName, (data) =>
             {
                 string text = (string)data.ExtraInfo;
@@ -173,12 +182,21 @@ namespace Assets.BlueOrb.Scripts.UI
             });
         }
 
+        public void CreateAlert(string text)
+        {
+            this.alertText?.SetText(text);
+            iTween.ValueTo(gameObject, iTween.Hash("name", AlertAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetAlertAlpha"));
+        }
+
         public GameObject CreateBuffUI()
             => GameObject.Instantiate(this.buffPrefab, this.buffScrollRect.content.transform);
 
         public void SetNotificationAlpha(float alpha) => this.notificationText.alpha = alpha;
 
+        public void SetAlertAlpha(float alpha) => this.alertText.alpha = alpha;
+
         private string TweenName => $"{this.GetInstanceID()}_sethptween";
         private string NotificationAlhpaTweenName => $"{this.GetInstanceID()}_notificationalphatween";
+        private string AlertAlhpaTweenName => $"{this.GetInstanceID()}_alertalphatween";
     }
 }
