@@ -12,7 +12,6 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
         public FsmOwnerDefault gameObject;
         private DollyCartJointComponent dollyCart;
         private float endTime;
-        private float oldTargetSpeed;
 
         public override void Reset()
         {
@@ -37,14 +36,13 @@ namespace BlueOrb.Scripts.AI.PlayMaker.DollyCart
             }
 
             this.endTime = Time.time + this.dollyCart.StopTime;
-            oldTargetSpeed = dollyCart.TargetSpeed;
-            dollyCart.Brake();
+            dollyCart.SetBrake(true);
         }
 
         public override void OnExit()
         {
             base.OnExit();
-            dollyCart.SetTargetSpeed(oldTargetSpeed);
+            dollyCart.SetBrake(false);
         }
 
         public override void OnUpdate()

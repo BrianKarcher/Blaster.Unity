@@ -41,6 +41,9 @@ namespace Assets.Blaster_Assets.Scripts.Components
         [SerializeField]
         private float emergencyBrakeTime = 0.5f;
 
+        [SerializeField]
+        private bool brake = false;
+
         public float GetSpeed() => _cinemachineDollyCart.m_Speed;
 
         protected override void Awake()
@@ -97,10 +100,15 @@ namespace Assets.Blaster_Assets.Scripts.Components
             }
         }
 
-        public void Brake() => StartAcceleration(0f, this.emergencyBrakeTime);
+        public void SetBrake(bool brake)
+        {
+            this.brake = brake;
+            this._smoothTime = this.emergencyBrakeTime;
+        }
 
         public void ProcessDollyCartSpeedChange()
         {
+            float targetSpeed = CalculateTargetSpeed();
             switch (_speedChangeType)
             {
                 case LerpType.Lerp:
@@ -129,6 +137,11 @@ namespace Assets.Blaster_Assets.Scripts.Components
                 updatingSpeed = false;
             }
             SetSpeed(this.speed);
+        }
+
+        public float CalculateTargetSpeed()
+        {
+            return this.brake ? 0f : this.targetSpeed;
         }
     }
 }
