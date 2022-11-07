@@ -230,11 +230,12 @@ MonoBehaviour:
   _speedChangeType: 2
   _dollyJoint: {fileID: 4851965367688820523}
   enemyTag: Enemy
-  enemyCheckOffset: {x: 0, y: 0, z: 2}
-  enemyCheckHalfExtents: {x: 0.5, y: 1, z: 1}
+  enemyCheckOffset: {x: 0, y: 0.5, z: 3}
+  enemyCheckHalfExtents: {x: 3, y: 2, z: 3}
   yaw: 0
   pitch: 0
   roll: 0
+  isCorrecting: 0
 --- !u!114 &124991980789547146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +475,7 @@ MonoBehaviour:
       _terrainLayer:
         serializedVersion: 2
         m_Bits: 0
+  startOnGround: 0
   _applySpeedLimit: 0
   _steering:
     _drawDebug: 0
