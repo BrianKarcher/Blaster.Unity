@@ -194,7 +194,7 @@ MonoBehaviour:
   _addToEntityContainer: 1
   _target: {fileID: 0}
   _defaultTargetIsPlayer: 1
-  _height: 0
+  _height: 1.6
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
   customId: 
@@ -232,6 +232,10 @@ MonoBehaviour:
   enemyTag: Enemy
   enemyCheckOffset: {x: 0, y: 0.5, z: 3}
   enemyCheckHalfExtents: {x: 3, y: 2, z: 3}
+  enemyPushRadius: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
   yaw: 0
   pitch: 0
   roll: 0
@@ -411,6 +415,7 @@ MonoBehaviour:
   componentName: 
   _controller:
     _isGrounded: 0
+    GroundNormal: {x: 0, y: -1, z: 0}
     _physicsData:
       _turnMode: 0
       _autoTurn: 0
