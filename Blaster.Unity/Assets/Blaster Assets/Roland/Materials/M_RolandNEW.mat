@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_RolandNEW
-  m_Shader: {fileID: 4800000, guid: d693a01606767a34dba9d887a9ed8211, type: 3}
+  m_Shader: {fileID: 4800000, guid: 7af7228bb16f577438be72a6e191a434, type: 3}
   m_ShaderKeywords: FRESNEL_ON _DISABLE_SSR _NORMALMAP_TANGENT_SPACE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -83,6 +83,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveMask:
+        m_Texture: {fileID: 2800000, guid: e28dc97a9541e3642a48c0e3886688c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortionVectorMap:
@@ -161,6 +165,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture0:
+        m_Texture: {fileID: 2800000, guid: 64e7766099ad46747a07014e44d0aea1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -212,6 +220,8 @@ Material:
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
+    - _DissolveDistorsionAmount: 0.08
+    - _DissolveIntensity: 10
     - _Distance: 0.01
     - _DistortionBlendMode: 0
     - _DistortionBlurBlendMode: 0
@@ -268,6 +278,7 @@ Material:
     - _NormalMapSpace: 0
     - _NormalScale: 1
     - _OcclusionStrength: 1
+    - _OpacityMask: -1
     - _OutlineDistance: 0.07
     - _OutlineWidth: 0.058
     - _PPDLodThreshold: 5
@@ -276,6 +287,7 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _Parallax: 0.02
+    - _RampDissolveScale: 3
     - _ReceivesSSR: 0
     - _RefractionModel: 0
     - _RenderQueueType: 1
@@ -352,6 +364,8 @@ Material:
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
+    - _DissolveColor: {r: 1, g: 0, b: 0, a: 0}
+    - _DissolveDistorsionSpeed: {r: 1, g: -1, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
@@ -371,5 +385,6 @@ Material:
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
+    - _VTInfoBlock: {r: 0, g: 0, b: 0, a: 0}
     - vInput: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
