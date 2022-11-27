@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 1435806190122842274}
   - component: {fileID: 1141605929619731127}
   - component: {fileID: 6818227861247268279}
+  - component: {fileID: 3336713134227664091}
   m_Layer: 9
   m_Name: Chief Smart Horde with Charge Attack
   m_TagString: Enemy
@@ -549,6 +550,23 @@ MonoBehaviour:
     _steeringForce: {x: 0, y: 0, z: 0}
   _isEnabled: 1
   _animForwardSpeedVar: 
+--- !u!114 &3336713134227664091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714508596768723161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 989605596, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
+  lifetimeSeconds: 60
+  maxDistanceFromPlayer: 300
+  FovCheckDegrees: 60
 --- !u!114 &1637082103
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 1554424433443792315}
   - component: {fileID: 1554424433443792312}
   - component: {fileID: 7858693960252311667}
+  - component: {fileID: 6630677117562903529}
   m_Layer: 9
   m_Name: Smart Horde Enemy With Bomb
   m_TagString: Enemy
@@ -360,9 +361,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addToEntityContainer: 1
   _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
   _height: 1.8
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+  customId: 
 --- !u!54 &1554424433443792313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -395,8 +398,8 @@ MonoBehaviour:
   componentName: 
   _controller:
     _isGrounded: 0
+    GroundNormal: {x: 0, y: -1, z: 0}
     _physicsData:
-      _instantForce: 0
       _turnMode: 0
       _autoTurn: 1
       _autoApplyToAnimator: 0
@@ -418,6 +421,7 @@ MonoBehaviour:
         _evadeWeight: 1
         _followPathWeight: 1
         _radiusClampWeight: 0.5
+        _lateralWaveWeight: 1
         _feelerOffset: 0
         _boundingRadius: 0
         _wanderRad: 1.2
@@ -425,7 +429,6 @@ MonoBehaviour:
         _wanderJitterPerSec: 10
         _wallDetectionFeelerLength: 2
       _showDebug: 0
-      _gravity: -9.8
       _gravityVector: {x: 0, y: -9.8, z: 0}
       _applyGravity: 1
       _movingTurnSpeed: 360
@@ -501,20 +504,23 @@ MonoBehaviour:
   _entityStats:
     _maxHP: 3
     _currentHP: 3
-    _maxSP: 0
-    _currentSP: 0
-    _maxStamina: 0
-    _currentStamina: 0
-    _actionStaminas: []
-    _staminaRefreshAmount: 0
-    _staminaRefreshDelay: 0
-    _physicalAttackPower: 0
-    _magicalAttackPower: 0
-    _physicalDefense: 0
-    _magicalDefense: 0
-    _experience: 0
-    _level: 0
-    IsHiding: 0
+--- !u!114 &6630677117562903529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554424433443792316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 989605596, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
+  lifetimeSeconds: 60
+  maxDistanceFromPlayer: 300
+  FovCheckDegrees: 60
 --- !u!1 &1554424433658027046
 GameObject:
   m_ObjectHideFlags: 0
