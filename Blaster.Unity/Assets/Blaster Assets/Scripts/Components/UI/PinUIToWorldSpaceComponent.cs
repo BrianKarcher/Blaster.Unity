@@ -9,10 +9,18 @@ namespace Assets.Blaster_Assets.Scripts.Components
     {
         [SerializeField]
         private Vector3 _worldPosition;
+        private TextMeshProUGUI text;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            text = GetComponent<TextMeshProUGUI>();
+        }
 
         private void Update()
         {
             var pos = UnityEngine.Camera.main.WorldToScreenPoint(_worldPosition);
+            this.text.enabled = pos.z > 0;
             transform.position = pos;
         }
 
