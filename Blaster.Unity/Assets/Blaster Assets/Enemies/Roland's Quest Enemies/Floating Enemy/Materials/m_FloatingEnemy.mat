@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: m_FloatingEnemy
-  m_Shader: {fileID: 4800000, guid: 489a182ffc8178c46a67f3c439956e1a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 7af7228bb16f577438be72a6e191a434, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -84,6 +84,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture0:
+        m_Texture: {fileID: 2800000, guid: 64e7766099ad46747a07014e44d0aea1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ToonRamp:
         m_Texture: {fileID: 2800000, guid: 6a57d8cd2b0d2524084c66d857ca9ced, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -96,32 +100,42 @@ Material:
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _Blend: 0
+    - _Brightness: 1
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
+    - _DissolveDistorsionAmount: 0.08
     - _DissolveIntensity: 20
     - _Distance: 0.1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _GetDamaged: 0
     - _Gloss: 0.386
     - _GlossMapScale: 0
     - _GlossMultiplier: 1
     - _Glossiness: 0
+    - _GlossinessMultiplier: 1
     - _GlossyReflections: 0
+    - _Inmunity: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OpacityMask: -0.6
-    - _OutlineWidth: 0.0019
+    - _OpacityMask: -1
+    - _OutlineDistance: 0
+    - _OutlineWidth: 0.019
     - _QueueOffset: 0
     - _RampDissolveScale: 10
     - _ReceiveShadows: 1
     - _RimOffset: 1
-    - _RimPower: 0.341
+    - _RimPower: 1
+    - _ShadowThreshold: 0
+    - _ShadowToony: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecIntensity: 1
     - _SpecTransition: 0.492
     - _SpecularHighlights: 1
+    - _SpecularIntensity: 1
+    - _SpecularTransition: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
@@ -133,7 +147,11 @@ Material:
     - _DissolveDistorsionSpeed: {r: 1, g: -1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _RimTint: {r: 1, g: 1, b: 1, a: 0}
+    - _ShadowTint: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
-    - _Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint: {r: 256, g: 256, b: 256, a: 0}
+    - _VTInfoBlock: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

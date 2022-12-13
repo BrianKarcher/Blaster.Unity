@@ -14,7 +14,7 @@ Shader "BlueOrbGames/DissolveCelShader"
 		_ShadowThreshold("ShadowThreshold", Range( -1 , 1)) = 0
 		_ShadowToony("ShadowToony", Range( 0 , 1)) = 1
 		_Masks("Masks", 2D) = "white" {}
-		_Brightness("Brightness", Range( 0 , 1)) = 0.1
+		_Brightness("Brightness", Range( 0 , 1)) = 1
 		[HDR]_RimColor("RimColor", Color) = (0,0,0,0)
 		_RimPower("RimPower", Range( 1 , 10)) = 1
 		[HDR]_OutlineColor("OutlineColor", Color) = (0,0,0,0)
