@@ -1870,6 +1870,36 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 0f3c5a90c597f2f4cb2ec0314cfebe9a, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!1 &5561187920998560604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2382293351868239699}
+  m_Layer: 0
+  m_Name: BigRockSpawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2382293351868239699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561187920998560604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5789933608142037315}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6322179955466651339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,25 +2134,7 @@ MonoBehaviour:
       boolVariables: []
       stringVariables: []
       vector2Variables: []
-      vector3Variables:
-      - useVariable: 1
-        name: 
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: {x: 0, y: 0, z: 0}
-      - useVariable: 1
-        name: 
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: {x: 0, y: 0, z: 0}
-      - useVariable: 1
-        name: 
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: {x: 0, y: 0, z: 0}
+      vector3Variables: []
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
@@ -2151,6 +2163,18 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 3455089243477437832}
+      - useVariable: 1
+        name: Big Rock Spawnpoint
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 5561187920998560604}
+      - useVariable: 1
+        name: Animator
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 7322318317843611282}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -2158,7 +2182,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -3560,21 +3584,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d061b2803d6aa545bd2c3cb8d26611a, type: 3}
---- !u!4 &696688580582377410 stripped
+--- !u!4 &5789933608142037315 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -2237071899525561343, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7592911084980945859}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &64173231342928308 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7619120052345930359, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7592911084980945859}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7167755283799531991 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8491665657175825900, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
+  m_CorrespondingSourceObject: {fileID: 4109122994558509696, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
     type: 3}
   m_PrefabInstance: {fileID: 7592911084980945859}
   m_PrefabAsset: {fileID: 0}
@@ -3584,9 +3596,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7592911084980945859}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &696688580582377410 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2237071899525561343, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7592911084980945859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7986510629359264808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7592911084980945859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7322318317843611282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7592911084980945859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7167755283799531991 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8491665657175825900, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7592911084980945859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &64173231342928308 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7619120052345930359, guid: 0d061b2803d6aa545bd2c3cb8d26611a,
     type: 3}
   m_PrefabInstance: {fileID: 7592911084980945859}
   m_PrefabAsset: {fileID: 0}
