@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 2572405789342415291}
   - component: {fileID: 2572405789342415292}
   - component: {fileID: 2572405789342415295}
+  - component: {fileID: 1463098105293079603}
   m_Layer: 11
-  m_Name: Enable Trigger
+  m_Name: Enable Split Trigger
   m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2572405789342415290}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
@@ -221,7 +222,9 @@ MonoBehaviour:
         boolValues: 
         stringValues: []
         vector4Values: []
-        objectReferences: []
+        objectReferences:
+        - {fileID: 0}
+        - {fileID: 0}
       enumVariables: []
       categories:
       - 
@@ -235,7 +238,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -270,3 +273,21 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 8d4d46309500bc946ad2b4a5d9e7cdf2, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &1463098105293079603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2572405789342415290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2140911019, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
+  message: ProjectileHit
+  trackSplits:
+  - {fileID: 0}
+  SetDisableTimer: 0
