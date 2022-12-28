@@ -24,7 +24,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 58
+        x: 154
         y: 105
         width: 100
         height: 32
@@ -84,7 +84,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 666
+        x: 762
         y: 320
         width: 100
         height: 32
@@ -279,10 +279,10 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 394
+        x: 490
         y: 232
-        width: 100
-        height: 48
+        width: 109
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -300,6 +300,14 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 0
         toState: Ice Spear Anim
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: FrozenBreath
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Frozen Breath Start
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -366,15 +374,17 @@ MonoBehaviour:
         - 
         - Ice Spear
         - Big Rock
-        byteData: 0000000000000000803f
-        arrayParamSizes: 02000000
+        - FrozenBreath
+        byteData: 000000000000000000000000803f
+        arrayParamSizes: 03000000
         arrayParamTypes:
         - BlueOrb.Scripts.AI.Playmaker.Input.RandomWaitWithEventChance+EventWithWeight
-        customTypeSizes: 0200000002000000
+        customTypeSizes: 020000000200000002000000
         customTypeNames:
         - BlueOrb.Scripts.AI.Playmaker.Input.RandomWaitWithEventChance+EventWithWeight
         - BlueOrb.Scripts.AI.Playmaker.Input.RandomWaitWithEventChance+EventWithWeight
-        paramDataType: 0f0000001700000001000000140000000f0000000f000000010000000c000000280000000200000017000000280000000200000017000000
+        - BlueOrb.Scripts.AI.Playmaker.Input.RandomWaitWithEventChance+EventWithWeight
+        paramDataType: 0f0000001700000001000000140000000f0000000f000000010000000c000000280000000200000017000000280000000200000017000000280000000200000017000000
         paramName:
         - time
         - finishEvent
@@ -390,14 +400,17 @@ MonoBehaviour:
         - 
         - Weight
         - Event
-        paramDataPos: 0000000000000000000000000000000001000000020000000100000000000000000000000200000001000000010000000600000002000000
-        paramByteDataSize: 0000000000000000010000000000000000000000000000000100000000000000000000000400000000000000000000000400000000000000
+        - 
+        - Weight
+        - Event
+        paramDataPos: 0000000000000000000000000000000001000000020000000100000000000000000000000200000001000000010000000600000002000000020000000a00000003000000
+        paramByteDataSize: 0000000000000000010000000000000000000000000000000100000000000000000000000400000000000000000000000400000000000000000000000400000000000000
     - name: Big Rock
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 349
+        x: 445
         y: 405
         width: 100
         height: 32
@@ -502,7 +515,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 660
+        x: 756
         y: 244
         width: 118
         height: 32
@@ -580,7 +593,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 372
+        x: 468
         y: 336
         width: 114
         height: 32
@@ -670,7 +683,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 278
+        x: 374
         y: 139
         width: 100
         height: 32
@@ -737,11 +750,203 @@ MonoBehaviour:
         - realTime
         paramDataPos: 000000000000000000000000
         paramByteDataSize: 000000000000000001000000
+    - name: Frozen Breath Start
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 238
+        y: 327
+        width: 145
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Frozen Breath
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000002000000
+        actionHashCodes: 9bd6f80148c01101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: FrozenBreath
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000120000000f0000001700000001000000
+        paramName:
+        - gameObject
+        - trigger
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000000000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000001000000
+    - name: Frozen Breath
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 63
+        y: 276
+        width: 112
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Idle
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 48c01101b2cf1000
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Frozen Breath
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 2
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        byteData: 000100
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f00000017000000010000001400000011000000110000000100000001000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        paramDataPos: 0000000000000000000000000000000000000000010000000100000002000000
+        paramByteDataSize: 0000000000000000010000000000000000000000000000000100000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
     - name: Big Rock
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: FrozenBreath
       isSystemEvent: 0
       isGlobal: 0
     - name: Ice Spear
@@ -795,6 +1000,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Frozen Breath
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -802,7 +1013,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
