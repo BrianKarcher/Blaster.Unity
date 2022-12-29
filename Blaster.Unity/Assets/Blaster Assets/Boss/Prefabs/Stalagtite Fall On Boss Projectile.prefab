@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4157899780938334468}
-  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.62449, y: 1.5105, z: 0.6626238}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 27118793719179959}
   m_RootOrder: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4157899780938334468}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 5909086013800343855, guid: 97aa945ac19a1b543aa07f10957e21c1, type: 3}
 --- !u!23 &8710856493800738249
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56,10 +56,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 77e9c4b851fcda746954b16972e8eb7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,6 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &882733968000957035
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -122,13 +124,13 @@ Transform:
   m_GameObject: {fileID: 6931756442574414503}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -11.78}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 6}
   m_Children:
   - {fileID: 3841210626854452010}
   - {fileID: 1744215930427970841}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5063905964134101136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,9 +145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addToEntityContainer: 1
   _target: {fileID: 0}
+  _defaultTargetIsPlayer: 1
   _height: 0
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
+  customId: 
 --- !u!54 &2450512580338099409
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -178,8 +182,8 @@ MonoBehaviour:
   componentName: 
   _controller:
     _isGrounded: 0
+    GroundNormal: {x: 0, y: -1, z: 0}
     _physicsData:
-      _instantForce: 0
       _turnMode: 0
       _autoTurn: 1
       _autoApplyToAnimator: 0
@@ -201,6 +205,7 @@ MonoBehaviour:
         _evadeWeight: 1
         _followPathWeight: 1
         _radiusClampWeight: 0.5
+        _lateralWaveWeight: 1
         _feelerOffset: 0
         _boundingRadius: 0
         _wanderRad: 1.2
@@ -208,7 +213,6 @@ MonoBehaviour:
         _wanderJitterPerSec: 10
         _wallDetectionFeelerLength: 2
       _showDebug: 0
-      _gravity: -9.8
       _gravityVector: {x: 0, y: -9.8, z: 0}
       _applyGravity: 0
       _movingTurnSpeed: 360
