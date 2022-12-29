@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e8efc107af8a1f94dbf366985cd303b9
+guid: 3d83f3b563f46bd4896ff4f2108278a5
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: TurnLeft
+      74: -2111909093079120281
+    second: TurnLeft_rm
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -17,7 +17,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: Rig_IceGolem
+    motionNodeName: Rig_IceGolem/grp_def/def_root/def_hips/def_vert_01/def_vert_02/def_chest
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -35,8 +35,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: TurnLeft
-      takeName: Take 001
+      name: TurnLeft_rm
+      takeName: turnleft
       internalID: 0
       firstFrame: 1
       lastFrame: 60
@@ -47,7 +47,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -73,8 +73,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
