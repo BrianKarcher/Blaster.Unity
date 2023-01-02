@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5725762335389919112}
   - component: {fileID: 8400422251763723973}
   - component: {fileID: 5637578058420577743}
-  - component: {fileID: 5610218680421098306}
   - component: {fileID: 8857784272084568822}
+  - component: {fileID: 794105922388962635}
   m_Layer: 9
   m_Name: Ice Boss Weak Point
   m_TagString: Enemy
@@ -97,22 +97,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5610218680421098306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5404838153969390572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1330274225, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _componentRepository: {fileID: 0}
-  componentName: 
-  _item: {fileID: 0}
-  ammoBoxShotMessage: AmmoBoxShot
 --- !u!114 &8857784272084568822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +116,26 @@ MonoBehaviour:
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 0}
   customId: 
+--- !u!114 &794105922388962635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404838153969390572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1556646815, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 8857784272084568822}
+  componentName: 
+  allProjectiles: 1
+  allProjectileHitMessage: ProjectileHit
+  projectiles: []
+  hp: 1
+  notifyOnDeath: {fileID: 0}
+  notificationDeathMessage: 
+  shotAudioClip: {fileID: 0}
+  deathAudioClip: {fileID: 0}
+  deathMaterial: {fileID: 2100000, guid: 6cb2d0ade908acc4bb7c85679d3ae6c8, type: 2}
