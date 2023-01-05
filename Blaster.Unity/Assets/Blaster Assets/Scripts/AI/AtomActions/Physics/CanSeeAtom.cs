@@ -1,4 +1,5 @@
-﻿using BlueOrb.Common.Container;
+﻿using BlueOrb.Base.Extensions;
+using BlueOrb.Common.Container;
 using BlueOrb.Physics;
 using UnityEngine;
 
@@ -13,19 +14,25 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
         public CanSeeTargetEnum CanSeeTarget;
         public bool CheckLOS;
+        public float losDistance;
         public bool CheckDistance;
         public bool CheckFOV;
+        public float fovDegrees = 30f;
 
         private IPhysicsComponent _physicsComponent;
         //protected EntityCommonComponent _entityCommon;
         private int _obstacleLayerMask = -1;
+        private float losDistanceSq;
+        private IEntity entity;
         //private bool _result;
 
         public override void Start(IEntity entity)
         {
             base.Start(entity);
+            this.entity = entity;
             if (_physicsComponent == null)
                 _physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
+            this.losDistanceSq = this.losDistance * this.losDistance;
             //if (_entityCommon == null)
             //    _entityCommon = ent
         }
@@ -45,7 +52,7 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
             if (CheckDistance)
             {
-                if (!_physicsComponent.Controller.CheckLOSDistance(target))
+                if (!PhysicsHelper.CheckLOSDistance(entity.gameObject, target, losDistanceSq))
                     return false;
                 //else
                 //    Debug.Log("Passed Distance Check");
@@ -53,33 +60,36 @@ namespace BlueOrb.Scripts.AI.AtomActions
 
             if (CheckFOV)
             {
-                if (!_physicsComponent.Controller.PosInFOV3(target.transform.position))
+                if (!PhysicsHelper.PosInFOV2(_entity.transform.position.xz(), _entity.transform.forward.xz(), target.xz(), fovDegrees))
                     return false;
-                else
-                {
-                    //Debug.Log("Passed FOV Check");
-                }
+                //else
+                //{
+                //    //Debug.Log("Passed FOV Check");
+                //}
             }
 
             if (CheckLOS)
             {
-                if (!_physicsComponent.Controller.HasLineOfSight(target, _obstacleLayerMask))
+                if (!PhysicsHelper.HasLineOfSight(entity.GetHeadPosition(), target, _obstacleLayerMask))
                     return false;
-                else
-                {
-                    //Debug.Log("Passed LOS Check");
-                }
+                //else
+                //{
+                //    //Debug.Log("Passed LOS Check");
+                //}
             }
 
             return true;
         }
 
-        private GameObject GetTarget()
+        private Vector3 GetTarget()
         {
             switch (CanSeeTarget)
             {
                 case CanSeeTargetEnum.EntityTarget:
-                    return _entity.Target;
+                    IEntity target = _entity.Target.GetComponent<IEntity>();
+                    if (target != null)
+                        return target.GetHeadPosition();
+                    return _entity.Target.transform.position;
             }
             throw new System.Exception("Target not found!");
         }
