@@ -37,7 +37,7 @@ namespace BlueOrb.Scripts.AI.Playmaker.Enemies
             base.OnUpdate();
             Vector2 toTarget = this.entity.Target.transform.position.xz() - this.entity.transform.position.xz();
             float angle = Vector2.SignedAngle(toTarget, this.entity.transform.forward.xz());
-            Debug.Log($"Angle: {angle}");
+            //Debug.Log($"Angle: {angle}");
             if (angle < -DegreesBeforeTurn.Value)
             {
                 TurnLeft();
