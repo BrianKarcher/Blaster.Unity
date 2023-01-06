@@ -87,7 +87,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
         private string GetRecipientId(GameObject recipient)
         {
-            if (recipient == null || recipient.gameObject == null)
+            if (recipient == null)
             {
                 Debug.Log($"{_entity?.name}.{Fsm?.ActiveStateName} (SendMessage) Could not locate recipient");
                 Finish();

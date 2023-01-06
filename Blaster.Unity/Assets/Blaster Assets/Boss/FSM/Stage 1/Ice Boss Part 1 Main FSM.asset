@@ -143,6 +143,7 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
         - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
@@ -153,10 +154,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 00000000050000000d000000150000001d000000
-        actionHashCodes: b2cf10001a44e0051a44e0051a44e0059c512400
+        - 
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 00000000050000000a000000120000001a00000022000000
+        actionHashCodes: b2cf1000b2cf10001a44e0051a44e0051a44e0059c512400
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -184,6 +186,14 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Heart
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -267,6 +277,18 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 1
         - useVariable: 0
           name: 
@@ -290,7 +312,7 @@ MonoBehaviour:
         - 
         - RArmDestroyed
         - BigHit
-        byteData: 010000000000000000
+        byteData: 0000010000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 020000000200000002000000
@@ -298,8 +320,13 @@ MonoBehaviour:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 14000000110000001100000001000000010000001400000028000000030000000300000017000000130000001200000001000000140000002800000003000000030000001700000013000000120000000100000014000000280000000300000003000000170000001300000012000000010000001400000007000000120000001700000013000000
+        paramDataType: 140000001100000011000000010000000100000014000000110000001100000001000000010000001400000028000000030000000300000017000000130000001200000001000000140000002800000003000000030000001700000013000000120000000100000014000000280000000300000003000000170000001300000012000000010000001400000007000000120000001700000013000000
         paramName:
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
         - gameObject
         - activate
         - recursive
@@ -334,8 +361,8 @@ MonoBehaviour:
         - collideTag
         - sendEvent
         - storeCollider
-        paramDataPos: 00000000000000000100000000000000010000000100000000000000000000000100000002000000000000000000000002000000020000000100000003000000040000000500000001000000010000000300000003000000020000000600000007000000080000000200000002000000040000000400000005000000030000000900000003000000
-        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000
+        paramDataPos: 000000000000000001000000000000000100000001000000020000000300000002000000030000000200000000000000000000000100000002000000000000000000000004000000030000000100000003000000040000000500000001000000010000000500000004000000020000000600000007000000080000000200000002000000060000000500000007000000030000000900000003000000
+        paramByteDataSize: 000000000000000000000000010000000100000000000000000000000000000001000000010000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000
     - name: Hit
       description: 
       colorIndex: 0
@@ -532,44 +559,97 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
+        - HutongGames.PlayMaker.Actions.DestroyObject
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000005000000
+        actionHashCodes: 9bd6f8019ff80c0248c01101
         unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Head
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: HeadHit
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - 
+        byteData: 00
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        paramDataType: 1400000012000000130000000f000000110000000f0000001700000001000000
+        paramName:
+        - gameObject
+        - trigger
+        - gameObject
+        - delay
+        - detachChildren
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
     - name: L Arm Destroyed
       description: 
       colorIndex: 0
@@ -592,44 +672,97 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
+        - HutongGames.PlayMaker.Actions.DestroyObject
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000005000000
+        actionHashCodes: 9bd6f8019ff80c0248c01101
         unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: LArm
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: LHit
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
+        stringParams:
+        - 
+        byteData: 00
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        paramDataType: 1400000012000000130000000f000000110000000f0000001700000001000000
+        paramName:
+        - gameObject
+        - trigger
+        - gameObject
+        - delay
+        - detachChildren
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
     - name: R Arm Destroyed
       description: 
       colorIndex: 0
@@ -652,83 +785,31 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: ExposeHeart
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 514
-        y: 466
-        width: 106
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
-        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.DestroyObject
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000002000000
-        actionHashCodes: 9bd6f801b2cf1000
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000005000000
+        actionHashCodes: 9bd6f8019ff80c0248c01101
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: RArm
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
         - ownerOption: 1
           gameObject:
             useVariable: 1
             name: Animator
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 0}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: Heart
             tooltip: 
             showInInspector: 1
             networkSync: 0
@@ -745,10 +826,215 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: ExposeHeart
+          value: RHit
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000012000000130000000f000000110000000f0000001700000001000000
+        paramName:
+        - gameObject
+        - trigger
+        - gameObject
+        - delay
+        - detachChildren
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000000000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+    - name: ExposeHeart
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 514
+        y: 466
+        width: 106
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Resume
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - BlueOrb.Scripts.AI.Playmaker.SendMessage
+        - BlueOrb.Scripts.AI.Playmaker.SendMessage
+        - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
+        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 000000000500000017000000290000002b000000
+        actionHashCodes: b2cf10008cc5bb038cc5bb039bd6f8011a44e005
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Heart
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: Heart
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Heart
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Main
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Revive
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Enable
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: ExposeHeart
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: -1
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
@@ -770,23 +1056,81 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 0000
+        stringParams:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - HeartDestroyed
+        - 
+        - 
+        byteData: 000000000000000000000000000100000000000000000000000100
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 14000000120000001400000011000000110000000100000001000000
+        customTypeSizes: 0d0000000d00000002000000
+        customTypeNames:
+        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
+        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
+        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
+        paramDataType: 140000001100000011000000010000000100000014000000130000002900000012000000280000000300000003000000030000000100000001000000010000000100000001000000010000000100000007000000010000000300000014000000130000002900000012000000280000000300000003000000030000000100000001000000010000000100000001000000010000000100000007000000010000000300000014000000120000001400000028000000030000000300000017000000130000001200000001000000
         paramName:
-        - gameObject
-        - trigger
         - gameObject
         - activate
         - recursive
         - resetOnExit
         - everyFrame
-        paramDataPos: 00000000000000000100000000000000010000000000000001000000
-        paramByteDataSize: 00000000000000000000000000000000000000000100000001000000
+        - gameObject
+        - Recipient
+        - Recipients
+        - Message
+        - _atom
+        - Message
+        - ExtraInfo
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToLevelController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - customRecipient
+        - gameObject
+        - Recipient
+        - Recipients
+        - Message
+        - _atom
+        - Message
+        - ExtraInfo
+        - collideTag
+        - _sendToSelf
+        - _sendToAll
+        - _sendToMainCharacter
+        - _sendToUsableController
+        - _sendToGameController
+        - _sendToLevelController
+        - _sendToUIManager
+        - SendMessageTime
+        - _finishOnFirstMessageSent
+        - customRecipient
+        - gameObject
+        - trigger
+        - gameObject
+        - _atom
+        - Message
+        - Data
+        - Received
+        - storeSender
+        - TagCheck
+        - GotoPreviousState
+        paramDataPos: 0000000000000000010000000000000001000000010000000000000000000000000000000000000000000000010000000200000002000000030000000400000005000000060000000700000008000000090000000d0000000300000002000000010000000100000001000000010000000400000005000000060000000e0000000f00000010000000110000001200000013000000140000001500000019000000070000000300000002000000040000000200000008000000090000000a00000002000000030000001a000000
+        paramByteDataSize: 000000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000100000004000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Cutscene
       description: 
       colorIndex: 0
@@ -902,7 +1246,6 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
         - HutongGames.PlayMaker.Actions.ActivateGameObject
-        - HutongGames.PlayMaker.Actions.ActivateGameObject
         - BlueOrb.Scripts.AI.Playmaker.SendMessage
         - BlueOrb.Scripts.AI.Playmaker.SendMessage
         - BlueOrb.Scripts.AI.Playmaker.SendMessage
@@ -912,11 +1255,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
-        actionEnabled: 010101010101
-        actionIsOpen: 010101010101
-        actionStartIndex: 0000000002000000070000000c0000001e00000030000000
-        actionHashCodes: 9bd6f801b2cf1000b2cf10008cc5bb038cc5bb038cc5bb03
+        actionEnabled: 0101010000
+        actionIsOpen: 0101010101
+        actionStartIndex: 000000000200000007000000190000002b000000
+        actionHashCodes: 9bd6f801b2cf10008cc5bb038cc5bb038cc5bb03
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -950,14 +1292,6 @@ MonoBehaviour:
           gameObject:
             useVariable: 1
             name: ControlledFSM
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 0}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: Heart
             tooltip: 
             showInInspector: 1
             networkSync: 0
@@ -1075,18 +1409,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -1105,7 +1427,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        byteData: 00000000000000000000000000000001000000000000000000000001000000000000000000000001
+        byteData: 0000000000000000000000000001000000000000000000000001000000000000000000000001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 0d0000000d0000000d000000
@@ -1113,7 +1435,7 @@ MonoBehaviour:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 140000001200000014000000110000001100000001000000010000001400000011000000110000000100000001000000140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000001000000070000000100000003000000140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000001000000070000000100000003000000140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000001000000070000000100000003000000
+        paramDataType: 14000000120000001400000011000000110000000100000001000000140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000001000000070000000100000003000000140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000001000000070000000100000003000000140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000001000000070000000100000003000000
         paramName:
         - gameObject
         - trigger
@@ -1123,11 +1445,6 @@ MonoBehaviour:
         - resetOnExit
         - everyFrame
         - gameObject
-        - activate
-        - recursive
-        - resetOnExit
-        - everyFrame
-        - gameObject
         - Recipient
         - Recipients
         - Message
@@ -1181,8 +1498,8 @@ MonoBehaviour:
         - SendMessageTime
         - _finishOnFirstMessageSent
         - customRecipient
-        paramDataPos: 00000000000000000100000000000000010000000000000001000000020000000200000003000000020000000300000003000000000000000000000001000000000000000000000001000000020000000400000005000000060000000700000008000000090000000a0000000b0000000f00000003000000040000000100000001000000020000000100000004000000050000000600000010000000110000001200000013000000140000001500000016000000170000001b00000007000000050000000200000002000000030000000200000008000000090000000a0000001c0000001d0000001e0000001f00000020000000210000002200000023000000270000000b000000
-        paramByteDataSize: 000000000000000000000000000000000000000001000000010000000000000000000000000000000100000001000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000040000000100000000000000
+        paramDataPos: 00000000000000000100000000000000010000000000000001000000020000000000000000000000010000000000000000000000010000000200000002000000030000000400000005000000060000000700000008000000090000000d0000000300000003000000010000000100000002000000010000000400000005000000060000000e0000000f0000001000000011000000120000001300000014000000150000001900000007000000040000000200000002000000030000000200000008000000090000000a0000001a0000001b0000001c0000001d0000001e0000001f0000002000000021000000250000000b000000
+        paramByteDataSize: 00000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000040000000100000000000000
     - name: LargeProjectileHit
       description: 
       colorIndex: 0
@@ -1208,15 +1525,23 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
         - HutongGames.PlayMaker.Actions.Wait
+        - HutongGames.PlayMaker.Actions.DestroyObject
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000002000000
-        actionHashCodes: 9bd6f80148c01101
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000005000000
+        actionHashCodes: 9bd6f80148c011019ff80c02
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Head
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
         - ownerOption: 1
           gameObject:
@@ -1250,8 +1575,20 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1.5
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -1264,15 +1601,96 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000120000000f0000001700000001000000
+        paramDataType: 14000000120000000f0000001700000001000000130000000f00000011000000
         paramName:
         - gameObject
         - trigger
         - time
         - finishEvent
         - realTime
-        paramDataPos: 0000000000000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000001000000
+        - gameObject
+        - delay
+        - detachChildren
+        paramDataPos: 0000000000000000000000000000000000000000000000000100000000000000
+        paramByteDataSize: 0000000000000000000000000000000001000000000000000000000000000000
+    - name: Resume
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 755
+        y: 461
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Play
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetAnimatorTrigger
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 9bd6f801
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Animator
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Resume
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000012000000
+        paramName:
+        - gameObject
+        - trigger
+        paramDataPos: 0000000000000000
+        paramByteDataSize: 0000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
