@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2788020141658704454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7180889390295801347}
+  m_Layer: 9
+  m_Name: DeathVfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7180889390295801347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788020141658704454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.95, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6855851718668254155}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5404838153969390572
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +61,8 @@ Transform:
   m_LocalRotation: {x: -0.5470862, y: 0.47733477, z: 0.52196085, w: 0.44766638}
   m_LocalPosition: {x: 0.8442363, y: -2.813757, z: -0.17975992}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 7180889390295801347}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 2, y: -91.66, z: 172.455}
@@ -136,9 +167,13 @@ MonoBehaviour:
   hp: 1
   notifyOnDeath: {fileID: 0}
   notificationDeathMessage: 
+  deathVfx: {fileID: 8393646542160958322, guid: 05b5145855fc7dd4cbf6899b2167bc3c,
+    type: 3}
+  deathVfxSpawnPoint: {fileID: 2788020141658704454}
   shotAudioClip: {fileID: 0}
   deathAudioClip: {fileID: 0}
   enableMaterial: {fileID: 2100000, guid: 7008ceb2056b40540bd76341f6186190, type: 2}
   disabledMaterial: {fileID: 2100000, guid: 6cb2d0ade908acc4bb7c85679d3ae6c8, type: 2}
   enableMessage: Enable
   disableMessage: Disable
+  reviveMessage: Revive
