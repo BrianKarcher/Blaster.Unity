@@ -1,11 +1,6 @@
-﻿using BlueOrb.Scripts.AI.AtomActions;
-using HutongGames.PlayMaker;
+﻿using HutongGames.PlayMaker;
 using BlueOrb.Common.Container;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Rewired;
 using BlueOrb.Messaging;
 using UnityEngine;
@@ -23,12 +18,15 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
         public FsmString ToggleRightAction = "ToggleRight";
         public FsmString ToggleMessage = "ToggleProjectile";
         public FsmString ToggleMessageRecipient = "Shooter Controller";
+        public FsmString WinMessage = "Win";
         public FsmEvent DeadEvent;
+        public FsmEvent WinEvent;
         private IEntity entity;
         private Player player;
         private LevelStateController levelStateController;
 
         private int toggleDirectionPressed = 0;
+        private long winId;
 
         public override void Reset()
         {
@@ -64,7 +62,15 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
 
         private void StartListening(IEntity entity)
         {
+            this.winId = MessageDispatcher.Instance.StartListening(this.WinMessage.Value, entity.GetId(), (data) =>
+            {
+                Fsm.Event(WinEvent);
+            });
+        }
 
+        private void StopListening(IEntity entity)
+        {
+            MessageDispatcher.Instance.StopListening(this.WinMessage.Value, entity.GetId(), this.winId);
         }
 
         public override void OnUpdate()
@@ -119,11 +125,6 @@ namespace BlueOrb.Scripts.AI.Playmaker.Manager
         {
             base.OnExit();
             StopListening(this.entity);
-        }
-
-        private void StopListening(IEntity entity)
-        {
-
         }
     }
 }

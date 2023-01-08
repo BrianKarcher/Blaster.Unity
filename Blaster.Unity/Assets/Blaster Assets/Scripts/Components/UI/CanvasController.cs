@@ -34,7 +34,7 @@ namespace BlueOrb.Controller.Inventory
 
         public void Update()
         {
-            if (rewiredEventSystem.currentSelectedGameObject == null)
+            if (rewiredEventSystem?.currentSelectedGameObject == null)
             {
                 var currentHAxis = _player.GetAxis(inputModule.horizontalAxis);
                 var currentVAxis = _player.GetAxis(inputModule.verticalAxis);
