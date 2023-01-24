@@ -139,14 +139,16 @@ MonoBehaviour:
         - BlueOrb.Scripts.AI.PlayMaker.Attack.GetGameObjectVariable
         - BlueOrb.Scripts.AI.PlayMaker.Attack.AddHp
         - BlueOrb.Scripts.AI.Playmaker.Notification
+        - HutongGames.PlayMaker.Actions.PlaySound
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000500000008000000
-        actionHashCodes: ceb8f602657e6f019bd6f801
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000005000000080000000a000000
+        actionHashCodes: ceb8f602657e6f019bd6f8019cdc3905
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -180,6 +182,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -193,7 +203,14 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: HEALED
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.AudioClip
+          value: {fileID: 8300000, guid: a8da8b0f87927c547bdd5e5632076c97, type: 3}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -204,10 +221,22 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 5
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
-        fsmVector3Params: []
+        fsmVector3Params:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -219,7 +248,7 @@ MonoBehaviour:
         customTypeSizes: 01000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.GetGameObjectVariableAtom
-        paramDataType: 1400000013000000280000000700000001000000140000000f000000170000001400000012000000
+        paramDataType: 1400000013000000280000000700000001000000140000000f000000170000001400000012000000140000001c000000180000000f000000
         paramName:
         - gameObject
         - StoreObject
@@ -231,8 +260,12 @@ MonoBehaviour:
         - IsDead
         - gameObject
         - NotificationMessage
-        paramDataPos: 00000000000000000000000000000000040000000100000000000000000000000200000000000000
-        paramByteDataSize: 00000000000000000000000004000000010000000000000000000000000000000000000000000000
+        - gameObject
+        - position
+        - clip
+        - volume
+        paramDataPos: 0000000000000000000000000000000004000000010000000000000000000000020000000000000003000000000000000000000001000000
+        paramByteDataSize: 0000000000000000000000000400000001000000000000000000000000000000000000000000000000000000000000000000000000000000
     - name: Destroy
       description: 
       colorIndex: 0
