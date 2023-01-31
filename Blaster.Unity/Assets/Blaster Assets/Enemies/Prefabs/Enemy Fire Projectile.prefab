@@ -4816,32 +4816,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!135 &1240388167630680581
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2553805800673467690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 1.0000001
-  m_Center: {x: -0.00000020861624, y: 0, z: 0.00000017881392}
---- !u!135 &8414143308355480256
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2553805800673467690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 1.0000001
-  m_Center: {x: -0.00000020861624, y: 0, z: 0.00000017881392}
 --- !u!114 &6180743177779903323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4870,9 +4844,9 @@ GameObject:
   - component: {fileID: 5695457797628056656}
   - component: {fileID: 6661934430033657290}
   - component: {fileID: 2901994414010049431}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Enemy Fire Projectile
-  m_TagString: Projectile
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4938,8 +4912,8 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5090170921490079855}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -5472,12 +5446,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b3fa29d6cc0e3e048814a2bcd3052d9e,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b3fa29d6cc0e3e048814a2bcd3052d9e,
         type: 3}
       propertyPath: m_TagString
-      value: Projectile
+      value: Target
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3fa29d6cc0e3e048814a2bcd3052d9e, type: 3}
