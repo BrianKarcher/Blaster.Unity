@@ -69,6 +69,10 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             int count = UnityEngine.Physics.OverlapBoxNonAlloc(offset,
                 halfExtent, _itemHits, Quaternion.identity, mask);
             Debug.Log($"Hit count: {count}");
+            for (int i = 0; i < count; i++)
+            {
+                Debug.LogWarning($"Attack hit {_itemHits[i].name}");
+            }
 
             this.hitDetect = this.attackComponent.ProcessAttack(_itemHits, count, this.Damage.Value);
 
