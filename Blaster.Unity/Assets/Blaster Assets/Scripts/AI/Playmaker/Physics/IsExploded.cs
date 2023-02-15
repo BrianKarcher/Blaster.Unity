@@ -1,10 +1,5 @@
 ﻿using BlueOrb.Scripts.AI.AtomActions;
 using HutongGames.PlayMaker;
-using BlueOrb.Common.Container;
-using System.Collections.Generic;
-using BlueOrb.Controller.Block;
-using Assets.Blaster_Assets.Scripts.AI.Playmaker.Physics.Data;
-using BlueOrb.Messaging;
 
 namespace BlueOrb.Scripts.AI.Playmaker
 {
@@ -40,7 +35,6 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
             var entity = base.GetEntityBase(go);
             _atom.Start(entity);
-            //Finish();
         }
 
         public override void OnUpdate()
@@ -58,10 +52,6 @@ namespace BlueOrb.Scripts.AI.Playmaker
         {
             base.OnExit();
             _atom.End();
-            if (!Position.IsNone)
-            {
-                Position.Value = _atom.Position;
-            }
         }
     }
 }
