@@ -11,6 +11,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
         public FsmOwnerDefault gameObject;
 
         public FsmBool Enable;
+        public FsmEvent Failed;
+
         private RagdollController ragdollController;
 
         public override void Reset()
@@ -31,7 +33,14 @@ namespace BlueOrb.Scripts.AI.Playmaker
             {
                 ragdollController = entity.Components.GetComponent<RagdollController>();
             }
+            if (ragdollController == null)
+            {
+                Fsm.Event(Failed);
+                Finish();
+                return;
+            }
             ragdollController?.EnableRagdoll(Enable.Value);
+            Finish();
         }
     }
 }

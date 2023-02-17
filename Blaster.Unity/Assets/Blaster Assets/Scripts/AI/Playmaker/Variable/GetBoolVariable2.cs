@@ -30,13 +30,15 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         public bool everyFrame = false;
         private IPhysicsComponent physicsComponent;
         private AnimationComponent animator;
+        private RagdollController ragdollController;
 
         public enum BoolVariableEnum
         {
             Grounded = 0,
             CanParry = 1,
             ImmediateStartGame = 2,
-            IsInputEnabled = 3
+            IsInputEnabled = 3,
+            HasRagdoll = 4
         }
 
         public override void Reset()
@@ -57,6 +59,9 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                 physicsComponent = entity.Components.GetComponent<IPhysicsComponent>();
             if (animator == null)
                 animator = entity.Components.GetComponent<AnimationComponent>();
+            if (ragdollController == null)
+                ragdollController = entity.Components.GetComponent<RagdollController>();
+
             Tick();
 
             if (!everyFrame)
@@ -97,6 +102,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
                     return GameStateController.Instance.GameSettingsConfig.ImmediateStartGame;
                 case BoolVariableEnum.IsInputEnabled:
                     return GameStateController.Instance.LevelStateController.EnableInput;
+                case BoolVariableEnum.HasRagdoll:
+                    return ragdollController != null;
             }
             throw new System.Exception("Enum " + Variable.ToString() + " not found");
         }

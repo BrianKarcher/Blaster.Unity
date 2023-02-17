@@ -105,6 +105,10 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 }
                 if (otherEntity == null)
                 {
+                    otherEntity = itemHit.GetComponent<ComponentRepository>();
+                }
+                if (otherEntity == null)
+                {
                     continue;
                 }
 

@@ -89,10 +89,10 @@ namespace BlueOrb.Scripts.UI
                 pinComponent.SetWorldPosition(points.Position);
 
                 var textMeshPro = label.GetComponent<TextMeshProUGUI>();
-                string prefix = string.Empty;
 
                 textMeshPro.color = points.Color;
-                textMeshPro.SetText(prefix + points.Points);
+                Debug.Log($"Adding {points.Points} points");
+                textMeshPro.SetText(points.Points.ToString());
             });
             MessageDispatcher.Instance.StartListening("CreateTempLabel", GetId(), (data) =>
             {

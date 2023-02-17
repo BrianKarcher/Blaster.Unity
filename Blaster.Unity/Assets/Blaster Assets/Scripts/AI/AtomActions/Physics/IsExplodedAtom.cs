@@ -21,6 +21,10 @@ namespace BlueOrb.Scripts.AI.AtomActions
                 _explodedDel = (data) =>
                 {
                     var explodeData = data.ExtraInfo as ExplodeData;
+                    if (damageComponent == null)
+                    {
+                        throw new Exception($"{entity.name} has no Damage Component, cannot check IsExploded");
+                    }
                     damageComponent.StoreExplodeSelfData(explodeData);
                     Finish();
                 };
