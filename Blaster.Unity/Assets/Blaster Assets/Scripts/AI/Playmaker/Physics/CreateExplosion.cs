@@ -18,10 +18,11 @@ namespace BlueOrb.Scripts.AI.Playmaker
         [RequiredField]
         public FsmOwnerDefault gameObject;
         public string ExplodeMessage = "Explode";
+        public string[] ExplodeMessages;
 
-        public FsmFloat Force = 7;
+        public FsmFloat Force = 9;
         public FsmFloat Radius = 5;
-        public FsmFloat UpwardModifier = 5;
+        public FsmFloat UpwardModifier = 2;
         public FsmFloat Damage = 1;
         public FsmFloat Delay;
         public bool CanHitSelf = false;
@@ -136,13 +137,20 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
                 Debug.Log("Exploded : " + otherEntity.name);
 
-                ExplodeEntity(otherEntity);
+                if (!string.IsNullOrEmpty(ExplodeMessage))
+                {
+                    ExplodeEntity(otherEntity, ExplodeMessage);
+                }
+                for (int k = 0; k < ExplodeMessages.Length; k++)
+                {
+                    ExplodeEntity(otherEntity, ExplodeMessages[k]);
+                }
 
                 entitiesHit.Add(otherEntity.GetId());
             }
         }
 
-        private void ExplodeEntity(ComponentRepository entity)
+        private void ExplodeEntity(ComponentRepository entity, string message)
         {
             ExplodeData explodeData = new ExplodeData()
             {
@@ -153,7 +161,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 Radius = Radius.Value,
                 UpwardModifier = UpwardModifier.Value
             };
-            MessageDispatcher.Instance.DispatchMsg(ExplodeMessage, 0f, entity.GetId(), entity.GetId(), explodeData);
+            MessageDispatcher.Instance.DispatchMsg(message, 0f, entity.GetId(), entity.GetId(), explodeData);
         }
     }
 }
