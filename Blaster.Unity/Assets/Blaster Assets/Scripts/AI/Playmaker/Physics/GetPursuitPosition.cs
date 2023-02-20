@@ -41,6 +41,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
 
             var targetEntity = base.GetEntityBase(target.Value);
             targetPhysics = targetEntity.Components.GetComponent<IPhysicsComponent>();
+            UnityEngine.Debug.Log($"Entity {targetEntity} must have an IPhysicsComponent!");
 
             Calculate();
 
