@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7446967687059312348}
   - component: {fileID: 4664610934175267350}
   - component: {fileID: 6304357024379779509}
-  - component: {fileID: 7250994088287534248}
   - component: {fileID: 2434784024966420353}
   - component: {fileID: 5877004260769842713}
+  - component: {fileID: 7249897106074956819}
   m_Layer: 11
   m_Name: HealItem
   m_TagString: Target
@@ -100,20 +100,6 @@ MonoBehaviour:
   SpinSpeed: 100
   RotationRange: 15
   Motion: 0
---- !u!64 &7250994088287534248
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6610433909656443843}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2580793032186051228, guid: a1ce390c3c0de6c40a9c3176d629f075, type: 3}
 --- !u!114 &2434784024966420353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,3 +260,16 @@ MonoBehaviour:
   _homePosition: {x: 0, y: 0, z: 0}
   _parentRepo: {fileID: 5877004260769842713}
   customId: 
+--- !u!135 &7249897106074956819
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6610433909656443843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.64
+  m_Center: {x: 0, y: 0, z: 0}

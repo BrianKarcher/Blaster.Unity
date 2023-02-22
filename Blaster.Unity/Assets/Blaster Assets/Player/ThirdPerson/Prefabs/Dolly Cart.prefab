@@ -178,6 +178,8 @@ MonoBehaviour:
   _componentRepository: {fileID: 4851965367688820526}
   componentName: 
   _speedChangeType: 2
+  autoRotate: 0
+  zeroY: 1
   _dollyJoint: {fileID: 4851965367688820523}
   enemyTag: Enemy
   enemyCheckOffset: {x: 0, y: 0.5, z: 3}
@@ -1169,6 +1171,88 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 39355dbc5a04c14468048c879484c7e7, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &8637054006878278124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228544700472702732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1958350459, guid: da931a18600ca9243bdb9b0c3530e8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
+  _controller:
+    _isGrounded: 0
+    GroundNormal: {x: 0, y: -1, z: 0}
+    _physicsData:
+      _turnMode: 0
+      _autoTurn: 1
+      _autoApplyToAnimator: 1
+      _steeringData:
+        _waypointSeekDistSq: 0.1
+        _separationWeight: 1
+        _alignmentWeight: 1
+        _cohesionWeight: 2
+        _obstacleAvoidanceWeight: 10
+        _wallAvoidanceWeight: 10
+        _wanderWeight: 1
+        _seekWeight: 1
+        _fleeWeight: 1
+        _arriveWeight: 1
+        _pursuitWeight: 1
+        _offsetPursuitWeight: 1
+        _interposeWeight: 1
+        _hideWeight: 1
+        _evadeWeight: 1
+        _followPathWeight: 1
+        _radiusClampWeight: 0.5
+        _lateralWaveWeight: 1
+        _feelerOffset: 0
+        _boundingRadius: 0
+        _wanderRad: 1.2
+        _wanderDist: 3
+        _wanderJitterPerSec: 10
+        _wallDetectionFeelerLength: 2
+      _showDebug: 0
+      _gravityVector: {x: 0, y: -9.8, z: 0}
+      _applyGravity: 1
+      _movingTurnSpeed: 360
+      _stationaryTurnSpeed: 180
+      _initialVelocity: {x: 0, y: 0, z: 0}
+      _size: {x: 0, y: 0, z: 0}
+      _velocity: {x: 0, y: 0, z: 0}
+      _jumpVelocity: {x: 0, y: 19.8, z: 0}
+      _offset: {x: 0, y: 0, z: 0}
+      _mass: 1
+      _maxSpeed: 6
+      _maxSpeedMultiplier: 1
+      _maxDistanceToTarget: 0
+      _directionRotate: 0
+      _boundingRadius: 1
+      _maxForce: 6
+      _forceMultiplier: 1
+      _friction: 0
+      _maxTurnRate: 6
+      _foot: {fileID: 0}
+      _fieldOfView: 60
+      _lineOfSight: 20
+      LOSSquared: 0
+      _dragForce: 0
+      _avoidLayersMask:
+        serializedVersion: 2
+        m_Bits: 0
+      _groundCheckDistance: 0.4
+      _groundLayer:
+        serializedVersion: 2
+        m_Bits: 0
+      _terrainLayer:
+        serializedVersion: 2
+        m_Bits: 0
+  _isEnabled: 1
 --- !u!1001 &1404021666741698794
 PrefabInstance:
   m_ObjectHideFlags: 0

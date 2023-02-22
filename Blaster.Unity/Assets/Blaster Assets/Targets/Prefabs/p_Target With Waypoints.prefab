@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 4118977382908292786}
   - component: {fileID: 4411942829071336468}
   - component: {fileID: 7897508589567510686}
+  - component: {fileID: 7796531607862815094}
   m_Layer: 11
   m_Name: p_Target With Waypoints
   m_TagString: Target
@@ -219,7 +220,7 @@ MonoBehaviour:
         actionEnabled: 000101
         actionIsOpen: 010101
         actionStartIndex: 00000000050000000d000000
-        actionHashCodes: 9c5124001a44e005156eaa05
+        actionHashCodes: 9c5124001a44e005f171df05
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -306,11 +307,10 @@ MonoBehaviour:
         byteData: 0000000000
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0200000001000000
+        customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        - BlueOrb.Scripts.AI.AtomActions.IsExplodedAtom
-        paramDataType: 1400000007000000120000001700000013000000140000002800000003000000030000001700000013000000120000000100000014000000170000001c0000002800000003000000
+        paramDataType: 1400000007000000120000001700000013000000140000002800000003000000030000001700000013000000120000000100000014000000170000001c00000003000000
         paramName:
         - gameObject
         - trigger
@@ -328,10 +328,9 @@ MonoBehaviour:
         - gameObject
         - Exploded
         - Position
-        - _atom
         - ExplodeMessage
-        paramDataPos: 000000000000000000000000000000000000000001000000000000000100000002000000030000000100000001000000040000000200000004000000000000000100000005000000
-        paramByteDataSize: 000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000001000000020000000300000001000000010000000400000002000000040000000000000005000000
+        paramByteDataSize: 0000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000
     - name: Destroy
       description: 
       colorIndex: 0
@@ -758,6 +757,7 @@ MonoBehaviour:
   componentName: 
   _controller:
     _isGrounded: 0
+    GroundNormal: {x: 0, y: -1, z: 0}
     _physicsData:
       _turnMode: 3
       _autoTurn: 0
@@ -1317,6 +1317,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetFSMs: []
+--- !u!114 &7796531607862815094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711834984351156037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1083349056, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentRepository: {fileID: 0}
+  componentName: 
+  _damageComponentData:
+    TakesDamage: 1
+    _damagedBounceForce: 1
+    _reportDamage: 1
+    _reportDamageMessage: EnemyDamaged
+    _damageDrag: 1
+  _deflectPrefab: {fileID: 0}
+  _deflectTag: 
+  immunityBuffConfig: {fileID: 0}
 --- !u!1001 &1905001515468585851
 PrefabInstance:
   m_ObjectHideFlags: 0
