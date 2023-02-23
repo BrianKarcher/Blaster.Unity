@@ -181,8 +181,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 000000001000000015000000
-        actionHashCodes: 8cc5bb0317211b04a4c8bf00
+        actionStartIndex: 000000001200000019000000
+        actionHashCodes: 8cc5bb03be75ab05a4c8bf00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -254,6 +254,18 @@ MonoBehaviour:
           networkSync: 0
           value: 70
         fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: DestroyAfterMessage
           tooltip: 
@@ -275,15 +287,16 @@ MonoBehaviour:
         - 
         - 
         - 
+        - 
         - Destroy
         - FINISHED
-        byteData: 00000000000000000000011038bb3d0000803f000000000000803f00
+        byteData: 0000000000000000000000011038bb3d0000803f000000000000803f00
         arrayParamSizes: 
         arrayParamTypes: []
-        customTypeSizes: 0b000000
+        customTypeSizes: 0d000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 1400000013000000290000001200000028000000030000000300000003000000010000000100000001000000010000000100000001000000070000000100000014000000130000001c000000100000000400000011000000170000001700000001000000
+        paramDataType: 14000000130000002900000012000000280000000300000003000000030000000100000001000000010000000100000001000000010000000100000007000000010000000300000014000000130000001c0000001000000011000000110000000400000011000000170000001700000001000000
         paramName:
         - gameObject
         - Recipient
@@ -298,20 +311,24 @@ MonoBehaviour:
         - _sendToMainCharacter
         - _sendToUsableController
         - _sendToGameController
+        - _sendToLevelController
         - _sendToUIManager
         - SendMessageTime
         - _finishOnFirstMessageSent
+        - customRecipient
         - gameObject
         - Label
         - LabelOffset
         - Points
+        - DisableGravity
+        - DisableColliders
         - Color
         - boolVariable
         - isTrue
         - isFalse
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000002000000000000000100000002000000030000000400000005000000060000000a000000010000000100000000000000000000000b0000000000000003000000040000001b000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000001000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000000000000000000010000000200000000000000010000000200000003000000040000000500000006000000070000000b000000030000000100000001000000000000000000000000000000010000000c0000000200000004000000050000001c000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000001000000
     - name: Check
       description: 
       colorIndex: 0

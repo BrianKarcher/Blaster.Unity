@@ -432,8 +432,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000005000000
-        actionHashCodes: 17211b049ff80c02
+        actionStartIndex: 0000000007000000
+        actionHashCodes: be75ab059ff80c02
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -489,6 +489,18 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 0
         fsmVector2Params: []
         fsmVector3Params:
@@ -507,18 +519,20 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000130000001c0000001000000004000000130000000f00000011000000
+        paramDataType: 14000000130000001c00000010000000110000001100000004000000130000000f00000011000000
         paramName:
         - gameObject
         - Label
         - LabelOffset
         - Points
+        - DisableGravity
+        - DisableColliders
         - Color
         - gameObject
         - delay
         - detachChildren
-        paramDataPos: 0000000000000000000000000000000000000000010000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000010000000000000000000000000000000
+        paramDataPos: 00000000000000000000000000000000000000000100000000000000010000000000000002000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000010000000000000000000000000000000
     - name: FrozenState
       description: 
       colorIndex: 0

@@ -61,7 +61,7 @@ namespace BlueOrb.Controller.Inventory
         public override void OnDisable()
         {
             base.OnDisable();
-            if (rewiredEventSystem.currentSelectedGameObject != null)
+            if (rewiredEventSystem?.currentSelectedGameObject != null)
             {
                 this.firstSelectedGameObject = rewiredEventSystem.currentSelectedGameObject.GetComponent<Selectable>();
             }
