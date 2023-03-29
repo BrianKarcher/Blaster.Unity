@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7318814327630136505}
   - component: {fileID: 7393538647247138994}
   - component: {fileID: 3014422500971426385}
+  - component: {fileID: 4397678474955596527}
   m_Layer: 0
   m_Name: Level State
   m_TagString: Untagged
@@ -69,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _componentRepository: {fileID: 7318814327630136510}
   componentName: 
+  winMessage: Win
   setLevelBeginMessage: SetLevelBegin
   currentHp: 5
   maxHp: 5
@@ -112,6 +114,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _componentRepository: {fileID: 0}
   componentName: 
+--- !u!82 &4397678474955596527
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318814327630136508}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7318814327642902001
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,910 +259,28 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: FSM
-    startState: Wait Until Start Timer
+    startState: State 1
     states:
-    - name: Wait Until Start Timer
+    - name: State 1
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 50
-        y: 116
-        width: 157
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Start Timer
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 1a44e005
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - LevelStart
-        - 
-        - FINISHED
-        byteData: 00
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 02000000
-        customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000
-        paramName:
-        - gameObject
-        - _atom
-        - Message
-        - Data
-        - Received
-        - storeSender
-        - TagCheck
-        - GotoPreviousState
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
-    - name: Start Timer
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 286
-        y: 115
+        y: 100
         width: 100
-        height: 32
+        height: 16
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Level Start Wait
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
+      transitions: []
       actionData:
-        actionNames:
-        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
-        - HutongGames.PlayMaker.Actions.ActivateGameObject
-        - BlueOrb.Scripts.AI.Playmaker.Input.WaitForLevelBegin
-        customNames:
-        - 
-        - 
-        - 
-        actionEnabled: 010100
-        actionIsOpen: 010101
-        actionStartIndex: 00000000080000000d000000
-        actionHashCodes: 1a44e005b2cf10008d4bb503
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: Main
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 7318814327630136508}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: StartTimer
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 7318814327842444472}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: Main
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 7318814327630136508}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - CountdownComplete
-        - 
-        - FINISHED
-        byteData: 000100
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 02000000
-        customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000140000001100000011000000010000000100000014000000
-        paramName:
-        - gameObject
-        - _atom
-        - Message
-        - Data
-        - Received
-        - storeSender
-        - TagCheck
-        - GotoPreviousState
-        - gameObject
-        - activate
-        - recursive
-        - resetOnExit
-        - everyFrame
-        - gameObject
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000010000000000000001000000010000000200000002000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000100000000000000
-    - name: Play
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 459
-        y: 334
-        width: 154
-        height: 64
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Pause
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Pause
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: OnConversationStart
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Conversation
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: Dead
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Dead Dialog
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - Rewired.Integration.PlayMaker.RewiredPlayerGetButtonDown
-        - BlueOrb.Scripts.AI.Playmaker.SendMessage
-        - HutongGames.PlayMaker.Actions.ScaleTime
-        - BlueOrb.Scripts.AI.Playmaker.Manager.LevelStatePlay
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 01000101
-        actionIsOpen: 01010101
-        actionStartIndex: 0000000007000000190000001c000000
-        actionHashCodes: b9d24e008cc5bb036cdd45046552ad04
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: Main
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 7318814327630136508}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Pause
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: ToggleLeft
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: ToggleRight
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: ToggleProjectile
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Shooter Controller
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Win
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          type: -1
-          objectTypeName: UnityEngine.Object
-          floatValues: []
-          intValues: 
-          boolValues: 
-          stringValues: []
-          vector4Values: []
-          objectReferences: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        fsmIntParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmBoolParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - Pause
-        - 
-        - 
-        - PlayScreen
-        - 
-        - 
-        - 
-        - Dead
-        - 
-        byteData: 0100000000000001000000000100
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 0d000000
-        customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 110000001700000017000000170000001200000010000000010000001400000013000000290000001200000028000000030000000300000003000000010000000100000001000000010000000100000001000000010000000700000001000000030000000f00000011000000010000001400000012000000120000001200000012000000120000001700000017000000
-        paramName:
-        - storeValue
-        - isTrueEvent
-        - isFalseEvent
-        - valueChangedEvent
-        - actionName
-        - playerId
-        - everyFrame
-        - gameObject
-        - Recipient
-        - Recipients
-        - Message
-        - _atom
-        - Message
-        - ExtraInfo
-        - collideTag
-        - _sendToSelf
-        - _sendToAll
-        - _sendToMainCharacter
-        - _sendToUsableController
-        - _sendToGameController
-        - _sendToLevelController
-        - _sendToUIManager
-        - SendMessageTime
-        - _finishOnFirstMessageSent
-        - customRecipient
-        - timeScale
-        - adjustFixedDeltaTime
-        - everyFrame
-        - gameObject
-        - ToggleLeftAction
-        - ToggleRightAction
-        - ToggleMessage
-        - ToggleMessageRecipient
-        - WinMessage
-        - DeadEvent
-        - WinEvent
-        paramDataPos: 00000000000000000100000002000000000000000000000000000000000000000000000000000000010000000000000003000000040000000500000001000000020000000300000004000000050000000600000007000000080000000c0000000600000000000000010000000d0000000100000002000000030000000400000005000000060000000700000008000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000
-    - name: Pause
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 463
-        y: 420
-        width: 100
-        height: 48
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Play
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: EndStage
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Wait Until Start Timer
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.ScaleTime
-        - BlueOrb.Scripts.AI.Playmaker.SendMessage
-        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
-        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 0000000003000000140000001c000000
-        actionHashCodes: 6cdd45048cc5bb031a44e0051a44e005
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Pause
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          type: -1
-          objectTypeName: UnityEngine.Object
-          floatValues: []
-          intValues: 
-          boolValues: 
-          stringValues: []
-          vector4Values: []
-          objectReferences: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - 
-        - 
-        - 
-        - Resume
-        - 
-        - FINISHED
-        - AbortLevel
-        - 
-        - EndStage
-        byteData: 000000000000000100000000010000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 0c0000000200000002000000
-        customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 0f0000001100000001000000140000001300000029000000120000002800000003000000030000000300000001000000010000000100000001000000010000000100000001000000070000000100000014000000280000000300000003000000170000001300000012000000010000001400000028000000030000000300000017000000130000001200000001000000
-        paramName:
-        - timeScale
-        - adjustFixedDeltaTime
-        - everyFrame
-        - gameObject
-        - Recipient
-        - Recipients
-        - Message
-        - _atom
-        - Message
-        - ExtraInfo
-        - collideTag
-        - _sendToSelf
-        - _sendToAll
-        - _sendToMainCharacter
-        - _sendToUsableController
-        - _sendToGameController
-        - _sendToLevelController
-        - _sendToUIManager
-        - SendMessageTime
-        - _finishOnFirstMessageSent
-        - gameObject
-        - _atom
-        - Message
-        - Data
-        - Received
-        - storeSender
-        - TagCheck
-        - GotoPreviousState
-        - gameObject
-        - _atom
-        - Message
-        - Data
-        - Received
-        - storeSender
-        - TagCheck
-        - GotoPreviousState
-        paramDataPos: 000000000000000000000000000000000000000000000000000000000000000000000000010000000200000001000000020000000300000004000000050000000600000007000000080000000c000000010000000100000003000000040000000500000001000000010000000d000000020000000200000006000000070000000800000002000000020000000e000000
-        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000100000001000000040000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001000000
-    - name: Level Start Wait
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 444
-        y: 118
-        width: 124
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Level Start
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.Wait
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 48c01101
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0.25
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - FINISHED
-        byteData: 00
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 0f0000001700000001000000
-        paramName:
-        - time
-        - finishEvent
-        - realTime
-        paramDataPos: 000000000000000000000000
-        paramByteDataSize: 000000000000000001000000
-    - name: Level Start
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 470
-        y: 217
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Play
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - BlueOrb.Scripts.AI.Playmaker.SendMessage
-        - BlueOrb.Scripts.AI.Playmaker.Input.SetLevelBegin
-        customNames:
-        - 
-        - 
-        actionEnabled: 0001
-        actionIsOpen: 0101
-        actionStartIndex: 0000000011000000
-        actionHashCodes: 8cc5bb039bd6f801
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: Main
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 7318814327630136508}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: Main
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 7318814327630136508}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: SetLevelBegin
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          type: -1
-          objectTypeName: UnityEngine.Object
-          floatValues: []
-          intValues: 
-          boolValues: 
-          stringValues: []
-          vector4Values: []
-          objectReferences: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - LevelStart
-        - 
-        - 
-        byteData: 000100000000000000000001
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 0c000000
-        customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 14000000130000002900000012000000280000000300000003000000030000000100000001000000010000000100000001000000010000000100000007000000010000001400000012000000
-        paramName:
-        - gameObject
-        - Recipient
-        - Recipients
-        - Message
-        - _atom
-        - Message
-        - ExtraInfo
-        - collideTag
-        - _sendToSelf
-        - _sendToAll
-        - _sendToMainCharacter
-        - _sendToUsableController
-        - _sendToGameController
-        - _sendToLevelController
-        - _sendToUIManager
-        - SendMessageTime
-        - _finishOnFirstMessageSent
-        - gameObject
-        - LevelBeginMessage
-        paramDataPos: 000000000000000000000000000000000000000000000000010000000200000000000000010000000200000003000000040000000500000006000000070000000b0000000100000001000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000100000004000000010000000000000000000000
-    - name: LevelEnd
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 108
-        y: 302
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Wait Until Start Timer
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - BlueOrb.Scripts.AI.Playmaker.Manager.ProcessEndStage
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 00000000
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1097,366 +313,7 @@ MonoBehaviour:
         paramName: []
         paramDataPos: 
         paramByteDataSize: 
-    - name: Conversation
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 715
-        y: 295
-        width: 146
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: OnConversationEnd
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: EndConversation
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.ScaleTime
-        - BlueOrb.Scripts.AI.PlayMaker.Attack.EnableInput
-        customNames:
-        - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 6cdd4504d98b4403
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 0f00000011000000010000000100000001000000
-        paramName:
-        - timeScale
-        - adjustFixedDeltaTime
-        - everyFrame
-        - Enable
-        - RevertOnExit
-        paramDataPos: 0000000000000000000000000100000002000000
-        paramByteDataSize: 0000000000000000010000000100000001000000
-    - name: EndConversation
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 705
-        y: 370
-        width: 130
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Play
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.ScaleTime
-        - HutongGames.PlayMaker.Actions.Wait
-        customNames:
-        - 
-        - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 6cdd450448c01101
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0.01
-        fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - 
-        byteData: 0000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 0f00000011000000010000000f0000001700000001000000
-        paramName:
-        - timeScale
-        - adjustFixedDeltaTime
-        - everyFrame
-        - time
-        - finishEvent
-        - realTime
-        paramDataPos: 000000000000000000000000010000000000000001000000
-        paramByteDataSize: 000000000000000001000000000000000000000001000000
-    - name: Dead Dialog
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 270
-        y: 439
-        width: 101
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: LevelEnd
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - BlueOrb.Scripts.AI.Playmaker.IsMessageReceived
-        - BlueOrb.Scripts.AI.PlayMaker.Attack.EnableInput
-        - HutongGames.PlayMaker.Actions.ScaleTime
-        - BlueOrb.Scripts.AI.Playmaker.SendMessage
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000080000000a0000000d000000
-        actionHashCodes: 1a44e005d98b44036cdd45048cc5bb03
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Died
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          type: -1
-          objectTypeName: UnityEngine.Object
-          floatValues: []
-          intValues: 
-          boolValues: 
-          stringValues: []
-          vector4Values: []
-          objectReferences: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmIntParams: []
-        fsmBoolParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 1
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams:
-        - OkClicked
-        - 
-        - FINISHED
-        - 
-        - 
-        - 
-        byteData: 00000000000000000000010000000001
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 020000000c000000
-        customTypeNames:
-        - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        - BlueOrb.Scripts.AI.AtomActions.SendMessageAtom
-        paramDataType: 140000002800000003000000030000001700000013000000120000000100000001000000010000000f00000011000000010000001400000013000000290000001200000028000000030000000300000003000000010000000100000001000000010000000100000001000000010000000700000001000000
-        paramName:
-        - gameObject
-        - _atom
-        - Message
-        - Data
-        - Received
-        - storeSender
-        - TagCheck
-        - GotoPreviousState
-        - Enable
-        - RevertOnExit
-        - timeScale
-        - adjustFixedDeltaTime
-        - everyFrame
-        - gameObject
-        - Recipient
-        - Recipients
-        - Message
-        - _atom
-        - Message
-        - ExtraInfo
-        - collideTag
-        - _sendToSelf
-        - _sendToAll
-        - _sendToMainCharacter
-        - _sendToUsableController
-        - _sendToGameController
-        - _sendToLevelController
-        - _sendToUIManager
-        - SendMessageTime
-        - _finishOnFirstMessageSent
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000010000000200000000000000000000000300000001000000010000000000000001000000010000000300000004000000050000000400000005000000060000000700000008000000090000000a0000000b0000000f000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000010000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000400000001000000
-    events:
-    - name: FINISHED
-      isSystemEvent: 1
-      isGlobal: 0
-    - name: Dead
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: EndStage
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: OnConversationEnd
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: OnConversationStart
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: Pause
-      isSystemEvent: 0
-      isGlobal: 0
+    events: []
     globalTransitions: []
     variables:
       floatVariables: []
@@ -1481,6 +338,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 7318814327630136508}
+      - useVariable: 1
+        name: Audio
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 7318814327630136508}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -1488,7 +351,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -1498,12 +361,12 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
     EnableBreakpoints: 1
-    editorFlags: 1
+    editorFlags: 3
     activeStateName: 
     mouseEvents: 0
     handleLevelLoaded: 0
@@ -1524,7 +387,7 @@ MonoBehaviour:
     handleJointBreak: 0
     handleJointBreak2D: 0
     handleOnGUI: 0
-    handleFixedUpdate: 1
+    handleFixedUpdate: 0
     handleLateUpdate: 0
     handleApplicationEvents: 0
     handleUiEvents: 0
