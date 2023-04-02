@@ -94,7 +94,20 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 return null;
             }
 
-            var target = recipient.GetComponent<EntityCommonComponent>();
+            EntityCommonComponent target = null;
+            GameObject rec = recipient;
+            while (target == null)
+            {
+                target = rec.GetComponent<EntityCommonComponent>();
+                if (target == null)
+                {
+                    rec = rec.transform.parent.gameObject;
+                }
+                if (rec == null)
+                {
+                    break;
+                }
+            }
             if (target == null)
             {
                 Debug.LogWarning($"Target {recipient.name} does not contain an EntityCommonComponent in GO {Fsm.GameObjectName} in FSM {Fsm.Name} - {Fsm.ActiveStateName}");
