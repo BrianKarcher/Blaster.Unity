@@ -105,8 +105,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
 
         public override void OnDrawActionGizmos()
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawCube(Vector3.zero, new Vector3(100, 100, 100));
+            base.OnDrawActionGizmos();
             if (IsDebug.Value)
             {
                 if (hitDetect)
