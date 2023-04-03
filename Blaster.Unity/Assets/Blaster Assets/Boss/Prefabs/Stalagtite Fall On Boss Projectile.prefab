@@ -312,7 +312,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1744215930427970841}
   - component: {fileID: 1643292384837407493}
-  - component: {fileID: 1854318378221882587}
   m_Layer: 11
   m_Name: FSM
   m_TagString: Environ Projectile
@@ -460,6 +459,13 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 1012493318970986468}
+      - useVariable: 1
+        name: InstantiateOnDestroy
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 8393646542160958322, guid: 507fa8211c074034188bd29a3ef9f459,
+          type: 3}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -467,7 +473,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -512,17 +518,3 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: ca606114324314647bdd3a9a044141bc, type: 2}
   eventHandlerComponentsAdded: 1
---- !u!136 &1854318378221882587
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7733257062258930227}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.28
-  m_Height: 3.04
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}

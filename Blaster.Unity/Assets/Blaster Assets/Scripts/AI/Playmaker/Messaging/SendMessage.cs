@@ -101,7 +101,7 @@ namespace BlueOrb.Scripts.AI.Playmaker
                 target = rec.GetComponent<EntityCommonComponent>();
                 if (target == null)
                 {
-                    rec = rec.transform.parent.gameObject;
+                    rec = rec.transform.parent?.gameObject;
                 }
                 if (rec == null)
                 {
