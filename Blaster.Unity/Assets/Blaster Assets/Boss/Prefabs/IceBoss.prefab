@@ -854,7 +854,19 @@ MonoBehaviour:
       floatVariables: []
       intVariables: []
       boolVariables: []
-      stringVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: ProjectileNotifyMessage
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: StalHit
+      - useVariable: 1
+        name: DropMessage
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: Drop
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
@@ -921,6 +933,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 8570670702591330435}
+      - useVariable: 1
+        name: Projectile
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -928,7 +946,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -3759,6 +3777,11 @@ PrefabInstance:
     - target: {fileID: 1224526026654509, guid: 92be158e494599e40ace2d5dce43f45b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952285719474046446, guid: 92be158e494599e40ace2d5dce43f45b,
+        type: 3}
+      propertyPath: fsm.editorFlags
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7223949952843991185, guid: 92be158e494599e40ace2d5dce43f45b,
         type: 3}

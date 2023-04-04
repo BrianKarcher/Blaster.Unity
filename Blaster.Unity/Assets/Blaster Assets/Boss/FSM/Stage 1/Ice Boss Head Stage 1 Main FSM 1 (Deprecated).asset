@@ -117,8 +117,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000008000000
-        actionHashCodes: 1a44e0059c512400
+        actionStartIndex: 0000000009000000
+        actionHashCodes: dad66e009c512400
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -162,6 +162,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: FireProjectileHit
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         - useVariable: 0
           name: 
@@ -192,9 +198,10 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 14000000280000000300000003000000170000001300000012000000010000001400000007000000120000001700000013000000
+        paramDataType: 1400000012000000280000000300000003000000170000001300000012000000010000001400000007000000120000001700000013000000
         paramName:
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -207,8 +214,8 @@ MonoBehaviour:
         - collideTag
         - sendEvent
         - storeCollider
-        paramDataPos: 00000000000000000000000001000000020000000000000000000000000000000100000001000000010000000300000001000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000
+        paramDataPos: 0000000000000000000000000000000001000000020000000000000001000000000000000100000001000000020000000300000001000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000010000000000000004000000000000000000000000000000
     - name: Hit
       description: 
       colorIndex: 0

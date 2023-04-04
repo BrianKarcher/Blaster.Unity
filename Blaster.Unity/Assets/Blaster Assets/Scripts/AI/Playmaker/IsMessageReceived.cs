@@ -19,6 +19,9 @@ namespace BlueOrb.Scripts.AI.Playmaker
 		[CheckForComponent(typeof(EntityCommonComponent))]
         [Tooltip("The main GameObject.")]
 		public FsmOwnerDefault gameObject;
+
+        public FsmString Message;
+
         public IsMessageReceivedAtom _atom;
 
         [UIHint(UIHint.Variable)]
@@ -55,6 +58,8 @@ namespace BlueOrb.Scripts.AI.Playmaker
             //var entity = Owner.GetComponent<IEntity>();
             if (!TagCheck.IsNone)
                 _atom.SetTagCheck(TagCheck.Value);
+            if (!Message.IsNone && !string.IsNullOrEmpty(Message.Value))
+                _atom.Message = Message.Value;
             _atom.Received += _atom_Received;
             _atom.Start(entity);
             //if (_isMessageReceivedAtom.Message == "VictoryPose")

@@ -413,9 +413,21 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 1
+        value: 5
       boolVariables: []
-      stringVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: NotifyMessage
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: StalHit
+      - useVariable: 1
+        name: DropMessage
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: Drop
       vector2Variables: []
       vector3Variables:
       - useVariable: 1
@@ -460,12 +472,11 @@ MonoBehaviour:
         networkSync: 0
         value: {fileID: 1012493318970986468}
       - useVariable: 1
-        name: InstantiateOnDestroy
+        name: Notify
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 8393646542160958322, guid: 507fa8211c074034188bd29a3ef9f459,
-          type: 3}
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -473,7 +484,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
