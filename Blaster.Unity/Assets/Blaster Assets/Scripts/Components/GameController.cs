@@ -1,8 +1,4 @@
-﻿using BlueOrb.Base.Global;
-using BlueOrb.Base.Manager;
-using BlueOrb.Common.Components;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 namespace BlueOrb.Controller.Manager
 {

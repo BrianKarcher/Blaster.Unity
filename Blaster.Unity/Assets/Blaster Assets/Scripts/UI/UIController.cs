@@ -141,7 +141,7 @@ namespace BlueOrb.Scripts.UI
         public void ButtonClicked(string button)
         {
             Debug.Log($"Button Clicked: {button}");
-            MessageDispatcher.Instance.DispatchMsg("ButtonClicked", 0f, GetId(), _componentRepository.GetId(), button);
+            MessageDispatcher.Instance.DispatchMsg("ButtonClicked", 0f, GetId(), null, button);
         }
 
         public void LevelSelect(SceneConfig sceneConfig)
