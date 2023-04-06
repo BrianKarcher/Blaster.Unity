@@ -15,6 +15,11 @@ namespace Assets.Blaster_Assets.Scripts.UI
             => button = GetComponent<Button>();
 
         public void Start()
-            => button.onClick.AddListener(() => MessageDispatcher.Instance.DispatchMsg("ButtonClicked", 0f, string.Empty, null, buttonName));
+        {
+            if (string.IsNullOrEmpty(buttonName))
+                return;
+
+            button.onClick.AddListener(() => MessageDispatcher.Instance.DispatchMsg("ButtonClicked", 0f, string.Empty, null, buttonName));
+        }
     }
 }

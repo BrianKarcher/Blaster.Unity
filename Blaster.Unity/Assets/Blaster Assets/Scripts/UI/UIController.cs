@@ -137,51 +137,5 @@ namespace BlueOrb.Scripts.UI
         {
             return HUD;
         }
-
-        public void ButtonClicked(string button)
-        {
-            Debug.Log($"Button Clicked: {button}");
-            MessageDispatcher.Instance.DispatchMsg("ButtonClicked", 0f, GetId(), null, button);
-        }
-
-        public void LevelSelect(SceneConfig sceneConfig)
-        {
-            GlobalStatic.NextScene = sceneConfig.SceneName;
-            GlobalStatic.NextSceneConfig = sceneConfig;
-            MessageDispatcher.Instance.DispatchMsg("LevelSelected", 0f, GetId(), GetId(), null);
-        }
-
-        public void SetDifficulty(string difficulty)
-        {
-            Debug.Log($"Button Clicked: {difficulty}");
-            GlobalStatic.Difficulty = difficulty;
-            MessageDispatcher.Instance.DispatchMsg("DifficultySelected", 0f, GetId(), GetId(), null);
-        }
-
-        public void SetEffectVolume()
-        {
-            float volume = this.soundEffectSlider.value;
-            Debug.Log($"Setting Sfx Volume to {volume}");
-            this.gameStateController.SettingsController.SetEffectVolume(volume);
-        }
-
-        public void SetMusicVolume()
-        {
-            float volume = this.musicSlider.value;
-            Debug.Log($"Setting Music Volume to {volume}");
-            this.gameStateController.SettingsController.SetMusicVolume(volume);
-        }
-
-        public void SetSensitivity()
-        {
-            this.gameStateController.SettingsController.SetSensitivity(this.sensitivitySlider.value);
-        }
-
-        public void SettingsBackClicked()
-        {
-            Debug.Log($"Button Clicked: Back");
-            this.gameStateController.SettingsController.SaveSettings();
-            MessageDispatcher.Instance.DispatchMsg("BackClicked", 0f, GetId(), UIController.UIControllerId, null);
-        }
     }
 }
