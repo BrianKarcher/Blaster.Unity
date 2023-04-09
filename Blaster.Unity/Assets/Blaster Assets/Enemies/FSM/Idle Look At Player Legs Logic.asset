@@ -133,8 +133,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 00000000090000000c000000
-        actionHashCodes: 109b580486fe5f019c512400
+        actionStartIndex: 000000000a0000000d000000
+        actionHashCodes: 16fb3e0386fe5f019c512400
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -195,7 +195,13 @@ MonoBehaviour:
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
-        fsmVector3Params: []
+        fsmVector3Params:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -210,9 +216,10 @@ MonoBehaviour:
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Physics.SetSteeringTargetToVectorAtom
         - BlueOrb.Scripts.AI.AtomActions.EnableSteeringBehaviorAtom
-        paramDataType: 1400000013000000280000000700000000000000010000000300000003000000010000001400000028000000070000001400000007000000120000001700000013000000
+        paramDataType: 140000001c00000013000000280000000700000000000000010000000300000003000000010000001400000028000000070000001400000007000000120000001700000013000000
         paramName:
         - gameObject
+        - TargetVector
         - GoToGameObject
         - _atom
         - _goToType
@@ -229,8 +236,8 @@ MonoBehaviour:
         - collideTag
         - sendEvent
         - storeCollider
-        paramDataPos: 00000000000000000000000000000000040000000800000000000000010000000900000001000000010000000a000000020000000e000000000000000200000001000000
-        paramByteDataSize: 0000000000000000000000000400000004000000010000000000000000000000010000000000000000000000040000000000000004000000000000000000000000000000
+        paramDataPos: 0000000000000000000000000000000000000000040000000800000000000000010000000900000001000000010000000a000000020000000e000000000000000200000001000000
+        paramByteDataSize: 000000000000000000000000000000000400000004000000010000000000000000000000010000000000000000000000040000000000000004000000000000000000000000000000
     - name: Hit
       description: 
       colorIndex: 0

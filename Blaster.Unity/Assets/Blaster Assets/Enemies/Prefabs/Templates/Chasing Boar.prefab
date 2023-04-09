@@ -27,7 +27,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6741130959194308102}
+  - {fileID: 2598407074783683609}
   - {fileID: 2302228104300329264}
   - {fileID: 2012776113335368434}
   - {fileID: 8927923559915303391}
@@ -45,14 +45,13 @@ GameObject:
   - component: {fileID: 2302228103584012944}
   - component: {fileID: 2302228103584012951}
   - component: {fileID: 2302228103584012948}
-  - component: {fileID: 2302228103584012949}
   - component: {fileID: 7453162780230285150}
   - component: {fileID: 3859979676176225410}
-  - component: {fileID: -6319302682828548422}
-  - component: {fileID: 447385514622097547}
-  - component: {fileID: 7028061456378383178}
+  - component: {fileID: 7447651380262486809}
+  - component: {fileID: 4080014458843103737}
+  - component: {fileID: -8447107281115563362}
   m_Layer: 9
-  m_Name: Boar Enemy
+  m_Name: Chasing Boar
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +64,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2302228103584012945}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -2.3510246, y: 0.00000047683716, z: -6.8622165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -73,6 +72,7 @@ Transform:
   - {fileID: 2302228102976037642}
   - {fileID: 2302228104698744949}
   - {fileID: 7763364201747168070}
+  - {fileID: 8405407606928325957}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -107,24 +107,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &2302228103584012949
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2302228103584012945}
-  m_Material: {fileID: 13400000, guid: a3d8bd354a4fed149b11e9ebb242cdfd, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 1
-  m_Height: 1.5445558
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.7622779, z: -0}
 --- !u!114 &7453162780230285150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +128,7 @@ MonoBehaviour:
   _entityStats:
     _maxHP: 2
     _currentHP: 2
+    isInvincible: 0
 --- !u!114 &3859979676176225410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +153,7 @@ MonoBehaviour:
   _messageToSend: 
   _hitVFX: {fileID: 0}
   _attackAnim: -1
---- !u!143 &-6319302682828548422
+--- !u!143 &7447651380262486809
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,13 +165,13 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 0
-  m_Radius: 1.2
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.75, z: 0}
---- !u!114 &447385514622097547
+  m_Center: {x: 0, y: 0.48, z: 0}
+--- !u!114 &4080014458843103737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,7 +228,7 @@ MonoBehaviour:
       _jumpVelocity: {x: 0, y: 9.8, z: 0}
       _offset: {x: 0, y: 0, z: 0}
       _mass: 1
-      _maxSpeed: 7
+      _maxSpeed: 10
       _maxSpeedMultiplier: 1
       _maxDistanceToTarget: 0
       _directionRotate: 0
@@ -265,7 +252,7 @@ MonoBehaviour:
       _terrainLayer:
         serializedVersion: 2
         m_Bits: 0
-  startOnGround: 0
+  startOnGround: 1
   _applySpeedLimit: 1
   _steering:
     _drawDebug: 0
@@ -276,7 +263,7 @@ MonoBehaviour:
     _steeringForce: {x: 0, y: 0, z: 0}
   _isEnabled: 1
   _animForwardSpeedVar: 
---- !u!114 &7028061456378383178
+--- !u!114 &-8447107281115563362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2302228104300329264
 Transform:
   m_ObjectHideFlags: 0
@@ -405,65 +392,11 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 0
-      - useVariable: 1
-        name: MeleeAttackDistance
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: 1
-      - useVariable: 1
-        name: AttackCooldown
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: 1
-      - useVariable: 1
-        name: RechaseDistance
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: 5
-      - useVariable: 1
-        name: FleeDistance
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: 20
-      - useVariable: 1
-        name: Speed
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: 7
       intVariables: []
       boolVariables: []
-      stringVariables:
-      - useVariable: 1
-        name: AttackAnimTrigger
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: Attack
-      - useVariable: 1
-        name: AnimSpeedVariable
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: Speed
-      - useVariable: 1
-        name: AnimTurnVariable
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: TurnSpeed
+      stringVariables: []
       vector2Variables: []
       vector3Variables:
-      - useVariable: 1
-        name: TargetPos
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: {x: 0, y: 0, z: 0}
       - useVariable: 1
         name: AttackOffset
         tooltip: 
@@ -476,6 +409,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {x: 2, y: 2, z: 2}
+      - useVariable: 1
+        name: pos
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {x: 0, y: 0, z: 0}
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
@@ -498,6 +437,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 8866463392381433101}
+      - useVariable: 1
+        name: Collider
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -515,23 +460,10 @@ MonoBehaviour:
         stringValues: []
         vector4Values: []
         objectReferences: []
-      - useVariable: 1
-        name: FleePath
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        type: 0
-        objectTypeName: UnityEngine.Object
-        floatValues: []
-        intValues: 
-        boolValues: 
-        stringValues: []
-        vector4Values: []
-        objectReferences: []
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -574,7 +506,7 @@ MonoBehaviour:
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
-  fsmTemplate: {fileID: 11400000, guid: e2fc77d5842c743498e9122b278776c1, type: 2}
+  fsmTemplate: {fileID: 11400000, guid: eafb80eaa9e720a4299417b1834d6ee5, type: 2}
   eventHandlerComponentsAdded: 1
 --- !u!114 &2302228104300329271
 MonoBehaviour:
@@ -686,7 +618,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1561928316334690435
+--- !u!114 &1401342975619678288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -969,7 +901,13 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 100
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: isScared
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables:
@@ -1007,14 +945,41 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 2302228104300329265}
+      - useVariable: 1
+        name: DissolveElement
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
-      materialVariables: []
+      materialVariables:
+      - useVariable: 1
+        name: Dissolve Material
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: UnityEngine.Object
+        value: {fileID: 0}
       textureVariables: []
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: ElementsToDissolve
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        type: 3
+        objectTypeName: UnityEngine.GameObject
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences:
+        - {fileID: 2302228103584012945}
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -1059,6 +1024,50 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: 0a5643f308f72e4469ced6dd7b40db7a, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!1 &5296138031729331275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8405407606928325957}
+  - component: {fileID: 2108779857273732816}
+  m_Layer: 11
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8405407606928325957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296138031729331275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2302228103584012944}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2108779857273732816
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296138031729331275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Center: {x: 0, y: 0.54, z: 0}
 --- !u!1 &7843497565167423146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1453,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 589387079065611268}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7013124160594592068
+--- !u!1001 &1788409365918554971
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1628,9 +1637,9 @@ PrefabInstance:
       objectReference: {fileID: 2302228103584012945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8eb30f56e220724fbd3b0be93ae018a, type: 3}
---- !u!4 &6741130959194308102 stripped
+--- !u!4 &2598407074783683609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4386173574291488578, guid: f8eb30f56e220724fbd3b0be93ae018a,
     type: 3}
-  m_PrefabInstance: {fileID: 7013124160594592068}
+  m_PrefabInstance: {fileID: 1788409365918554971}
   m_PrefabAsset: {fileID: 0}

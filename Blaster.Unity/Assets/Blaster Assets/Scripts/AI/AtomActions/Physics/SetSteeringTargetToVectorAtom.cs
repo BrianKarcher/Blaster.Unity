@@ -19,7 +19,8 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
             Self = 7,
             Home = 8,
             Player = 9,
-            GameObject = 10
+            GameObject = 10,
+            Vector = 11
         }
 
         public GoToType _goToType;
@@ -32,6 +33,7 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
 
         private IPhysicsComponent _physicsComponent;
         private GameObject _goToGameObject;
+        private Vector3 targetVector;
         //private AIComponent _aIComponent;
         //private SteeringBehaviorManager _steering;
 
@@ -140,6 +142,8 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
                     return EntityContainer.Instance.GetMainCharacter().GetFootPosition();
                 case GoToType.GameObject:
                     return _goToGameObject.transform.position;
+                case GoToType.Vector:
+                    return this.targetVector;
             }
             return Vector3.negativeInfinity;
         }
@@ -172,6 +176,11 @@ namespace BlueOrb.Scripts.AI.AtomActions.Physics
         public void SetGameObject(GameObject gameObject)
         {
             _goToGameObject = gameObject;
+        }
+
+        public void SetTargetVector(Vector3 target)
+        {
+            this.targetVector = target;
         }
     }
 }
