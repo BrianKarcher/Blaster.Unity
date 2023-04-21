@@ -155,7 +155,7 @@ namespace Assets.BlueOrb.Scripts.UI
             {
                 string text = (string)data.ExtraInfo;
                 this.notificationText?.SetText(text);
-                iTween.ValueTo(gameObject, iTween.Hash("name", NotificationAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetNotificationAlpha"));
+                StartNotificationAlphaTween();
             });
 
             MessageDispatcher.Instance.StartListening(this.alertHudMessage, ControllerName, (data) =>
@@ -182,10 +182,21 @@ namespace Assets.BlueOrb.Scripts.UI
             });
         }
 
+        private void StartNotificationAlphaTween()
+        {
+            iTween.ValueTo(gameObject, iTween.Hash("name", NotificationAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetNotificationAlpha"));
+        }
+
         public void CreateAlert(string text)
         {
             this.alertText?.SetText(text);
             iTween.ValueTo(gameObject, iTween.Hash("name", AlertAlhpaTweenName, "from", 1, "to", 0, "time", 3, "onupdate", "SetAlertAlpha"));
+        }
+
+        public void CreateNotification(string text)
+        {
+            this.notificationText?.SetText(text);
+            StartNotificationAlphaTween();
         }
 
         public GameObject CreateBuffUI()
