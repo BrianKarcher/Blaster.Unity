@@ -13,7 +13,10 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
     public class AttackOverlapBox : BasePlayMakerAction
     {
         [RequiredField]
+        [CheckForComponent(typeof(AudioSource))]
+        [HutongGames.PlayMaker.Tooltip("The GameObject with an AudioSource component.")]
         public FsmOwnerDefault gameObject;
+
         [UIHint(UIHint.Layer)]
         [HutongGames.PlayMaker.Tooltip("Layers to check.")]
         public FsmInt[] Layer;
@@ -21,10 +24,18 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
         public FsmVector3 Offset;
         public FsmFloat Damage;
         public FsmBool IsDebug;
+        [ObjectType(typeof(AudioClip))]
+        [HutongGames.PlayMaker.Tooltip("Optionally play a 'one shot' AudioClip. NOTE: Volume cannot be adjusted while playing a 'one shot' AudioClip.")]
+        public FsmObject oneShotClip;
 
         private AttackComponent attackComponent;
         private bool hitDetect = false;
         private IEntity entity;
+        [HasFloatSlider(0, 1)]
+        [HutongGames.PlayMaker.Tooltip("Set the volume.")]
+        public FsmFloat volume;
+        public FsmFloat audioDelay;
+        private AudioSource audio;
 
         public override void Reset()
         {
@@ -75,6 +86,28 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             }
 
             this.hitDetect = this.attackComponent.ProcessAttack(_itemHits, count, this.Damage.Value);
+            var audioClip = oneShotClip.Value as AudioClip;
+
+            if (audioClip != null)
+            {
+                audio = go.GetComponent<AudioSource>();
+                if (audio != null)
+                {
+                    if (!volume.IsNone)
+                    {
+                        audio.volume = volume.Value;
+                        //audio.PlayOneShot(audioClip, volume.Value);
+                    }
+                    else
+                    {
+                        audio.volume = 1;
+                        //audio.PlayOneShot(audioClip);
+                    }
+                    float delay = this.audioDelay.IsNone ? 0f : this.audioDelay.Value;
+                    audio.clip = audioClip;
+                    audio.PlayDelayed(delay);
+                }
+            }
 
             Finish();
         }

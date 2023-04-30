@@ -310,8 +310,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 00000000070000000d000000
-        actionHashCodes: c58f3f001f8cd10448c01101
+        actionStartIndex: 000000000a00000010000000
+        actionHashCodes: c9207d051f8cd10448c01101
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -356,7 +356,14 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -367,6 +374,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -414,7 +433,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.FsmInt
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000000c000000100000001c0000001c0000000f000000110000001400000012000000120000001300000017000000170000000f0000001700000001000000
+        paramDataType: 140000000c000000100000001c0000001c0000000f00000011000000180000000f0000000f0000001400000012000000120000001300000017000000170000000f0000001700000001000000
         paramName:
         - gameObject
         - Layer
@@ -423,6 +442,9 @@ MonoBehaviour:
         - Offset
         - Damage
         - IsDebug
+        - oneShotClip
+        - volume
+        - audioDelay
         - gameObject
         - Message
         - ShieldTag
@@ -432,8 +454,8 @@ MonoBehaviour:
         - time
         - finishEvent
         - realTime
-        paramDataPos: 00000000000000000000000000000000010000000000000000000000010000000000000001000000000000000000000001000000010000000200000000000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000010000000000000000000000000000000100000002000000010000000000000001000000000000000000000001000000030000000200000000000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Attack Anim 2
       description: 
       colorIndex: 0
@@ -674,8 +696,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 00000000070000000d000000
-        actionHashCodes: c58f3f001f8cd10448c01101
+        actionStartIndex: 000000000a00000010000000
+        actionHashCodes: c9207d051f8cd10448c01101
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -720,7 +742,14 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -731,6 +760,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -778,7 +819,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.FsmInt
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000000c000000100000001c0000001c0000000f000000110000001400000012000000120000001300000017000000170000000f0000001700000001000000
+        paramDataType: 140000000c000000100000001c0000001c0000000f00000011000000180000000f0000000f0000001400000012000000120000001300000017000000170000000f0000001700000001000000
         paramName:
         - gameObject
         - Layer
@@ -787,6 +828,9 @@ MonoBehaviour:
         - Offset
         - Damage
         - IsDebug
+        - oneShotClip
+        - volume
+        - audioDelay
         - gameObject
         - Message
         - ShieldTag
@@ -796,8 +840,8 @@ MonoBehaviour:
         - time
         - finishEvent
         - realTime
-        paramDataPos: 00000000000000000000000000000000010000000000000000000000010000000000000001000000000000000000000001000000010000000200000000000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000010000000000000000000000000000000100000002000000010000000000000001000000000000000000000001000000030000000200000000000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Attack Anim 3
       description: 
       colorIndex: 0
@@ -1028,8 +1072,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000007000000
-        actionHashCodes: c58f3f0048c01101
+        actionStartIndex: 000000000a000000
+        actionHashCodes: c9207d0548c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -1048,7 +1092,14 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams: []
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -1059,6 +1110,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -1104,7 +1167,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.FsmInt
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000000c000000100000001c0000001c0000000f000000110000000f0000001700000001000000
+        paramDataType: 140000000c000000100000001c0000001c0000000f00000011000000180000000f0000000f0000000f0000001700000001000000
         paramName:
         - gameObject
         - Layer
@@ -1113,11 +1176,14 @@ MonoBehaviour:
         - Offset
         - Damage
         - IsDebug
+        - oneShotClip
+        - volume
+        - audioDelay
         - time
         - finishEvent
         - realTime
-        paramDataPos: 00000000000000000000000000000000010000000000000000000000010000000000000000000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000010000000000000000000000000000000100000002000000030000000000000000000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Chase Module
       description: 
       colorIndex: 0

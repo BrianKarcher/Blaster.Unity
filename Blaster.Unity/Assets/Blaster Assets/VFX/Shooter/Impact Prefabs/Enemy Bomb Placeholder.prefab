@@ -402,7 +402,7 @@ MonoBehaviour:
         actionEnabled: 0001
         actionIsOpen: 0101
         actionStartIndex: 000000000b000000
-        actionHashCodes: 6259e401c58f3f00
+        actionHashCodes: 6259e401c9207d05
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -429,7 +429,14 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams: []
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams:
         - useVariable: 1
@@ -453,6 +460,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams:
         - useVariable: 0
           name: 
@@ -518,7 +537,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.FsmInt
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001c0000001c0000000c00000010000000100000001000000017000000170000002900000001000000140000000c0000001c0000001c0000000f00000011000000
+        paramDataType: 140000001c0000001c0000000c00000010000000100000001000000017000000170000002900000001000000140000000c0000001c0000001c0000000f00000011000000180000000f0000000f000000
         paramName:
         - gameObject
         - Offset
@@ -537,8 +556,11 @@ MonoBehaviour:
         - Offset
         - Damage
         - IsDebug
-        paramDataPos: 0000000000000000010000000000000000000000010000000200000000000000010000000000000000000000010000000100000002000000030000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000
+        - oneShotClip
+        - volume
+        - audioDelay
+        paramDataPos: 0000000000000000010000000000000000000000010000000200000000000000010000000000000000000000010000000100000002000000030000000000000000000000000000000100000002000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000
     - name: SendMessage
       description: 
       colorIndex: 0
@@ -759,7 +781,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
