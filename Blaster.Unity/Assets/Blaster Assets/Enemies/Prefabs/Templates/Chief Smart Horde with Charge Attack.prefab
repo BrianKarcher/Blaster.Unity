@@ -136,6 +136,18 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 4
+      - useVariable: 1
+        name: SingleMeleeAttackDamage
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 2
+      - useVariable: 1
+        name: AttackAudioClipDelay
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0.3
       intVariables: []
       boolVariables: []
       stringVariables:
@@ -177,12 +189,6 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {x: 2, y: 2, z: 2}
-      - useVariable: 1
-        name: TargetPos
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: {x: 0, y: 0, z: 0}
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
@@ -211,27 +217,27 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 6654398364799702927}
-      objectVariables: []
+      - useVariable: 1
+        name: Audio
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 714508596768723161}
+      objectVariables:
+      - useVariable: 1
+        name: AttackAudioClip
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: UnityEngine.AudioClip
+        value: {fileID: 8300000, guid: 94ef583a2f4691042afdd130f3ea02a0, type: 3}
       materialVariables: []
       textureVariables: []
-      arrayVariables:
-      - useVariable: 1
-        name: Path
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        type: 0
-        objectTypeName: UnityEngine.Object
-        floatValues: []
-        intValues: 
-        boolValues: 
-        stringValues: []
-        vector4Values: []
-        objectReferences: []
+      arrayVariables: []
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -341,6 +347,7 @@ GameObject:
   - component: {fileID: 6818227861247268279}
   - component: {fileID: 3336713134227664091}
   - component: {fileID: 3893375468208113304}
+  - component: {fileID: 3426768837502448634}
   m_Layer: 9
   m_Name: Chief Smart Horde with Charge Attack
   m_TagString: Enemy
@@ -417,6 +424,7 @@ MonoBehaviour:
   _entityStats:
     _maxHP: 10
     _currentHP: 10
+    isInvincible: 0
 --- !u!114 &1435806190122842274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +559,7 @@ MonoBehaviour:
     _steeringForce: {x: 0, y: 0, z: 0}
   _isEnabled: 1
   _animForwardSpeedVar: 
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &3336713134227664091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +600,102 @@ MonoBehaviour:
   _deflectPrefab: {fileID: 0}
   _deflectTag: 
   immunityBuffConfig: {fileID: 0}
+--- !u!82 &3426768837502448634
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714508596768723161}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1637082103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,6 +1965,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Audio
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 714508596768723161}
       objectVariables: []
       materialVariables:
       - useVariable: 1
@@ -1894,7 +2005,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
