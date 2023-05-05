@@ -428,6 +428,7 @@ MonoBehaviour:
   _entityStats:
     _maxHP: 1
     _currentHP: 1
+    isInvincible: 0
 --- !u!136 &4120140323763395791
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -576,6 +577,7 @@ MonoBehaviour:
     _steeringForce: {x: 0, y: 0, z: 0}
   _isEnabled: 1
   _animForwardSpeedVar: 
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &-5676746300748385533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,6 +789,12 @@ MonoBehaviour:
         networkSync: 0
         value: {fileID: 5090170921490079855, guid: 03cb04d1116ad8d4aa93264301fd0f49,
           type: 3}
+      - useVariable: 1
+        name: Audio
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1400864726268507530}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -807,7 +815,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0

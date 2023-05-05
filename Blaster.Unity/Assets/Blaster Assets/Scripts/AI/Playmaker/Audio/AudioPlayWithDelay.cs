@@ -71,8 +71,10 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Audio
             }
 
             // Finish if failed to play sound	
-
-            Finish();
+            if (!WaitForEndOfClip.Value)
+            {
+                Finish();
+            }
         }
 
         public override void OnUpdate()

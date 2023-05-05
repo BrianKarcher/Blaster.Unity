@@ -44,6 +44,7 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Attack
             Damage = 1.0f;
             Offset = new Vector3(0f, 0f, 1f);
             IsDebug = false;
+            volume = 1f;
         }
 
         private Collider[] _itemHits = new Collider[50];
