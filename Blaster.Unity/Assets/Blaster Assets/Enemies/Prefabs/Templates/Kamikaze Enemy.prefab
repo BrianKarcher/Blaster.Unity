@@ -520,6 +520,7 @@ MonoBehaviour:
   _entityStats:
     _maxHP: 2
     _currentHP: 2
+    isInvincible: 0
 --- !u!114 &3888843482911550153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +658,7 @@ MonoBehaviour:
     _steeringForce: {x: 0, y: 0, z: 0}
   _isEnabled: 1
   _animForwardSpeedVar: 
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &6734603634200223092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,7 +725,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1449,7 +1451,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 1a44e005
+        actionHashCodes: dad66e00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -1479,6 +1481,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: Dissolve
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         fsmObjectParams: []
         fsmVarParams: []
@@ -1502,9 +1510,10 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 140000001200000028000000030000000300000017000000130000001200000001000000
         paramName:
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -1512,8 +1521,8 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Spawn
       description: 
       colorIndex: 0
@@ -2086,7 +2095,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 1a44e005
+        actionHashCodes: dad66e00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -2116,6 +2125,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: Dissolve
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         fsmObjectParams: []
         fsmVarParams: []
@@ -2139,9 +2154,10 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 140000001200000028000000030000000300000017000000130000001200000001000000
         paramName:
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -2149,8 +2165,8 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Spawn
       description: 
       colorIndex: 0
@@ -2723,7 +2739,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 1a44e005
+        actionHashCodes: dad66e00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -2753,6 +2769,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: Dissolve
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         fsmObjectParams: []
         fsmVarParams: []
@@ -2776,9 +2798,10 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 140000001200000028000000030000000300000017000000130000001200000001000000
         paramName:
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -2786,8 +2809,8 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Spawn
       description: 
       colorIndex: 0
@@ -3360,7 +3383,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 1a44e005
+        actionHashCodes: dad66e00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -3390,6 +3413,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: Dissolve
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         fsmObjectParams: []
         fsmVarParams: []
@@ -3413,9 +3442,10 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 140000001200000028000000030000000300000017000000130000001200000001000000
         paramName:
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -3423,8 +3453,8 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Spawn
       description: 
       colorIndex: 0
@@ -3997,7 +4027,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 1a44e005
+        actionHashCodes: dad66e00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -4027,6 +4057,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: Dissolve
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         fsmObjectParams: []
         fsmVarParams: []
@@ -4050,9 +4086,10 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 140000001200000028000000030000000300000017000000130000001200000001000000
         paramName:
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -4060,8 +4097,8 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Spawn
       description: 
       colorIndex: 0
@@ -4634,7 +4671,7 @@ MonoBehaviour:
         actionEnabled: 01
         actionIsOpen: 01
         actionStartIndex: 00000000
-        actionHashCodes: 1a44e005
+        actionHashCodes: dad66e00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -4664,6 +4701,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: Dissolve
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         fsmObjectParams: []
         fsmVarParams: []
@@ -4687,9 +4730,10 @@ MonoBehaviour:
         customTypeSizes: 02000000
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 140000001200000028000000030000000300000017000000130000001200000001000000
         paramName:
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -4697,8 +4741,8 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Spawn
       description: 
       colorIndex: 0
@@ -10722,8 +10766,8 @@ MonoBehaviour:
         - 
         actionEnabled: 010101
         actionIsOpen: 010101
-        actionStartIndex: 00000000090000000c000000
-        actionHashCodes: 109b580486fe5f011a44e005
+        actionStartIndex: 000000000a0000000d000000
+        actionHashCodes: 16fb3e0386fe5f01dad66e00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -10775,6 +10819,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: AIOff
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         fsmObjectParams: []
         fsmVarParams: []
@@ -10784,7 +10834,13 @@ MonoBehaviour:
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
-        fsmVector3Params: []
+        fsmVector3Params:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -10802,9 +10858,10 @@ MonoBehaviour:
         - BlueOrb.Scripts.AI.AtomActions.Physics.SetSteeringTargetToVectorAtom
         - BlueOrb.Scripts.AI.AtomActions.EnableSteeringBehaviorAtom
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
-        paramDataType: 1400000013000000280000000700000000000000010000000300000003000000010000001400000028000000070000001400000028000000030000000300000017000000130000001200000001000000
+        paramDataType: 140000001c0000001300000028000000070000000000000001000000030000000300000001000000140000002800000007000000140000001200000028000000030000000300000017000000130000001200000001000000
         paramName:
         - gameObject
+        - TargetVector
         - GoToGameObject
         - _atom
         - _goToType
@@ -10817,6 +10874,7 @@ MonoBehaviour:
         - _atom
         - behavior_Type
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -10824,8 +10882,8 @@ MonoBehaviour:
         - storeSender
         - TagCheck
         - GotoPreviousState
-        paramDataPos: 00000000000000000000000000000000040000000800000000000000010000000900000001000000010000000a000000020000000200000002000000030000000400000001000000000000000e000000
-        paramByteDataSize: 0000000000000000000000000400000004000000010000000000000000000000010000000000000000000000040000000000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 0000000000000000000000000000000000000000040000000800000000000000010000000900000001000000010000000a00000002000000000000000200000002000000030000000400000001000000010000000e000000
+        paramByteDataSize: 00000000000000000000000000000000040000000400000001000000000000000000000001000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: LegsOff
       description: 
       colorIndex: 0
@@ -10856,8 +10914,8 @@ MonoBehaviour:
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000008000000
-        actionHashCodes: 1a44e00510d52604
+        actionStartIndex: 0000000009000000
+        actionHashCodes: dad66e0010d52604
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -10895,6 +10953,12 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: AIOn
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 
         fsmObjectParams: []
         fsmVarParams: []
@@ -10919,9 +10983,10 @@ MonoBehaviour:
         customTypeNames:
         - BlueOrb.Scripts.AI.AtomActions.Messaging.IsMessageReceivedAtom
         - BlueOrb.Scripts.AI.AtomActions.StopMovingAtom
-        paramDataType: 1400000028000000030000000300000017000000130000001200000001000000140000002800000001000000
+        paramDataType: 140000001200000028000000030000000300000017000000130000001200000001000000140000002800000001000000
         paramName:
         - gameObject
+        - Message
         - _atom
         - Message
         - Data
@@ -10932,8 +10997,8 @@ MonoBehaviour:
         - gameObject
         - _atom
         - everyFrame
-        paramDataPos: 0000000000000000000000000100000002000000000000000000000000000000010000000100000001000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000100000000000000010000000100000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000001000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1

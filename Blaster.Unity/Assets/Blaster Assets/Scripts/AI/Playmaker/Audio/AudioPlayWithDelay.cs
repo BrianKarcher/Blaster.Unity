@@ -27,6 +27,8 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Audio
         [HutongGames.PlayMaker.Tooltip("Wait until the end of the clip to send the Finish Event. Set to false to send the finish event immediately.")]
         public FsmBool WaitForEndOfClip;
 
+        public bool StopOnExit = true;
+
         [HutongGames.PlayMaker.Tooltip("Event to send when the action finishes.")]
         public FsmEvent finishedEvent;
 
@@ -74,6 +76,15 @@ namespace BlueOrb.Scripts.AI.PlayMaker.Audio
             if (!WaitForEndOfClip.Value)
             {
                 Finish();
+            }
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            if (StopOnExit)
+            {
+                audio.Stop();
             }
         }
 
