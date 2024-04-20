@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 951968298, guid: 7481b082cf95aa74e85d83ed9aab201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentRepository: {fileID: 0}
+  _componentRepository: {fileID: 7609723305893883830}
   componentName: 
   _spawnPointPosition: {fileID: 3921212477941222154}
   maxRaycastDistance: 1000
@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4626206673898463069
 Transform:
   m_ObjectHideFlags: 0
@@ -343,6 +343,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 3921212477941222154}
+      - useVariable: 1
+        name: ShooterAnimator
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 5699101925074661165}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -350,7 +356,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -524,6 +530,12 @@ Transform:
 --- !u!1 &3921212477941222154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3454111584941392879, guid: 9085f7ebdb25e6341bd6a7a3d27ff924,
+    type: 3}
+  m_PrefabInstance: {fileID: 1839027578128189669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5699101925074661165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6238275859907323848, guid: 9085f7ebdb25e6341bd6a7a3d27ff924,
     type: 3}
   m_PrefabInstance: {fileID: 1839027578128189669}
   m_PrefabAsset: {fileID: 0}
