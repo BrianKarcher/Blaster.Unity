@@ -18,6 +18,7 @@ namespace Assets.BlueOrb.Scripts.UI
         [SerializeField] private TextMeshProUGUI _levelStartTimer;
         [SerializeField] private TextMeshProUGUI multiplierText;
         [SerializeField] private TextMeshProUGUI consecutiveHitsText;
+        [SerializeField] private TextMeshProUGUI timerText;
         [SerializeField] private GameObject notificationObject;
         [SerializeField] private GameObject alertObject;
         //[SerializeField] private string _changeProjectileMessage;
@@ -55,6 +56,9 @@ namespace Assets.BlueOrb.Scripts.UI
 
         [SerializeField]
         private ScrollRect buffScrollRect;
+
+        // [SerializeField]
+        // private GameObject timer;
 
         private const string ControllerName = "Hud Controller";
 
@@ -209,5 +213,9 @@ namespace Assets.BlueOrb.Scripts.UI
         private string TweenName => $"{this.GetInstanceID()}_sethptween";
         private string NotificationAlhpaTweenName => $"{this.GetInstanceID()}_notificationalphatween";
         private string AlertAlhpaTweenName => $"{this.GetInstanceID()}_alertalphatween";
+
+        public void SetTimer(string time) {
+            timerText.text = time;
+        }
     }
 }
