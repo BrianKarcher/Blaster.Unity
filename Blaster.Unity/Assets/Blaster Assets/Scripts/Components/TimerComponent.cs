@@ -1,9 +1,7 @@
 ﻿using BlueOrb.Common.Components;
 using UnityEngine;
-using System.Collections.Generic;
-using BlueOrb.Scripts.UI;
-using BlueOrb.Controller.Manager;
 using BlueOrb.Base.Manager;
+using BlueOrb.Components.Action;
 
 namespace BlueOrb.Components
 {
@@ -14,15 +12,22 @@ namespace BlueOrb.Components
         private float timerLength;
         [SerializeField]
         private float speed;
-        [SerializeField]
-        private List<GameObject> objectsToDisable;
         private bool isActive;
         private float startTime;
+        private int currentTimeLeft;
+        private ActionSystem actionSystem;
 
         protected override void Awake()
         {
+            this.actionSystem = GetComponent<ActionSystem>();
+        }
+
+        public override void OnEnable()
+        {
             this.isActive = true;
             this.startTime = Time.time;
+            this.currentTimeLeft = (int)this.timerLength;
+            SetTime(currentTimeLeft.ToString());
         }
 
         private void FixedUpdate()
@@ -30,11 +35,21 @@ namespace BlueOrb.Components
             if (!this.isActive) {
                 return;
             }
+            float timeLeft = Time.time - this.startTime;
+            if (this.currentTimeLeft != (int)timeLeft) {
+                this.currentTimeLeft = (int)timeLeft;
+                SetTime(this.currentTimeLeft.ToString());
+            }
+            if (timeLeft < 0) {
+                this.isActive = false;
+                SetTime(string.Empty);
+                this.actionSystem.Act();
+            }
 
         }
 
-        private void ShowTime(float time) {
-            GameStateController.Instance.UIController.HudController.SetTimer(time.ToString());
+        private void SetTime(string time) {
+            GameStateController.Instance.UIController.HudController.SetTimer(time);
         }
     }
 }
